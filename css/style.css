@@ -1,0 +1,58 @@
+h1, h2, h3, h4, h5, h6{
+    color: #FF6B08;
+}
+
+header, footer{
+    color: #E8E8E8;
+    background-color: #000000;
+}
+
+main{
+    background-color: #191919;
+}
+
+a{
+    text-decoration: none;
+    color: #E8E8E8;
+}
+
+ul{
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+}
+
+li{
+    list-style: none;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header li{
+    display: inline;
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
+span#title{
+    font-weight: 700;
+    font-size: x-large;
+}
+
+#title span{
+    color: #FF6B08;
+    font-weight: 900;
+}
+
+/*MEDIA QUERY WEB*/
+
+@media only screen and (min-width: 620px){
+    header{
+        flex-direction: row;
+    }
+}
