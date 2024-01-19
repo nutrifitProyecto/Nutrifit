@@ -8,14 +8,17 @@
 
 <body>
     <h2>Iniciar sesión</h2>
-    <form method="post" action="../../back/src/loginClient.php">
-        Email: <input type="text" name="email" required><br>
-        Contraseña: <input type="password" name="passwd" required><br>
+    <form method="post" action="../../back/src/loginClient.php" >
+        <label for="client-email">Email:</label>
+        <input id="client-email" type="email" name="email" required><br>
+
+        <label for="client-passwd">Contraseña:</label>
+        <input id="client-passwd" type="password" name="password" required><br>
+
         <input type="submit" value="Iniciar sesión">
     </form>
 </body>
-<script type="text/javascript">
 
-</script>
+<script src="../js/login.js"></script>
 
 </html>
