@@ -15,6 +15,7 @@ let regexValidation = {
     password: /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$/
 }
 
+//Valida los campos comprobando con regex
 const validarCampo = (expr, input, campo) => {
     if (expr.test(input.value)) {
         console.log("funciona")
@@ -26,7 +27,6 @@ const validarCampo = (expr, input, campo) => {
 }
 
 function validarForm(e) {
-    console.log(e.target.name);
     validarCampo(regexValidation[e.target.name], e.target, e.target.name)
 }
 
