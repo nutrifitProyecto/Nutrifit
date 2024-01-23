@@ -3,6 +3,11 @@ h1, h2, h3, h4, h5, h6{
     text-align: center;
 }
 
+body{
+
+    background-color:#191919;
+    }
+
 header, footer{
     color: #E8E8E8;
     background-color: #000000;
@@ -53,7 +58,7 @@ span#title{
 /*PERDIDA DE PESO ESTILO*/
 
 .logo {
-    width: 50px; /* Ancho de la imagen */
+    width: 0px; /* Ancho de la imagen */
     height: 50px; /* Alto de la imagen */
    }
 
@@ -69,9 +74,48 @@ span#title{
     height: 600px;
 }
 
+.informacionPD {
+    display: flex;
+    flex-direction: column;  /* Cambiado a columna para que los elementos aparezcan uno debajo del otro */
+    align-items: center;  /* Alinear al centro horizontalmente */
+    background-color: #1A1A1A;
+  }
+  
+  .informacionPD img {
+    width: 40%;
+    margin-top: 10px;  /* Añadido un margen superior para separar la imagen del contenido */
+  }
+  
+  .informacionPD h1 {
+    margin-bottom: 10px;
+  }
+  
+  .informacionPD p {
+    margin-top: 10px;
+    text-align: center;  /* Alineado el texto al centro */
+  }
+  
+  .informacion {
+    color: #FF6B08;
+  }
+  
+  
+  .entrenamientos p{
 
+    color: #E8E8E8;
+    
+      }
+  .monitoreo p{
 
+color: #E8E8E8;
 
+  }
+
+  .enfoque p{
+
+    color: #E8E8E8;
+    
+      }
 
 /*MEDIA QUERY WEB*/
 
