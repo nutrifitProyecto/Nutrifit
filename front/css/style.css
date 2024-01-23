@@ -1,5 +1,6 @@
 h1, h2, h3, h4, h5, h6{
     color: #FF6B08;
+    text-align: center;
 }
 
 header, footer{
@@ -51,12 +52,22 @@ span#title{
 
 /*PERDIDA DE PESO ESTILO*/
 
+.logo {
+    width: 50px; /* Ancho de la imagen */
+    height: 50px; /* Alto de la imagen */
+   }
+
+.logo-pos {
+ position: absolute;
+ top: 50px; /* Espacio desde la parte superior */
+ left: 50px; /* Espacio desde la izquierda */
+}
 
 
-
-
-
-
+.fondo {
+    width: 100%;
+    height: 600px;
+}
 
 
 
