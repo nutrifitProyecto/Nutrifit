@@ -39,7 +39,7 @@ function tablaClientes() {
                 </tr>`
     });
     cad += `</table>
-            <button onclick="crearCliente()">Crear cliente</button>`
+            <button onclick="crearCliente()" data-bs-toggle="modal" data-bs-target="#crearClienteModal">Crear cliente</button>`
     table.innerHTML = cad
 }
 
