@@ -59,7 +59,45 @@
                                 </select>
                             </div>
                         </div>
-                    <button type="submit" class="btn btn-primary">Crear cliente</button>
+                        <button type="submit" class="btn btn-primary">Crear cliente</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL EDITAR CLIENTES -->
+    <div class="modal fade" id="editarClienteModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Editar Cliente</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form method="post" action="./crearCliente.php">
+                        <div class="d-flex">
+                            <div class="me-4">
+                                <label for="cliEditName">Nombre:</label><br>
+                                <input type="text" name="cliEditName" id="cliEditName" class="w-100">
+                            </div>
+                            <div>
+                                <label for="cliEditSurname">Apellido:</label><br>
+                                <input type="text" name="cliEditSurname" id="cliEditSurname" class="w-100">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="cliEditTipo">Tipo:</label><br>
+                            <select name="cliEditTipo" id="cliEditTipo" class="form-select form-select-sm">
+                                <option value="0" selected>Normal</option>
+                                <option value="1">Admin</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Crear cliente</button>
                     </form>
                 </div>
                 <div class="modal-footer">
