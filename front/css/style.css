@@ -1,6 +1,9 @@
 h1, h2, h3, h4, h5, h6{
     color: #FF6B08;
     text-align: center;
+    font-size: 4vh;
+    font-family: Inter, sans-serif;
+    font-weight: bold;
 }
 
 body{
@@ -72,40 +75,69 @@ span#title{
 .fondo {
     width: 100%;
     height: 600px;
+    opacity: 70%;
 }
 
 .informacionPD {
     display: flex;
-    flex-direction: column;  /* Cambiado a columna para que los elementos aparezcan uno debajo del otro */
-    align-items: center;  /* Alinear al centro horizontalmente */
-    background-color: #1A1A1A;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.informacionPD .contenido-izquierda {
+    flex: 1;
+    padding-right: 20px; /* Espacio entre la parte izquierda y la imagen */
+}
+
+.informacionPD h1 {
+    text-align: left;
+    font-size: 4vh;
+    font-family: Inter, sans-serif;
+    font-weight: bold;
   }
   
-  .informacionPD img {
-    width: 40%;
-    margin-top: 10px;  /* Añadido un margen superior para separar la imagen del contenido */
-  }
-  
-  .informacionPD h1 {
-    margin-bottom: 10px;
-  }
-  
-  .informacionPD p {
-    margin-top: 10px;
-    text-align: center;  /* Alineado el texto al centro */
-  }
-  
-  .informacion {
-    color: #FF6B08;
-  }
+.informacionPD p{
+    font-size: 3vh;
+    color: white
+
+}
+.informacionPD button {
+    margin-bottom: 15px;
+    border: white;
+    border-radius: 10%;
+    width: 10%;
+    height: 40px;
+    color: #f2f4f7;
+    background-color: #FF6B08;
+}
+
+.informacionPD img {
+    max-width: 350PX;
+    height: auto; /* Hace que la altura se ajuste automáticamente según el ancho */
+}
+.informacionPD button{
+    text-align: center;
+}
   
   
   .entrenamientos p{
 
     color: #E8E8E8;
+    text-align: center;
     
       }
-  .monitoreo p{
+
+
+
+
+      .entrenamientos button{
+        text-align: center;
+
+      }
+
+
+
+      .monitoreo p{
 
 color: #E8E8E8;
 
@@ -116,6 +148,21 @@ color: #E8E8E8;
     color: #E8E8E8;
     
       }
+
+      .teaser-bg {
+        position: relative;
+        display: inline-block;
+      }
+      
+      .titulo {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #E8E8E8;
+        font-size: 4vh;
+      }
+      
 
 /*MEDIA QUERY WEB*/
 
