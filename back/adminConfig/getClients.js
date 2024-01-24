@@ -1,12 +1,6 @@
 let table = document.getElementById('client-table')
 let info = []
 let inputs = document.querySelectorAll('input')
-let editForm = document.getElementById('editClientForm')
-
-editForm.addEventListener('click', () => {
-    console.log("hola");
-    console.log(editForm.input);
-})
 
 limpiarCampos()
 
@@ -35,7 +29,7 @@ function tablaClientes() {
                         <th>opciones</th>
                     </tr>`
     info.forEach(client => {
-        cad += `<tr id="${client.id}">
+        cad += `<tr id="column${client.id}">
                     <td>${client.id}</td>
                     <td>${client.name}</td>
                     <td>${client.email}</td>
@@ -43,7 +37,7 @@ function tablaClientes() {
                     <td>${client.tipo}</td>
                     <td>
                         <button onclick="eliminarCliente()" class="btn btn-danger">Eliminar</button>
-                        <button data-bs-toggle="modal" data-bs-target="#editarClienteModal" class="btn btn-success">Editar</button>
+                        <button id="btnEditar" data-bs-toggle="modal" data-bs-target="#editarClienteModal" class="btn btn-success" onclick="llenarCampos(${client.id})">Editar</button>
                     </td>
                 </tr>`
     });
@@ -54,6 +48,14 @@ function tablaClientes() {
 
 function eliminarCliente() {
     console.log("hola");
+}
+
+function llenarCampos(id) {
+    let editInputs = document.getElementsByName('cliEdit')
+
+    editInputs[0].value = document.getElementById('column' + id).childNodes[3].innerHTML
+    editInputs[1].value = document.getElementById('column' + id).childNodes[5].innerHTML
+    editInputs[2].value = document.getElementById('column' + id).childNodes[9].innerHTML
 }
 
 function limpiarCampos() {
