@@ -10,13 +10,19 @@ $email = $_POST['cliEmail'];
 $passwd = $_POST['cliPasswd'];
 $tipo = $_POST['cliTipo'];
 
-$query = "INSERT INTO clientes (NAME, SURNAME, EMAIL, PASSWORD, TIPO) VALUES ('$name', '$surname', '$email', '$passwd', '$tipo')";
+$query = "INSERT INTO clientes (name, surname, email, password, tipo) VALUES ('$name', '$surname', '$email', '$passwd', '$tipo')";
 
 $result = $connection->query($query);
 
-if ($connection->$result === true) {
-        header('./clientList.html');
+echo "<script>console.log('" . $result . "')</script>";
+//echo "<script>console.log('" . $result . "')</script>";
+
+if ($result === true) {
+        header('Location: ./clientList.html');
         exit();
 } else {
+        $query = "DELETE FROM clientes WHERE email = '$email'";
+        $connection->query($query);
         echo "alert('error al crear el usuario')";
 }
+$connection->close();
