@@ -165,13 +165,6 @@ span#title{
      
 
 
-
-  .enfoque p{
-
-    color: #E8E8E8;
-    
-      }
-
       .teaser-bg {
         position: relative;
         display: inline-block;
@@ -191,7 +184,7 @@ span#title{
         height: 200px;
         background-color: #f1f1f1;
         border: 1px solid #ddd;
-        border-radius: 5px;
+        border-radius: 20px;
         margin: 10px;
         padding: 10px;
         display: flex;
@@ -203,6 +196,7 @@ span#title{
 text-align: center;
 justify-content: center;
 display: flex;
+
 }
 
 .cajas h1{
