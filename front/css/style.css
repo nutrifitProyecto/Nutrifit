@@ -21,14 +21,25 @@ li{
 header, footer{
     color: #E8E8E8;
     background-color: #000000;
+ 
 }
 
 header{
     display: grid;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    grid-template-columns: repeat(2,auto);
+    grid-template-rows: repeat(2,auto);
+}
+
+.bars-svg{
+    width: 60px;
+    height: 50px;
 }
 
 header ul{
     display: none;
+    font-size: larger;
 }
 
 header li{
@@ -73,4 +84,5 @@ main{
     header{
         flex-direction: row;
     }
+
 }
