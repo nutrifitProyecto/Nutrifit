@@ -22,8 +22,9 @@ function tablaClientes() {
     let cad = `<table class="table table-striped">
                     <tr>
                         <th>id</th>
-                        <th>name</th>
-                        <th>email</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Email</th>
                         <th>passwd</th>
                         <th>tipo</th>
                         <th>opciones</th>
@@ -32,6 +33,7 @@ function tablaClientes() {
         cad += `<tr id="column${client.id}">
                     <td>${client.id}</td>
                     <td>${client.name}</td>
+                    <td>${client.surname}</td>
                     <td>${client.email}</td>
                     <td>${client.password}</td>
                     <td>${client.tipo}</td>
@@ -51,11 +53,12 @@ function eliminarCliente() {
 }
 
 function llenarCampos(id) {
-    let editInputs = document.getElementsByName('cliEdit')
+    let editInputs = document.getElementsByName('showValues')
 
-    editInputs[0].value = document.getElementById('column' + id).childNodes[3].innerHTML
-    editInputs[1].value = document.getElementById('column' + id).childNodes[5].innerHTML
-    editInputs[2].value = document.getElementById('column' + id).childNodes[9].innerHTML
+    editInputs[0].childNodes[1].value = document.getElementById('column' + id).childNodes[1].innerHTML
+    editInputs[1].childNodes[4].value = document.getElementById('column' + id).childNodes[3].innerHTML
+    editInputs[2].childNodes[4].value = document.getElementById('column' + id).childNodes[5].innerHTML
+    editInputs[3].childNodes[1].value = document.getElementById('column' + id).childNodes[11].innerHTML
 }
 
 function limpiarCampos() {

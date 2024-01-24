@@ -14,9 +14,9 @@ $query = "INSERT INTO clientes (NAME, SURNAME, EMAIL, PASSWORD, TIPO) VALUES ('$
 
 $result = $connection->query($query);
 
-var_dump($result);
-
-if ($result->num_rows == true) {
+if ($connection->$result === true) {
         header('./clientList.html');
         exit();
+} else {
+        echo "alert('error al crear el usuario')";
 }

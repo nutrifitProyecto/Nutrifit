@@ -44,12 +44,14 @@
                                 <input type="text" name="cliSurname" id="cliSurname" class="w-100">
                             </div>
                         </div>
-                        <label for="cliEmail">Email:</label><br>
-                        <input type="email" name="cliEmail" id="cliEmail" class="w-75">
-                        <div class="d-flex">
+                        <div class="mt-3">
+                            <label for="cliEmail">Email:</label><br>
+                            <input type="email" name="cliEmail" id="cliEmail" class="w-75">
+                        </div>
+                        <div class="d-flex mt-3">
                             <div class="me-4">
                                 <label for="cliPasswd">Contraseña:</label><br>
-                                <input type="text" name="cliPasswd" id="cliPasswd" class="w-100">
+                                <input type="password" name="cliPasswd" id="cliPasswd" class="w-100">
                             </div>
                             <div>
                                 <label for="cliTipo">Tipo:</label><br>
@@ -60,10 +62,11 @@
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary mt-3">Crear cliente</button>
-                    </form> 
+                    </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="limpiarCampos()">Cerrar</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                        onclick="limpiarCampos()">Cerrar</button>
                 </div>
             </div>
         </div>
@@ -80,22 +83,27 @@
                 </div>
                 <div class="modal-body">
                     <form method="post" action="./editarCliente.php" id="editClientForm">
+                        <div name="showValues">
+                            <input type="text" name="cliEditId" style="display: none;">
+                        </div>
                         <div class="d-flex">
-                            <div class="me-4">
+                            <div class="me-4" name="showValues">
                                 <label for="cliEditName">Nombre:</label><br>
-                                <input type="text" name="cliEdit" id="cliEditName" class="w-100">
+                                <input type="text" name="cliEditName" id="cliEditName" class="w-100">
                             </div>
-                            <div>
+                            <div name="showValues">
                                 <label for="cliEditSurname">Apellido:</label><br>
-                                <input type="text" name="cliEdit" id="cliEditSurname" class="w-100">
+                                <input type="text" name="cliEditSurname" id="cliEditSurname" class="w-100">
                             </div>
                         </div>
-                        <div>
+                        <div class="mt-3">
                             <label for="cliEditTipo">Tipo:</label><br>
-                            <select name="cliEdit" id="cliEditTipo" class="form-select form-select-sm w-50">
-                                <option value="0" selected>Normal</option>
-                                <option value="1">Admin</option>
-                            </select>
+                            <div name="showValues">
+                                <select name="cliEditTipo" id="cliEditTipo" class="form-select form-select-sm w-50">
+                                    <option value="0" selected>Normal</option>
+                                    <option value="1">Admin</option>
+                                </select>
+                            </div>
                         </div>
                         <button type="submit" class="btn btn-primary mt-3">Crear cliente</button>
                     </form>
