@@ -145,71 +145,124 @@ main {
 .informacionPD button {
     text-align: center;
 }
-
-
-.entrenamientos p {
-
-    color: #E8E8E8;
-    text-align: center;
-
-}
+  
+  
 
 
 
 
-.entrenamientos button {
-    text-align: center;
-
-}
-
-
-
-.monitoreo p {
-
-    color: #E8E8E8;
-
-}
-
-.enfoque p {
-
-    color: #E8E8E8;
-
-}
-
-.teaser-bg {
-    position: relative;
-    display: inline-block;
-}
-
-.titulo {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #E8E8E8;
-    font-size: 4vh;
-}
-
-footer{
-    padding-block: 15px;
-}
-
-footer ul{
+.entrenamientos,.monitoreo,.enfoque{
     display: flex;
     justify-content: center;
-    margin: 0;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
 }
 
-footer li{
-    display: inline;
-    margin-inline: 10px;
+
+
+
+  .entrenamientos p,
+  .monitoreo p,
+  .enfoque p{
+
+    color: #E8E8E8;
+    text-align: center;
+    font-size: 2.5vh;
+    
+      }
+
+
+
+
+      .entrenamientos button,
+      .monitoreo button,
+      .enfoque button{
+        align-items: center;
+        text-align: center;
+        border: white;
+        border-radius: 10%;
+        width: 10%;
+        height: 40px;
+        color: #f2f4f7;
+        background-color: #262424;
+
 }
 
-footer li img{
-    width: 50px;
-    height: 50px;
+     
+
+
+
+  .enfoque p{
+
+    color: #E8E8E8;
+
+      .teaser-bg {
+        position: relative;
+        display: inline-block;
+      }
+      
+      .titulo {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #E8E8E8;
+        font-size: 4vh;
+      }
+
+      .caja1,.caja2,.caja3 {
+        width: 300px;
+        height: 200px;
+        background-color: #f1f1f1;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        margin: 10px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+      }
+      
+.cajas{
+text-align: center;
+justify-content: center;
+display: flex;
 }
 
+.cajas h1{
+    display: flex;
+}
+
+.cajas img {
+    width: 10%;
+    height: 15%;
+    border-radius: 50%;
+}
+
+      .informacioncaja {
+        width: 100%;
+        height: 100%;
+      }
+      
+      .opinion {
+        line-height: 1.5;
+       
+      }
+      
+      .nombre {
+        font-size: 14px;
+        font-weight: bold;
+        margin: 5px 0;
+      }
+      
+      .email {
+        font-size: 14px;
+        color: #0084b4;
+        margin: 0;
+      }
+      
+      
 
 /*MEDIA QUERY WEB*/
 

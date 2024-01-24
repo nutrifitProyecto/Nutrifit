@@ -12,3 +12,5 @@ $result = $connection->query($query);
 if($result->num_rows > 0) {
     echo json_encode($result->fetch_all(MYSQLI_ASSOC));
 }
+
+$connection->close();
