@@ -1,5 +1,5 @@
 <?php
-include "../inc/dbinfo.inc";
+include "../../inc/dbinfo.inc";
 
 //Conectar con la base de datos
 $connection = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
@@ -14,7 +14,7 @@ $query = "UPDATE clientes SET name = '$name', surname = '$surname', tipo = $tipo
 $result = $connection->query($query);
 
 if ($result === true) {
-    header('Location: ./clientList.html');
+    header('Location: ../clientList.html');
     exit();
 } else {
     echo "alert('Error al editar el usuario')";

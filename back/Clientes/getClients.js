@@ -4,20 +4,19 @@ let inputs = document.querySelectorAll('input')
 
 limpiarCampos()
 
-fetch('./getClients.php')
+fetch('./php/getClients.php')
     .then(response => response.json())
     .then((data) => {
         //Parsea la respuesta a JSON
         info = JSON.parse(JSON.stringify(data));
         //Llama a la función y crea una tabla con los clientes
         tablaClientes()
-
     })
     .catch(error => {
         console.log(error);
     });
 
-
+//Crear la tabla con todos los clientes
 function tablaClientes() {
     let cad = `<table class="table table-striped">
                     <tr>
@@ -38,7 +37,7 @@ function tablaClientes() {
                     <td>${client.password}</td>
                     <td>${client.tipo}</td>
                     <td>
-                        <button onclick="eliminarCliente()" class="btn btn-danger">Eliminar</button>
+                        <button onclick="eliminarCliente(${client.id})" class="btn btn-danger">Eliminar</button>
                         <button id="btnEditar" data-bs-toggle="modal" data-bs-target="#editarClienteModal" class="btn btn-success" onclick="llenarCampos(${client.id})">Editar</button>
                     </td>
                 </tr>`
@@ -48,19 +47,30 @@ function tablaClientes() {
     table.innerHTML = cad
 }
 
-function eliminarCliente() {
-    console.log("hola");
+//Elimina un cliente con respecto al id de este
+function eliminarCliente(sendId) {
+    confirm("Seguro que quieres eliminar al usuario?")
+    if (confirm) {
+        $.ajax({
+            type: "POST", // Puedes usar "GET" en lugar de "POST" si lo prefieres
+            url: "./php/eliminarCliente.php",
+            data: { idToDelete: sendId }, // Enviar la variable como parte de los datos
+            success: window.location = "./clientList.html"
+        });
+    }
 }
 
 function llenarCampos(id) {
     let editInputs = document.getElementsByName('showValues')
 
+    //Asigno valores con respecto a los campos de la tabla
     editInputs[0].childNodes[1].value = document.getElementById('column' + id).childNodes[1].innerHTML
     editInputs[1].childNodes[4].value = document.getElementById('column' + id).childNodes[3].innerHTML
     editInputs[2].childNodes[4].value = document.getElementById('column' + id).childNodes[5].innerHTML
     editInputs[3].childNodes[1].value = document.getElementById('column' + id).childNodes[11].innerHTML
 }
 
+//Limpia los campos de la ventana modal
 function limpiarCampos() {
     inputs.forEach(element => {
         element.value = ""

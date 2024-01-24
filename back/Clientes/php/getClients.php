@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "../inc/dbinfo.inc";
+include "../../inc/dbinfo.inc";
 
 //Creación de la conexión
 $connection = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);

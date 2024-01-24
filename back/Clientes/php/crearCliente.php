@@ -1,5 +1,5 @@
 <?php
-include "../inc/dbinfo.inc";
+include "../../inc/dbinfo.inc";
 
 //Conectar con la base de datos
 $connection = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
@@ -18,7 +18,7 @@ echo "<script>console.log('" . $result . "')</script>";
 //echo "<script>console.log('" . $result . "')</script>";
 
 if ($result === true) {
-        header('Location: ./clientList.html');
+        header('Location: ../clientList.html');
         exit();
 } else {
         $query = "DELETE FROM clientes WHERE email = '$email'";
