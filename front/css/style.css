@@ -1,13 +1,14 @@
 h1, h2, h3, h4, h5, h6{
     color: #FF6B08;
     text-align: center;
-    font-size: 4vh;
-    font-family: Inter, sans-serif;
+    font-size: 5vh;
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 2px;
     font-weight: bold;
 }
 
 body{
-
+    font-family: "Bebas Neue", sans-serif;
     background-color:#191919;
     }
 
@@ -231,8 +232,100 @@ display: flex;
         margin: 0;
       }
       
-      
 
+/*CAJAS PANEL */
+      .titulopanel {
+        color: #E8E8E8;
+    }
+    
+    .cajap {
+        width: 400px;
+        height: 300px;
+        text-align: center;
+        margin-left: 10%;
+        margin-right: 10%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Centra verticalmente */
+        position: relative;
+        display: inline-block;
+        text-align: center;
+    }
+    
+    .cajap h1 {
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin-bottom: 20px;
+    }
+    
+    .cajaspanel {
+        display: flex;
+        margin-top: 5%;
+        justify-content: space-around; /* Ajusta el espacio entre las cajas */
+        flex-wrap: wrap;
+    }
+    
+    .cajap img {
+        width: 80%;
+        height: 80%;
+        border-radius: 20px;
+    }
+
+
+/*CAJAS CONTRATOS*/
+.cajascontratoarriba {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px; /* Ajusta el valor según tus necesidades */
+    padding: 0%;
+}
+
+.cajac {
+    width: 200px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(204, 3, 3, 0.1);
+}
+
+.informacioncajac {
+    text-align: center;
+}
+
+.informacioncajac img {
+    width: 100%;
+}
+
+.opinionc {
+    margin-top: 10px;
+}
+
+.nombrec {
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.cajascontratoarriba button,
+.cajascontratoabajo button {
+    margin-bottom: 15px;
+    border: white;
+    border-radius: 10%;
+    width: 40%;
+    height: 40px;
+    color: #f2f4f7;
+    background-color: #FF6B08;
+}
+
+.cajascontratoabajo{
+    display: flex;
+    justify-content: space-around;
+    margin: 10px; /* Ajusta el valor según tus necesidades */
+    padding: 0%;
+}
+
+
+    
 /*MEDIA QUERY WEB*/
 
 @media only screen and (min-width: 620px){
