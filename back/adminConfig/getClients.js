@@ -4,8 +4,10 @@ let info = []
 fetch('./getClients.php')
     .then(response => response.json())
     .then((data) => {
+        //Parsea la respuesta a JSON
         info = JSON.parse(JSON.stringify(data));
         console.log(data);
+        //Llama a la función y crea una tabla con los clientes
         tablaClientes()
 
     })
@@ -17,10 +19,12 @@ fetch('./getClients.php')
 function tablaClientes() {
     let cad = `<table>
                     <tr>
-                        <td>id</td>
-                        <td>name</td>
-                        <td>email</td>
-                        <td>passwd</td>
+                        <th>id</th>
+                        <th>name</th>
+                        <th>email</th>
+                        <th>passwd</th>
+                        <th>tipo</th>
+                        <th>opciones</th>
                     </tr>`
     info.forEach(client => {
         cad += `<tr>
@@ -28,12 +32,21 @@ function tablaClientes() {
                     <td>${client.name}</td>
                     <td>${client.email}</td>
                     <td>${client.password}</td>
+                    <td>${client.tipo}</td>
                     <td>
-                        <button>Eliminar</button>
+                        <button onclick="eliminarCliente()">Eliminar</button>
                         <button>Editar</button>
                 </tr>`
     });
-    cad += `</table>`
-    console.log(cad);
+    cad += `</table>
+            <button onclick="crearCliente()" data-bs-toggle="modal" data-bs-target="#crearClienteModal">Crear cliente</button>`
     table.innerHTML = cad
+}
+
+function crearCliente() {
+    
+}
+
+function eliminarCliente() {
+    console.log("hola");
 }
