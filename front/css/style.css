@@ -1,4 +1,9 @@
-h1, h2, h3, h4, h5, h6{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     color: #FF6B08;
     text-align: center;
     font-size: 4vh;
@@ -6,86 +11,88 @@ h1, h2, h3, h4, h5, h6{
     font-weight: bold;
 }
 
-body{
+body {
 
-    background-color:#191919;
-    }
+    background-color: #191919;
+}
 
-header, footer{
+header,
+footer {
     color: #E8E8E8;
     background-color: #000000;
 }
 
-main{
+main {
     background-color: #191919;
 }
 
-a{
+a {
     text-decoration: none;
     color: #E8E8E8;
 }
 
-ul{
+ul {
     margin-left: 0;
     margin-right: 0;
     padding: 0;
 }
 
-li{
+li {
     list-style: none;
 }
 
-header, footer{
+header,
+footer {
     color: #E8E8E8;
     background-color: #000000;
- 
+
 }
 
-header{
+header {
     display: grid;
     padding-top: 15px;
     padding-bottom: 15px;
-    grid-template-columns: repeat(2,auto);
-    grid-template-rows: repeat(2,auto);
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, auto);
 }
 
-.bars-svg{
+.bars-svg {
     width: 60px;
     height: 50px;
 }
 
-header ul{
+header nav {
     display: none;
     font-size: larger;
 }
 
-header li{
+header li {
     margin-left: 6px;
     margin-right: 6px;
 }
 
-span#title{
+span#title {
     font-weight: 700;
     font-size: x-large;
 }
 
-#title span{
+#title span {
     color: #FF6B08;
     font-weight: 900;
 }
 
 
-div#logo-title{
+div#logo-title {
     display: flex;
     align-items: center;
 }
 
-.img-logo{
+.img-logo {
     width: 60px;
     height: 60px;
 }
 
-main{
+main {
     background-color: #191919;
 }
 
@@ -103,7 +110,8 @@ main{
 
 .informacionPD .contenido-izquierda {
     flex: 1;
-    padding-right: 20px; /* Espacio entre la parte izquierda y la imagen */
+    padding-right: 20px;
+    /* Espacio entre la parte izquierda y la imagen */
 }
 
 .informacionPD h1 {
@@ -111,13 +119,13 @@ main{
     font-size: 4vh;
     font-family: Inter, sans-serif;
     font-weight: bold;
-  }
-  
-.informacionPD p{
+}
+
+.informacionPD p {
     font-size: 3vh;
     color: white
-
 }
+
 .informacionPD button {
     margin-bottom: 15px;
     border: white;
@@ -130,62 +138,87 @@ main{
 
 .informacionPD img {
     max-width: 350PX;
-    height: auto; /* Hace que la altura se ajuste automáticamente según el ancho */
+    height: auto;
+    /* Hace que la altura se ajuste automáticamente según el ancho */
 }
-.informacionPD button{
+
+.informacionPD button {
     text-align: center;
 }
-  
-  
-  .entrenamientos p{
+
+
+.entrenamientos p {
 
     color: #E8E8E8;
     text-align: center;
-    
-      }
+
+}
 
 
 
 
-      .entrenamientos button{
-        text-align: center;
+.entrenamientos button {
+    text-align: center;
 
-      }
+}
 
 
 
-      .monitoreo p{
-
-color: #E8E8E8;
-
-  }
-
-  .enfoque p{
+.monitoreo p {
 
     color: #E8E8E8;
-    
-      }
 
-      .teaser-bg {
-        position: relative;
-        display: inline-block;
-      }
-      
-      .titulo {
-        position: absolute;
-        top: 40%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: #E8E8E8;
-        font-size: 4vh;
-      }
-      
+}
+
+.enfoque p {
+
+    color: #E8E8E8;
+
+}
+
+.teaser-bg {
+    position: relative;
+    display: inline-block;
+}
+
+.titulo {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #E8E8E8;
+    font-size: 4vh;
+}
+
+footer{
+    padding-block: 15px;
+}
+
+footer ul{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+footer li{
+    display: inline;
+    margin-inline: 10px;
+}
+
+footer li img{
+    width: 50px;
+    height: 50px;
+}
+
 
 /*MEDIA QUERY WEB*/
 
-@media only screen and (min-width: 620px){
-    header{
+@media only screen and (min-width: 620px) {
+    header {
         flex-direction: row;
     }
 
+    header nav {
+        display: block;
+    }
 }
