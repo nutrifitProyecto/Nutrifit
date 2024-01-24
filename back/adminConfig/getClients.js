@@ -1,6 +1,12 @@
 let table = document.getElementById('client-table')
 let info = []
 let inputs = document.querySelectorAll('input')
+let editForm = document.getElementById('editClientForm')
+
+editForm.addEventListener('click', () => {
+    console.log("hola");
+    console.log(editForm.input);
+})
 
 limpiarCampos()
 
@@ -37,7 +43,8 @@ function tablaClientes() {
                     <td>${client.tipo}</td>
                     <td>
                         <button onclick="eliminarCliente()" class="btn btn-danger">Eliminar</button>
-                        <button data-bs-target="#editarClienteModal" class="btn btn-success">Editar</button>
+                        <button data-bs-toggle="modal" data-bs-target="#editarClienteModal" class="btn btn-success">Editar</button>
+                    </td>
                 </tr>`
     });
     cad += `</table>
