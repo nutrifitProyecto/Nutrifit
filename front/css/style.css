@@ -145,13 +145,15 @@ main {
 .informacionPD button {
     text-align: center;
 }
-  
-  
 
 
 
 
-.entrenamientos,.monitoreo,.enfoque{
+
+
+.entrenamientos,
+.monitoreo,
+.enfoque {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -159,78 +161,66 @@ main {
     padding: 20px;
 }
 
-
-
-
-  .entrenamientos p,
-  .monitoreo p,
-  .enfoque p{
+.entrenamientos p,
+.monitoreo p,
+.enfoque p {
 
     color: #E8E8E8;
     text-align: center;
     font-size: 2.5vh;
-    
-      }
-
-
-
-
-      .entrenamientos button,
-      .monitoreo button,
-      .enfoque button{
-        align-items: center;
-        text-align: center;
-        border: white;
-        border-radius: 10%;
-        width: 10%;
-        height: 40px;
-        color: #f2f4f7;
-        background-color: #262424;
 
 }
 
-     
+.entrenamientos button,
+.monitoreo button,
+.enfoque button {
+    align-items: center;
+    text-align: center;
+    border: white;
+    border-radius: 10%;
+    width: 10%;
+    height: 40px;
+    color: #f2f4f7;
+    background-color: #262424;
 
+}
 
+.teaser-bg {
+    position: relative;
+    display: inline-block;
+}
 
-  .enfoque p{
-
+.titulo {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     color: #E8E8E8;
-
-      .teaser-bg {
-        position: relative;
-        display: inline-block;
-      }
-      
-      .titulo {
-        position: absolute;
-        top: 40%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: #E8E8E8;
-        font-size: 4vh;
-      }
-
-      .caja1,.caja2,.caja3 {
-        width: 300px;
-        height: 200px;
-        background-color: #f1f1f1;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        margin: 10px;
-        padding: 10px;
-        display: flex;
-        flex-direction: column-reverse;
-        justify-content: center;
-      }
-      
-.cajas{
-text-align: center;
-justify-content: center;
-display: flex;
+    font-size: 4vh;
 }
 
-.cajas h1{
+.caja1,
+.caja2,
+.caja3 {
+    width: 300px;
+    height: 200px;
+    background-color: #f1f1f1;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+}
+
+.cajas {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+}
+
+.cajas h1 {
     display: flex;
 }
 
@@ -240,29 +230,48 @@ display: flex;
     border-radius: 50%;
 }
 
-      .informacioncaja {
-        width: 100%;
-        height: 100%;
-      }
-      
-      .opinion {
-        line-height: 1.5;
-       
-      }
-      
-      .nombre {
-        font-size: 14px;
-        font-weight: bold;
-        margin: 5px 0;
-      }
-      
-      .email {
-        font-size: 14px;
-        color: #0084b4;
-        margin: 0;
-      }
-      
-      
+.informacioncaja {
+    width: 100%;
+    height: 100%;
+}
+
+.opinion {
+    line-height: 1.5;
+
+}
+
+.nombre {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.email {
+    font-size: 14px;
+    color: #0084b4;
+    margin: 0;
+}
+
+
+/*FOOTER*/
+
+footer{
+    padding-block: 15px;
+}
+
+footer ul{
+    display: flex;
+    justify-content: center;
+}
+
+footer li{
+    margin-inline: 10px;
+}
+
+footer li img{
+    width: 50px;
+    height: 50px;
+}
 
 /*MEDIA QUERY WEB*/
 
