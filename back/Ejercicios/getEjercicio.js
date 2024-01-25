@@ -43,7 +43,7 @@ function tablaEjercicios() {
     table.innerHTML = cad
 }
 
-//Elimina un cliente con respecto al id de este
+//Elimina un ejercicio con respecto al id de este
 function eliminarEjercicio(sendId) {
     confirm("Seguro que quieres eliminar el ejercicio?")
     if (confirm) {
