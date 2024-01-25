@@ -5,16 +5,16 @@ include "../../inc/dbinfo.inc";
 $connection = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
 
 //Variable recibida desde el js
-$idCliente = $_POST['idToDelete'];
+$idEntrenador = $_POST['idToDelete'];
 
 //Query para eliminar al cliente
-$query = "DELETE FROM clientes WHERE id = '$idCliente'";
+$query = "DELETE FROM entrenadores WHERE id = '$idEntrenador'";
 
 $result = $connection->query($query);
 
 if ($result === true) {
     //Redirección a la página de clientes (recargarla)
-    header('Location: ../clientList.html');
+    header('Location: ../entrenadorList.html');
     exit();
 } else {
     echo "alert('Error al eliminar el usuario')";
