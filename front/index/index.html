@@ -11,8 +11,8 @@
 <body>
     <header>
         <div id="logo">
-            
-            
+            <img src="/front/img/logo.jpeg" alt="logo">
+            <span id="title">NUTRI<span>FIT</span></span>
         </div>
         <nav>
             <ul>
@@ -26,42 +26,36 @@
 
     <main>
         <div id="teaser-bg">
-            <img src="/front/img/fondo.jpeg" alt="backg" class="fondo fondo imagen">
+            <img src="/front/img/fondo.jpeg" alt="backg" class="fondo">
             <h2 class="titulo">"TRANSFORMA TU CUERPO, CAMBIA TU MENTE"</h2>
-            <button>Comienza ahora</button>
+            <!-- <button>Comienza ahora</button> -->
           </div>
           
         <div id="features">
             <div class="feature">
-                <a href="">
-                    <img src="" alt="entrenamiento">
-                    <div>
-                        <h2>ENTRENAMIENTOS</h2>
-                        <p>Entrena con las mejores rutinas de entrenamiento</p>
-                    </div>
-                </a>
+                <img src="/front/img/entrenamientos.jpeg" alt="entrenamiento" class="flotante-feature" >
+                <div>
+                    <a href=""><h2>ENTRENAMIENTOS</h2></a>
+                    <p>Entrena con las mejores rutinas de entrenamiento</p>
+                </div>
             </div>
             <div class="feature">
-                <a href="">
-                    <div>
-                        <h2>DIETAS</h2>
-                        <p>Disfruta de nuestras dietas</p>
-                    </div>
-                    <img src="" alt="dietas">
-                </a>
+                <div class="flotante-feature">
+                    <a href=""><h2>DIETAS</h2></a>
+                    <p>Disfruta de nuestras dietas</p>
+                </div>
+                <img src="/front/img/dietas..png" alt="dietas">
             </div>
             <div class="feature">
-                <a href="">
-                    <img src="" alt="asesoramiento">
-                    <div>
-                        <h2>ASESORAMIENTO</h2>
-                        <p>Asesorate con expertos</p>
-                    </div>
-                </a>
+                <img src="/front/img/asesormento.jpg" alt="asesoramiento" class="flotante-feature">
+                <div>
+                    <a href=""><h2>ASESORAMIENTO</h2></a>
+                    <p>Asesorate con expertos</p>
+                </div>
             </div>
         </div>
 
-        <div id="features-2">
+        <!-- <div id="features-2">
             <div class="row2">
                 <div>
                     <h2>Titulo 1</h2>
@@ -78,29 +72,82 @@
                     <button>Lee mas</button>
                 </div>
             </div>
+        </div> -->
+
+        <section>
+            <h2>OPINIONES</h2>
+            <div class="cajas">
+                <div class="caja">
+                    <img src="/front/img/opinion1.jpg" alt="" srcset="">
+                    <div class="informacioncaja">
+                        <p class="opinion">Thank you for building such an empowering tool, especially for designers! The site went from Figma to Framer in less than a week!</p>
+                        <p class="nombre">Eva Elle</p>
+                        <p class="email">@evaelle</p>
+                    </div>
+                </div>
+                
+                <div class="caja">
+                    <img src="/front/img/opinion2.jpg" alt="" srcset="">
+                    <div class="informacioncaja">
+                        <p class="opinion">Thank you for building such an empowering tool, especially for designers! The site went from Figma to Framer in less than a week!</p>
+                        <p class="nombre">Eva Elle</p>
+                        <p class="email">@evaelle</p>
+                    </div>
+                </div>
+                
+                <div class="caja">
+                    <img src="/front/img/opinion3.jpg" alt="" srcset="">
+                    <div class="informacioncaja">
+                        <p class="opinion">Thank you for building such an empowering tool, especially for designers! The site went from Figma to Framer in less than a week!</p>
+                        <p class="nombre">Eva Elle</p>
+                        <p class="email">@evaelle</p>
+                    </div>
+                </div> 
+            </div>
+        </section>
+
+        <div id="faqs">
+            <h2>PREGUNTAS FRECUENTES</h2>
+            <button class="accordion">¿Cuánto tiempo debo dedicar a hacer ejercicio cada día?</button>
+            <div class="panel">
+                <p>La cantidad de tiempo recomendada para hacer ejercicio puede variar según tus objetivos y nivel de condición física. Sin embargo, se sugiere al menos 150 minutos de actividad moderada o 75 minutos de actividad vigorosa a la semana, distribuidos a lo largo de varios días. Esto puede adaptarse según tus metas específicas, pero la consistencia es clave.</p>
+            </div>
+    
+            <button class="accordion">¿Cuáles son los mejores ejercicios para perder peso?</button>
+            <div class="panel">
+                <p>No hay un único ejercicio mágico para perder peso, ya que la pérdida de peso efectiva implica una combinación de actividad física y una dieta balanceada. Sin embargo, ejercicios cardiovasculares como correr, nadar o andar en bicicleta son excelentes para quemar calorías. También se recomienda incluir entrenamiento de fuerza para fortalecer los músculos y aumentar el metabolismo basal.</p>
+            </div>
+
+            <button class="accordion">¿Es necesario utilizar equipo de gimnasio o puedo entrenar en casa sin él?</button>
+            <div class="panel">
+                <p>No es necesario tener equipo de gimnasio para mantenerse en forma. Muchos ejercicios efectivos se pueden realizar en casa sin equipo especial, como sentadillas, flexiones, abdominales y yoga. Sin embargo, si dispones de equipo como pesas o una estera de yoga, puedes agregar variedad a tu rutina. La clave es encontrar un plan de ejercicios que se adapte a tus necesidades y preferencias.</p>
+            </div>
         </div>
 
-        <div class="reviews">
-            <div class="review">
-                <h4>Eva</h4>
-            </div>
-            <div class="review">
-                <h4>Gary</h4>
-            </div>
-            <div class="review">
-                <h4>Kayla</h4>
-            </div>
+        <div id="contacto">
+            <h2>CONTACTO</h2>
+            <form action="">
+                <input type="text" name="nombre" placeholder="Nombre">
+                <input type="email" name="correoelectronico" placeholder="Correo electronico">
+                <br>
+                <textarea name="mensaje" cols="80" rows="10" placeholder="Mensaje..."></textarea>
+                <br>
+                <input type="button" value="Enviar">
+                <input type="button" value="Limpiar">
+            </form>
         </div>
     </main>
 
     <footer>
         <h2>Siguenos</h2>
         <ul>
-            <li><a href=""><img src="" alt="instagram">Instagram</a></li>
-            <li><a href=""><img src="" alt="x">X</a></li>
-            <li><a href=""><img src="" alt="tiktok">Tiktok</a></li>
-            <li><a href=""><img src="" alt="spotify">Spotify</a></li>
+            <li><a href="#"><img src="/front/img/instagram-icon.svg" alt="instagram"></a></li>
+            <li><a href="#"><img src="/front/img/x-icon.svg" alt="x"></a></li>
+            <li><a href="#"><img src="/front/img/tiktok-icon.svg" alt="tiktok"></a></li>
+            <li><a href="#"><img src="/front/img/spotify-icon.svg" alt="spotify"></a></li>
         </ul>
     </footer>
+
+    <script src="/front/js/main.js"></script>
 </body>
 </html>

@@ -27,9 +27,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     //Si devuelve solo una línea es que a encontrado al usuario
     if ($result->num_rows == 1) {
-        $_SESSION['email'] = $email;
-        header('Location: ../../front/src/index.html');
-        exit();
+
+        $row = $result->fetch_assoc();
+
+        // Obtener el valor específico de la consulta (por ejemplo, un campo llamado 'tipo_usuario')
+        $tipoUsuario = $row['tipo'];
+
+        // Redirigir a diferentes páginas según el valor de 'tipo_usuario'
+        if ($tipoUsuario == 0) {
+            $_SESSION['email'] = $email;
+            header('Location: ../../front/index/index.html');
+            exit();
+        } elseif ($tipoUsuario == 1) {
+            header('Location: ../Clientes/clientList.html');
+            exit();
+        }
     } else {
         $error = "email o contraseña incorrectos.";
         header('Location: ../../front/src/login.html');
