@@ -599,7 +599,7 @@ margin-top: 15%;
 /*MEDIA QUERY MOVIL*/
 
 @media only screen and (max-width: 620px){
-    .cajas{
+    .cajas {
         flex-direction: column;
         align-items: center;
     }
