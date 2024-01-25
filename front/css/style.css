@@ -22,10 +22,6 @@ footer {
     background-color: #000000;
 }
 
-main {
-    background-color: #191919;
-}
-
 a {
     text-decoration: none;
     color: #E8E8E8;
@@ -53,7 +49,9 @@ header {
     padding-top: 15px;
     padding-bottom: 15px;
     grid-template-columns: repeat(2, auto);
-    grid-template-rows: repeat(2, auto);
+    position: sticky;
+    top: 0px;
+    width: 100%;
 }
 
 .bars-svg {
@@ -61,7 +59,7 @@ header {
     height: 50px;
 }
 
-header nav {
+nav {
     display: none;
     font-size: larger;
 }
@@ -92,9 +90,38 @@ div#logo-title {
     height: 60px;
 }
 
+/*MAIN INDEX*/
+
 main {
     background-color: #191919;
 }
+
+#features{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+
+.flotante-feature{
+    float: inline-start;
+}
+
+.feature{
+    position: relative;
+    left: 10%;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.feature img{
+    width: 40%;
+    height: 300px;
+}
+
+/*PERDIDA DE PESO*/
 
 .fondo {
     width: 100%;
@@ -146,11 +173,6 @@ main {
     text-align: center;
 }
 
-
-
-
-
-
 .entrenamientos,
 .monitoreo,
 .enfoque {
@@ -185,6 +207,8 @@ main {
 
 }
 
+/*IMAGEN DE FONDO INDEX*/
+
 .teaser-bg {
     position: relative;
     display: inline-block;
@@ -199,9 +223,9 @@ main {
     font-size: 4vh;
 }
 
-.caja1,
-.caja2,
-.caja3 {
+/*OPINIONES*/
+
+.caja{
     width: 300px;
     height: 200px;
     background-color: #f1f1f1;
@@ -212,6 +236,7 @@ main {
     display: flex;
     flex-direction: column-reverse;
     justify-content: center;
+    align-items: center;
 }
 
 .cajas {
@@ -252,6 +277,72 @@ main {
     margin: 0;
 }
 
+/*ACORDEON DE PREGUNTAS FRECUENTES*/
+#faqs{
+    position: relative;
+    left: 10%;
+    width: 80%;
+    margin-block: 15px;
+}
+
+
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+
+div#faqs :nth-child(2){
+    border-radius: 10px 10px 0 0;
+}
+
+  .active, .accordion:hover {
+    background-color: #ccc;
+  }
+  
+  .panel {
+    padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  }
+
+  .accordion:after {
+    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+  }
+  
+  .active:after {
+    content: "\2796"; /* Unicode character for "minus" sign (-) */
+  }
+
+/*CONTACTO*/
+#contacto{
+    width: 80%;
+    position: relative;
+    left: 10%;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#contacto input,textarea{
+    border: 2px solid gray;
+    border-radius: 15px;
+}
+
 
 /*FOOTER*/
 
@@ -276,11 +367,31 @@ footer li img{
 /*MEDIA QUERY WEB*/
 
 @media only screen and (min-width: 620px) {
-    header {
-        flex-direction: row;
+    nav {
+        display: block;
+        grid-row: 1;
+        grid-column: 2;
     }
 
-    header nav {
-        display: block;
+    nav li{
+        display: inline;
+    }
+
+    .bars-svg{
+        display: none;
+    }
+
+
+    header{
+        justify-content: space-between;
+    }
+}
+
+/*MEDIA QUERY MOVIL*/
+
+@media only screen and (max-width: 620px){
+    .cajas{
+        flex-direction: column;
+        align-items: center;
     }
 }
