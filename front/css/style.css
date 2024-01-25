@@ -12,10 +12,10 @@ h6 {
     font-weight: bold;
 }
 
-body{
+body {
     font-family: "Bebas Neue", sans-serif;
-    background-color:#191919;
-    }
+    background-color: #191919;
+}
 
 
 
@@ -99,17 +99,17 @@ main {
     background-color: #191919;
 }
 
-#features{
+#features {
     display: flex;
     flex-direction: column;
     width: 90%;
 }
 
-.flotante-feature{
+.flotante-feature {
     float: inline-start;
 }
 
-.feature{
+.feature {
     position: relative;
     left: 10%;
     width: 80%;
@@ -119,7 +119,7 @@ main {
     text-align: center;
 }
 
-.feature img{
+.feature img {
     width: 40%;
     height: 300px;
 }
@@ -194,13 +194,13 @@ main {
     text-align: center;
     font-size: 2.5vh;
 
-<<<<<<< HEAD
+}
 
 
 
-      .entrenamientos button,
-      .monitoreo button,
-      .enfoque button{
+    .entrenamientos button,
+    .monitoreo button,
+    .enfoque button {
         align-items: center;
         text-align: center;
         border: white;
@@ -210,26 +210,28 @@ main {
         color: #f2f4f7;
         background-color: #262424;
 
-      }
-
-     
+    }
 
 
-      .teaser-bg {
+
+
+    .teaser-bg {
         position: relative;
         display: inline-block;
-      }
-      
-      .titulo {
+    }
+
+    .titulo {
         position: absolute;
         top: 40%;
         left: 50%;
         transform: translate(-50%, -50%);
         color: #E8E8E8;
         font-size: 4vh;
-      }
+    }
 
-      .caja1,.caja2,.caja3 {
+    .caja1,
+    .caja2,
+    .caja3 {
         width: 300px;
         height: 200px;
         background-color: #f1f1f1;
@@ -240,367 +242,371 @@ main {
         display: flex;
         flex-direction: column-reverse;
         justify-content: center;
-      }
-      
-.cajas{
-text-align: center;
-justify-content: center;
-display: flex;
+    }
 
-=======
->>>>>>> e6b5a1c256f31f7de00b17ac4b6539db1d038539
-}
+    .cajas {
+        text-align: center;
+        justify-content: center;
+        display: flex;
 
-.entrenamientos button,
-.monitoreo button,
-.enfoque button {
-    align-items: center;
-    text-align: center;
-    border: white;
-    border-radius: 10%;
-    width: 10%;
-    height: 40px;
-    color: #f2f4f7;
-    background-color: #262424;
+    }
 
-}
+    .entrenamientos button,
+    .monitoreo button,
+    .enfoque button {
+        align-items: center;
+        text-align: center;
+        border: white;
+        border-radius: 10%;
+        width: 10%;
+        height: 40px;
+        color: #f2f4f7;
+        background-color: #262424;
 
-/*IMAGEN DE FONDO INDEX*/
+    }
 
-.teaser-bg {
-    position: relative;
-    display: inline-block;
-}
+    /*IMAGEN DE FONDO INDEX*/
 
-.titulo {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #E8E8E8;
-    font-size: 4vh;
-}
+    .teaser-bg {
+        position: relative;
+        display: inline-block;
+    }
 
-/*OPINIONES*/
+    .titulo {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #E8E8E8;
+        font-size: 4vh;
+    }
 
-.caja{
-    width: 300px;
-    height: 200px;
-    background-color: #f1f1f1;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin: 10px;
-    padding: 10px;
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: center;
-    align-items: center;
-}
+    /*OPINIONES*/
 
-.cajas {
-    text-align: center;
-    justify-content: center;
-    display: flex;
-}
+    .caja {
+        width: 300px;
+        height: 200px;
+        background-color: #f1f1f1;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        margin: 10px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
 
-.cajas h1 {
-    display: flex;
-}
+    .cajas {
+        text-align: center;
+        justify-content: center;
+        display: flex;
+    }
 
-.cajas img {
-    width: 10%;
-    height: 15%;
-    border-radius: 50%;
-}
+    .cajas h1 {
+        display: flex;
+    }
 
-<<<<<<< HEAD
-      .informacioncaja {
+    .cajas img {
+        width: 10%;
+        height: 15%;
+        border-radius: 50%;
+    }
+
+    .informacioncaja {
         width: 100%;
         height: 100%;
-      }
-      
-      .opinion {
+    }
+
+    .opinion {
         line-height: 1.5;
-       
-      }
-      
-      .nombre {
+
+    }
+
+    .nombre {
         font-size: 14px;
         font-weight: bold;
         margin: 5px 0;
-      }
-      
-      .email {
+    }
+
+    .email {
         font-size: 14px;
         color: #0084b4;
         margin: 0;
-      }
-      
-=======
-.informacioncaja {
-    width: 100%;
-    height: 100%;
-}
+    }
 
-.opinion {
-    line-height: 1.5;
+    .informacioncaja {
+        width: 100%;
+        height: 100%;
+    }
 
-}
+    .opinion {
+        line-height: 1.5;
 
-.nombre {
-    font-size: 14px;
-    font-weight: bold;
-    margin: 5px 0;
-}
+    }
 
-.email {
-    font-size: 14px;
-    color: #0084b4;
-    margin: 0;
-}
+    .nombre {
+        font-size: 14px;
+        font-weight: bold;
+        margin: 5px 0;
+    }
 
-/*ACORDEON DE PREGUNTAS FRECUENTES*/
-#faqs{
-    position: relative;
-    left: 10%;
-    width: 80%;
-    margin-block: 15px;
-}
+    .email {
+        font-size: 14px;
+        color: #0084b4;
+        margin: 0;
+    }
 
-
-.accordion {
-    background-color: #eee;
-    color: #444;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    text-align: left;
-    border: none;
-    outline: none;
-    transition: 0.4s;
-}
-
-div#faqs :nth-child(2){
-    border-radius: 10px 10px 0 0;
-}
-
-  .active, .accordion:hover {
-    background-color: #ccc;
-  }
-  
-  .panel {
-    padding: 0 18px;
-  background-color: white;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
-  }
-
-  .accordion:after {
-    content: '\02795'; /* Unicode character for "plus" sign (+) */
-    font-size: 13px;
-    color: #777;
-    float: right;
-    margin-left: 5px;
-  }
-  
-  .active:after {
-    content: "\2796"; /* Unicode character for "minus" sign (-) */
-  }
-
-/*CONTACTO*/
-#contacto{
-    width: 80%;
-    position: relative;
-    left: 10%;
-    margin-bottom: 25px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-#contacto input,textarea{
-    border: 2px solid gray;
-    border-radius: 15px;
-}
+    /*ACORDEON DE PREGUNTAS FRECUENTES*/
+    #faqs {
+        position: relative;
+        left: 10%;
+        width: 80%;
+        margin-block: 15px;
+    }
 
 
-/*FOOTER*/
+    .accordion {
+        background-color: #eee;
+        color: #444;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        text-align: left;
+        border: none;
+        outline: none;
+        transition: 0.4s;
+    }
 
-footer{
-    padding-block: 15px;
-}
+    div#faqs :nth-child(2) {
+        border-radius: 10px 10px 0 0;
+    }
 
-footer ul{
-    display: flex;
-    justify-content: center;
-}
+    .active,
+    .accordion:hover {
+        background-color: #ccc;
+    }
 
-footer li{
-    margin-inline: 10px;
-}
+    .panel {
+        padding: 0 18px;
+        background-color: white;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+    }
 
-footer li img{
-    width: 50px;
-    height: 50px;
-}
->>>>>>> e6b5a1c256f31f7de00b17ac4b6539db1d038539
+    .accordion:after {
+        content: '\02795';
+        /* Unicode character for "plus" sign (+) */
+        font-size: 13px;
+        color: #777;
+        float: right;
+        margin-left: 5px;
+    }
 
-/*CAJAS PANEL */
-      .titulopanel {
+    .active:after {
+        content: "\2796";
+        /* Unicode character for "minus" sign (-) */
+    }
+
+    /*CONTACTO*/
+    #contacto {
+        width: 80%;
+        position: relative;
+        left: 10%;
+        margin-bottom: 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    #contacto input,
+    textarea {
+        border: 2px solid gray;
+        border-radius: 15px;
+    }
+
+
+    /*FOOTER*/
+
+    footer {
+        padding-block: 15px;
+    }
+
+    footer ul {
+        display: flex;
+        justify-content: center;
+    }
+
+    footer li {
+        margin-inline: 10px;
+    }
+
+    footer li img {
+        width: 50px;
+        height: 50px;
+    }
+
+
+    /*CAJAS PANEL */
+    .titulopanel {
         color: #E8E8E8;
     }
-   .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100%;
-  }
-  
-.cajaspanel {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
 
-    width: 50%;
-    justify-content: center;
-    align-items: baseline;
-margin-top: 10%;  
-  }
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100%;
+    }
 
-      .cajap {
+    .cajaspanel {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+
+        width: 50%;
+        justify-content: center;
+        align-items: baseline;
+        margin-top: 10%;
+    }
+
+    .cajap {
         display: flex;
         flex-direction: column;
         align-items: center;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         padding: 20px;
         text-align: center;
-        
-      }
-      
-      .cajap h1 {
+
+    }
+
+    .cajap h1 {
         margin-bottom: 20px;
-      }
-      
-      .cajap img {
+    }
+
+    .cajap img {
         width: 250px;
         height: 250px;
         border-radius: 10px;
-      }
-
-/*CAJAS CONTRATOS*/
-.cajascontratoarriba {
-    display: flex;
-    justify-content: center;
-    margin: 10px;
-border-radius: 20px solid ;
-gap: 10px;
-margin-top: 15%;
-}
-.cajascontratoabajo{
-    display: flex;
-    justify-content: center;
-    margin: 10px;
-    padding: 0%;
-    gap: 10px;
-}
-
-.cajascontratoarriba button,
-.cajascontratoabajo button {
-    margin-bottom: 15px;
-    border: white;
-    border-radius: 10%;
-    width: 40%;
-    height: 40px;
-    color: #f2f4f7;
-    background-color: #FF6B08;
-}
-
-.cajac {
-    width: 200px;
-    background-color: #f0f0f0;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(204, 3, 3, 0.1);
-}
-
-.informacioncajac {
-    text-align: center;
-}
-
-.informacioncajac img {
-    width: 100%;
-}
-
-.opinionc {
-    margin-top: 10px;
-}
-
-.nombrec {
-    font-weight: bold;
-    margin: 10px 0;
-}
-
-
-.cajascontratoabajo p{
-
-    color: #FF6B08;
-    font-size: 4vh;
-}
-
-.redes{
-    display: flex;
-    justify-content: space-evenly;
-
-}
-.redes img{
-
-
-    width: 60px;
-    height: 40px;
-
-}
-.redes h2{
-    font-size: 3vh;
-}
-
-.informacioncajac li{
-    text-align: left;
-    justify-content: center;
-    align-content: center;
-}
-
-
-    
-/*MEDIA QUERY WEB*/
-
-@media only screen and (min-width: 620px) {
-    nav {
-        display: block;
-        grid-row: 1;
-        grid-column: 2;
     }
 
-    nav li{
-        display: inline;
+    /*CAJAS CONTRATOS*/
+    .cajascontratoarriba {
+        display: flex;
+        justify-content: center;
+        margin: 10px;
+        border-radius: 20px solid;
+        gap: 10px;
+        margin-top: 15%;
     }
 
-    .bars-svg{
-        display: none;
+    .cajascontratoabajo {
+        display: flex;
+        justify-content: center;
+        margin: 10px;
+        padding: 0%;
+        gap: 10px;
+    }
+
+    .cajascontratoarriba button,
+    .cajascontratoabajo button {
+        margin-bottom: 15px;
+        border: white;
+        border-radius: 10%;
+        width: 40%;
+        height: 40px;
+        color: #f2f4f7;
+        background-color: #FF6B08;
+    }
+
+    .cajac {
+        width: 200px;
+        background-color: #f0f0f0;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(204, 3, 3, 0.1);
+    }
+
+    .informacioncajac {
+        text-align: center;
+    }
+
+    .informacioncajac img {
+        width: 100%;
+    }
+
+    .opinionc {
+        margin-top: 10px;
+    }
+
+    .nombrec {
+        font-weight: bold;
+        margin: 10px 0;
     }
 
 
-    header{
-        justify-content: space-between;
-    }
-}
+    .cajascontratoabajo p {
 
-/*MEDIA QUERY MOVIL*/
-
-@media only screen and (max-width: 620px){
-    .cajas {
-        flex-direction: column;
-        align-items: center;
+        color: #FF6B08;
+        font-size: 4vh;
     }
-}
+
+    .redes {
+        display: flex;
+        justify-content: space-evenly;
+
+    }
+
+    .redes img {
+
+
+        width: 60px;
+        height: 40px;
+
+    }
+
+    .redes h2 {
+        font-size: 3vh;
+    }
+
+    .informacioncajac li {
+        text-align: left;
+        justify-content: center;
+        align-content: center;
+    }
+
+
+
+    /*MEDIA QUERY WEB*/
+
+    @media only screen and (min-width: 620px) {
+        nav {
+            display: block;
+            grid-row: 1;
+            grid-column: 2;
+        }
+
+        nav li {
+            display: inline;
+        }
+
+        .bars-svg {
+            display: none;
+        }
+
+
+        header {
+            justify-content: space-between;
+        }
+    }
+
+    /*MEDIA QUERY MOVIL*/
+
+    @media only screen and (max-width: 620px) {
+        .cajas {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
