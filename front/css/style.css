@@ -237,49 +237,71 @@ display: flex;
       .titulopanel {
         color: #E8E8E8;
     }
-    
-    .cajap {
-        width: 400px;
-        height: 300px;
-        text-align: center;
-        margin-left: 10%;
-        margin-right: 10%;
+   .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+  }
+  
+.cajaspanel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+
+    width: 50%;
+    justify-content: center;
+    align-items: baseline;
+margin-top: 10%;  
+  }
+
+      .cajap {
         display: flex;
         flex-direction: column;
-        justify-content: center; /* Centra verticalmente */
-        position: relative;
-        display: inline-block;
+        align-items: center;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
         text-align: center;
-    }
-    
-    .cajap h1 {
-        position: absolute;
-        top: 30%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        
+      }
+      
+      .cajap h1 {
         margin-bottom: 20px;
-    }
-    
-    .cajaspanel {
-        display: flex;
-        margin-top: 5%;
-        justify-content: space-around; /* Ajusta el espacio entre las cajas */
-        flex-wrap: wrap;
-    }
-    
-    .cajap img {
-        width: 80%;
-        height: 80%;
-        border-radius: 20px;
-    }
-
+      }
+      
+      .cajap img {
+        width: 250px;
+        height: 250px;
+        border-radius: 10px;
+      }
 
 /*CAJAS CONTRATOS*/
 .cajascontratoarriba {
     display: flex;
-    justify-content: space-around;
-    margin: 10px; /* Ajusta el valor según tus necesidades */
+    justify-content: center;
+    margin: 10px;
+border-radius: 20px solid ;
+gap: 10px;
+margin-top: 15%;
+}
+.cajascontratoabajo{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
     padding: 0%;
+    gap: 10px;
+}
+
+.cajascontratoarriba button,
+.cajascontratoabajo button {
+    margin-bottom: 15px;
+    border: white;
+    border-radius: 10%;
+    width: 40%;
+    height: 40px;
+    color: #f2f4f7;
+    background-color: #FF6B08;
 }
 
 .cajac {
@@ -306,22 +328,33 @@ display: flex;
     margin: 10px 0;
 }
 
-.cajascontratoarriba button,
-.cajascontratoabajo button {
-    margin-bottom: 15px;
-    border: white;
-    border-radius: 10%;
-    width: 40%;
-    height: 40px;
-    color: #f2f4f7;
-    background-color: #FF6B08;
+
+.cajascontratoabajo p{
+
+    color: #FF6B08;
+    font-size: 4vh;
 }
 
-.cajascontratoabajo{
+.redes{
     display: flex;
-    justify-content: space-around;
-    margin: 10px; /* Ajusta el valor según tus necesidades */
-    padding: 0%;
+    justify-content: space-evenly;
+
+}
+.redes img{
+
+
+    width: 60px;
+    height: 40px;
+
+}
+.redes h2{
+    font-size: 3vh;
+}
+
+.informacioncajac li{
+    text-align: left;
+    justify-content: center;
+    align-content: center;
 }
 
 
