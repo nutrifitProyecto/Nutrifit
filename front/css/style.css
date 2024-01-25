@@ -188,7 +188,11 @@ main {
 
 }
 
-
+/*tick*/
+ #tick-icon{
+    width: 12px;
+    height: 12px;
+ }
 
     .entrenamientos button,
     .monitoreo button,
@@ -485,6 +489,10 @@ main {
         height: 250px;
         border-radius: 10px;
     }
+    .entrenadores h2{
+
+        margin-top: 20%;
+    }
 
     /*CAJAS CONTRATOS*/
     .cajascontratoarriba {
@@ -493,7 +501,7 @@ main {
         margin: 10px;
         border-radius: 20px solid;
         gap: 10px;
-        margin-top: 15%;
+       
     }
 
     .cajascontratoabajo {
@@ -545,6 +553,12 @@ main {
         color: #FF6B08;
         font-size: 4vh;
     }
+    .cajascontratoabajo li{
+        text-align: left;
+        margin: 10px
+    }
+
+
 
    
 
