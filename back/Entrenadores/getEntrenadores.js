@@ -47,12 +47,12 @@ function tablaEntrenadores() {
     table.innerHTML = cad
 }
 
-//Elimina un cliente con respecto al id de este
+//Elimina un entrenador con respecto al id de este
 function eliminarEntrenador(sendId) {
     confirm("Seguro que quieres eliminar al usuario?")
     if (confirm) {
         $.ajax({
-            type: "POST", // Puedes usar "GET" en lugar de "POST" si lo prefieres
+            type: "POST", //POST para enviar los datos al php
             url: "./php/eliminarEntrenador.php",
             data: { idToDelete: sendId }, // Enviar la variable como parte de los datos
             success: window.location = "./entrenadorList.html"

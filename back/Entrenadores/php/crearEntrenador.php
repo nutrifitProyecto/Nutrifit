@@ -4,6 +4,7 @@ include "../../inc/dbinfo.inc";
 //Conectar con la base de datos
 $connection = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
 
+//Recogida de datos del formulario
 $name = $_POST['entName'];
 $surname = $_POST['entSurname'];
 $email = $_POST['entEmail'];
