@@ -49,7 +49,7 @@ function tablaEntrenadores() {
 
 //Elimina un entrenador con respecto al id de este
 function eliminarEntrenador(sendId) {
-    confirm("Seguro que quieres eliminar al usuario?")
+    confirm("Seguro que quieres eliminar al entrenador?")
     if (confirm) {
         $.ajax({
             type: "POST", //POST para enviar los datos al php
