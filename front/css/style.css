@@ -442,8 +442,8 @@ main {
 
 
     /*CAJAS PANEL */
-    .titulopanel {
-        color: #E8E8E8;
+    .titulopanel h2 {
+        color: #FF6B08;
     }
 
     .container {
@@ -477,6 +477,7 @@ main {
 
     .cajap h1 {
         margin-bottom: 20px;
+        color: #E8E8E8;
     }
 
     .cajap img {
@@ -545,31 +546,7 @@ main {
         font-size: 4vh;
     }
 
-    .redes {
-        display: flex;
-        justify-content: space-evenly;
-
-    }
-
-    .redes img {
-
-
-        width: 60px;
-        height: 40px;
-
-    }
-
-    .redes h2 {
-        font-size: 3vh;
-    }
-
-    .informacioncajac li {
-        text-align: left;
-        justify-content: center;
-        align-content: center;
-    }
-
-
+   
 
     /*MEDIA QUERY WEB*/
 
