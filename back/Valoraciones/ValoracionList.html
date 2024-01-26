@@ -75,25 +75,27 @@
                 <div class="modal-body">
                     <form method="post" action="./php/editarEntrenador.php" id="editEntrenadorForm">
                         <div name="showValues">
-                            <input type="text" name="entEditId" style="display: none;">
+                            <input type="text" name="rateEditId" style="display: none;">
                         </div>
                         <div class="d-flex">
                             <div class="me-4" name="showValues">
-                                <label for="entEditName">Nombre:</label><br>
-                                <input type="text" name="entEditName" id="entEditName" class="w-100">
+                                <label for="rateEditClient">Cliente:</label><br>
+                                <input type="text" name="rateEditClient" id="rateEditClient" class="w-100">
                             </div>
                             <div name="showValues">
-                                <label for="entEditSurname">Apellido:</label><br>
-                                <input type="text" name="entEditSurname" id="entEditSurname" class="w-100">
+                                <label for="rateEditEntrenador">Entrenador:</label><br>
+                                <select name="rateEditEntrenador" id="rateEditEntrenador">
+
+                                </select>
                             </div>
                         </div>
                         <div class="mt-3">
                             <div name="showValues">
-                                <label for="entEditDesc">Descripción:</label><br>
-                                <textarea name="entEditDesc" id="entEditDesc" cols="50" rows="5"></textarea>
+                                <label for="rateEditRate">Valoración (1 a 5):</label><br>
+                                <input type="text" name="rateEditRate" id="rateEditRate" min="1" max="5">
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary mt-3">Editar entrenador</button>
+                        <button type="submit" class="btn btn-primary mt-3">Editar valoración</button>
                     </form>
                 </div>
                 <div class="modal-footer">
