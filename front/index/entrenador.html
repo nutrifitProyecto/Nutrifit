@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrifit</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        main {
+            background: -webkit-linear-gradient(0deg, #000000, #757270, #000000);
+            background: linear-gradient(0deg, #000000, #757270, #000000);
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <header>
+
+
+        <img src="/front/img/bars.svg" alt="bars" class="bars-svg" onclick="displayChange()">
+        <div id="logo-title">
+            <img src="/front/img/logo1.png" alt="logo" class="img-logo">
+            <span id="title">NUTRI<span>FIT</span></span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="">Servicios</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Registrarse</a></li>
+                <li><a href="">Iniciar Sesion</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main>
+
+
+        <section>
+
+
+            <div class="perfil">
+                <h2>Perfil</h2>
+
+                <div class="imagen">
+
+                    <img src="/front/img/entrenador1.jpg" alt="" srcset="">
+
+                </div>
+                <div class="nombrecompleto">
+                    <p class="perfilinfo">Nombre</p>
+                    <input type="text">
+
+                </div>
+
+
+                <div class="experiencia">
+                    <p class="perfilinfo">Experiencia</p>
+                    <input type="text" id="file-name" readonly>
+                    <!-- Botón personalizado -->
+                    <label for="file-input" class="custom-btn">Subir Cv</label>
+                    <!-- Input de tipo file oculto -->
+                    <input type="file" id="file-input" style="display: none;">
+
+                </div>
+
+
+                <div class="edad">
+                    <p class="perfilinfo">Edad</p>
+                    <input type="text">
+
+                </div>
+
+
+
+
+                <section>
+
+                    <h2>Clientes</h2>
+
+                    <div class="clientescurso">
+
+                        <div class="infoclientes">
+
+                            <div class="informacioncliente">
+                                <img src="/front/img/opinion1.jpg" alt="" srcset="">
+                                <p class="nombre">Eva Elle</p>
+                                <p class="email">@evaelle</p>
+                            </div>
+                        </div>
+
+                        <div class="infoclientes">
+                            <div class="informacioncliente">
+                                <img src="/front/img/opinion2.jpg" alt="" srcset="">
+                                <p class="nombre">Eva Elle</p>
+                                <p class="email">@evaelle</p>
+                            </div>
+                        </div>
+
+                        <div class="infoclientes">
+                            <div class="informacioncliente">
+                                <img src="/front/img/opinion3.jpg" alt="" srcset="">
+                                <p class="nombre">Eva Elle</p>
+                                <p class="email">@evaelle</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </section>
+
+
+                <section>
+
+                    <h2>Cursos</h2>
+
+                    <div class="cursos">
+                        <img src="/front/img/curso1.jpg" alt="">
+                        <p class="nombrecurso">Mantenimiento integral</p>
+                        <p class="cursoinfo">Mi enfoque se centra en ayudarte a mantener
+                            un estilo de vida saludable y equilibrado.<br>
+                            A través de la combinación de entrenamiento,
+                            asesoramiento y nutrición,<br> te guiaré para alcanzar
+                            y mantener tu mejor estado físico y bienestar general.
+                        </p>
+
+
+                    </div>
+
+
+                </section>
+
+
+                <section>
+
+                    <h2>Billetera</h2>
+
+                        <div class="billetera">
+
+                            <ul>
+
+                                <li>Metodo de pago</li>
+                                <li class="numerotarjeta">*****4082</li>
+                                <li><img src="/front/img/tik.png" alt="" id="tick-icon">Nombre de titular</li>
+                                <li><img src="/front/img/tik.png" alt="" id="tick-icon">Numero de tarjeta</li>
+                                <li><img src="/front/img/tik.png" alt="" id="tick-icon">Fecha de vencimiento</li>
+                                <li><img src="/front/img/tik.png" alt="" id="tick-icon">CVV</li>
+        
+                            </ul>
+                            <button type="button">Ver infomación</button>
+
+                        <div class="billetera1">
+
+                        </div>
+                        <div class="billetera2">
+
+                        </div>
+                        <div class="billetera3">
+
+                        </div>
+
+
+
+
+
+                        </div>
+
+
+                </section>
+
+
+
+
+
+
+            </div>
+        </section>
+
+
+    </main>
+
+    <footer>
+        <h2>Siguenos</h2>
+        <ul>
+            <li><a href="#"><img src="/front/img/instagram-icon.svg" alt="instagram"></a></li>
+            <li><a href="#"><img src="/front/img/x-icon.svg" alt="x"></a></li>
+            <li><a href="#"><img src="/front/img/tiktok-icon.svg" alt="tiktok"></a></li>
+            <li><a href="#"><img src="/front/img/spotify-icon.svg" alt="spotify"></a></li>
+        </ul>
+    </footer>
+
+    <script src="/front/js/main.js"></script>
+</body>
+
+</html>

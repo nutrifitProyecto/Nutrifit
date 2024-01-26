@@ -279,20 +279,6 @@ main {
 
     /*OPINIONES*/
 
-    .caja {
-        width: 300px;
-        height: 200px;
-        background-color: #f1f1f1;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        margin: 10px;
-        padding: 10px;
-        display: flex;
-        flex-direction: column-reverse;
-        justify-content: center;
-        align-items: center;
-    }
-
     .cajas {
         text-align: center;
         justify-content: center;
@@ -560,8 +546,160 @@ main {
     }
 
 
+/*ENTRENADOR*/
 
+.perfil img{
+
+
+   width: 150px; 
+   height: 160px;
+   border-radius: 600px;
+   align-content: center;
+}
+
+
+.perfil{
+    text-align: center;
+
+}
+
+.perfilinfo{
+
+    color:white;
+
+}
+
+.botoncv{
+    background-color: #191919;
+    width: 2px;
+    height: 2px;
+}
+.experiencia img{
+    background-color: #191919;
+    width: 40px;
+    height: 40px;
+}
+
+
+
+/*CLIENTES-entrenador*/
+
+
+.clientescurso {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    gap: 10px;
+}
+
+.clientescurso h1 {
+    display: flex;
+}
+
+.clientescurso img {
+    width: 10%;
+    height: 15%;
+    border-radius: 50%;
+}
+
+.informacioncliente {
+    width: 200px;
+    height: auto;
+    background-color: white;
+    border-radius: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+
+
+
+.nombre p {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 5px 0;
+    color: #000000;
+}
+
+.email {
+    font-size: 14px;
+    color: #000000;
+    margin: 0;
+}
+
+
+/* Cursos*/
+
+.cursos img{
+    width: 420px;
+    height: 200px;
+    border-radius:20px;
+
+}
+
+.cursoinfo{
+    color: #878585;
+    text-align: justify;
+    font-size: 2vh;
+    display: flex;
+    justify-content: center;
+
+}
+
+.nombrecurso{
+    font-size: 3vh;
+    font-weight: bold;
+    color: white;
+}
+
+
+/*BILLETERA*/
+
+.billetera{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente */
+    background-color: white;
+    width: 250px;
+    height: 320px;   
+     font-size: 2.2vh;
+    border-radius: 20px;
+    margin-left: 100px;
    
+}
+
+.numerotarjeta{
+    color: #FF6B08;
+    font-size: 4vh;
+    font-weight: bold;
+
+}
+
+.billetera button{
+    width: 135px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border-color: white;
+
+
+}
+
+.billetera li{
+    margin: 15px;
+    text-align: center;
+    display: flex;
+
+}
+
+
+
 
     /*MEDIA QUERY WEB*/
 
