@@ -3,6 +3,7 @@ main{
     flex-direction: column;
     align-items: center;
     color: #fff;
+    margin-bottom: 16.5%;
 }
 
 .formularioLogin{
@@ -10,12 +11,12 @@ main{
     border: 1px #ff6b08 solid ;
     border-radius: 10px;
     width: 50%;
-    height: 40vh;
 }
 
 main a{
     text-decoration: underline;
     cursor: pointer;
+    color: #ff6b08;
 }
 
 label{
@@ -23,8 +24,23 @@ label{
     display: block;
 }
 
+input{
+    color: #fff;
+    border: 1px solid white;
+    border-radius: 10px;
+    width: 75%;
+    background: none;
+    padding: 1%;
+}
+
+.bttn-submit{
+    width: 50%;
+    background-color: #ff6b08;
+    cursor: pointer;
+}
+
 footer{
-    position: absolute;
+    position: relative;
     width: 100%;
     bottom: 0;
 }

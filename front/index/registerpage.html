@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Iniciar sesión</title>
+    <title>Registarte</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="/front/css/normalize.css">
     <link rel="stylesheet" href="/front/css/style.css">
@@ -28,19 +28,19 @@
     </header>
 
     <main>
-        <h2>Iniciar sesión</h2>
+        <h2>Registrate</h2>
         <div class="formularioLogin">
             <form method="post" action="../../back/src/loginClient.php">
-                <label for="client-email">Correo electronico:</label>
-                <input id="client-email" type="email" name="email" required autofocus><br>
+                <label for="">Nombre</label><input type="text" autofocus>
+                <label for="">Apellidos</label><input type="text">
+                <label for="">Fecha de nacimiento</label><input type="date" name="" id="">
+                <label for="">Correo electronico</label><input type="email" name="" id="">
+                <label for="">Contraseña</label><input type="password" name="" id="">
+                <label for="">Repetir contraseña</label><input type="password" name="" id="">
                 
-                <label for="client-passwd">Contraseña:</label>
-                <input id="client-passwd" type="password" name="passwd" required><br>
-                <span>He olvidado la contraseña</span>
-                <p>¿No tienes una cuenta? <a href="/front/index/registerpage.html">Darse de alta</a></p>
                 <p><a href="">Soy entrenador</a></p>
 
-                <input class="bttn-submit" type="submit" value="Iniciar sesión">
+                <input class="bttn-submit" type="submit" value="Registrarse">
             </form>
         </div>
     </main>
