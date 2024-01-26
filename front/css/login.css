@@ -1,0 +1,30 @@
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+}
+
+.formularioLogin{
+    text-align: center;
+    border: 1px #ff6b08 solid ;
+    border-radius: 10px;
+    width: 50%;
+    height: 40vh;
+}
+
+main a{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+label{
+    padding-top: 4%;
+    display: block;
+}
+
+footer{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}

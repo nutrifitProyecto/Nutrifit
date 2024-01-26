@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Iniciar sesión</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/front/css/normalize.css">
+    <link rel="stylesheet" href="/front/css/style.css">
+    <link rel="stylesheet" href="/front/css/login.css">
+</head>
+
+<body>
+    <header>
+        <img src="/front/img/bars.svg" alt="bars" class="bars-svg" onclick="displayChange()">
+        <div id="logo-title">
+            <img src="/front/img/logo1.png" alt="logo" class="img-logo">
+            <span id="title">NUTRI<span>FIT</span></span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="">Servicios</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Registrarse</a></li>
+                <li><a href="">Iniciar Sesion</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Iniciar sesión</h2>
+        <div class="formularioLogin">
+            <form method="post" action="../../back/src/loginClient.php">
+                <label for="client-email">Correo electronico:</label>
+                <input id="client-email" type="email" name="email" required><br>
+                
+                <label for="client-passwd">Contraseña:</label>
+                <input id="client-passwd" type="password" name="passwd" required><br>
+                
+                <p>¿No tienes una cuenta?<a onclick="registrarse()"> Registrate</a></p>
+                <p><a>Soy entrenador</a></p>
+
+                <input type="submit" value="Iniciar sesión">
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <h2>Siguenos</h2>
+        <ul>
+            <li><a href="#"><img src="/front/img/instagram-icon.svg" alt="instagram"></a></li>
+            <li><a href="#"><img src="/front/img/x-icon.svg" alt="x"></a></li>
+            <li><a href="#"><img src="/front/img/tiktok-icon.svg" alt="tiktok"></a></li>
+            <li><a href="#"><img src="/front/img/spotify-icon.svg" alt="spotify"></a></li>
+        </ul>
+    </footer>
+
+    <script src="/front/js/main.js"></script>
+    <script src="/front/js/loginpage.js"></script>
+</body>
+
+<!-- <script src="./login.js"></script> ACABAR FUNCIONALIDAD-->
+
+</html>

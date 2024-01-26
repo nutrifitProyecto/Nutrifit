@@ -427,6 +427,7 @@ main {
     /*FOOTER*/
 
     footer {
+        bottom: 0;
         padding-block: 15px;
     }
 
