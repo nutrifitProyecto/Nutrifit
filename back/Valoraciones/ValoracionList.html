@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de valoraciones</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+    <header>Consulta tabla Valoraciones</header>
+    <div class="d-flex p-2">
+        <aside class="me-3">
+            <ul>
+                <li><a href="../Clientes/clientList.html">Clientes</a></li>
+                <li><a href="../Entrenadores/entrenadorList.html">Entrenadores</a></li>
+            </ul>
+        </aside>
+        <div id="valoracion-table" class="ps-2">
+            <!-- Valoraciones de la base de datos -->
+        </div>
+    </div>
+
+    <!-- MODAL CREAR VALORACIONES -->
+    <div class="modal fade" id="crearValoracionModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Crear Valoración</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form method="post" action="./php/crearValoracion.php">
+                        <div class="d-flex">
+                            <div class="me-4">
+                                <label for="rateClient">¿Quién eres?</label><br>
+                                <select name="rateClient" id="rateClient">
+                                    <!-- Una query llena la select con los clientes -->
+                                </select>
+                            </div>
+                            <div>
+                                <label for="rateEnt">¿A quién valoras?</label><br>
+                                <select name="rateEnt" id="rateEnt">
+                                    <!-- Una query llena la select con los clientes -->
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <label for="rate">Puntuación del 1 al 5:</label><br>
+                            <input type="number" name="rate" id="rate" class="w-75" min="1" max="5">
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-3">Valorar al entrenador</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                        onclick="limpiarCampos()">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL EDITAR ENTRENADORES -->
+    <div class="modal fade" id="editarEntrenadorModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Editar Entrenador</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form method="post" action="./php/editarEntrenador.php" id="editEntrenadorForm">
+                        <div name="showValues">
+                            <input type="text" name="entEditId" style="display: none;">
+                        </div>
+                        <div class="d-flex">
+                            <div class="me-4" name="showValues">
+                                <label for="entEditName">Nombre:</label><br>
+                                <input type="text" name="entEditName" id="entEditName" class="w-100">
+                            </div>
+                            <div name="showValues">
+                                <label for="entEditSurname">Apellido:</label><br>
+                                <input type="text" name="entEditSurname" id="entEditSurname" class="w-100">
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <div name="showValues">
+                                <label for="entEditDesc">Descripción:</label><br>
+                                <textarea name="entEditDesc" id="entEditDesc" cols="50" rows="5"></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-3">Editar entrenador</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./getValoraciones.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</body>
+
+</html>
