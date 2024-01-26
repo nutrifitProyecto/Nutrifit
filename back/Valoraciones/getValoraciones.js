@@ -30,8 +30,8 @@ function tablaValoraciones() {
     info.forEach(rate => {
         cad += `<tr id="column${rate.id}">
                     <td>${rate.id}</td>
-                    <td>${pla(rate.idCliente, "getClientData")}</td>
-                    <td>${rate.idEntrenador}</td>
+                    <td>${rate.cliName} ${rate.cliSurname}</td>
+                    <td>${rate.entName} ${rate.entSurname}</td>
                     <td>${rate.rate}</td>
                     <td>
                         <button onclick="eliminarEntrenador(${rate.id})" class="btn btn-danger">Eliminar</button>
@@ -39,27 +39,9 @@ function tablaValoraciones() {
                     </td>
                 </tr>`
     });
-    console.log(cliInfo);
     cad += `</table>
-            <button data-bs-toggle="modal" data-bs-target="#crearEntrenadorModal" class="btn btn-primary">Crear entrenador</button>`
+                            <button data-bs-toggle="modal" data-bs-target="#crearEntrenadorModal" class="btn btn-primary">Crear entrenador</button>`
     table.innerHTML = cad
-}
-
-
-function pla(id, route) {
-    let cad = ""
-    $.ajax({
-        type: "POST", //POST para enviar los datos al php
-        url: "./php/getClientData.php",
-        data: { idSelect: id }, // Enviar la variable como parte de los datos
-        success: function(data) {
-            let info = JSON.parse(data)
-
-            cad = info[0].name + " " + info[0].surname
-            cliInfo = cad
-        }
-    });
-    return cad
 }
 
 //Elimina un entrenador con respecto al id de este
