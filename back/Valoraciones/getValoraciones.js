@@ -35,7 +35,7 @@ function tablaValoraciones() {
                     <td>${rate.rate}</td>
                     <td>
                         <button onclick="eliminarEntrenador(${rate.id})" class="btn btn-danger">Eliminar</button>
-                        <button id="btnEditar" data-bs-toggle="modal" data-bs-target="#editarEntrenadorModal" class="btn btn-success" onclick="llenarSelectClientes()">Editar</button>
+                        <button id="btnEditar" data-bs-toggle="modal" data-bs-target="#editarEntrenadorModal" class="btn btn-success" onclick="llenarSelectEntrenadores(${rate.idCliente}, ${rate.idEntrenador}), llenarCampos(${rate.id})">Editar</button>
                     </td>
                 </tr>`
     });
@@ -57,52 +57,60 @@ function eliminarEntrenador(sendId) {
     }
 }
 
-function llenarSelectEntrenadores() {
+function llenarSelectEntrenadores(cliId, entId) {
+    // Select de los entrenadores para llenar la select
     fetch('../Entrenadores/php/getEntrenador.php')
-    .then(response => response.json())
-    .then((data) => {
-        //Parsea la respuesta a JSON
-        info = JSON.parse(JSON.stringify(data));
-        //Llama a la función y crea una tabla con los entrenadores
-        let cad = ``
-        info.forEach(element => {
-            //IMPLEMENTAR IF PARA SABER AL QUE SE VA A EDITAR
-            cad += `<option value="${element.id}">${element.name} ${element.surname}</option>`
+        .then(response => response.json())
+        .then((data) => {
+            //Parsea la respuesta a JSON
+            info = JSON.parse(JSON.stringify(data));
+            //Llama a la función y crea una tabla con los entrenadores
+            let cad = ``
+            info.forEach(element => {
+                // Dependiendo de la valoración que queramos editar la select nos mostrará un cliente u otro
+                if (element.id == entId) {
+                    cad += `<option value="${element.id}" selected>${element.name} ${element.surname} </option>`
+                } else {
+                    cad += `<option value="${element.id}">${element.name} ${element.surname} </option>`
+                }
+            });
+            document.getElementById('rateEditEntrenador').innerHTML = cad
+        })
+        .catch(error => {
+            console.log(error);
         });
-        document.getElementById('rateEditEntrenador').innerHTML = cad
-    })
-    .catch(error => {
-        console.log(error);
-    });
-
-    fetch('../Entrenadores/php/getEntrenador.php')
-    .then(response => response.json())
-    .then((data) => {
-        //Parsea la respuesta a JSON
-        info = JSON.parse(JSON.stringify(data));
-        //Llama a la función y crea una tabla con los entrenadores
-        let cad = ``
-        info.forEach(element => {
-            //IMPLEMENTAR IF PARA SABER AL QUE SE VA A EDITAR
-            cad += `<option value="${element.id}">${element.name} ${element.surname} </option>`
+    
+    // Select de los clientes para llenar la select del html
+    fetch('./php/getClients.php')
+        .then(response => response.json())
+        .then((data) => {
+            //Parsea la respuesta a JSON
+            info = JSON.parse(JSON.stringify(data));
+            //Llama a la función y crea una tabla con los entrenadores
+            let cad = ``
+            info.forEach(element => {
+                // Dependiendo de la valoración que queramos editar la select nos mostrará un cliente u otro
+                if (element.id == cliId) {
+                    cad += `<option value="${element.id}" selected>${element.name} ${element.surname} </option>`
+                } else {
+                    cad += `<option value="${element.id}">${element.name} ${element.surname} </option>`
+                }
+            });
+            document.getElementById('rateEditClient').innerHTML = cad
+        })
+        .catch(error => {
+            console.log(error);
         });
-        document.getElementById('rateEditEntrenador').innerHTML = cad
-    })
-    .catch(error => {
-        console.log(error);
-    });
 }
 
 //Rellena los campos de la ventana modal
 function llenarCampos(id) {
-    let editInputs = document.getElementsByName('showValues')
+    let editRate = document.getElementById('rateEditRate')
+    let editId = document.getElementById('rateEditId')
 
-    //Asigno valores con respecto a los campos de la tabla
-    editInputs[0].childNodes[1].value = document.getElementById('column' + id).childNodes[1].innerHTML
-    editInputs[1].childNodes[4].value = document.getElementById('column' + id).childNodes[3].innerHTML
-    editInputs[2].childNodes[4].value = document.getElementById('column' + id).childNodes[5].innerHTML
-    editInputs[3].childNodes[4].value = document.getElementById('column' + id).childNodes[11].innerHTML
-    console.log(editInputs[3].childNodes[4]);
+    //Asigno la valoración con respecto a los campos de la tabla
+    editId.value = document.getElementById('column' + id).childNodes[1].innerHTML
+    editRate.value = document.getElementById('column' + id).childNodes[7].innerHTML
 }
 
 //Limpia los campos de la ventana modal
@@ -110,9 +118,4 @@ function limpiarCampos() {
     inputs.forEach(element => {
         element.value = ""
     });
-}
-
-function selectNombres() {
-    let cad = ""
-    
 }

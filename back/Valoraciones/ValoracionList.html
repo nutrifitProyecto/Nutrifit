@@ -73,26 +73,28 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form method="post" action="./php/editarEntrenador.php" id="editEntrenadorForm">
+                    <form method="post" action="./php/editarValoracion.php" id="editEntrenadorForm">
                         <div name="showValues">
-                            <input type="text" name="rateEditId" style="display: none;">
+                            <input type="text" name="rateEditId" id="rateEditId" style="display: none;">
                         </div>
                         <div class="d-flex">
                             <div class="me-4" name="showValues">
                                 <label for="rateEditClient">Cliente:</label><br>
-                                <input type="text" name="rateEditClient" id="rateEditClient" class="w-100">
+                                <select name="rateEditClient" id="rateEditClient">
+                                    <!-- SELECT con los clientes -->
+                                </select>
                             </div>
                             <div name="showValues">
                                 <label for="rateEditEntrenador">Entrenador:</label><br>
                                 <select name="rateEditEntrenador" id="rateEditEntrenador">
-
+                                    <!-- SELECT con los entrenadores -->
                                 </select>
                             </div>
                         </div>
                         <div class="mt-3">
                             <div name="showValues">
                                 <label for="rateEditRate">Valoración (1 a 5):</label><br>
-                                <input type="text" name="rateEditRate" id="rateEditRate" min="1" max="5">
+                                <input type="number" name="rateEditRate" id="rateEditRate" min="1" max="5">
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary mt-3">Editar valoración</button>

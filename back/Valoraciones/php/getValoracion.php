@@ -6,7 +6,7 @@ include "../../inc/dbinfo.inc";
 $connection = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
 
 //Consulta con legt join para obtener el nombre y apellidos de los entrenadores y clientes
-$query = 'SELECT valoracion.id, clientes.name AS cliName, clientes.surname AS cliSurname, entrenadores.name AS entName, entrenadores.surname AS entSurname, valoracion.rate
+$query = 'SELECT valoracion.id, clientes.name AS cliName, clientes.surname AS cliSurname, entrenadores.name AS entName, entrenadores.surname AS entSurname, valoracion.rate, valoracion.idCliente, valoracion.idEntrenador
  FROM valoracion
  LEFT JOIN clientes
  ON valoracion.idCliente = clientes.id
