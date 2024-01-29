@@ -1,7 +1,6 @@
 let table = document.getElementById('valoracion-table')
 let info = []
 let inputs = document.querySelectorAll('input')
-let cliInfo = ""
 
 limpiarCampos()
 
@@ -35,12 +34,12 @@ function tablaValoraciones() {
                     <td>${rate.rate}</td>
                     <td>
                         <button onclick="eliminarEntrenador(${rate.id})" class="btn btn-danger">Eliminar</button>
-                        <button id="btnEditar" data-bs-toggle="modal" data-bs-target="#editarEntrenadorModal" class="btn btn-success" onclick="llenarSelectEntrenadores(${rate.idCliente}, ${rate.idEntrenador}), llenarCampos(${rate.id})">Editar</button>
+                        <button id="btnEditar" data-bs-toggle="modal" data-bs-target="#editarEntrenadorModal" class="btn btn-success" onclick="llenarSelectEntrenadores(${rate.idCliente}, ${rate.idEntrenador}, 'Edit'), llenarCampos(${rate.id})">Editar</button>
                     </td>
                 </tr>`
     });
     cad += `</table>
-                            <button data-bs-toggle="modal" onclick="llenarSelectEntrenadores()" data-bs-target="#crearValoracionModal" class="btn btn-primary">Crear valoración</button>`
+            <button data-bs-toggle="modal" onclick="llenarSelectEntrenadores(${rate.idCliente}, ${rate.idEntrenador}, '')" data-bs-target="#crearValoracionModal" class="btn btn-primary">Crear valoración</button>`
     table.innerHTML = cad
 }
 
@@ -57,7 +56,8 @@ function eliminarEntrenador(sendId) {
     }
 }
 
-function llenarSelectEntrenadores(cliId, entId) {
+// Rellena las selects con los nombres de los clientes y entrenadores
+function llenarSelectEntrenadores(cliId, entId, route) {
     // Select de los entrenadores para llenar la select
     fetch('../Entrenadores/php/getEntrenador.php')
         .then(response => response.json())
@@ -74,7 +74,7 @@ function llenarSelectEntrenadores(cliId, entId) {
                     cad += `<option value="${element.id}">${element.name} ${element.surname} </option>`
                 }
             });
-            document.getElementById('rateEditEntrenador').innerHTML = cad
+            document.getElementById('rate' + route +'Ent').innerHTML = cad
         })
         .catch(error => {
             console.log(error);
@@ -96,7 +96,7 @@ function llenarSelectEntrenadores(cliId, entId) {
                     cad += `<option value="${element.id}">${element.name} ${element.surname} </option>`
                 }
             });
-            document.getElementById('rateEditClient').innerHTML = cad
+            document.getElementById('rate' + route +'Client').innerHTML = cad
         })
         .catch(error => {
             console.log(error);

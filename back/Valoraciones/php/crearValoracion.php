@@ -5,18 +5,16 @@ include "../../inc/dbinfo.inc";
 $connection = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
 
 //Recogida de datos del formulario
-$name = $_POST['entName'];
-$surname = $_POST['entSurname'];
-$email = $_POST['entEmail'];
-$passwd = $_POST['entPasswd'];
-$desc = $_POST['entDesc'];
+$cli = $_POST['rateClient'];
+$ent = $_POST['rateEnt'];
+$rate = $_POST['rate'];
 
-$query = "INSERT INTO entrenadores (name, surname, email, password, description) VALUES ('$name', '$surname', '$email', '$passwd', '$desc')";
+$query = "INSERT INTO valoracion (idCliente, idEntrenador, rate) VALUES ('$cli', '$ent', '$rate')";
 
 $result = $connection->query($query);
 
 if ($result === true) {
-        header('Location: ../entrenadorList.html');
+        header('Location: ../valoracionList.html');
         exit();
 } else {
         $query = "DELETE FROM entrenadores WHERE email = '$email'";
