@@ -40,7 +40,7 @@ function tablaValoraciones() {
                 </tr>`
     });
     cad += `</table>
-                            <button data-bs-toggle="modal" data-bs-target="#crearValoracionModal" class="btn btn-primary">Crear entrenador</button>`
+                            <button data-bs-toggle="modal" onclick="llenarSelectEntrenadores()" data-bs-target="#crearValoracionModal" class="btn btn-primary">Crear valoración</button>`
     table.innerHTML = cad
 }
 
@@ -57,7 +57,7 @@ function eliminarEntrenador(sendId) {
     }
 }
 
-function llenarSelectClientes() {
+function llenarSelectEntrenadores() {
     fetch('../Entrenadores/php/getEntrenador.php')
     .then(response => response.json())
     .then((data) => {
@@ -68,6 +68,23 @@ function llenarSelectClientes() {
         info.forEach(element => {
             //IMPLEMENTAR IF PARA SABER AL QUE SE VA A EDITAR
             cad += `<option value="${element.id}">${element.name} ${element.surname}</option>`
+        });
+        document.getElementById('rateEditEntrenador').innerHTML = cad
+    })
+    .catch(error => {
+        console.log(error);
+    });
+
+    fetch('../Entrenadores/php/getEntrenador.php')
+    .then(response => response.json())
+    .then((data) => {
+        //Parsea la respuesta a JSON
+        info = JSON.parse(JSON.stringify(data));
+        //Llama a la función y crea una tabla con los entrenadores
+        let cad = ``
+        info.forEach(element => {
+            //IMPLEMENTAR IF PARA SABER AL QUE SE VA A EDITAR
+            cad += `<option value="${element.id}">${element.name} ${element.surname} </option>`
         });
         document.getElementById('rateEditEntrenador').innerHTML = cad
     })
@@ -93,4 +110,9 @@ function limpiarCampos() {
     inputs.forEach(element => {
         element.value = ""
     });
+}
+
+function selectNombres() {
+    let cad = ""
+    
 }
