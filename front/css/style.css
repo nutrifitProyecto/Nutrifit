@@ -192,6 +192,7 @@ main {
  #tick-icon{
     width: 12px;
     height: 12px;
+    margin: 5px;
  }
 
     .entrenamientos button,
@@ -657,19 +658,87 @@ main {
 
 /*BILLETERA*/
 
+
+.BILLETERACAJAS{
+    gap: 10px;
+    display: flex;
+}
 .billetera{
     text-align: center;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centra horizontalmente */
+    align-items: center;
     background-color: white;
-    width: 250px;
-    height: 320px;   
-     font-size: 2.2vh;
+    width: 270px;
+    height: 350px;
+    font-size: 2.2vh;
     border-radius: 20px;
     margin-left: 100px;
    
 }
+
+.billetera li{
+    margin: 15px;
+    text-align: center;
+    display: flex;
+
+}
+.billetera1 {
+    background-color: white;
+    width: 270px;
+    height: 350px;
+    font-size: 2.2vh;
+    border-radius: 20px;
+    margin-left: 100px;
+}
+
+.billetera1 li {
+    margin: 20px;
+}
+
+.billetera1 h2 {
+    text-align: left;
+    margin-left: 20px;
+    color: #777;
+    font-size: 2vh;
+}
+
+.billetera1 ul{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+.billetera1 .precio {
+    text-align: left;
+    color: #000000;
+    font-size: 4.5vh;
+}
+
+.billetera2{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    width: 270px;
+    height: 350px;
+    font-size: 2.2vh;
+    border-radius: 20px;
+    margin-left: 100px;
+
+}
+
+.billetera2 h2{
+    text-align: left;
+    margin-left: 20px;
+    color: #777;
+    font-size: 2vh;
+}
+
+
 
 .numerotarjeta{
     color: #FF6B08;
@@ -691,7 +760,7 @@ main {
 
 }
 
-.billetera li{
+.billetera1 pago{
     margin: 15px;
     text-align: center;
     display: flex;
