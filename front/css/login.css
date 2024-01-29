@@ -1,0 +1,46 @@
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    margin-bottom: 16.5%;
+}
+
+.formularioLogin{
+    text-align: center;
+    border: 1px #ff6b08 solid ;
+    border-radius: 10px;
+    width: 50%;
+}
+
+main a{
+    text-decoration: underline;
+    cursor: pointer;
+    color: #ff6b08;
+}
+
+label{
+    padding-top: 4%;
+    display: block;
+}
+
+input{
+    color: #fff;
+    border: 1px solid white;
+    border-radius: 10px;
+    width: 75%;
+    background: none;
+    padding: 1%;
+}
+
+.bttn-submit{
+    width: 50%;
+    background-color: #ff6b08;
+    cursor: pointer;
+}
+
+footer{
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}

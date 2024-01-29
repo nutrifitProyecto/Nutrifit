@@ -23,5 +23,20 @@ for (i = 0; i < acc.length; i++) {
     }
   });
 }
-/** */
 
+
+
+//SUBIR CV
+
+
+
+
+     // Obtén referencia al input de tipo file y al input de texto
+     const fileInput = document.getElementById('file-input');
+     const fileNameInput = document.getElementById('file-name');
+
+     // Agrega un listener al cambio de input
+     fileInput.addEventListener('change', function() {
+         // Muestra el nombre del archivo seleccionado en el input de texto
+         fileNameInput.value = fileInput.files[0].name;
+     });
