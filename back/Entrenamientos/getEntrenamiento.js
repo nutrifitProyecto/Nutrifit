@@ -48,9 +48,9 @@ function eliminarEjercicio(sendId) {
     if (confirm) {
         $.ajax({
             type: "POST", //POST para enviar los datos al php
-            url: "./php/eliminarEjercicio.php",
+            url: "./php/eliminarEntrenamiento.php",
             data: { idToDelete: sendId }, // Enviar la variable como parte de los datos
-            success: window.location = "./ejercicioList.html"
+            success: window.location = "./entrenamientoList.html"
         });
     }
 }
