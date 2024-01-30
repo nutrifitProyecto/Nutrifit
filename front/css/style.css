@@ -548,6 +548,9 @@ main {
 
 /*ENTRENADOR*/
 
+.perfilh2  {
+    margin-top: 0;
+}
 .perfil img{
 
 
@@ -660,9 +663,10 @@ main {
 
 
 .BILLETERACAJAS{
-
-
-
+    display: flex;
+    gap: 100px;
+    align-items: center;
+    justify-content: center;
     
 }
 
@@ -676,14 +680,27 @@ main {
     height: 350px;
     font-size: 2.2vh;
     border-radius: 20px;
-    margin-left: 100px;
+    box-shadow: 0 0 20px rgb(255, 255, 255);
+
    
+}
+.billetera li{
+    padding: 5px;
+    display: flex;
+}
+
+.billetera .Metodopago{
+    color: gray;
+    justify-content: center;
+    padding: 20px;
+    display: flex;
 }
 
 .numerotarjeta{
     color: #FF6B08;
     font-size: 4vh;
     font-weight: bold;
+    justify-content: center;
 
 }
 
@@ -701,42 +718,75 @@ main {
 }
 
 
-.billetera1{
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: white;
-    width: 270px;
-    height: 350px;
-    font-size: 2.2vh;
-    border-radius: 20px;
-    margin-left: 100px;
-
-}
 
 .billetera2{
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: white;
+    background-color: #ff6b08;
     width: 270px;
-    height: 350px;
+    height: 150px;
     font-size: 2.2vh;
     border-radius: 20px;
-    margin-left: 100px;
+    box-shadow: 0 0 20px #ff6b08;
+}
+
+.billetera2 h2{
+    color: white;
+    font-size: 2.5vh;
 
 }
 
-
-.billetera1 pago{
-    margin: 15px;
-    text-align: center;
+.billetera1 {
     display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra el contenido horizontalmente */
+    background-color: white;
+    width: 270px;
+    height: 250px;
+    font-size: 2.2vh;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgb(255, 255, 255);
+
 
 }
 
+.billetera1 h2 {
+    text-align: left;
+    color: #636363;
+    font-size: 2.5vh;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.billetera1 ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Organiza los elementos de la lista verticalmente */
+    align-items: center; /* Centra el contenido horizontalmente */
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
+
+}
+
+.billetera1 .precio {
+    color: #000000;
+    font-size: 5.5vh;
+}
+
+.billetera1 .fecha {
+    color: #777;
+    font-size: 2vh;
+}
+
+.billetera2 .Preciototal{
+
+font-size: 4.5vh;
+}
 
 
 
