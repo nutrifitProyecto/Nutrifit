@@ -9,6 +9,7 @@ if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
+// Obtener datos de html
 $selectValue = $_POST['select_ejercicios'];
 $idEnt = $_POST['insertEjEntId'];
 
@@ -25,7 +26,8 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     header("Location: ../consultaEjercicios.html?id=$idEnt");
 } else {
-    $query = "INSERT INTO entrenamiento_ejercicio (idEntrenamiento, idEjercicio) VALUES ('$idEnt', '$selectValue')";
+    $query = "INSERT INTO entrenamiento_ejercicio (idEntrenamiento, idEjercicio) 
+                VALUES ('$idEnt', '$selectValue')";
 
     $result = $conn->query($query);
 
