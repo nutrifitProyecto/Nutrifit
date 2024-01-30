@@ -32,7 +32,7 @@ function tablaEntrenamientos() {
                     <td>${ent.description}</td>
                     <td><button onclick="consultarEjercicios(${ent.id})">Ver ejercicios</button></td>
                     <td>
-                        <button onclick="eliminarEjercicio(${ent.id})" class="btn btn-danger">Eliminar</button>
+                        <button onclick="eliminarEntrenamiento(${ent.id})" class="btn btn-danger">Eliminar</button>
                         <button id="btnEditar" data-bs-toggle="modal" data-bs-target="#editarEntrenamientoModal" class="btn btn-success" onclick="llenarCampos(${ent.id})">Editar</button>
                     </td>
                 </tr>`
@@ -42,9 +42,9 @@ function tablaEntrenamientos() {
     table.innerHTML = cad
 }
 
-//Elimina un ejercicio con respecto al id de este
-function eliminarEjercicio(sendId) {
-    confirm("Seguro que quieres eliminar el ejercicio?")
+//Elimina un entrenamiento con respecto al id de este
+function eliminarEntrenamiento(sendId) {
+    confirm("Seguro que quieres eliminar el entrenamiento?")
     if (confirm) {
         $.ajax({
             type: "POST", //POST para enviar los datos al php
