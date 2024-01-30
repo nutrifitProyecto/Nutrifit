@@ -13,8 +13,9 @@ h6 {
 }
 
 body {
-    font-family: "Bebas Neue", sans-serif;
     background-color: #191919;
+    font-family: "Bebas Neue", sans-serif;
+font-weight: bold;
 }
 
 a {
@@ -44,8 +45,8 @@ header {
     padding-top: 15px;
     padding-bottom: 15px;
     grid-template-columns: repeat(2, auto);
-    position: sticky;
-    top: 0px;
+    /*position: sticky;
+    top: 0px;*/
     width: 100%;
 }
 
@@ -192,6 +193,7 @@ main {
  #tick-icon{
     width: 12px;
     height: 12px;
+    margin: 5px;
  }
 
     .entrenamientos button,
@@ -225,9 +227,7 @@ main {
         font-size: 4vh;
     }
 
-    .caja1,
-    .caja2,
-    .caja3 {
+    .caja{
         width: 300px;
         height: 200px;
         background-color: #f1f1f1;
@@ -548,6 +548,9 @@ main {
 
 /*ENTRENADOR*/
 
+.perfilh2  {
+    margin-top: 0;
+}
 .perfil img{
 
 
@@ -611,6 +614,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center; 
+    padding: 10px
 }
 
 
@@ -657,24 +661,46 @@ main {
 
 /*BILLETERA*/
 
+
+.BILLETERACAJAS{
+    display: flex;
+    gap: 100px;
+    align-items: center;
+    justify-content: center;
+    
+}
+
 .billetera{
     text-align: center;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centra horizontalmente */
+    align-items: center;
     background-color: white;
-    width: 250px;
-    height: 320px;   
-     font-size: 2.2vh;
+    width: 270px;
+    height: 350px;
+    font-size: 2.2vh;
     border-radius: 20px;
-    margin-left: 100px;
+    box-shadow: 0 0 20px rgb(255, 255, 255);
+
    
+}
+.billetera li{
+    padding: 5px;
+    display: flex;
+}
+
+.billetera .Metodopago{
+    color: gray;
+    justify-content: center;
+    padding: 20px;
+    display: flex;
 }
 
 .numerotarjeta{
     color: #FF6B08;
     font-size: 4vh;
     font-weight: bold;
+    justify-content: center;
 
 }
 
@@ -691,13 +717,76 @@ main {
 
 }
 
-.billetera li{
-    margin: 15px;
+
+
+.billetera2{
     text-align: center;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ff6b08;
+    width: 270px;
+    height: 150px;
+    font-size: 2.2vh;
+    border-radius: 20px;
+    box-shadow: 0 0 20px #ff6b08;
+}
+
+.billetera2 h2{
+    color: white;
+    font-size: 2.5vh;
 
 }
 
+.billetera1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra el contenido horizontalmente */
+    background-color: white;
+    width: 270px;
+    height: 250px;
+    font-size: 2.2vh;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgb(255, 255, 255);
+
+
+}
+
+.billetera1 h2 {
+    text-align: left;
+    color: #636363;
+    font-size: 2.5vh;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.billetera1 ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Organiza los elementos de la lista verticalmente */
+    align-items: center; /* Centra el contenido horizontalmente */
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
+
+}
+
+.billetera1 .precio {
+    color: #000000;
+    font-size: 5.5vh;
+}
+
+.billetera1 .fecha {
+    color: #777;
+    font-size: 2vh;
+}
+
+.billetera2 .Preciototal{
+
+font-size: 4.5vh;
+}
 
 
 
