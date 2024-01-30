@@ -38,12 +38,13 @@ fetch(`./php/getEntrenamientoEjercicio.php?idEnt=${idEnt}`)
                         <th>Eliminar</th>
                     </tr>`
 
+        // Recorre el array de ejercicios
         info.forEach(ej => {
             cad += `<tr id="column${ej.ejId}">
                         <td>${ej.ejDia}</td>
                         <td>${ej.ejDesc}</td>
                         <td>${ej.ejDur}</td>
-                        <td><button onclick="eliminarEj(${ej.ejId})">Eliminar</button></td>
+                        <td><button onclick="eliminarEj(${ej.ejId}, ${idEnt})">Eliminar</button></td>
             <tr>`
         });
         cad += `</table>`
@@ -54,8 +55,21 @@ fetch(`./php/getEntrenamientoEjercicio.php?idEnt=${idEnt}`)
     });
 
 
-function eliminarEj(id) {
-    console.log(id);
+function eliminarEj(idEjSend, idEntSend) {
+    confirm("Seguro que quieres eliminar el ejercicio del entrenamiento?")
+    if (confirm) {
+        console.log(idEjSend);
+        console.log(idEntSend);
+        $.ajax({
+            type: "POST", //POST para enviar los datos al php
+            url: "./php/eliminarEjercicio.php",
+            data: {
+                idEj: idEjSend,
+                idEnt: idEntSend
+            }, // Enviar las variables como parte de los datos
+            success: window.location = `./consultaEjercicios.html?id=${idEnt}`
+        });
+    }
 }
 
 //Rellena la select con los ejercicios para añadirlos a los entrenamientos
@@ -64,30 +78,30 @@ function llenarSelect() {
     let selectedEj = ""
 
     fetch(`./php/getEjercicios.php`)
-    .then(response => response.json())
-    .then((data) => {
-        //Parsea la respuesta a JSON
-        infoEjercicios = JSON.parse(JSON.stringify(data))
+        .then(response => response.json())
+        .then((data) => {
+            //Parsea la respuesta a JSON
+            infoEjercicios = JSON.parse(JSON.stringify(data))
 
-        //Se crean las opciones de la select con los ejercicios
-        infoEjercicios.forEach(ej => {
-            cadEjercicios += `<option value="${ej.id}">${ej.description}</option>`
+            //Se crean las opciones de la select con los ejercicios
+            infoEjercicios.forEach(ej => {
+                cadEjercicios += `<option value="${ej.id}">${ej.description}</option>`
+            })
+
+            select_ejercicios.innerHTML += cadEjercicios
+
+            //Se le añade un evento a la select, cuando cambie de valor se mostrarán los datos más detallados del ejercicio
+            select_ejercicios.addEventListener('change', () => {
+                let selectedId = select_ejercicios.value
+
+                //En el array
+                selectedEj = infoEjercicios.find(ej => ej.id === selectedId)
+
+                document.getElementById('ejDia').value = selectedEj.dia
+                document.getElementById('ejDur').value = selectedEj.duracion
+            })
         })
-
-        select_ejercicios.innerHTML += cadEjercicios
-        
-        //Se le añade un evento a la select, cuando cambie de valor se mostrarán los datos más detallados del ejercicio
-        select_ejercicios.addEventListener('change', () => {
-            let selectedId = select_ejercicios.value
-
-            //En el array
-            selectedEj = infoEjercicios.find(ej => ej.id === selectedId)
-
-            document.getElementById('ejDia').value = selectedEj.dia
-            document.getElementById('ejDur').value = selectedEj.duracion
-        })
-    })
-    .catch(error => {
-        console.log(error);
-    });
+        .catch(error => {
+            console.log(error);
+        });
 }
