@@ -1,45 +1,44 @@
-let table = document.getElementById('client-table')
+let table = document.getElementById('entrenamiento-table')
 let info = []
 let inputs = document.querySelectorAll('input')
 
 limpiarCampos()
 
-fetch('./php/getEjercicio.php')
+fetch('./php/getEntrenamiento.php')
     .then(response => response.json())
     .then((data) => {
         //Parsea la respuesta a JSON
         info = JSON.parse(JSON.stringify(data));
         //Llama a la función y crea una tabla con los ejercicios
-        tablaEjercicios()
+        tablaEntrenamientos()
     })
     .catch(error => {
         console.log(error);
     });
 
 //Crear la tabla con todos los ejercicios
-function tablaEjercicios() {
+function tablaEntrenamientos() {
     let cad = `<table class="table table-striped">
                     <tr>
                         <th>id</th>
-                        <th>Día</th>
-                        <th>Dercripción</th>
-                        <th>Duración</th>
-                        <th>opciones</th>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Ejercicios</th>
                     </tr>`
-    info.forEach(ej => {
-        cad += `<tr id="column${ej.id}">
-                    <td>${ej.id}</td>
-                    <td>${ej.dia}</td>
-                    <td>${ej.description}</td>
-                    <td>${ej.duracion}</td>
+    info.forEach(ent => {
+        cad += `<tr id="column${ent.id}">
+                    <td>${ent.id}</td>
+                    <td>${ent.nombre}</td>
+                    <td>${ent.description}</td>
+                    <td><button>Ver ejercicios</button></td>
                     <td>
-                        <button onclick="eliminarEjercicio(${ej.id})" class="btn btn-danger">Eliminar</button>
-                        <button id="btnEditar" data-bs-toggle="modal" data-bs-target="#editarEjercicioModal" class="btn btn-success" onclick="llenarCampos(${ej.id})">Editar</button>
+                        <button onclick="eliminarEjercicio(${ent.id})" class="btn btn-danger">Eliminar</button>
+                        <button id="btnEditar" data-bs-toggle="modal" data-bs-target="#editarEjercicioModal" class="btn btn-success" onclick="llenarCampos(${ent.id})">Editar</button>
                     </td>
                 </tr>`
     });
     cad += `</table>
-            <button data-bs-toggle="modal" data-bs-target="#crearEjercicoModal" class="btn btn-primary">Crear ejercicio</button>`
+            <button data-bs-toggle="modal" data-bs-target="#crearEntrenamientoModal" class="btn btn-primary">Crear entrenamiento</button>`
     table.innerHTML = cad
 }
 

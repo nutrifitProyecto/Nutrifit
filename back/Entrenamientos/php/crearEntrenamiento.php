@@ -8,7 +8,7 @@ $name = $_POST['trainName'];
 $desc = $_POST['trainDesc'];
 
 //query que inserta datos en la tabla ejercicios
-$query = "INSERT INTO entrenamientos (nombre, description, duracion) VALUES ('$name', '$desc')";
+$query = "INSERT INTO entrenamientos (nombre, description) VALUES ('$name', '$desc')";
 
 $result = $connection->query($query);
 
