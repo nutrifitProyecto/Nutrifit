@@ -658,6 +658,14 @@ main {
 
 /*BILLETERA*/
 
+
+.BILLETERACAJAS{
+
+
+
+    
+}
+
 .billetera{
     text-align: center;
     display: flex;
@@ -691,6 +699,36 @@ main {
 
 
 }
+
+
+.billetera1{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    width: 270px;
+    height: 350px;
+    font-size: 2.2vh;
+    border-radius: 20px;
+    margin-left: 100px;
+
+}
+
+.billetera2{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    width: 270px;
+    height: 350px;
+    font-size: 2.2vh;
+    border-radius: 20px;
+    margin-left: 100px;
+
+}
+
 
 .billetera1 pago{
     margin: 15px;
