@@ -45,8 +45,8 @@ header {
     padding-top: 15px;
     padding-bottom: 15px;
     grid-template-columns: repeat(2, auto);
-    position: sticky;
-    top: 0px;
+    /*position: sticky;
+    top: 0px;*/
     width: 100%;
 }
 
