@@ -13,8 +13,9 @@ h6 {
 }
 
 body {
-    font-family: "Bebas Neue", sans-serif;
     background-color: #191919;
+    font-family: "Bebas Neue", sans-serif;
+font-weight: bold;
 }
 
 a {
@@ -192,6 +193,7 @@ main {
  #tick-icon{
     width: 12px;
     height: 12px;
+    margin: 5px;
  }
 
     .entrenamientos button,
@@ -609,6 +611,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center; 
+    padding: 10px
 }
 
 
@@ -659,11 +662,11 @@ main {
     text-align: center;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centra horizontalmente */
+    align-items: center;
     background-color: white;
-    width: 250px;
-    height: 320px;   
-     font-size: 2.2vh;
+    width: 270px;
+    height: 350px;
+    font-size: 2.2vh;
     border-radius: 20px;
     margin-left: 100px;
    
@@ -689,7 +692,7 @@ main {
 
 }
 
-.billetera li{
+.billetera1 pago{
     margin: 15px;
     text-align: center;
     display: flex;
