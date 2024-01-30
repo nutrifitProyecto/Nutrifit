@@ -13,8 +13,9 @@ h6 {
 }
 
 body {
-    font-family: "Bebas Neue", sans-serif;
     background-color: #191919;
+    font-family: "Bebas Neue", sans-serif;
+font-weight: bold;
 }
 
 a {
@@ -612,6 +613,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center; 
+    padding: 10px
 }
 
 
@@ -662,6 +664,7 @@ main {
 .BILLETERACAJAS{
     gap: 10px;
     display: flex;
+    align-items: center;
 }
 .billetera{
     text-align: center;
@@ -686,7 +689,7 @@ main {
 .billetera1 {
     background-color: white;
     width: 270px;
-    height: 350px;
+    height: 270px;
     font-size: 2.2vh;
     border-radius: 20px;
     margin-left: 100px;
@@ -714,20 +717,16 @@ main {
 .billetera1 .precio {
     text-align: left;
     color: #000000;
-    font-size: 4.5vh;
+    font-size: 4vh;
 }
 
 .billetera2{
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: white;
     width: 270px;
-    height: 350px;
+    height: 100px;
     font-size: 2.2vh;
     border-radius: 20px;
     margin-left: 100px;
+    background-color: #F4AA78;
 
 }
 
@@ -736,6 +735,14 @@ main {
     margin-left: 20px;
     color: #777;
     font-size: 2vh;
+}
+
+.billetera2 .Preciototal{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 4.5vh;
+  
 }
 
 
