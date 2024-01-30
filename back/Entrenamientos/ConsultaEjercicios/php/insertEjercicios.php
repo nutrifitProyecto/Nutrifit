@@ -10,28 +10,27 @@ if ($conn->connect_error) {
 }
 
 $selectValue = $_POST['select_ejercicios'];
-$idEnt = $_POST['insertEjEntId']
+$idEnt = $_POST['insertEjEntId'];
 
 // Comprobar si hay campos duplicados
-$sql = "SELECT idEjercicio, COUNT(*)
+$sql = "SELECT idEjercicio
     FROM entrenamiento_ejercicio
-    WHERE mi_campo = 'valor_determinado'
-    GROUP BY idEjercicio
-    HAVING COUNT(*) > 1;";
+    WHERE idEntrenamiento = '$idEnt'
+    AND idEjercicio = '$selectValue'";
 
 // Ejecutar la consulta
 $result = $conn->query($sql);
 
 // Verificar si el resultado es igual a 1
-if ($result->num_rows == 1) {
-    echo "Hay duplicados en la tabla.";
+if ($result->num_rows > 0) {
+    header("Location: ../consultaEjercicios.html?id=$idEnt");
 } else {
-    $query = "INSERT INTO entrenamiento_ejercicio (idEntrenamiento, idEjercicio) VALUES ('$idEnt', '$idEj')";
+    $query = "INSERT INTO entrenamiento_ejercicio (idEntrenamiento, idEjercicio) VALUES ('$idEnt', '$selectValue')";
 
-    $result = $connection->query($query);
+    $result = $conn->query($query);
 
     if ($result === true) {
-        header('Location: ../entrenamientoList.html');
+        header("Location: ../consultaEjercicios.html?id=$idEnt");
         exit();
     } else {
         echo "alert('error al crear el usuario')";
