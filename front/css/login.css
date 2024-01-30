@@ -4,13 +4,15 @@ main{
     align-items: center;
     color: #fff;
     margin-bottom: 16.5%;
+
 }
 
 .formularioLogin{
     text-align: center;
-    border: 1px #ff6b08 solid ;
+    border: 8px #ff6b08 solid ;
     border-radius: 10px;
     width: 50%;
+    padding-bottom: 8px;
 }
 
 main a{
