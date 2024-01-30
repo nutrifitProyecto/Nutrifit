@@ -3,6 +3,7 @@ let idEnt = paramURL.get('id')
 let cad = ``
 
 let ejercicios = document.getElementById('ejercicios')
+let select_ejercicios = document.getElementById('select_ejercicios')
 
 //Datos del entrenamiento actual
 fetch(`./php/getEntrenamiento.php?id=${idEnt}`)
@@ -18,25 +19,6 @@ fetch(`./php/getEntrenamiento.php?id=${idEnt}`)
     .catch(error => {
         console.log(error);
     });
-
-/*
-fetch(`./php/getEjercicios.php?id=${idEnt}`)
-    .then(response => response.json())
-    .then((data) => {
-        //Parsea la respuesta a JSON
-        info = JSON.parse(JSON.stringify(data));
-        info.forEach(ej => {
-            cad += `<p>${ej.dia}</p>
-            <p>${ej.description}</p>
-            <p>${ej.duracion}</p>
-            <hr>`
-        });
-        //Llama a la función y crea una tabla con los ejercicios
-    })
-    .catch(error => {
-        console.log(error);
-    });
-*/
 
 //Ejercicios del entrenamiento
 fetch(`./php/getEntrenamientoEjercicio.php?idEnt=${idEnt}`)
@@ -62,7 +44,7 @@ fetch(`./php/getEntrenamientoEjercicio.php?idEnt=${idEnt}`)
             <tr>`
         });
         cad += `</table>
-                <button onclick="añadirEjercicio()">Añadir ejercicio</button>`
+                <button data-bs-toggle="modal" data-bs-target="#anyadirEjercicioModal" onclick="añadirEjercicio()">Añadir ejercicio</button>`
         ejercicios.innerHTML = cad
     })
     .catch(error => {
@@ -75,5 +57,20 @@ function eliminarEj(id) {
 }
 
 function añadirEjercicio() {
-    console.log('caca');
+    let cadEjercicios = ``
+    fetch(`./php/getEjercicios.php`)
+    .then(response => response.json())
+    .then((data) => {
+        //Parsea la respuesta a JSON
+        info = JSON.parse(JSON.stringify(data));
+        info.forEach(ej => {
+            cadEjercicios += `<option value="${ej.id}">${ej.description}</option>`
+        });
+        console.log(cadEjercicios);
+        select_ejercicios.innerHTML = cadEjercicios
+        //Llama a la función y crea una tabla con los ejercicios
+    })
+    .catch(error => {
+        console.log(error);
+    });
 }
