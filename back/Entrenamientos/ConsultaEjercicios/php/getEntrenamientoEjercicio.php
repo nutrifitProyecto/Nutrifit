@@ -5,17 +5,16 @@ include "../../../inc/dbinfo.inc";
 //Creación de la conexión
 $connection = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
 
-$id = $_GET['id'];
+$id = $_GET['idEnt'];
 
-$query = 'SELECT ejercicios.dia AS ejDia, ejercicios.description AS ejDesc, ejercicios.duracion AS ejDur
+$query = 'SELECT ejercicios.id AS ejId, ejercicios.dia AS ejDia, ejercicios.description AS ejDesc, ejercicios.duracion AS ejDur
     FROM ejercicios
     LEFT JOIN entrenamiento_ejercicio
         ON entrenamiento_ejercicio.idEjercicio = ejercicios.id
-    WHERE entrenamiento_ejercicio.idEntrenamiento = $id';
+    WHERE entrenamiento_ejercicio.idEntrenamiento = 1
+    ORDER BY ejercicios.dia asc';
 
 $result = $connection->query($query);
-
-echo "<script>console.log(" . $result . ")</script>";
 
 if ($result->num_rows > 0) {
     echo json_encode($result->fetch_all(MYSQLI_ASSOC));
