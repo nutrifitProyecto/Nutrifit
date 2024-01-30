@@ -30,7 +30,7 @@ function tablaEntrenamientos() {
                     <td>${ent.id}</td>
                     <td>${ent.nombre}</td>
                     <td>${ent.description}</td>
-                    <td><button>Ver ejercicios</button></td>
+                    <td><button onclick="consultarEjercicios(${ent.id})">Ver ejercicios</button></td>
                     <td>
                         <button onclick="eliminarEjercicio(${ent.id})" class="btn btn-danger">Eliminar</button>
                         <button id="btnEditar" data-bs-toggle="modal" data-bs-target="#editarEntrenamientoModal" class="btn btn-success" onclick="llenarCampos(${ent.id})">Editar</button>
@@ -69,4 +69,8 @@ function limpiarCampos() {
     inputs.forEach(element => {
         element.value = ""
     });
+}
+
+function consultarEjercicios(id) {
+    window.location.replace(`./ConsultaEjercicios/consultaEjercicios.html?id=${id}`)
 }
