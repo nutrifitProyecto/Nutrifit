@@ -33,7 +33,7 @@ function tablaEntrenamientos() {
                     <td><button>Ver ejercicios</button></td>
                     <td>
                         <button onclick="eliminarEjercicio(${ent.id})" class="btn btn-danger">Eliminar</button>
-                        <button id="btnEditar" data-bs-toggle="modal" data-bs-target="#editarEjercicioModal" class="btn btn-success" onclick="llenarCampos(${ent.id})">Editar</button>
+                        <button id="btnEditar" data-bs-toggle="modal" data-bs-target="#editarEntrenamientoModal" class="btn btn-success" onclick="llenarCampos(${ent.id})">Editar</button>
                     </td>
                 </tr>`
     });
@@ -62,8 +62,6 @@ function llenarCampos(id) {
     editInputs[0].childNodes[1].value = document.getElementById('column' + id).childNodes[1].innerHTML
     editInputs[1].childNodes[4].value = document.getElementById('column' + id).childNodes[3].innerHTML
     editInputs[2].childNodes[4].value = document.getElementById('column' + id).childNodes[5].innerHTML
-    editInputs[3].childNodes[4].value = document.getElementById('column' + id).childNodes[7].innerHTML
-    
 }
 
 //Limpia los campos de la ventana modal
