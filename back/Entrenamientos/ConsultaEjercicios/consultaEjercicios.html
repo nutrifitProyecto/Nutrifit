@@ -20,6 +20,8 @@
         <!-- EJERCICIOS DEL ENTRENAMIENTO -->
     </div>
 
+    <button data-bs-toggle="modal" data-bs-target="#anyadirEjercicioModal" onclick="llenarSelect()">Añadir ejercicio</button>
+
     <!-- MODAL CREAR ENTRENAMIENTOS -->
     <div class="modal fade" id="anyadirEjercicioModal" tabindex="-1" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
@@ -30,10 +32,20 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form method="post" action="./php/crearEntrenamiento.php">
+                    <form method="post" action="./php/insertEjercicios.php">
                         <select name="select_ejercicios" id="select_ejercicios">
+                            <option value="0">--- Selecciona un ejercicio</option>
                             <!-- Ejercicios para añadir -->
                         </select>
+                        <br>
+                        <label for="ejDia">Día</label><br>
+                        <input type="text" id="ejDia" name="ejDia" disabled>
+                        <br>
+                        <label for="ejDur">Duración</label><br>
+                        <input type="text" id="ejDur" name="ejDur" disabled><br>
+
+                        <input type="text" id="insertEjEntId" name="insertEjEntId">
+
                         <button type="submit" class="btn btn-primary mt-3">Crear entrenamiento</button>
                     </form>
                 </div>
