@@ -92,12 +92,22 @@
                         <div class="d-flex">
                             <div class="me-4">
                                 <label for="cursoEnt">Entrenador:</label><br>
-                                <select name="cursoEnt" id="cursoEnt"></select>
+                                <select name="cursoEnt" id="cursoEnt">
+                                    <!-- RELLENAR ENTRENADORES CON JS -->
+                                </select>
                             </div>
                             <div>
                                 <label for="cursoCoste">Coste mes:</label><br>
                                 <input type="text" name="cursoCoste" id="cursoCoste" class="w-100">
                             </div>
+                        </div>
+                        <div>
+                            <label for="cursoTipo">Tipo del curso:</label><br>
+                             <select name="cursoTipo" id="cursoTipo">
+                                <option value="0">--- Selecciona un tipo</option>
+                                <option value="1">Entrenamiento</option>
+                                <option value="2">Dieta</option>
+                             </select>   
                         </div>
                         <button type="submit" class="btn btn-primary mt-3">Crear curso</button>
                     </form>
