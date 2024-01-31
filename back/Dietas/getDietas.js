@@ -37,7 +37,7 @@ function tablaDietas() {
                     <td>${ent.valor_calorico}</td>
                     <td>${ent.comidas_dia}</td>
                     <td>
-                        <button onclick="eliminarEntrenador(${ent.id})" class="btn btn-danger">Eliminar</button>
+                        <button onclick="eliminarDieta(${ent.id})" class="btn btn-danger">Eliminar</button>
                         <button id="btnEditar" data-bs-toggle="modal" data-bs-target="#editarDietaModal" class="btn btn-success" onclick="llenarCampos(${ent.id})">Editar</button>
                     </td>
                 </tr>`
@@ -48,14 +48,14 @@ function tablaDietas() {
 }
 
 //Elimina un entrenador con respecto al id de este
-function eliminarEntrenador(sendId) {
-    confirm("Seguro que quieres eliminar al entrenador?")
+function eliminarDieta(sendId) {
+    confirm("Seguro que quieres eliminar la dieta?")
     if (confirm) {
         $.ajax({
             type: "POST", //POST para enviar los datos al php
-            url: "./php/eliminarEntrenador.php",
+            url: "./php/eliminarDieta.php",
             data: { idToDelete: sendId }, // Enviar la variable como parte de los datos
-            success: window.location = "./entrenadorList.html"
+            success: window.location = "./dietaList.html"
         });
     }
 }
