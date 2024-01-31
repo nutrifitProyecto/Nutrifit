@@ -1,3 +1,23 @@
+//header
+window.addEventListener("load",function(){
+  let header=document.getElementsByTagName("header")[0];
+  header.innerHTML=`
+  <img src="../img/bars.svg" alt="bars" class="bars-svg" onclick="displayChange()">
+  <div id="logo-title">
+      <img src="../img/logo1.png" alt="logo" class="img-logo">
+      <span id="title">NUTRI<span>FIT</span></span>
+  </div>
+  <nav>
+      <ul>
+          <li><a href="">Servicios</a></li>
+          <li><a href="">About</a></li>
+          <li><a href="./registerpage.html">Registrarse</a></li>
+          <li><a href="./loginpage.html">Iniciar Sesion</a></li>
+      </ul>
+  </nav>`;
+});
+
+//Boton de menu en movil
 function displayChange(){
     let bttn=document.querySelector("header nav");    
     if(bttn.style.display==="none"){
@@ -24,8 +44,37 @@ for (i = 0; i < acc.length; i++) {
   });
 }
 
+/** */
+/*Boton de "soy entrenador" en el registerpage cuando se pulse se
+actualizara el formulario añadiendo unos inputs de experiencia y quittando otros*/
+function registerCoach(){
+  let div=document.getElementsByClassName("campoderegistro")[0];
+  while(div.hasChildNodes()){
+    div.firstChild.remove();    
+  }
+  let form=document.getElementsByTagName("form")[0];
+  let newinputs=
+  `<label for="rg-descripcion">Descripcion</label><textarea name="descripcion" id="rg-descripcion"></textarea>
+  <label for="rg-foto">Foto de Perfil</label><input type="file" id="rg-foto" name="foto" accept=".png, .jpg, .jpeg">
+  <label for="rg-ncurso">Nombre del Curso</label><input type="text" id="rg-ncurso" name="ncurso">
+  <label for="rg-descurso">Descripcion del Curso</label><textarea name="descurso" id="rg-descurso"></textarea>
+  <label>Etiquetas</label>
+  <div class="checkboxing">
+  <input type="checkbox" id="" name=""><label for="">ENTRENAMIENTO PERSONALIZADO</label>
+  <input type="checkbox" id="" name=""><label for="">MANTENIMIENTO INTEGRAL</label>
+  <input type="checkbox" id="" name=""><label for="">ASESORAMIENTO ALIMENTICIO</label>
+  <input type="checkbox" id="" name=""><label for="">SEGUIMIENTO CONTINUO Y AJUSTES</label>
+  <input type="checkbox" id="" name=""><label for="">PERDIDA DE PESO</label>
+  <input type="checkbox" id="" name=""><label for="">AUMENTO DE VOLUMEN</label>
+  </div>`;
 
+  form.getElementsByTagName("p")[0].textContent="";
 
+  div.innerHTML=newinputs;
+
+}
+
+/*
 //SUBIR CV
 
 
@@ -40,3 +89,4 @@ for (i = 0; i < acc.length; i++) {
          // Muestra el nombre del archivo seleccionado en el input de texto
          fileNameInput.value = fileInput.files[0].name;
      });
+*/

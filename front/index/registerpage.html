@@ -12,33 +12,38 @@
 
 <body>
     <header>
-        <img src="../img/bars.svg" alt="bars" class="bars-svg" onclick="displayChange()">
+        <!-- <img src="../img/bars.svg" alt="bars" class="bars-svg" onclick="displayChange()">
         <div id="logo-title">
             <img src="../img/logo1.png" alt="logo" class="img-logo">
             <span id="title">NUTRI<span>FIT</span></span>
         </div>
         <nav>
             <ul>
-                <li><a href="">Servicios</a></li>
-                <li><a href="">About</a></li>
-                <li><a href="">Registrarse</a></li>
-                <li><a href="">Iniciar Sesion</a></li>
+                <li><a href="./index.html">Servicios</a></li>
+                <li><a href="./index.html">About</a></li>
+                <li><a href="./registerpage.html">Registrarse</a></li>
+                <li><a href="./loginpage.html">Iniciar Sesion</a></li>
             </ul>
-        </nav>
+        </nav> -->
     </header>
 
     <main>
         <h2>Registrate</h2>
         <div class="formularioLogin">
             <form method="post" action="../../back/src/loginClient.php">
-                <label for="">Nombre</label><input type="text" autofocus>
-                <label for="">Apellidos</label><input type="text">
-                <label for="">Fecha de nacimiento</label><input type="date" name="" id="">
-                <label for="">Correo electronico</label><input type="email" name="" id="">
-                <label for="">Contraseña</label><input type="password" name="" id="">
-                <label for="">Repetir contraseña</label><input type="password" name="" id="">
+                <label for="rg-nombre">Nombre</label><input type="text" id="rg-nombre" name="nombre" autofocus>
+                <label for="rg-apellido">Apellidos</label><input type="text" id="rg-apellido" name="apellido">
+                <label for="rg-fechan">Fecha de nacimiento</label><input type="date" name="fechaNacimiento" id="rg-fechan">
+                <div class="campoderegistro">
+                    <label for="rg-altura">Altura</label><input type="text" id="rg-altura" name="altura">
+                    <label for="rg-peso">Peso</label><input type="text" id="rg-peso" name="peso">
+                </div>
                 
-                <p><a href="">Soy entrenador</a></p>
+                <label for="rg-email">Correo electronico</label><input type="email" name="email" id="rg-email">
+                <label for="rg-psswd">Contraseña</label><input type="password" name="psswd" id="rg-psswd">
+                <label for="rg2-psswd">Repetir contraseña</label><input type="password" name="psswd2" id="rg2-psswd">
+                
+                <p onclick="registerCoach()"><a>Soy entrenador</a></p>
 
                 <input class="bttn-submit" type="submit" value="Registrarse">
             </form>

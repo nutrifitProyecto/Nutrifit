@@ -9,10 +9,11 @@ main{
 
 .formularioLogin{
     text-align: center;
-    border: 8px #ff6b08 solid ;
-    border-radius: 10px;
+    border: 4px #ff6b08 solid ;
+    border-radius: 15px;
     width: 50%;
     padding-bottom: 8px;
+    box-shadow: 0 0 20px #ff6b08;
 }
 
 main a{
@@ -26,7 +27,7 @@ label{
     display: block;
 }
 
-input{
+input, textarea{
     color: #fff;
     border: 1px solid white;
     border-radius: 10px;
@@ -39,6 +40,13 @@ input{
     width: 50%;
     background-color: #ff6b08;
     cursor: pointer;
+}
+
+.checkboxing{
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-items: start;
+    justify-content: center;
 }
 
 footer{
