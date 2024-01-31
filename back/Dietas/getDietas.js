@@ -38,7 +38,7 @@ function tablaDietas() {
                     <td>${ent.comidas_dia}</td>
                     <td>
                         <button onclick="eliminarEntrenador(${ent.id})" class="btn btn-danger">Eliminar</button>
-                        <button id="btnEditar" data-bs-toggle="modal" data-bs-target="#editarEntrenadorModal" class="btn btn-success" onclick="llenarCampos(${ent.id})">Editar</button>
+                        <button id="btnEditar" data-bs-toggle="modal" data-bs-target="#editarDietaModal" class="btn btn-success" onclick="llenarCampos(${ent.id})">Editar</button>
                     </td>
                 </tr>`
     });
@@ -65,11 +65,19 @@ function llenarCampos(id) {
     let editInputs = document.getElementsByName('showValues')
 
     //Asigno valores con respecto a los campos de la tabla
+    // Inputs del modal                     contenido del documento
+    //Id
     editInputs[0].childNodes[1].value = document.getElementById('column' + id).childNodes[1].innerHTML
+    //Nombre
     editInputs[1].childNodes[4].value = document.getElementById('column' + id).childNodes[3].innerHTML
-    editInputs[2].childNodes[4].value = document.getElementById('column' + id).childNodes[5].innerHTML
-    editInputs[3].childNodes[4].value = document.getElementById('column' + id).childNodes[11].innerHTML
-    console.log(editInputs[3].childNodes[4]);
+    //Desc
+    editInputs[3].childNodes[4].value = document.getElementById('column' + id).childNodes[5].innerHTML
+    //Tipo
+    editInputs[2].childNodes[4].value = document.getElementById('column' + id).childNodes[7].innerHTML
+    //Valor
+    editInputs[4].childNodes[4].value = document.getElementById('column' + id).childNodes[9].innerHTML
+    //Comidas
+    editInputs[5].childNodes[4].value = document.getElementById('column' + id).childNodes[11].innerHTML
 }
 
 //Limpia los campos de la ventana modal
