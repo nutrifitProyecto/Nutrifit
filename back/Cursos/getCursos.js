@@ -23,12 +23,12 @@ function tablaCursos() {
                         <th>id</th>
                         <th>Entrenador</th>
                         <th>Coste mes</th>
-                        <th>opciones</th>
+                        <th>Opciones</th>
                     </tr>`
     info.forEach(curso => {
         cad += `<tr id="column${curso.id}">
                     <td>${curso.id}</td>
-                    <td>${curso.idEntrenador}</td>
+                    <td>${curso.entName} ${curso.entSurname}</td>
                     <td>${curso.costeMes}</td>
                     <td>
                         <button onclick="eliminarCurso(${curso.id})" class="btn btn-danger">Eliminar</button>

@@ -5,7 +5,10 @@ include "../../inc/dbinfo.inc";
 //Creación de la conexión
 $connection = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
 
-$query = 'SELECT * FROM cursos';
+$query = 'SELECT cursos.id, entrenadores.name AS entName, entrenadores.surname AS entSurname, cursos.costeMes
+    FROM cursos
+    LEFT JOIN entrenadores
+    ON cursos.idEntrenador = entrenadores.id';
 
 $result = $connection->query($query);
 
