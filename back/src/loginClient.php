@@ -18,8 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $passwd = $_POST['passwd'];
 
     //Creamos una consulta
-    $query = "SELECT * FROM clientes WHERE email='$email' AND password='$p
-    swd'";
+    $query = "SELECT * FROM clientes WHERE email='$email' AND password='$passwd'";
     $result = $connection->query($query);
 
     if (!$result) {
