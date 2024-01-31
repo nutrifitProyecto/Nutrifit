@@ -4,38 +4,38 @@ let inputs = document.querySelectorAll('input')
 
 limpiarCampos()
 
-fetch('./php/getEntrenador.php')
+fetch('./php/getDieta.php')
     .then(response => response.json())
     .then((data) => {
         //Parsea la respuesta a JSON
         info = JSON.parse(JSON.stringify(data));
         //Llama a la función y crea una tabla con los entrenadores
-        tablaEntrenadores()
+        tablaDietas()
     })
     .catch(error => {
         console.log(error);
     });
 
 //Crear la tabla con todos los entrenadores
-function tablaEntrenadores() {
+function tablaDietas() {
     let cad = `<table class="table table-striped">
                     <tr>
                         <th>id</th>
                         <th>Nombre</th>
-                        <th>Apellido</th>
-                        <th>Email</th>
-                        <th>Contraseña</th>
                         <th>Descripción</th>
-                        <th>opciones</th>
+                        <th>Tipo</th>
+                        <th>Valor calórico</th>
+                        <th>Comidas al día</th>
+                        <th>Opciones</th>
                     </tr>`
     info.forEach(ent => {
         cad += `<tr id="column${ent.id}">
                     <td>${ent.id}</td>
-                    <td>${ent.name}</td>
-                    <td>${ent.surname}</td>
-                    <td>${ent.email}</td>
-                    <td>${ent.password}</td>
+                    <td>${ent.nombre}</td>
                     <td>${ent.description}</td>
+                    <td>${ent.tipo}</td>
+                    <td>${ent.valor_calorico}</td>
+                    <td>${ent.comidas_dia}</td>
                     <td>
                         <button onclick="eliminarEntrenador(${ent.id})" class="btn btn-danger">Eliminar</button>
                         <button id="btnEditar" data-bs-toggle="modal" data-bs-target="#editarEntrenadorModal" class="btn btn-success" onclick="llenarCampos(${ent.id})">Editar</button>
@@ -43,7 +43,7 @@ function tablaEntrenadores() {
                 </tr>`
     });
     cad += `</table>
-            <button data-bs-toggle="modal" data-bs-target="#crearEntrenadorModal" class="btn btn-primary">Crear entrenador</button>`
+            <button data-bs-toggle="modal" data-bs-target="#crearDietaModal" class="btn btn-primary">Crear entrenador</button>`
     table.innerHTML = cad
 }
 

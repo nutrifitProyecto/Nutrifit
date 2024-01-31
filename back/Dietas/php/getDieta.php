@@ -5,7 +5,7 @@ include "../../inc/dbinfo.inc";
 //Creación de la conexión
 $connection = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
 
-$query = 'SELECT * FROM entrenadores';
+$query = 'SELECT * FROM dietas';
 
 $result = $connection->query($query);
 
