@@ -9,8 +9,8 @@ window.addEventListener("load",function(){
   </div>
   <nav>
       <ul>
-          <li><a href="">Servicios</a></li>
-          <li><a href="">About</a></li>
+          <li><a href="./perdidadepeso.html">Servicios</a></li>
+          <li><a href="./index.html">About</a></li>
           <li><a href="./registerpage.html">Registrarse</a></li>
           <li><a href="./loginpage.html">Iniciar Sesion</a></li>
       </ul>
@@ -53,24 +53,24 @@ function registerCoach(){
     div.firstChild.remove();    
   }
   let form=document.getElementsByTagName("form")[0];
-  let newinputs=
-  `<label for="rg-descripcion">Descripcion</label><textarea name="descripcion" id="rg-descripcion"></textarea>
-  <label for="rg-foto">Foto de Perfil</label><input type="file" id="rg-foto" name="foto" accept=".png, .jpg, .jpeg">
-  <label for="rg-ncurso">Nombre del Curso</label><input type="text" id="rg-ncurso" name="ncurso">
-  <label for="rg-descurso">Descripcion del Curso</label><textarea name="descurso" id="rg-descurso"></textarea>
-  <label>Etiquetas</label>
-  <div class="checkboxing">
-  <input type="checkbox" id="" name=""><label for="">ENTRENAMIENTO PERSONALIZADO</label>
-  <input type="checkbox" id="" name=""><label for="">MANTENIMIENTO INTEGRAL</label>
-  <input type="checkbox" id="" name=""><label for="">ASESORAMIENTO ALIMENTICIO</label>
-  <input type="checkbox" id="" name=""><label for="">SEGUIMIENTO CONTINUO Y AJUSTES</label>
-  <input type="checkbox" id="" name=""><label for="">PERDIDA DE PESO</label>
-  <input type="checkbox" id="" name=""><label for="">AUMENTO DE VOLUMEN</label>
-  </div>`;
+  // let newinputs=
+  // `<label for="rg-descripcion">Descripcion</label><textarea name="descripcion" id="rg-descripcion"></textarea>
+  // <label for="rg-foto">Foto de Perfil</label><input type="file" id="rg-foto" name="foto" accept=".png, .jpg, .jpeg">
+  // <label for="rg-ncurso">Nombre del Curso</label><input type="text" id="rg-ncurso" name="ncurso">
+  // <label for="rg-descurso">Descripcion del Curso</label><textarea name="descurso" id="rg-descurso"></textarea>
+  // <label>Etiquetas</label>
+  // <div class="checkboxing">
+  // <input type="checkbox" id="" name=""><label for="">ENTRENAMIENTO PERSONALIZADO</label>
+  // <input type="checkbox" id="" name=""><label for="">MANTENIMIENTO INTEGRAL</label>
+  // <input type="checkbox" id="" name=""><label for="">ASESORAMIENTO ALIMENTICIO</label>
+  // <input type="checkbox" id="" name=""><label for="">SEGUIMIENTO CONTINUO Y AJUSTES</label>
+  // <input type="checkbox" id="" name=""><label for="">PERDIDA DE PESO</label>
+  // <input type="checkbox" id="" name=""><label for="">AUMENTO DE VOLUMEN</label>
+  // </div>`;
 
   form.getElementsByTagName("p")[0].textContent="";
 
-  div.innerHTML=newinputs;
+  // div.innerHTML=newinputs;
 
 }
 
