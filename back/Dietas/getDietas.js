@@ -9,14 +9,14 @@ fetch('./php/getDieta.php')
     .then((data) => {
         //Parsea la respuesta a JSON
         info = JSON.parse(JSON.stringify(data));
-        //Llama a la función y crea una tabla con los entrenadores
+        //Llama a la función y crea una tabla con las dietas
         tablaDietas()
     })
     .catch(error => {
         console.log(error);
     });
 
-//Crear la tabla con todos los entrenadores
+//Crear la tabla con todos las dietas
 function tablaDietas() {
     let cad = `<table class="table table-striped">
                     <tr>
@@ -28,17 +28,17 @@ function tablaDietas() {
                         <th>Comidas al día</th>
                         <th>Opciones</th>
                     </tr>`
-    info.forEach(ent => {
-        cad += `<tr id="column${ent.id}">
-                    <td>${ent.id}</td>
-                    <td>${ent.nombre}</td>
-                    <td>${ent.description}</td>
-                    <td>${ent.tipo}</td>
-                    <td>${ent.valor_calorico}</td>
-                    <td>${ent.comidas_dia}</td>
+    info.forEach(diet => {
+        cad += `<tr id="column${diet.id}">
+                    <td>${diet.id}</td>
+                    <td>${diet.nombre}</td>
+                    <td>${diet.description}</td>
+                    <td>${diet.tipo}</td>
+                    <td>${diet.valor_calorico}</td>
+                    <td>${diet.comidas_dia}</td>
                     <td>
-                        <button onclick="eliminarDieta(${ent.id})" class="btn btn-danger">Eliminar</button>
-                        <button id="btnEditar" data-bs-toggle="modal" data-bs-target="#editarDietaModal" class="btn btn-success" onclick="llenarCampos(${ent.id})">Editar</button>
+                        <button onclick="eliminarDieta(${diet.id})" class="btn btn-danger">Eliminar</button>
+                        <button id="btnEditar" data-bs-toggle="modal" data-bs-target="#editarDietaModal" class="btn btn-success" onclick="llenarCampos(${diet.id})">Editar</button>
                     </td>
                 </tr>`
     });
@@ -47,7 +47,7 @@ function tablaDietas() {
     table.innerHTML = cad
 }
 
-//Elimina un entrenador con respecto al id de este
+//Elimina una dieta con respecto al id de este
 function eliminarDieta(sendId) {
     confirm("Seguro que quieres eliminar la dieta?")
     if (confirm) {
