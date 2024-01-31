@@ -1,4 +1,4 @@
-let table = document.getElementById('entrenador-table')
+let table = document.getElementById('dieta-table')
 let info = []
 let inputs = document.querySelectorAll('input')
 
