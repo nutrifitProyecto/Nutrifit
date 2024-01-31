@@ -18,7 +18,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $passwd = $_POST['passwd'];
 
     //Creamos una consulta
-    $query = "SELECT * FROM clientes WHERE email='$email' AND password='$passwd'";
+    $query = "SELECT * FROM clientes WHERE email='$email' AND password='$p
+    swd'";
     $result = $connection->query($query);
 
     if (!$result) {
@@ -36,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Redirigir a diferentes páginas según el valor de 'tipo_usuario'
         if ($tipoUsuario == 0) {
             $_SESSION['email'] = $email;
-            header('Location: ../../front/index/index.html');
+            header('Location: ../../front/index/index.html'); //si inicia sesion siendo cliente que lleve a paneldecontrol.html y si es entrenador que lleve a entrenador.html
             exit();
         } elseif ($tipoUsuario == 1) {
             header('Location: ../Clientes/clientList.html');
