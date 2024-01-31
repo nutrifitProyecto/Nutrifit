@@ -1,3 +1,22 @@
+//header
+window.addEventListener("load",function(){
+  let header=document.getElementsByTagName("header")[0];
+  header.innerHTML=`
+  <img src="../img/bars.svg" alt="bars" class="bars-svg" onclick="displayChange()">
+  <div id="logo-title">
+      <img src="../img/logo1.png" alt="logo" class="img-logo">
+      <span id="title">NUTRI<span>FIT</span></span>
+  </div>
+  <nav>
+      <ul>
+          <li><a href="">Servicios</a></li>
+          <li><a href="">About</a></li>
+          <li><a href="./registerpage.html">Registrarse</a></li>
+          <li><a href="./loginpage.html">Iniciar Sesion</a></li>
+      </ul>
+  </nav>`;
+});
+
 //Boton de menu en movil
 function displayChange(){
     let bttn=document.querySelector("header nav");    
