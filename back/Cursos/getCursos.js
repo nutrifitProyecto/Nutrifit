@@ -32,7 +32,7 @@ function tablaCursos() {
                     <td>${curso.costeMes}</td>
                     <td>
                         <button onclick="eliminarCurso(${curso.id})" class="btn btn-danger">Eliminar</button>
-                        <button id="btnEditar" data-bs-toggle="modal" data-bs-target="#editarCursoModal" class="btn btn-success" onclick="llenarCampos(${curso.id})">Editar</button>
+                        <button id="btnEditar" data-bs-toggle="modal" data-bs-target="#editarCursoModal" class="btn btn-success" onclick="llenarCampos(${curso.id}), llenarSelectEntrenadores(${curso.idEnt}, 'Edit')">Editar</button>
                     </td>
                 </tr>`
     });
@@ -41,7 +41,8 @@ function tablaCursos() {
 }
 
 // Función asignada al click del botón crear curso
-function llenarSelectEntrenadores() {
+function llenarSelectEntrenadores(idEnt, route) {
+    let cad = ``
     // Consulta de los entrenadores para llenar la select
     fetch('../Entrenadores/php/getEntrenador.php')
         .then(response => response.json())
@@ -49,13 +50,18 @@ function llenarSelectEntrenadores() {
             // Parsea la respuesta a JSON
             info = JSON.parse(JSON.stringify(data));
             // Llama a la función y crea una tabla con los entrenadores
-            let cad = `<option value="0">--- Selecciona un entrenador</option>`
+
             info.forEach(element => {
                 // Dependiendo de la valoración que queramos editar la select nos mostrará un cliente u otro
-                cad += `<option value="${element.id}">${element.name} ${element.surname} </option>`
-
+                if (element.id == idEnt) {
+                    cad += `<option value="${element.id}" selected>${element.name} ${element.surname} </option>`
+                } else {
+                    cad += `<option value="${element.id}">${element.name} ${element.surname} </option>`
+                }
             });
-            document.getElementById('cursoEnt').innerHTML = cad
+            console.log(route);
+            console.log(document.getElementById('cursoEnt'));
+            document.getElementById('curso' + route + 'Ent').innerHTML += cad
         })
         .catch(error => {
             console.log(error);
@@ -79,10 +85,9 @@ function llenarCampos(id) {
     let editInputs = document.getElementsByName('showValues')
 
     //Asigno valores con respecto a los campos de la tabla
-    editInputs[0].childNodes[1].value = document.getElementById('column' + id).childNodes[1].innerHTML
+    //editInputs[0].childNodes[1].value = document.getElementById('column' + id).childNodes[1].innerHTML
     editInputs[1].childNodes[4].value = document.getElementById('column' + id).childNodes[3].innerHTML
-    editInputs[2].childNodes[4].value = document.getElementById('column' + id).childNodes[5].innerHTML
-    editInputs[3].childNodes[1].value = document.getElementById('column' + id).childNodes[11].innerHTML
+    //editInputs[2].childNodes[4].value = document.getElementById('column' + id).childNodes[5].innerHTML
 }
 
 //Limpia los campos de la ventana modal
