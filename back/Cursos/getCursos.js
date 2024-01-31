@@ -23,6 +23,7 @@ function tablaCursos() {
                         <th>id</th>
                         <th>Entrenador</th>
                         <th>Coste mes</th>
+                        <th>Tipo</th>
                         <th>Opciones</th>
                     </tr>`
     info.forEach(curso => {
@@ -30,6 +31,13 @@ function tablaCursos() {
                     <td>${curso.id}</td>
                     <td>${curso.entName} ${curso.entSurname}</td>
                     <td>${curso.costeMes}</td>
+                    <td>`
+                    if (curso.tipo == 1) {
+                        cad += `Entrenamiento`
+                    } else {
+                        cad += `Dieta`
+                    }
+                    cad += `</td>
                     <td>
                         <button onclick="eliminarCurso(${curso.id})" class="btn btn-danger">Eliminar</button>
                         <button id="btnEditar" data-bs-toggle="modal" data-bs-target="#editarCursoModal" class="btn btn-success" onclick="llenarCampos(${curso.id}), llenarSelectEntrenadores(${curso.idEnt}, 'Edit')">Editar</button>
@@ -84,10 +92,8 @@ function eliminarCliente(sendId) {
 function llenarCampos(id) {
     let editInputs = document.getElementsByName('showValues')
 
-    //Asigno valores con respecto a los campos de la tabla
-    //editInputs[0].childNodes[1].value = document.getElementById('column' + id).childNodes[1].innerHTML
-    editInputs[1].childNodes[4].value = document.getElementById('column' + id).childNodes[3].innerHTML
-    //editInputs[2].childNodes[4].value = document.getElementById('column' + id).childNodes[5].innerHTML
+    editInputs[2].childNodes[4].value = document.getElementById('column' + id).childNodes[5].innerHTML
+    console.log(document.getElementById('column' + id).childNodes[7].innerHTML);
 }
 
 //Limpia los campos de la ventana modal
