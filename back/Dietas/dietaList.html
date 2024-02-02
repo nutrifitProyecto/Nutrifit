@@ -69,9 +69,14 @@
                 <hr>
             </div>
         </aside>
-        <div id="dieta-table" class="ps-2">
-            <!-- Dietas de la base de datos -->
+        <div>
+            <div id="dieta-table" class="ps-2">
+                <!-- Dietas de la base de datos -->
+            </div>
+            <button onclick="llenarSelectEntrenadores()" data-bs-toggle="modal" data-bs-target="#crearDietaModal"
+                class="btn btn-primary m-3">Crear dieta</button>
         </div>
+
     </div>
 
     <!-- MODAL CREAR DIETAS -->
@@ -108,6 +113,18 @@
                                 <input type="number" name="dietComidas" id="dietComidas">
                             </div>
                         </div>
+                        <div class="d-flex mt-3">
+                            <div class="me-4">
+                                <label for="cursoCoste">Coste mensual:</label><br>
+                                <input type="number" name="cursoCoste" id="cursoCoste" class="w-100">
+                            </div>
+                            <div class="me-4 w-75">
+                                <label for="cursoEnt">Entrenador:</label><br>
+                                <select name="cursoEnt" id="cursoEnt">
+                                    <!-- RELLENAR ENTRENADORES CON JS -->
+                                </select>
+                            </div>
+                        </div>
                         <button type="submit" class="btn btn-primary mt-3">Crear dieta</button>
                     </form>
                 </div>
@@ -120,8 +137,7 @@
     </div>
 
     <!-- MODAL EDITAR DIETAS -->
-    <div class="modal fade" id="editarDietaModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
+    <div class="modal fade" id="editarDietaModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
