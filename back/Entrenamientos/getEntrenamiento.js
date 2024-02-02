@@ -38,8 +38,7 @@ function tablaEntrenamientos() {
                     </td>
                 </tr>`
     });
-    cad += `</table>
-            <button data-bs-toggle="modal" data-bs-target="#crearEntrenamientoModal" class="btn btn-primary">Crear entrenamiento</button>`
+    cad += `</table>`
     table.innerHTML = cad
 }
 
@@ -54,6 +53,29 @@ function eliminarEntrenamiento(sendId) {
             success: window.location = "./entrenamientoList.html"
         });
     }
+}
+
+// Función asignada al click del botón crear curso
+function llenarSelectEntrenadores() {
+    let cad = `<option value="0">--- Selecciona un entrenador</option>`
+    // Consulta de los entrenadores para llenar la select
+    fetch('../Entrenadores/php/getEntrenador.php')
+        .then(response => response.json())
+        .then((data) => {
+            // Parsea la respuesta a JSON
+            info = JSON.parse(JSON.stringify(data));
+            // Llama a la función y crea una tabla con los entrenadores
+
+            info.forEach(element => {
+                // Se rellena la select con los entrenadores
+                cad += `<option value="${element.id}">${element.name} ${element.surname} </option>`
+            });
+            console.log(document.getElementById('cursoEnt'));
+            document.getElementById('cursoEnt').innerHTML = cad
+        })
+        .catch(error => {
+            console.log(error);
+        });
 }
 
 function llenarCampos(id) {

@@ -32,12 +32,12 @@ function tablaCursos() {
                     <td>${curso.entName} ${curso.entSurname}</td>
                     <td>${curso.costeMes}</td>
                     <td>`
-                    if (curso.tipo == 1) {
-                        cad += `Entrenamiento`
-                    } else {
-                        cad += `Dieta`
-                    }
-                    cad += `</td>
+        if (curso.tipo == 1) {
+            cad += `Entrenamiento`
+        } else {
+            cad += `Dieta`
+        }
+        cad += `</td>
                     <td>
                         <button onclick="eliminarCurso(${curso.id})" class="btn btn-danger">Eliminar</button>
                         <button id="btnEditar" data-bs-toggle="modal" data-bs-target="#editarCursoModal" class="btn btn-success" onclick="llenarCampos(${curso.id}), llenarSelectEntrenadores(${curso.idEnt}, 'Edit')">Editar</button>
