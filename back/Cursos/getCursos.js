@@ -24,6 +24,7 @@ function tablaCursos() {
                         <th>Entrenador</th>
                         <th>Coste mes</th>
                         <th>Tipo</th>
+                        <th>Consultar</th>
                         <th>Opciones</th>
                     </tr>`
     info.forEach(curso => {
@@ -37,7 +38,8 @@ function tablaCursos() {
         } else {
             cad += `Dieta`
         }
-        cad += `</td>
+        cad += `<td><button onclick="consultarDatos(${curso.id}, ${curso.tipo})">Ver ejercicios</button></td>
+                </td>
                     <td>
                         <button onclick="eliminarCurso(${curso.id})" class="btn btn-danger">Eliminar</button>
                         <button id="btnEditar" data-bs-toggle="modal" data-bs-target="#editarCursoModal" class="btn btn-success" onclick="llenarCampos(${curso.id}), llenarSelectEntrenadores(${curso.idEnt}, 'Edit')">Editar</button>
@@ -67,8 +69,6 @@ function llenarSelectEntrenadores(idEnt, route) {
                     cad += `<option value="${element.id}">${element.name} ${element.surname} </option>`
                 }
             });
-            console.log(route);
-            console.log(document.getElementById('cursoEnt'));
             document.getElementById('curso' + route + 'Ent').innerHTML += cad
         })
         .catch(error => {
@@ -91,9 +91,16 @@ function eliminarCliente(sendId) {
 
 function llenarCampos(id) {
     let editInputs = document.getElementsByName('showValues')
+    let selectTipo = document.getElementById('cursoEditTipo')
 
     editInputs[2].childNodes[4].value = document.getElementById('column' + id).childNodes[5].innerHTML
-    console.log(document.getElementById('column' + id).childNodes[7].innerHTML);
+    
+    // Establecer el valor seleccionado de la select dependiendo de lo que haya en la tabla n(dieta/entrenamiento)
+    if (document.getElementById('column' + id).childNodes[7].innerHTML == "Entrenamiento") {
+        selectTipo.value = 1
+    } else {
+        selectTipo.value = 2
+    }
 }
 
 //Limpia los campos de la ventana modal
@@ -101,4 +108,8 @@ function limpiarCampos() {
     inputs.forEach(element => {
         element.value = ""
     });
+}
+
+function consultarDatos(id, tipo) {
+    window.location.replace(`./ConsultarDatos/consultarDatos.html?id=${id}&tipo=${tipo}`)
 }

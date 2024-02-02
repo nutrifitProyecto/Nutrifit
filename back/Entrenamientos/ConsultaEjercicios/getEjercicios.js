@@ -1,7 +1,6 @@
 let paramURL = new URLSearchParams(window.location.search)
 let idEnt = paramURL.get('id')
 let cad = ``
-let aaa = []
 
 let ejercicios = document.getElementById('ejercicios')
 let select_ejercicios = document.getElementById('select_ejercicios')
