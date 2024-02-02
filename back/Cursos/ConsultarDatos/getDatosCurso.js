@@ -1,21 +1,39 @@
 let paramURL = new URLSearchParams(window.location.search)
 let idCurso = paramURL.get('id')
 let tipo = paramURL.get('tipo')
+let ent = paramURL.get('ent')
 
-console.log(idCurso);
-console.log(tipo);
-
-//Datos del entrenamiento actual
-fetch(`../php/getEntrenador.php?id=${idCurso}`)
+//Datos del ENTRENADOR
+fetch(`./php/getEntrenador.php?id=${ent}`)
     .then(response => response.json())
     .then((data) => {
         //Parsea la respuesta a JSON
         info = JSON.parse(JSON.stringify(data));
 
-        document.getElementById('entName').innerHTML += info[0].nombre
-        document.getElementById('entDesc').innerHTML += info[0].description
-        //Llama a la función y crea una tabla con los ejercicios
+        //Muestra nombre y apellidos del entrenador
+        document.getElementById('Entrenador').innerHTML += "Curso de " + info[0].name + " " + info[0].surname
     })
     .catch(error => {
         console.log(error);
     });
+
+
+
+
+
+
+if (tipo == 1) {
+    fetch(`./php/getEntrenamiento.php?idCurso=${idCurso}`)
+    .then(response => response.json())
+    .then((data) => {
+        //Parsea la respuesta a JSON
+        info = JSON.parse(JSON.stringify(data));
+
+        //Muestra nombre y apellidos del entrenador
+        console.log(info);
+        //document.getElementById('Entrenador').innerHTML += "Curso de " + info[0].name + " " + info[0].surname
+    })
+    .catch(error => {
+        console.log(error);
+    });
+}

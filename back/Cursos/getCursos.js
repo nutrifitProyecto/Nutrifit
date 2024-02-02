@@ -38,11 +38,14 @@ function tablaCursos() {
         } else {
             cad += `Dieta`
         }
-        cad += `<td><button onclick="consultarDatos(${curso.id}, ${curso.tipo})">Ver ejercicios</button></td>
+        cad += `<td><button onclick="consultarDatos(${curso.id}, ${curso.tipo}, ${curso.idEnt})">Ver ejercicios</button></td>
                 </td>
                     <td>
                         <button onclick="eliminarCurso(${curso.id})" class="btn btn-danger">Eliminar</button>
-                        <button id="btnEditar" data-bs-toggle="modal" data-bs-target="#editarCursoModal" class="btn btn-success" onclick="llenarCampos(${curso.id}), llenarSelectEntrenadores(${curso.idEnt}, 'Edit')">Editar</button>
+                        <button id="btnEditar" data-bs-toggle="modal" 
+                        data-bs-target="#editarCursoModal" class="btn btn-success" 
+                        onclick="llenarCampos(${curso.id}), llenarSelectEntrenadores(${curso.idEnt}, 'Edit')"
+                        >Editar</button>
                     </td>
                 </tr>`
     });
@@ -110,6 +113,6 @@ function limpiarCampos() {
     });
 }
 
-function consultarDatos(id, tipo) {
-    window.location.replace(`./ConsultarDatos/consultarDatos.html?id=${id}&tipo=${tipo}`)
+function consultarDatos(id, tipo, ent) {
+    window.location.replace(`./ConsultarDatos/consultarDatos.html?id=${id}&tipo=${tipo}&ent=${ent}`)
 }

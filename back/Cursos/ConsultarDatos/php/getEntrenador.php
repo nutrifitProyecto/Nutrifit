@@ -5,7 +5,10 @@ include "../../../inc/dbinfo.inc";
 //Creación de la conexión
 $connection = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
 
-$query = 'SELECT * FROM entrenadores';
+$entId = $_GET['id'];
+
+$query = "SELECT * FROM entrenadores
+    WHERE id = '$entId'";
 
 $result = $connection->query($query);
 
