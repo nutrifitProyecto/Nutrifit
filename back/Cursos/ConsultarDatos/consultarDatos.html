@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,20 +9,54 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
 </head>
+
 <body class="m-4">
     <header>
         <p><a href="../cursoList.html">Volver a la lista de cursos</a></p>
     </header>
 
-    <h1 id="nombre"></h1>
-    <h2 id="Entrenador"></h2>
-    <p id="desc"></p>
+    <div class="card" id="entDisplay">
+        <div class="row ">
 
-    <div id="datosCurso">
-        
+            <div class="col-md-7 px-3">
+                <div class="card-block px-6">
+                    <h3 id="nombre" class="card-title"></h3>
+                    <h4 id="Entrenador"></h4>
+                    <p class="card-text" id="desc">
+
+                    </p>
+                    <br>
+                    <h2>Ejercicios del entrenamiento</h2>
+                    <div id="ejercicios" class="w-100">
+                        <!-- Ejercicios del entrenamiento -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card" id="dietDisplay">
+        <div class="row ">
+
+            <div class="col-md-7 px-3">
+                <div class="card-block px-6">
+                    <h3 id="nombre" class="card-title"></h3>
+                    <h4 id="Entrenador"></h4>
+                    <p class="card-text" id="desc">
+
+                    </p>
+                    <br>
+                    <h2>Ejercicios del entrenamiento</h2>
+                    <div id="ejercicios" class="w-100">
+                        <!-- Ejercicios del entrenamiento -->
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 </body>
 
 <script src="./getDatosCurso.js"></script>
+
 </html>
