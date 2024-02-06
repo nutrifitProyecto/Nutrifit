@@ -7,17 +7,13 @@ $connection = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
 
 $idCurso = $_GET['idCurso'];
 
-$query = "SELECT cursos.costeMes, entrenamientos.nombre, entrenamientos.description, entrenamientos.id AS entId,  ejercicios.dia AS ejDia, ejercicios.duracion AS ejDur, ejercicios.description AS ejDesc
-            FROM cursos_entrenamientos
+$query = "SELECT cursos.costeMes AS coste, dietas.nombre, dietas.description AS dietDesc, dietas.tipo, dietas.valor_calorico,dietas.comidas_dia  
+            FROM cursos_dietas
             LEFT JOIN cursos
-            ON cursos.id = cursos_entrenamientos.idCurso
-            LEFT JOIN entrenamientos
-            ON entrenamientos.id = cursos_entrenamientos.idEntrenamiento
-            LEFT JOIN entrenamiento_ejercicio
-            ON entrenamientos.id = entrenamiento_ejercicio.idEntrenamiento
-            LEFT JOIN ejercicios
-            ON entrenamiento_ejercicio.idEjercicio = ejercicios.id
-                WHERE cursos_entrenamientos.idCurso = '$idCurso'";
+            ON cursos.id = cursos_dietas.idCurso
+            LEFT JOIN dietas
+            ON dietas.id = cursos_dietas.idDieta
+            WHERE cursos.id = '$idCurso'";
 
 $result = $connection->query($query);
 

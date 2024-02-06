@@ -17,9 +17,8 @@ $query = "DELETE FROM cursos_dietas WHERE idDieta = '$idCurso'";
 $result = $connection->query($query);
 
 $query = "DELETE FROM cursos_entrenamientos WHERE idEntrenamiento = '$idCurso'";
+
 $result = $connection->query($query);
-
-
 
 if ($result === true) {
     //Redirección a la página de clientes (recargarla)

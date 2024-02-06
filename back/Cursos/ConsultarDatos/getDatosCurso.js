@@ -2,10 +2,6 @@ let paramURL = new URLSearchParams(window.location.search)
 let idCurso = paramURL.get('id')
 let tipo = paramURL.get('tipo')
 let ent = paramURL.get('ent')
-let idEnt
-let ejercicios = document.getElementById('ejercicios')
-let dietaDisplay = document.getElementById('dietDisplay')
-let entDisplay = document.getElementById('entDisplay')
 
 //Datos del ENTRENADOR
 fetch(`./php/getEntrenador.php?id=${ent}`)
@@ -16,6 +12,7 @@ fetch(`./php/getEntrenador.php?id=${ent}`)
 
         //Muestra nombre y apellidos del entrenador
         document.getElementById('Entrenador').innerHTML += "Entrenador: " + info[0].name + " " + info[0].surname
+        document.getElementById('dietEntrenador').innerHTML += "Entrenador: " + info[0].name + " " + info[0].surname
     })
     .catch(error => {
         console.log(error);
@@ -23,6 +20,8 @@ fetch(`./php/getEntrenador.php?id=${ent}`)
 
 if (tipo == 1) {
     let infoCad = ``
+    let ejercicios = document.getElementById('ejercicios')
+    let dietaDisplay = document.getElementById('dietDisplay')
 
     dietaDisplay.style = "display: none;"
 
@@ -37,7 +36,6 @@ if (tipo == 1) {
             document.getElementById('nombre').innerHTML += info[0].nombre + " - " + info[0].costeMes + "€/mes"
             document.getElementById('desc').innerHTML += info[0].description
             console.log(info[0].entId);
-            idEnt = info[0].entId
 
             infoCad += `<table class="table table-striped w-100">
                     <tr>
@@ -61,6 +59,7 @@ if (tipo == 1) {
             console.log(error);
         });
 } else {
+    let entDisplay = document.getElementById('entDisplay')
     entDisplay.style = "display: none;"
 
     fetch(`./php/getDieta.php?idCurso=${idCurso}`)
@@ -69,6 +68,16 @@ if (tipo == 1) {
             // Parsea la respuesta a JSON
             info = JSON.parse(JSON.stringify(data));
 
+            console.log(info);
+
+            document.getElementById('dietNombre').innerHTML += info[0].nombre + " - " + info[0].coste + "€/mes"
+            document.getElementById('dietDesc').innerHTML += info[0].dietDesc
+            document.getElementById('dietData').innerHTML = `
+            <ul>
+                <li>Tipo: ${info[0].tipo}</li>
+                <li>Valor Calórico: ${info[0].valor_calorico}</li>
+                <li>Comidas al día: ${info[0].comidas_dia}</li>
+            </ul>`
         })
         .catch(error => {
             console.log(error);
