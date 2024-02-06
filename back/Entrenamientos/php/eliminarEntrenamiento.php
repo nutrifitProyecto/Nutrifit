@@ -12,6 +12,10 @@ $query = "DELETE FROM entrenamientos WHERE id = '$idEntrenamiento'";
 
 $result = $connection->query($query);
 
+$query = "DELETE FROM entrenamiento_ejercicio WHERE idEntrenamiento = '$idEntrenamiento'";
+
+$result = $connection->query($query);
+
 if ($result === true) {
     //Redirección a la página de ejercicios (recargarla)
     header('Location: ../entrenamientoList.html');
