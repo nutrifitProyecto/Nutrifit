@@ -4,22 +4,22 @@ include "../../inc/dbinfo.inc";
 //Conectar con la base de datos
 $connection = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
 
-$name = $_POST['cliName'];
-$surname = $_POST['cliSurname'];
-$email = $_POST['cliEmail'];
-$passwd = $_POST['cliPasswd'];
-$tipo = $_POST['cliTipo'];
+$cli = $_POST['factCli'];
+$curs = $_POST['factCurs'];
+$desc = $_POST['factDesc'];
+$costeTotal = $_POST['factCosteTotal'];
+$meses = $_POST['factMeses'];
+$coste = $_POST['costeA'];
 
-$query = "INSERT INTO clientes (name, surname, email, password, tipo) VALUES ('$name', '$surname', '$email', '$passwd', '$tipo')";
+
+$query = "INSERT INTO factura (idCliente, idCurso, description, costeTotal, mesesSuscripcion) VALUES ('$cli', '$curs', '$desc', '$coste', '$meses')";
 
 $result = $connection->query($query);
 
 if ($result === true) {
-        header('Location: ../clientList.html');
+        header('Location: ../facturasList.html');
         exit();
 } else {
-        $query = "DELETE FROM clientes WHERE email = '$email'";
-        $connection->query($query);
         echo "alert('error al crear el usuario')";
 }
 $connection->close();

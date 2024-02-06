@@ -140,6 +140,9 @@ function llenarSelects(cliId, entId, route) {
 // Al escribir los meses se calcula automáticamente lo que deberá pagar el cliente
 factMeses.addEventListener('keyup' && 'blur', () => {
     selectCosteTotal.value = coste * factMeses.value
+    selectCosteTotal.innerHTML = coste * factMeses.value
+    document.getElementById('ano').value = coste * factMeses.value
+    console.log(selectCosteTotal.value);
 })
 
 crearFact.addEventListener('click', () => {

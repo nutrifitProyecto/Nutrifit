@@ -94,7 +94,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form method="post" action="./php/crearCliente.php">
+                    <form method="post" action="./php/crearFactura.php">
                         <div class="d-flex">
                             <div class="me-4">
                                 <label for="factCli">Cliente:</label><br>
@@ -119,6 +119,11 @@
                                 <input type="number" name="factMeses" id="factMeses" class="w-75">
                             </div>
                         </div>
+                        <div class="mt-2">
+                            <label for="factDesc">Descripción:</label>
+                            <textarea name="factDesc" id="factDesc" cols="50" rows="3"></textarea>
+                        </div>
+                        <input id="ano" name="costeA" style="display: none;">
                         <button type="submit" class="btn btn-primary mt-3">Crear factura</button>
                     </form>
                 </div>

@@ -18,7 +18,8 @@ FROM factura
   	LEFT JOIN cursos_dietas
     ON cursos.id = cursos_dietas.idCurso
     LEFT JOIN dietas
-    ON cursos_dietas.idDieta = dietas.id';
+    ON cursos_dietas.idDieta = dietas.id
+    ORDER BY factura.id';
 
 $result = $connection->query($query);
 
