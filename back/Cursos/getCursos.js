@@ -65,7 +65,7 @@ function llenarSelectEntrenadores(idEnt, route) {
             // Llama a la función y crea una tabla con los entrenadores
 
             info.forEach(element => {
-                // Dependiendo de la valoración que queramos editar la select nos mostrará un cliente u otro
+                // Dependiendo del entrenador del curso saldrá como seleccionado o no
                 if (element.id == idEnt) {
                     cad += `<option value="${element.id}" selected>${element.name} ${element.surname} </option>`
                 } else {
@@ -79,15 +79,15 @@ function llenarSelectEntrenadores(idEnt, route) {
         });
 }
 
-//Elimina un cliente con respecto al id de este
-function eliminarCliente(sendId) {
-    confirm("Seguro que quieres eliminar al usuario?")
+//Elimina un curso con respecto al id de este
+function eliminarCurso(sendId) {
+    confirm("Seguro que quieres eliminar el curso?")
     if (confirm) {
         $.ajax({
             type: "POST", //POST para enviar los datos al php
-            url: "./php/eliminarCliente.php",
+            url: "./php/eliminarCurso.php",
             data: { idToDelete: sendId }, // Enviar la variable como parte de los datos
-            success: window.location = "./clientList.html"
+            success: window.location = "./cursoList.html"
         });
     }
 }
