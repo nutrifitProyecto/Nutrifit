@@ -75,13 +75,17 @@
             </div>
         </aside>
 
-        <div id="factura-table" class="ps-2 w-100">
-            <!-- Facturas de la base de datos -->
+        <div class="p-2">
+            <div id="factura-table" class="ps-2 w-100">
+                <!-- Facturas de la base de datos -->
+            </div>
+            <button data-bs-toggle="modal" data-bs-target="#crearFacturaModal" class="btn btn-primary">Crear factura</button>
         </div>
+
     </div>
 
     <!-- MODAL CREAR FACTURAS -->
-    <div class="modal fade" id="crearClienteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="crearFacturaModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -131,7 +135,7 @@
     </div>
 
     <!-- MODAL EDITAR CLIENTES -->
-    <div class="modal fade" id="editarClienteModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+    <div class="modal fade" id="editarFacturaModal" tabindex="-1" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
