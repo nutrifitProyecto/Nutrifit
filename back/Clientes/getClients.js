@@ -50,7 +50,7 @@ function tablaClientes() {
 //Elimina un cliente con respecto al id de este
 function eliminarCliente(sendId) {
     confirm("Seguro que quieres eliminar al usuario?")
-    if (confirm) {
+    if (confirm == true) {
         $.ajax({
             type: "POST", //POST para enviar los datos al php
             url: "./php/eliminarCliente.php",

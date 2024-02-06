@@ -69,7 +69,6 @@ function llenarCampos(id) {
     editInputs[1].childNodes[4].value = document.getElementById('column' + id).childNodes[3].innerHTML
     editInputs[2].childNodes[4].value = document.getElementById('column' + id).childNodes[5].innerHTML
     editInputs[3].childNodes[4].value = document.getElementById('column' + id).childNodes[11].innerHTML
-    console.log(editInputs[3].childNodes[4]);
 }
 
 //Limpia los campos de la ventana modal

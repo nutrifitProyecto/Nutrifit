@@ -1,7 +1,6 @@
 let paramURL = new URLSearchParams(window.location.search)
 let idEnt = paramURL.get('id')
 let cad = ``
-let aaa = []
 
 let ejercicios = document.getElementById('ejercicios')
 let select_ejercicios = document.getElementById('select_ejercicios')
@@ -41,9 +40,9 @@ fetch(`./php/getEntrenamientoEjercicio.php?idEnt=${idEnt}`)
         // Recorre el array de ejercicios
         info.forEach(ej => {
             cad += `<tr id="column${ej.ejId}">
-                        <td>${ej.ejDia}</td>
+                        <td>${ej.dia}</td>
                         <td>${ej.ejDesc}</td>
-                        <td>${ej.ejDur}</td>
+                        <td>${ej.duracion}</td>
                         <td><button onclick="eliminarEj(${ej.ejId}, ${idEnt})">Eliminar</button></td>
             <tr>`
         });

@@ -14,9 +14,6 @@ $query = "INSERT INTO clientes (name, surname, email, password, tipo) VALUES ('$
 
 $result = $connection->query($query);
 
-echo "<script>console.log('" . $result . "')</script>";
-//echo "<script>console.log('" . $result . "')</script>";
-
 if ($result === true) {
         header('Location: ../clientList.html');
         exit();
