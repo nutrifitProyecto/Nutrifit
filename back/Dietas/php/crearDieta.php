@@ -24,7 +24,7 @@ $result = $connection->query($query);
 // Una vez creada la dieta y el curso se seleccionan los ids más nuevos para insertarlos en la tabla cursos_dietas y gardar las relaciones
 $query = "SELECT cursos.id AS cursoId, dietas.id AS dietId 
         FROM cursos, dietas
-        ORDER BY cursoId, dietId desc
+        ORDER BY cursoId desc, dietId desc
         LIMIT 1";
 
 $result = $connection->query($query);

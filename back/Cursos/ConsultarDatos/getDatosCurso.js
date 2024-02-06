@@ -4,6 +4,8 @@ let tipo = paramURL.get('tipo')
 let ent = paramURL.get('ent')
 let idEnt
 let ejercicios = document.getElementById('ejercicios')
+let dietaDisplay = document.getElementById('dietDisplay')
+let entDisplay = document.getElementById('entDisplay')
 
 //Datos del ENTRENADOR
 fetch(`./php/getEntrenador.php?id=${ent}`)
@@ -21,6 +23,9 @@ fetch(`./php/getEntrenador.php?id=${ent}`)
 
 if (tipo == 1) {
     let infoCad = ``
+
+    dietaDisplay.style = "display: none;"
+
     // Datos del entrenamiento
     fetch(`./php/getEntrenamiento.php?idCurso=${idCurso}`)
         .then(response => response.json())
@@ -51,6 +56,19 @@ if (tipo == 1) {
             });
             infoCad += `</table>`
             ejercicios.innerHTML = infoCad
+        })
+        .catch(error => {
+            console.log(error);
+        });
+} else {
+    entDisplay.style = "display: none;"
+
+    fetch(`./php/getDieta.php?idCurso=${idCurso}`)
+        .then(response => response.json())
+        .then((data) => {
+            // Parsea la respuesta a JSON
+            info = JSON.parse(JSON.stringify(data));
+
         })
         .catch(error => {
             console.log(error);

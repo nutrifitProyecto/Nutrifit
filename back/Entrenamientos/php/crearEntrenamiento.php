@@ -20,7 +20,7 @@ $result = $connection->query($query);
 // Una vez creado el entrenamiento y el curso se seleccionan los ids más nuevos para insertarlos en la tabla cursos_entrenamientos y gardar las relaciones
 $query = "SELECT cursos.id AS cursoId, entrenamientos.id AS entId 
         FROM cursos, entrenamientos
-        ORDER BY cursoId, entId desc
+        ORDER BY cursoId desc, entId desc
         LIMIT 1";
 
 $result = $connection->query($query);
