@@ -27,6 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $result = $connection->query($query);
 
     if ($result === true) {
+        $_SESSION['email'] = $email;
         header('Location: ../../front/index/index.html');
         exit();
     } else {
