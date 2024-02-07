@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Iniciar sesión</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+
+<body>
+    <header>
+        <img src="../img/bars.svg" alt="bars" class="bars-svg" onclick="displayChange()">
+        <div id="logo-title">
+            <img src="../img/logo1.png" alt="logo" class="img-logo">
+            <span id="title">NUTRI<span>FIT</span></span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Servicios</a></li>
+                <li><a href="./index.html">About</a></li>
+                <li><a href="./registerpage.html">Registrarse</a></li>
+                <li><a href="./loginpage.html">Iniciar Sesion</a></li>
+            </ul>
+        </nav> 
+    </header>
+
+    <main>
+        <section>
+            <h2>PASARELA DE PAGO</h2>
+            <div class="pasareladepago">
+              <form method="post" id="formulario-pago" action="../../back/src/pasareladepago.php" onsubmit="return validarFormulario()">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+          
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" name="apellido" required>
+          
+                <label for="correo">Correo electrónico:</label>
+                <input type="email" id="correo" name="correo" required>
+          
+                <label for="tarjeta">Número de tarjeta:</label>
+                <input type="text" id="tarjeta" name="tarjeta" required>
+          
+                <label for="fecha">Fecha de vencimiento:</label>
+                <input type="date" id="fecha" name="fecha" required>
+          
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" required>
+                <button type="submit">Pagar</button>
+              </form>
+            </div>
+          </section>
+          
+
+
+    
+    </main>
+
+    <footer>
+        <h2>Siguenos</h2>
+        <ul>
+            <li><a href="#"><img src="../img/instagram-icon.svg" alt="instagram"></a></li>
+            <li><a href="#"><img src="../img/x-icon.svg" alt="x"></a></li>
+            <li><a href="#"><img src="../img/tiktok-icon.svg" alt="tiktok"></a></li>
+            <li><a href="#"><img src="../img/spotify-icon.svg" alt="spotify"></a></li>
+        </ul>
+    </footer>
+
+    <script src="../js/validacionpago.js"></script>
+</body>
+
+<!-- <script src="./login.js"></script> ACABAR FUNCIONALIDAD-->
+
+</html>

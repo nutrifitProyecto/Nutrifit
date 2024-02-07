@@ -7,7 +7,7 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/login.css">
+    
 </head>
 
 <body>
@@ -30,7 +30,7 @@
     <main>
         <h2>Registrate</h2>
         <div class="formularioLogin">
-            <form method="post" action="../../back/src/registerClient.php">
+            <form method="post" id="formulario-pago" action="../../back/src/pasareladepago.php" onsubmit="return validarFormulario()">
                 <label for="rg-nombre">Nombre</label><input type="text" id="rg-nombre" name="nombre" autofocus>
                 <label for="rg-apellido">Apellidos</label><input type="text" id="rg-apellido" name="apellido">
                 <label for="rg-fechan">Fecha de nacimiento</label><input type="date" name="fechaNacimiento" id="rg-fechan">
