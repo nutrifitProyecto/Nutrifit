@@ -9,7 +9,7 @@ window.addEventListener("load",function(){
   </div>
   <nav>
       <ul>
-          <li><a href="./perdidadepeso.html">Servicios</a></li>
+          <li><a href="./index.html">Servicios</a></li>
           <li><a href="./index.html">About</a></li>
           <li><a href="./registerpage.html">Registrarse</a></li>
           <li><a href="./loginpage.html">Iniciar Sesion</a></li>
