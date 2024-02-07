@@ -48,15 +48,12 @@ function tablaDietas() {
 
 //Elimina una dieta con respecto al id de este
 function eliminarDieta(sendId) {
-    confirm("Seguro que quieres eliminar la dieta?")
-    if (confirm) {
-        $.ajax({
-            type: "POST", //POST para enviar los datos al php
-            url: "./php/eliminarDieta.php",
-            data: { idToDelete: sendId }, // Enviar la variable como parte de los datos
-            success: window.location = "./dietaList.html"
-        });
-    }
+    $.ajax({
+        type: "POST", //POST para enviar los datos al php
+        url: "./php/eliminarDieta.php",
+        data: { idToDelete: sendId }, // Enviar la variable como parte de los datos
+        success: window.location = "./dietaList.html"
+    });
 }
 
 // Función asignada al click del botón crear curso

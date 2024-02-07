@@ -81,15 +81,12 @@ function llenarSelectEntrenadores(idEnt, route) {
 
 //Elimina un curso con respecto al id de este
 function eliminarCurso(sendId) {
-    confirm("Seguro que quieres eliminar el curso?")
-    if (confirm) {
-        $.ajax({
-            type: "POST", //POST para enviar los datos al php
-            url: "./php/eliminarCurso.php",
-            data: { idToDelete: sendId }, // Enviar la variable como parte de los datos
-            success: window.location = "./cursoList.html"
-        });
-    }
+    $.ajax({
+        type: "POST", //POST para enviar los datos al php
+        url: "./php/eliminarCurso.php",
+        data: { idToDelete: sendId }, // Enviar la variable como parte de los datos
+        success: window.location = "./cursoList.html"
+    });
 }
 
 function llenarCampos(id) {
@@ -97,7 +94,7 @@ function llenarCampos(id) {
     let selectTipo = document.getElementById('cursoEditTipo')
 
     editInputs[2].childNodes[4].value = document.getElementById('column' + id).childNodes[5].innerHTML
-    
+
     // Establecer el valor seleccionado de la select dependiendo de lo que haya en la tabla n(dieta/entrenamiento)
     if (document.getElementById('column' + id).childNodes[7].innerHTML == "Entrenamiento") {
         selectTipo.value = 1

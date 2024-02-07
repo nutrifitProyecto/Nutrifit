@@ -44,15 +44,12 @@ function tablaEntrenamientos() {
 
 //Elimina un entrenamiento con respecto al id de este
 function eliminarEntrenamiento(sendId) {
-    confirm("Seguro que quieres eliminar el entrenamiento?")
-    if (confirm) {
-        $.ajax({
-            type: "POST", //POST para enviar los datos al php
-            url: "./php/eliminarEntrenamiento.php",
-            data: { idToDelete: sendId }, // Enviar la variable como parte de los datos
-            success: window.location = "./entrenamientoList.html"
-        });
-    }
+    $.ajax({
+        type: "POST", //POST para enviar los datos al php
+        url: "./php/eliminarEntrenamiento.php",
+        data: { idToDelete: sendId }, // Enviar la variable como parte de los datos
+        success: window.location = "./entrenamientoList.html"
+    });
 }
 
 // Función asignada al click del botón crear curso
