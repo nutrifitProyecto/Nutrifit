@@ -12,7 +12,7 @@ fetch('../../back/Entrenadores/php/getEntrenador.php')
     .catch(error => {
         console.log(error);
     });
-
+ 
 //Crear la tabla con todos los entrenadores
 function anyadirTexto() {
     let cad = ``;
