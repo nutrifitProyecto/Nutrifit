@@ -45,15 +45,12 @@ function tablaEjercicios() {
 
 //Elimina un ejercicio con respecto al id de este
 function eliminarEjercicio(sendId) {
-    confirm("Seguro que quieres eliminar el ejercicio?")
-    if (confirm) {
-        $.ajax({
-            type: "POST", //POST para enviar los datos al php
-            url: "./php/eliminarEjercicio.php",
-            data: { idToDelete: sendId }, // Enviar la variable como parte de los datos
-            success: window.location = "./ejercicioList.html"
-        });
-    }
+    $.ajax({
+        type: "POST", //POST para enviar los datos al php
+        url: "./php/eliminarEjercicio.php",
+        data: { idToDelete: sendId }, // Enviar la variable como parte de los datos
+        success: window.location = "./ejercicioList.html"
+    });
 }
 
 function llenarCampos(id) {
@@ -64,7 +61,7 @@ function llenarCampos(id) {
     editInputs[1].childNodes[4].value = document.getElementById('column' + id).childNodes[3].innerHTML
     editInputs[2].childNodes[4].value = document.getElementById('column' + id).childNodes[5].innerHTML
     editInputs[3].childNodes[4].value = document.getElementById('column' + id).childNodes[7].innerHTML
-    
+
 }
 
 //Limpia los campos de la ventana modal

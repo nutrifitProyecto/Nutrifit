@@ -49,15 +49,12 @@ function tablaClientes() {
 
 //Elimina un cliente con respecto al id de este
 function eliminarCliente(sendId) {
-    confirm("Seguro que quieres eliminar al usuario?")
-    if (confirm) {
-        $.ajax({
-            type: "POST", //POST para enviar los datos al php
-            url: "./php/eliminarCliente.php",
-            data: { idToDelete: sendId }, // Enviar la variable como parte de los datos
-            success: window.location = "./clientList.html"
-        });
-    }
+    $.ajax({
+        type: "POST", //POST para enviar los datos al php
+        url: "./php/eliminarCliente.php",
+        data: { idToDelete: sendId }, // Enviar la variable como parte de los datos
+        success: window.location = "./clientList.html"
+    });
 }
 
 function llenarCampos(id) {

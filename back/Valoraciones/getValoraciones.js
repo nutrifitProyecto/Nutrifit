@@ -45,15 +45,12 @@ function tablaValoraciones() {
 
 //Elimina una valoración con respecto al id de este
 function eliminarEntrenador(sendId) {
-    confirm("Seguro que quieres eliminar al entrenador?")
-    if (confirm) {
-        $.ajax({
-            type: "POST", //POST para enviar los datos al php
-            url: "./php/eliminarValoracion.php",
-            data: { idToDelete: sendId }, // Enviar la variable como parte de los datos
-            success: window.location = "./valoracionList.html"
-        });
-    }
+    $.ajax({
+        type: "POST", //POST para enviar los datos al php
+        url: "./php/eliminarValoracion.php",
+        data: { idToDelete: sendId }, // Enviar la variable como parte de los datos
+        success: window.location = "./valoracionList.html"
+    });
 }
 
 // Rellena las selects con los nombres de los clientes y entrenadores
@@ -74,12 +71,12 @@ function llenarSelectEntrenadores(cliId, entId, route) {
                     cad += `<option value="${element.id}">${element.name} ${element.surname} </option>`
                 }
             });
-            document.getElementById('rate' + route +'Ent').innerHTML = cad
+            document.getElementById('rate' + route + 'Ent').innerHTML = cad
         })
         .catch(error => {
             console.log(error);
         });
-    
+
     // Select de los clientes para llenar la select del html
     fetch('./php/getClients.php')
         .then(response => response.json())
@@ -96,7 +93,7 @@ function llenarSelectEntrenadores(cliId, entId, route) {
                     cad += `<option value="${element.id}">${element.name} ${element.surname} </option>`
                 }
             });
-            document.getElementById('rate' + route +'Client').innerHTML = cad
+            document.getElementById('rate' + route + 'Client').innerHTML = cad
         })
         .catch(error => {
             console.log(error);

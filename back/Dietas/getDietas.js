@@ -42,22 +42,40 @@ function tablaDietas() {
                     </td>
                 </tr>`
     });
-    cad += `</table>
-            <button data-bs-toggle="modal" data-bs-target="#crearDietaModal" class="btn btn-primary">Crear entrenador</button>`
+    cad += `</table>`
     table.innerHTML = cad
 }
 
 //Elimina una dieta con respecto al id de este
 function eliminarDieta(sendId) {
-    confirm("Seguro que quieres eliminar la dieta?")
-    if (confirm) {
-        $.ajax({
-            type: "POST", //POST para enviar los datos al php
-            url: "./php/eliminarDieta.php",
-            data: { idToDelete: sendId }, // Enviar la variable como parte de los datos
-            success: window.location = "./dietaList.html"
+    $.ajax({
+        type: "POST", //POST para enviar los datos al php
+        url: "./php/eliminarDieta.php",
+        data: { idToDelete: sendId }, // Enviar la variable como parte de los datos
+        success: window.location = "./dietaList.html"
+    });
+}
+
+// Función asignada al click del botón crear curso
+function llenarSelectEntrenadores() {
+    let cad = `<option value="0">--- Selecciona un entrenador</option>`
+    // Consulta de los entrenadores para llenar la select
+    fetch('../Entrenadores/php/getEntrenador.php')
+        .then(response => response.json())
+        .then((data) => {
+            // Parsea la respuesta a JSON
+            info = JSON.parse(JSON.stringify(data));
+            // Llama a la función y crea una tabla con los entrenadores
+
+            info.forEach(element => {
+                // Se rellena la select con los entrenadores
+                cad += `<option value="${element.id}">${element.name} ${element.surname} </option>`
+            });
+            document.getElementById('cursoEnt').innerHTML = cad
+        })
+        .catch(error => {
+            console.log(error);
         });
-    }
 }
 
 //Rellena los campos de la ventana modal

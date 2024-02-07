@@ -49,15 +49,12 @@ function tablaEntrenadores() {
 
 //Elimina un entrenador con respecto al id de este
 function eliminarEntrenador(sendId) {
-    confirm("Seguro que quieres eliminar al entrenador?")
-    if (confirm) {
-        $.ajax({
-            type: "POST", //POST para enviar los datos al php
-            url: "./php/eliminarEntrenador.php",
-            data: { idToDelete: sendId }, // Enviar la variable como parte de los datos
-            success: window.location = "./entrenadorList.html"
-        });
-    }
+    $.ajax({
+        type: "POST", //POST para enviar los datos al php
+        url: "./php/eliminarEntrenador.php",
+        data: { idToDelete: sendId }, // Enviar la variable como parte de los datos
+        success: window.location = "./entrenadorList.html"
+    });
 }
 
 //Rellena los campos de la ventana modal
@@ -69,7 +66,6 @@ function llenarCampos(id) {
     editInputs[1].childNodes[4].value = document.getElementById('column' + id).childNodes[3].innerHTML
     editInputs[2].childNodes[4].value = document.getElementById('column' + id).childNodes[5].innerHTML
     editInputs[3].childNodes[4].value = document.getElementById('column' + id).childNodes[11].innerHTML
-    console.log(editInputs[3].childNodes[4]);
 }
 
 //Limpia los campos de la ventana modal
