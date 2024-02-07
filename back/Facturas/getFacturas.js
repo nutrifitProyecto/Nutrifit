@@ -50,7 +50,6 @@ function tablaClientes() {
                     <td>${fact.mesesSuscripcion}</td>
                     <td>
                         <button onclick="eliminarFactura(${fact.id})" class="btn btn-danger">Eliminar</button>
-                        <button id="btnEditar" data-bs-toggle="modal" data-bs-target="#editarFacturaModal" class="btn btn-success" onclick="llenarCampos(${fact.id})">Editar</button>
                     </td>
                 </tr>`
     });
@@ -59,16 +58,13 @@ function tablaClientes() {
 }
 
 //Elimina un cliente con respecto al id de este
-function eliminarCliente(sendId) {
-    confirm("Seguro que quieres eliminar al usuario?")
-    if (confirm == true) {
-        $.ajax({
-            type: "POST", //POST para enviar los datos al php
-            url: "./php/eliminarCliente.php",
-            data: { idToDelete: sendId }, // Enviar la variable como parte de los datos
-            success: window.location = "./clientList.html"
-        });
-    }
+function eliminarFactura(sendId) {
+    $.ajax({
+        type: "POST", //POST para enviar los datos al php
+        url: "./php/eliminarFactura.php",
+        data: { idToDelete: sendId }, // Enviar la variable como parte de los datos
+        success: window.location = "./facturasList.html"
+    });
 }
 
 // Rellena las selects con los nombres de los clientes y entrenadores
@@ -121,13 +117,13 @@ function llenarSelects(cliId, entId, route) {
             // Evento cuando se cambia la select
             selectFactCurs.addEventListener('change', () => {
                 let selected = selectFactCurs.value
-                
+
                 // Busca la variable selected en el array de info que tiene los dasos de los cursos
                 // De esta forma cambia el valor de un campo sin tener que consultar de nuevo a la base de datos
                 selectedCurs = info.find(ej => ej.id === selected)
 
                 selectCosteTotal.value = selectedCurs.costeMes * factMeses.value
-                
+
                 // Guarda el coste para multiplicarlo por los meses
                 coste = selectedCurs.costeMes
             })
@@ -148,16 +144,6 @@ factMeses.addEventListener('keyup' && 'blur', () => {
 crearFact.addEventListener('click', () => {
     llenarSelects()
 })
-
-function llenarCampos(id) {
-    let editInputs = document.getElementsByName('showValues')
-
-    //Asigno valores con respecto a los campos de la tabla
-    editInputs[0].childNodes[1].value = document.getElementById('column' + id).childNodes[1].innerHTML
-    editInputs[1].childNodes[4].value = document.getElementById('column' + id).childNodes[3].innerHTML
-    editInputs[2].childNodes[4].value = document.getElementById('column' + id).childNodes[5].innerHTML
-    editInputs[3].childNodes[1].value = document.getElementById('column' + id).childNodes[11].innerHTML
-}
 
 //Limpia los campos de la ventana modal
 function limpiarCampos() {

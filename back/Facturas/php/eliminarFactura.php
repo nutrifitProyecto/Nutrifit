@@ -5,19 +5,19 @@ include "../../inc/dbinfo.inc";
 $connection = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
 
 //Variable recibida desde el js
-$idCliente = $_POST['idToDelete'];
+$idFactura = $_POST['idToDelete'];
 
 //Query para eliminar al cliente
-$query = "DELETE FROM clientes WHERE id = '$idCliente'";
+$query = "DELETE FROM factura WHERE id = '$idFactura'";
 
 $result = $connection->query($query);
 
 if ($result === true) {
-    //Redirección a la página de clientes (recargarla)
-    header('Location: ../clientList.html');
+    //Redirección a la página de facturas (recargarla)
+    header('Location: ../facturasList.html');
     exit();
 } else {
-    echo "alert('Error al eliminar el usuario')";
+    echo "alert('Error al eliminar la factura')";
 }
 
 $connection->close();
