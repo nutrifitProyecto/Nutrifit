@@ -78,9 +78,10 @@
                                         <div class="card2" id="paypage">
                                             <div class="form-card">
                                                 <h2 id="heading2" class="text-orange">Datos de pago</h2>
-                                                <form action="../../back/DatosPago/guardarDatosPago.php">
+                                                <form method="post" action="../../back/DatosPago/guardarDatosPago.php">
                                                     <div name="inputsDatosPago" style="display: none;">
                                                         <input id="idCliente" name="idCliente" type="number">
+                                                        <input id="emailCliente" name="emailCliente" type="email">
                                                     </div>
                                                     <div name="inputsDatosPago">
                                                         <label class="pay">Nombre en tarjeta</label>

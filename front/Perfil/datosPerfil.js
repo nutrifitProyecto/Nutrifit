@@ -52,13 +52,13 @@ mostrarDatosPago.addEventListener('click', () => {
 
 function getDatosPago() {
     document.getElementById('idCliente').value = idCliente
+    document.getElementById('emailCliente').value = email
 
     fetch(`../../back/DatosPago/verDatosPago.php?id=${idCliente}`)
     .then(response => response.json())
     .then((data) => {
         //Parsea la respuesta a JSON
         info = JSON.parse(JSON.stringify(data));
-        console.log(info);
 
         inputsPago[1].childNodes[3].value = info[0].nombreTitular
         inputsPago[2].childNodes[3].value = info[0].num_tarjeta

@@ -9,6 +9,7 @@ $nombreTitular = $_POST['nombreTitular'];
 $numTarjeta = $_POST['numTarjeta'];
 $cvv = $_POST['cvv'];
 $fechaExp = $_POST['fechaExp'];
+$email = $_POST['emailCliente'];
 
 $query = "SELECT * FROM datos_pago WHERE idCliente = '$idCli'";
 
@@ -20,22 +21,24 @@ if ($result->num_rows === 0) {
         $result = $connection->query($query);
 
         if ($result === true) {
-                header('Location: ../clientList.html');
+                header("Location: ../../front/Perfil/perfil.html?email=$email");
                 exit();
         } else {
-                echo "alert('error al crear el usuario')";
+                echo "error al crear tarjeta";
         }
-} else {
+} else if ($result->num_rows > 0) {
         $query = "UPDATE datos_pago SET num_tarjeta = '$numTarjeta', fecha_caducidad = '$fechaExp', cvv = '$cvv', nombreTitular = '$nombreTitular' WHERE idCliente = '$idCli'";
 
         $result = $connection->query($query);
 
         if ($result === true) {
-                header('Location: ../clientList.html');
+                header("Location: ../../front/Perfil/perfil.html?email=$email");
                 exit();
         } else {
-                echo "alert('error al crear el usuario')";
+                echo "error al actualizar datos tarjeta";
         }
+} else {
+        echo "nose que pasa";
 }
 
 
