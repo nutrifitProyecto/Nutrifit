@@ -25,21 +25,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $query = "SELECT * FROM clientes WHERE email='$email'";
     $result = $connection->query($query);
 
-    // Si devuelve solo una línea es que a encontrado al usuario
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         // Guarda la contraseña de la consulta
         $compPasswd = $row['password'];
 
-        // Si las contraseñas coinciden
+
         if (password_verify($passwd, $compPasswd)) {
-            // Obtener el valor específico de la consulta (por ejemplo, un campo llamado 'tipo_usuario')
+            $_SESSION['email'] = $email;
+            $_SESSION['tipo_usuario'] = $tipoUsuario;  // Guardar el tipo de usuario en la sesión
+
             $tipoUsuario = $row['tipo'];
 
-            // Redirigir a diferentes páginas según el valor de 'tipo_usuario'
             if ($tipoUsuario == 0) {
-                $_SESSION['email'] = $email;
-                header('Location: ../../front/index/index.html'); // si inicia sesion siendo cliente que lleve a paneldecontrol.html y si es entrenador que lleve a entrenador.html
+                header('Location: ../../front/index/index.html'); // Cambiado el nombre de la página
                 exit();
             } elseif ($tipoUsuario == 1) {
                 header('Location: ../Clientes/clientList.html');
@@ -48,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     } else {
         $error = "email o contraseña incorrectos.";
-        header('Location: ../../front/login/login.html');
+        header('Location: ../../front/index/loginpage.html');
         exit();
     }
 }
