@@ -792,6 +792,8 @@ section {
     text-align: center;
   }
   
+  /*PASARELA DE PAGO*/
+
   .pasareladepago {
     border-radius: 20px;
     padding: 20px;
@@ -800,24 +802,24 @@ section {
     box-shadow: 0 0 20px #ff6b08;
   }
   
-  form {
+  #formulario-pago{
     display: flex;
     flex-direction: column;
   }
   
-  label {
+  .pasareladepago label {
     margin-bottom: 5px;
     font-weight: bold;
   }
   
-  input {
+  .pasareladepago input {
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
     width: 100%;
   }
   
-  button {
+  .pasareladepago button {
     background-color: #FF6B08;
     color: white;
     padding: 10px 20px;
@@ -827,10 +829,10 @@ section {
     cursor: pointer;
   }
   
-  button:hover {
+  .pasareladepago button:hover {
     background-color: #0069d9;
   }
-  #nombre, #apellido, #correo, #tarjeta, #fecha, #cvv {
+  .pasareladepago #nombre, #apellido, #correo, #tarjeta, #fecha, #cvv {
     width: auto;
   }
 
