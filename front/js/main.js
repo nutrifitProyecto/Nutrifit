@@ -30,20 +30,24 @@ function prepararCabecera() {
   let header = document.getElementsByTagName("header")[0];
   console.log(sesion);
   header.innerHTML = `
-  <a href="./index.html">
+  <a href="../index/index.html">
     <div id="logo-title" style="display: flex">
       <img src="../img/logo1.png" alt="logo" class="img-logo">
       <span id="title">NUTRI<span>FIT</span></span>
     </div>
   </a>
   <nav>
-      <ul style="display: flex">
+      <ul style="display: flex; align-items: center; padding-top: 10px">
           <li><a href="./index.html">Servicios</a></li>
           <li><a href="./index.html">About</a></li>
-          <li class="changeInicio loggedIn"><a href="./registerpage.html">Registrarse</a></li>
-          <li class="changeInicio loggedIn"><a href="./loginpage.html">Iniciar Sesion</a></li>
+          <li class="changeInicio loggedIn"><a href="../index/registerpage.html">Registrarse</a></li>
+          <li class="changeInicio loggedIn"><a href="../index/loginpage.html">Iniciar Sesion</a></li>
           <li class="loggedOut"><a href="../Perfil/perfil.html?email=${sesion.email}">Mi perfil</a></li>
-          <li class="loggedOut">Cerrar sesión</li>
+          <li class="loggedOut">
+            <form action="../../back/src/logOut.php">
+              <button type="submit" class="btn btn-light">Cerar sesión</button>
+            </form>
+          </li>
       </ul>
   </nav>`;
 }
