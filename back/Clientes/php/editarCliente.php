@@ -8,8 +8,9 @@ $id = $_POST['cliEditId'];
 $name = $_POST['cliEditName'];
 $surname = $_POST['cliEditSurname'];
 $tipo = $_POST['cliEditTipo'];
+$fecha = $_POST['cliEditFecha'];
 
-$query = "UPDATE clientes SET name = '$name', surname = '$surname', tipo = $tipo WHERE id = $id";
+$query = "UPDATE clientes SET name = '$name', surname = '$surname', tipo = $tipo, fecha_nacimiento = '$fecha' WHERE id = $id";
 
 $result = $connection->query($query);
 
