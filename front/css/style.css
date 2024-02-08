@@ -403,7 +403,7 @@ main {
         text-align: center;
     }
 
-    #contacto input,
+    #contacto  
     textarea {
         border: 2px solid gray;
         border-radius: 15px;
@@ -787,7 +787,52 @@ main {
 
 font-size: 4.5vh;
 }
-
+section {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .pasareladepago {
+    border-radius: 20px;
+    padding: 20px;
+    width: 500px;
+    margin: 0 auto;
+    box-shadow: 0 0 20px #ff6b08;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+  }
+  
+  button {
+    background-color: #FF6B08;
+    color: white;
+    padding: 10px 20px;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    margin-top: 30px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0069d9;
+  }
+  #nombre, #apellido, #correo, #tarjeta, #fecha, #cvv {
+    width: auto;
+  }
 
 
     /*MEDIA QUERY WEB*/
