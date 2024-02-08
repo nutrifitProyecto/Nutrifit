@@ -2,7 +2,7 @@
 window.addEventListener("load",function(){
   let header=document.getElementsByTagName("header")[0];
   header.innerHTML=`
-  <img src="../img/bars.svg" alt="bars" class="bars-svg" onclick="displayChange()">
+  <a href=".<img src="../img/bars.svg" alt="bars" class="bars-svg" onclick="displayChange()">
   <div id="logo-title">
       <img src="../img/logo1.png" alt="logo" class="img-logo">
       <span id="title">NUTRI<span>FIT</span></span>
