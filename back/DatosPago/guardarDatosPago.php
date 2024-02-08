@@ -1,28 +1,44 @@
 <?php
-include "../../inc/dbinfo.inc";
+include "../inc/dbinfo.inc";
 
 //Conectar con la base de datos
 $connection = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
 
-$name = $_POST['cliName'];
-$surname = $_POST['cliSurname'];
-$email = $_POST['cliEmail'];
-$passwd = $_POST['cliPasswd'];
-$tipo = $_POST['cliTipo'];
-$fecha = $_POST['cliFecha'];
+$idCli = $_POST['idCliente'];
+$nombreTitular = $_POST['nombreTitular'];
+$numTarjeta = $_POST['numTarjeta'];
+$cvv = $_POST['cvv'];
+$fechaExp = $_POST['fechaExp'];
 
-$hashContraseña = password_hash($passwd, PASSWORD_DEFAULT);
-
-$query = "INSERT INTO clientes (name, surname, email, password, tipo, fecha_nacimiento) VALUES ('$name', '$surname', '$email', '$hashContraseña', '$tipo', '$fecha')";
+$query = "SELECT * FROM datos_pago WHERE idCliente = '$idCli'";
 
 $result = $connection->query($query);
 
-if ($result === true) {
-        header('Location: ../clientList.html');
-        exit();
+if ($result->num_rows === 0) {
+        $query = "INSERT INTO datos_pago (idCliente, num_tarjeta, fecha_caducidad, cvv, nombreTitular) VALUES ('$idCli', '$numTarjeta', '$fechaExp', '$cvv', '$nombreTitular')";
+
+        $result = $connection->query($query);
+
+        if ($result === true) {
+                header('Location: ../clientList.html');
+                exit();
+        } else {
+                echo "alert('error al crear el usuario')";
+        }
 } else {
-        $query = "DELETE FROM clientes WHERE email = '$email'";
-        $connection->query($query);
-        echo "alert('error al crear el usuario')";
+        $query = "UPDATE datos_pago SET num_tarjeta = '$numTarjeta', fecha_caducidad = '$fechaExp', cvv = '$cvv', nombreTitular = '$nombreTitular' WHERE idCliente = '$idCli'";
+
+        $result = $connection->query($query);
+
+        if ($result === true) {
+                header('Location: ../clientList.html');
+                exit();
+        } else {
+                echo "alert('error al crear el usuario')";
+        }
 }
+
+
+
+
 $connection->close();
