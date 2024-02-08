@@ -182,11 +182,9 @@ main {
 .entrenamientos p,
 .monitoreo p,
 .enfoque p {
-
     color: #E8E8E8;
     text-align: center;
     font-size: 2.5vh;
-
 }
 
 /*tick*/
@@ -207,11 +205,7 @@ main {
     height: 40px;
     color: #f2f4f7;
     background-color: #262424;
-
 }
-
-
-
 
 .teaser-bg {
     position: relative;
@@ -347,7 +341,6 @@ main {
     margin-block: 15px;
 }
 
-
 .accordion {
     background-color: #eee;
     color: #444;
@@ -430,7 +423,6 @@ footer li img {
     height: 50px;
 }
 
-
 /*CAJAS PANEL */
 .titulopanel h2 {
     color: #FF6B08;
@@ -448,7 +440,6 @@ footer li img {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
-
     width: 50%;
     justify-content: center;
     align-items: baseline;
@@ -462,7 +453,6 @@ footer li img {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
     text-align: center;
-
 }
 
 .cajap h1 {
@@ -477,7 +467,6 @@ footer li img {
 }
 
 .entrenadores h2 {
-
     margin-top: 20%;
 }
 
@@ -488,7 +477,6 @@ footer li img {
     margin: 10px;
     border-radius: 20px solid;
     gap: 10px;
-
 }
 
 .cajascontratoabajo {
@@ -534,9 +522,7 @@ footer li img {
     margin: 10px 0;
 }
 
-
 .cajascontratoabajo p {
-
     color: #FF6B08;
     font-size: 4vh;
 }
@@ -546,7 +532,6 @@ footer li img {
     margin: 10px
 }
 
-
 /*ENTRENADOR*/
 
 .perfilh2 {
@@ -554,24 +539,18 @@ footer li img {
 }
 
 .perfil img {
-
-
     width: 150px;
     height: 160px;
     border-radius: 600px;
     align-content: center;
 }
 
-
 .perfil {
     text-align: center;
-
 }
 
 .perfilinfo {
-
     color: white;
-
 }
 
 .botoncv {
@@ -586,10 +565,7 @@ footer li img {
     height: 40px;
 }
 
-
-
 /*CLIENTES-entrenador*/
-
 
 .clientescurso {
     text-align: center;
@@ -620,9 +596,6 @@ footer li img {
     padding: 10px
 }
 
-
-
-
 .nombre p {
     font-size: 14px;
     font-weight: bold;
@@ -636,14 +609,12 @@ footer li img {
     margin: 0;
 }
 
-
 /* Cursos*/
 
 .cursos img {
     width: 420px;
     height: 200px;
     border-radius: 20px;
-
 }
 
 .cursoinfo {
@@ -652,7 +623,6 @@ footer li img {
     font-size: 2vh;
     display: flex;
     justify-content: center;
-
 }
 
 .nombrecurso {
@@ -661,9 +631,7 @@ footer li img {
     color: white;
 }
 
-
 /*BILLETERA*/
-
 
 .BILLETERACAJAS {
     display: flex;
@@ -684,8 +652,6 @@ footer li img {
     font-size: 2.2vh;
     border-radius: 20px;
     box-shadow: 0 0 20px rgb(255, 255, 255);
-
-
 }
 
 .billetera li {
@@ -705,7 +671,6 @@ footer li img {
     font-size: 4vh;
     font-weight: bold;
     justify-content: center;
-
 }
 
 .billetera button {
@@ -717,11 +682,7 @@ footer li img {
     justify-content: center;
     font-weight: bold;
     border-color: white;
-
-
 }
-
-
 
 .billetera2 {
     text-align: center;
@@ -739,7 +700,6 @@ footer li img {
 .billetera2 h2 {
     color: white;
     font-size: 2.5vh;
-
 }
 
 .billetera1 {
@@ -753,8 +713,6 @@ footer li img {
     font-size: 2.2vh;
     border-radius: 20px;
     box-shadow: 0 0 20px rgb(255, 255, 255);
-
-
 }
 
 .billetera1 h2 {
@@ -854,15 +812,14 @@ section {
  * ESTILOS PERFIL --------------------------------------------------------- *
 */
 
-.btn-light {
-    font-weight: bold;
-    background-color: #ff6b08;
-    color: #000000;
-    border: #ff6b08;
-}
-
-.col-form-label {
-    color: #dbd9d9;
+.bg-profile {
+    background-color: #2c2c2c;
+    border-radius: 30px;
+    text-align: center;
+    border: 4px #ff6b08 solid ;
+    border-radius: 15px;
+    padding-bottom: 8px;
+    box-shadow: 0 0 20px #ff6b08;
 }
 
 
@@ -886,6 +843,31 @@ section {
 
     header {
         justify-content: space-between;
+    }
+
+    /* 
+    * ESTILOS PERFIL --------------------------------------------------------- *
+    */
+
+    .btn-light {
+        font-weight: bold;
+        background-color: #ff6b08;
+        color: #000000;
+        border: #ff6b08;
+    }
+
+    .col-form-label {
+        color: #dbd9d9;
+    }
+
+    .bg-profile {
+        background-color: #2c2c2c;
+        border-radius: 30px;
+        text-align: center;
+        border: 4px #ff6b08 solid ;
+        border-radius: 15px;
+        padding-bottom: 8px;
+        box-shadow: 0 0 20px #ff6b08;
     }
 }
 
