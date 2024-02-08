@@ -9,10 +9,11 @@ $surname = $_POST['cliSurname'];
 $email = $_POST['cliEmail'];
 $passwd = $_POST['cliPasswd'];
 $tipo = $_POST['cliTipo'];
+$fecha = $_POST['cliFecha'];
 
 $hashContraseña = password_hash($passwd, PASSWORD_DEFAULT);
 
-$query = "INSERT INTO clientes (name, surname, email, password, tipo) VALUES ('$name', '$surname', '$email', '$hashContraseña', '$tipo')";
+$query = "INSERT INTO clientes (name, surname, email, password, tipo, fecha_nacimiento) VALUES ('$name', '$surname', '$email', '$hashContraseña', '$tipo', '$fecha')";
 
 $result = $connection->query($query);
 

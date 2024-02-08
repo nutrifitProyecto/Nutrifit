@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $hashContraseña = password_hash($passwd, PASSWORD_DEFAULT);
 
-    $query = "INSERT INTO clientes (name, surname, email, password, tipo, weight, height, fnacimiento) VALUES ('$name', '$surname', '$email', '$hashContraseña', 0, '$weight', '$height', '$fnacimiento')";
+    $query = "INSERT INTO clientes (name, surname, email, password, tipo, weight, height, fecha_nacimiento) VALUES ('$name', '$surname', '$email', '$hashContraseña', 0, '$weight', '$height', '$fnacimiento')";
 
     $result = $connection->query($query);
 
