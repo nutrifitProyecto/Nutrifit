@@ -9,11 +9,13 @@ window.addEventListener("load", function () {
     </div>
   </a>
   <nav>
-      <ul>
+      <ul style="display: flex">
           <li><a href="./index.html">Servicios</a></li>
           <li><a href="./index.html">About</a></li>
-          <li><a href="./registerpage.html">Registrarse</a></li>
-          <li><a href="./loginpage.html">Iniciar Sesion</a></li>
+          <li class="loggedIn"><a href="./registerpage.html">Registrarse</a></li>
+          <li class="loggedIn"><a href="./loginpage.html">Iniciar Sesion</a></li>
+          <li class="loggedOut"><a href="#">Mi perfil</a></li>
+          <li class="loggedOut">Cerrar sesión</li>
       </ul>
   </nav>`;
 });
