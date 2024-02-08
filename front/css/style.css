@@ -12,14 +12,6 @@ h6 {
     font-weight: bold;
 }
 
-.loggedOut {
-    display: none;
-}
-
-.loggedIn {
-    display: block;
-}
-
 body {
     background-color: #191919;
     font-family: "Bebas Neue", sans-serif;

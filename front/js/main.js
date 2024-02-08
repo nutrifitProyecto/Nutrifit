@@ -1,6 +1,34 @@
-//header
-window.addEventListener("load", function () {
+let sesion = []
+
+// Recoge los datos de la sesión
+function datosSesion() {
+  // Realizar una solicitud al servidor para verificar el estado de la sesión
+  $.ajax({
+    url: '../../back/Session/getSession.php',
+    type: 'GET',
+    dataType: 'json',
+    success: function (data) {
+      sesion = data
+      if (sesion.autenticado) {
+        console.log('Usuario autenticado:', sesion.autenticado + "\n" + sesion.email);
+        // Creación de cabecera
+        prepararCabecera()
+      } else {
+        console.log('Usuario no autenticado');
+        // Creación de cabecera
+        prepararCabecera()
+      }
+    },
+    error: function (error) {
+      console.error('Error en la solicitud AJAX:', error);
+    }
+  })
+}
+
+// Prepara la cabecera y la muestra
+function prepararCabecera() {
   let header = document.getElementsByTagName("header")[0];
+  console.log(sesion);
   header.innerHTML = `
   <a href="./index.html">
     <div id="logo-title" style="display: flex">
@@ -12,12 +40,18 @@ window.addEventListener("load", function () {
       <ul style="display: flex">
           <li><a href="./index.html">Servicios</a></li>
           <li><a href="./index.html">About</a></li>
-          <li class="loggedIn"><a href="./registerpage.html">Registrarse</a></li>
-          <li class="loggedIn"><a href="./loginpage.html">Iniciar Sesion</a></li>
-          <li class="loggedOut"><a href="#">Mi perfil</a></li>
+          <li class="changeInicio loggedIn"><a href="./registerpage.html">Registrarse</a></li>
+          <li class="changeInicio loggedIn"><a href="./loginpage.html">Iniciar Sesion</a></li>
+          <li class="loggedOut"><a href="../Perfil/perfil.html?email=${sesion.email}">Mi perfil</a></li>
           <li class="loggedOut">Cerrar sesión</li>
       </ul>
   </nav>`;
+}
+
+//header
+window.addEventListener("load", function () {
+  // Recoge los datos de la sesión
+  datosSesion()
 });
 
 //Boton de menu en movil
@@ -30,7 +64,6 @@ function displayChange() {
   }
 }
 
-/** */
 //acordeon preguntas frecuentes
 var acc = document.getElementsByClassName("accordion");
 var i;
