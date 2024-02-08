@@ -157,16 +157,13 @@ main {
     height: 40px;
     color: #f2f4f7;
     background-color: #FF6B08;
+    text-align: center;
 }
 
 .informacionPD img {
     max-width: 350PX;
     height: auto;
     /* Hace que la altura se ajuste automáticamente según el ancho */
-}
-
-.informacionPD button {
-    text-align: center;
 }
 
 .entrenamientos,

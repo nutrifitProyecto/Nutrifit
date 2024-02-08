@@ -1,0 +1,61 @@
+/*Card containing 2 cards*/
+.card0 {
+    margin: 40px 12px 15px 12px;
+    border: 0;
+    background-color: transparent;
+}
+
+.container-fluid {
+    width: 80%; 
+}
+
+/*Right Side Card*/
+.card2 {
+    padding: 25px;
+    margin: 0;
+    height: 100%;
+    background-color: #191919;
+    border-radius: 30px;
+}
+
+.form-card .pay {
+    font-weight: bold;
+}
+
+.form-card input,
+.form-card textarea {
+    padding: 10px 8px 10px 8px;
+    border: none;
+    border: 1px solid lightgrey;
+    border-radius: 0px;
+    margin-bottom: 25px;
+    margin-top: 2px;
+    width: 100%;
+    box-sizing: border-box;
+    color: #2C3E50;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.form-card input:focus,
+.form-card textarea:focus {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: none;
+    font-weight: bold;
+    border: 1px solid gray;
+    outline-width: 0;
+}
+
+.btn-info {
+    color: #ffffff;
+}
+
+.text-orange {
+    color: #ff6b08;
+}
+
+.pay {
+    color: #ffffff;
+}
