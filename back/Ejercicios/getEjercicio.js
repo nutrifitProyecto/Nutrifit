@@ -39,7 +39,7 @@ function tablaEjercicios() {
                 </tr>`
     });
     cad += `</table>
-            <button data-bs-toggle="modal" data-bs-target="#crearEjercicoModal" class="btn btn-primary">Crear ejercicio</button>`
+            `
     table.innerHTML = cad
 }
 
