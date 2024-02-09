@@ -12,7 +12,7 @@ function datosSesion() {
     success: function (data) {
       sesion = data
       if (sesion.autenticado) {
-        console.log('Usuario autenticado:', sesion.autenticado + "\n" + sesion.email);
+        console.log('Usuario autenticado:', sesion.autenticado + "\n" + sesion.email + "\n" + sesion.tipo);
         // Creación de cabecera
         prepararCabecera()
         loggedIn[0].style.display = 'none'
@@ -62,31 +62,7 @@ function prepararCabecera() {
 window.addEventListener("load", function () {
   // Recoge los datos de la sesión
   datosSesion()
-});
-
-let logType = document.getElementById('logType')
-
-logType.addEventListener('click', () => {
-  let form = document.getElementById('formLogIn')
-  let attr = form.getAttribute('logTo')
-
-  if (attr == 'cliente') {
-    form.setAttribute('logTo', 'entrenador')
-    logType.innerHTML = 'Soy entrenador'
-    document.getElementById('formLogIn').action = "../../back/src/loginEntrenador.php"
-    console.log(document.getElementById('formLogIn'));
-  } else {
-    form.setAttribute('logTo', 'cliente')
-    logType.innerHTML = 'Soy cliente'
-    document.getElementById('formLogIn').action = "../../back/src/loginClient.php"
-    console.log(document.getElementById('formLogIn'));
-  }
 })
-
-
-
-
-
 
 //Boton de menu en movil
 function displayChange() {

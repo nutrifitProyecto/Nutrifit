@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     // Creamos una consulta
-    $query = "SELECT * FROM clientes WHERE email='$email'";
+    $query = "SELECT * FROM entrenadores WHERE email='$email'";
     $result = $connection->query($query);
 
     if ($result->num_rows > 0) {
@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         if (password_verify($passwd, $compPasswd)) {
             $_SESSION['email'] = $email;
-            $_SESSION['tipo'] = 1;  // Guardar el tipo de usuario en la sesión
+            $_SESSION['tipo'] = 2;  // Guardar el tipo de usuario en la sesión
 
             $tipoUsuario = $row['tipo'];
 
@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     } else {
         $error = "email o contraseña incorrectos.";
-        header('Location: ../../front/index/loginpage.html');
+        //header('Location: ../../front/index/loginpage.html');
         exit();
     }
 }

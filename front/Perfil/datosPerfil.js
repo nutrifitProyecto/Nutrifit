@@ -10,9 +10,95 @@ let datosPago = document.getElementById('datosPago')
 let inputsPago = document.getElementsByName('inputsDatosPago')
 
 let mostrar = mostrarDatosPago.getAttribute('mostrar')
+let sesion
 
+function datosSesion() {
+    // Realizar una solicitud al servidor para verificar el estado de la sesión
+    $.ajax({
+        url: '../../back/Session/getSession.php',
+        type: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            sesion = data
+            if (sesion.tipo == 1) {
 
-fetch(`../../back/Clientes/php/verCliente.php?email=${email}`)
+            } else {
+
+            }
+        },
+        error: function (error) {
+            console.error('Error en la solicitud AJAX:', error);
+        }
+    })
+}
+
+window.addEventListener("load", function () {
+    // Recoge los datos de la sesión
+    datosSesion()
+})
+
+function datosCliente() {
+    fetch(`../../back/Clientes/php/verCliente.php?email=${email}`)
+        .then(response => response.json())
+        .then((data) => {
+            //Parsea la respuesta a JSON
+            info = JSON.parse(JSON.stringify(data));
+            idCliente = info[0].id
+
+            inputs[0].value = info[0].name
+            inputs[1].value = info[0].surname
+            inputs[2].value = info[0].email
+            inputs[3].value = info[0].fecha_nacimiento
+            inputs[4].value = info[0].weight
+            inputs[5].value = info[0].height
+        })
+        .catch(error => {
+            console.log(error);
+        });
+
+    // Quita el diabled del input para editar los datos del usuario 
+    btonEditarDatos.addEventListener('click', () => {
+        inputs[2].disabled = false
+    })
+
+    mostrarDatosPago.addEventListener('click', () => {
+        console.log(idCliente);
+        // Muestra datos de pago
+        if (mostrarDatosPago.getAttribute(mostrar) == "true") {
+            datosPago.style.display = 'none'
+            mostrarDatosPago.innerHTML = "Mostrar datos de pago"
+            mostrarDatosPago.setAttribute(mostrar, "false")
+        } else { // Oculta datos de pago
+            getDatosPago()
+            datosPago.style.display = 'block'
+            mostrarDatosPago.innerHTML = "Ocultar datos de pago"
+            mostrarDatosPago.setAttribute(mostrar, "true")
+        }
+    })
+
+    function getDatosPago() {
+        document.getElementById('idCliente').value = idCliente
+        document.getElementById('emailCliente').value = email
+
+        fetch(`../../back/DatosPago/verDatosPago.php?id=${idCliente}`)
+            .then(response => response.json())
+            .then((data) => {
+                //Parsea la respuesta a JSON
+                info = JSON.parse(JSON.stringify(data));
+
+                inputsPago[1].childNodes[3].value = info[0].nombreTitular
+                inputsPago[2].childNodes[3].value = info[0].num_tarjeta
+                inputsPago[3].childNodes[3].value = info[0].cvv
+                inputsPago[4].childNodes[1].value = info[0].fecha_caducidad
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    }
+}
+
+function datosEntrenador() {
+    fetch(`../../back/Clientes/php/verCliente.php?email=${email}`)
     .then(response => response.json())
     .then((data) => {
         //Parsea la respuesta a JSON
@@ -30,42 +116,4 @@ fetch(`../../back/Clientes/php/verCliente.php?email=${email}`)
         console.log(error);
     });
 
-// Quita el diabled del input para editar los datos del usuario 
-btonEditarDatos.addEventListener('click', () => {
-    inputs[2].disabled = false
-})
-
-mostrarDatosPago.addEventListener('click', () => {
-    console.log(idCliente);
-    // Muestra datos de pago
-    if (mostrarDatosPago.getAttribute(mostrar) == "true") {
-        datosPago.style.display = 'none'
-        mostrarDatosPago.innerHTML = "Mostrar datos de pago"
-        mostrarDatosPago.setAttribute(mostrar, "false")
-    } else { // Oculta datos de pago
-        getDatosPago()
-        datosPago.style.display = 'block'
-        mostrarDatosPago.innerHTML = "Ocultar datos de pago"
-        mostrarDatosPago.setAttribute(mostrar, "true")
-    }
-})
-
-function getDatosPago() {
-    document.getElementById('idCliente').value = idCliente
-    document.getElementById('emailCliente').value = email
-
-    fetch(`../../back/DatosPago/verDatosPago.php?id=${idCliente}`)
-    .then(response => response.json())
-    .then((data) => {
-        //Parsea la respuesta a JSON
-        info = JSON.parse(JSON.stringify(data));
-
-        inputsPago[1].childNodes[3].value = info[0].nombreTitular
-        inputsPago[2].childNodes[3].value = info[0].num_tarjeta
-        inputsPago[3].childNodes[3].value = info[0].cvv
-        inputsPago[4].childNodes[1].value = info[0].fecha_caducidad
-    })
-    .catch(error => {
-        console.log(error);
-    });
 }
