@@ -15,7 +15,7 @@ h6 {
 body {
     background-color: #191919;
     font-family: "Bebas Neue", sans-serif;
-font-weight: bold;
+    font-weight: bold;
 }
 
 a {
@@ -157,16 +157,13 @@ main {
     height: 40px;
     color: #f2f4f7;
     background-color: #FF6B08;
+    text-align: center;
 }
 
 .informacionPD img {
     max-width: 350PX;
     height: auto;
     /* Hace que la altura se ajuste automáticamente según el ancho */
-}
-
-.informacionPD button {
-    text-align: center;
 }
 
 .entrenamientos,
@@ -182,411 +179,390 @@ main {
 .entrenamientos p,
 .monitoreo p,
 .enfoque p {
-
     color: #E8E8E8;
     text-align: center;
     font-size: 2.5vh;
-
 }
 
 /*tick*/
- #tick-icon{
+#tick-icon {
     width: 12px;
     height: 12px;
     margin: 5px;
- }
-
-    .entrenamientos button,
-    .monitoreo button,
-    .enfoque button {
-        align-items: center;
-        text-align: center;
-        border: white;
-        border-radius: 10%;
-        width: 10%;
-        height: 40px;
-        color: #f2f4f7;
-        background-color: #262424;
-
-    }
-
-
-
-
-    .teaser-bg {
-        position: relative;
-        display: inline-block;
-    }
-
-    .titulo {
-        position: absolute;
-        top: 40%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: #E8E8E8;
-        font-size: 4vh;
-    }
-
-    .caja{
-        width: 300px;
-        height: 200px;
-        background-color: #f1f1f1;
-        border: 1px solid #ddd;
-        border-radius: 20px;
-        margin: 10px;
-        padding: 10px;
-        display: flex;
-        flex-direction: column-reverse;
-        justify-content: center;
-    }
-
-    .cajas {
-        text-align: center;
-        justify-content: center;
-        display: flex;
-
-    }
-
-    .entrenamientos button,
-    .monitoreo button,
-    .enfoque button {
-        align-items: center;
-        text-align: center;
-        border: white;
-        border-radius: 10%;
-        width: 10%;
-        height: 40px;
-        color: #f2f4f7;
-        background-color: #262424;
-
-    }
-
-    /*IMAGEN DE FONDO INDEX*/
-
-    .teaser-bg {
-        position: relative;
-        display: inline-block;
-    }
-
-    .titulo {
-        position: absolute;
-        top: 40%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: #E8E8E8;
-        font-size: 4vh;
-    }
-
-    /*OPINIONES*/
-
-    .cajas {
-        text-align: center;
-        justify-content: center;
-        display: flex;
-    }
-
-    .cajas h1 {
-        display: flex;
-    }
-
-    .cajas img {
-        width: 10%;
-        height: 15%;
-        border-radius: 50%;
-    }
-
-    .informacioncaja {
-        width: 100%;
-        height: 100%;
-    }
-
-    .opinion {
-        line-height: 1.5;
-
-    }
-
-    .nombre {
-        font-size: 14px;
-        font-weight: bold;
-        margin: 5px 0;
-    }
-
-    .email {
-        font-size: 14px;
-        color: #0084b4;
-        margin: 0;
-    }
-
-    .informacioncaja {
-        width: 100%;
-        height: 100%;
-    }
-
-    .opinion {
-        line-height: 1.5;
-
-    }
-
-    .nombre {
-        font-size: 14px;
-        font-weight: bold;
-        margin: 5px 0;
-    }
-
-    .email {
-        font-size: 14px;
-        color: #0084b4;
-        margin: 0;
-    }
-
-    /*ACORDEON DE PREGUNTAS FRECUENTES*/
-    #faqs {
-        position: relative;
-        left: 10%;
-        width: 80%;
-        margin-block: 15px;
-    }
-
-
-    .accordion {
-        background-color: #eee;
-        color: #444;
-        cursor: pointer;
-        padding: 18px;
-        width: 100%;
-        text-align: left;
-        border: none;
-        outline: none;
-        transition: 0.4s;
-    }
-
-    div#faqs :nth-child(2) {
-        border-radius: 10px 10px 0 0;
-    }
-
-    .active,
-    .accordion:hover {
-        background-color: #ccc;
-    }
-
-    .panel {
-        padding: 0 18px;
-        background-color: white;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.2s ease-out;
-    }
-
-    .accordion:after {
-        content: '\02795';
-        /* Unicode character for "plus" sign (+) */
-        font-size: 13px;
-        color: #777;
-        float: right;
-        margin-left: 5px;
-    }
-
-    .active:after {
-        content: "\2796";
-        /* Unicode character for "minus" sign (-) */
-    }
-
-    /*CONTACTO*/
-    #contacto {
-        width: 80%;
-        position: relative;
-        left: 10%;
-        margin-bottom: 25px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    #contacto  
-    textarea {
-        border: 2px solid gray;
-        border-radius: 15px;
-    }
-
-
-    /*FOOTER*/
-
-    footer {
-        bottom: 0;
-        padding-block: 15px;
-    }
-
-    footer ul {
-        display: flex;
-        justify-content: center;
-    }
-
-    footer li {
-        margin-inline: 10px;
-    }
-
-    footer li img {
-        width: 50px;
-        height: 50px;
-    }
-
-
-    /*CAJAS PANEL */
-    .titulopanel h2 {
-        color: #FF6B08;
-    }
-
-    .container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        width: 100%;
-    }
-
-    .cajaspanel {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-
-        width: 50%;
-        justify-content: center;
-        align-items: baseline;
-        margin-top: 10%;
-    }
-
-    .cajap {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        padding: 20px;
-        text-align: center;
-
-    }
-
-    .cajap h1 {
-        margin-bottom: 20px;
-        color: #E8E8E8;
-    }
-
-    .cajap img {
-        width: 250px;
-        height: 250px;
-        border-radius: 10px;
-    }
-    .entrenadores h2{
-
-        margin-top: 20%;
-    }
-
-    /*CAJAS CONTRATOS*/
-    .cajascontratoarriba {
-        display: flex;
-        justify-content: center;
-        margin: 10px;
-        border-radius: 20px solid;
-        gap: 10px;
-       
-    }
-
-    .cajascontratoabajo {
-        display: flex;
-        justify-content: center;
-        margin: 10px;
-        padding: 0%;
-        gap: 10px;
-    }
-
-    .cajascontratoarriba button,
-    .cajascontratoabajo button {
-        margin-bottom: 15px;
-        border: white;
-        border-radius: 10%;
-        width: 40%;
-        height: 40px;
-        color: #f2f4f7;
-        background-color: #FF6B08;
-    }
-
-    .cajac {
-        width: 200px;
-        background-color: #f0f0f0;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(204, 3, 3, 0.1);
-    }
-
-    .informacioncajac {
-        text-align: center;
-    }
-
-    .informacioncajac img {
-        width: 100%;
-    }
-
-    .opinionc {
-        margin-top: 10px;
-    }
-
-    .nombrec {
-        font-weight: bold;
-        margin: 10px 0;
-    }
-
-
-    .cajascontratoabajo p {
-
-        color: #FF6B08;
-        font-size: 4vh;
-    }
-    .cajascontratoabajo li{
-        text-align: left;
-        margin: 10px
-    }
-
+}
+
+.entrenamientos button,
+.monitoreo button,
+.enfoque button {
+    align-items: center;
+    text-align: center;
+    border: white;
+    border-radius: 10%;
+    width: 10%;
+    height: 40px;
+    color: #f2f4f7;
+    background-color: #262424;
+}
+
+.teaser-bg {
+    position: relative;
+    display: inline-block;
+}
+
+.titulo {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #E8E8E8;
+    font-size: 4vh;
+}
+
+.caja {
+    width: 300px;
+    height: 200px;
+    background-color: #f1f1f1;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+}
+
+.cajas {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+
+}
+
+.entrenamientos button,
+.monitoreo button,
+.enfoque button {
+    align-items: center;
+    text-align: center;
+    border: white;
+    border-radius: 10%;
+    width: 10%;
+    height: 40px;
+    color: #f2f4f7;
+    background-color: #262424;
+
+}
+
+/*IMAGEN DE FONDO INDEX*/
+
+.teaser-bg {
+    position: relative;
+    display: inline-block;
+}
+
+.titulo {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #E8E8E8;
+    font-size: 4vh;
+}
+
+/*OPINIONES*/
+
+.cajas {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+}
+
+.cajas h1 {
+    display: flex;
+}
+
+.cajas img {
+    width: 10%;
+    height: 15%;
+    border-radius: 50%;
+}
+
+.informacioncaja {
+    width: 100%;
+    height: 100%;
+}
+
+.opinion {
+    line-height: 1.5;
+
+}
+
+.nombre {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.email {
+    font-size: 14px;
+    color: #0084b4;
+    margin: 0;
+}
+
+.informacioncaja {
+    width: 100%;
+    height: 100%;
+}
+
+.opinion {
+    line-height: 1.5;
+
+}
+
+.nombre {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.email {
+    font-size: 14px;
+    color: #0084b4;
+    margin: 0;
+}
+
+/*ACORDEON DE PREGUNTAS FRECUENTES*/
+#faqs {
+    position: relative;
+    left: 10%;
+    width: 80%;
+    margin-block: 15px;
+}
+
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+
+div#faqs :nth-child(2) {
+    border-radius: 10px 10px 0 0;
+}
+
+.active,
+.accordion:hover {
+    background-color: #ccc;
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.accordion:after {
+    content: '\02795';
+    /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2796";
+    /* Unicode character for "minus" sign (-) */
+}
+
+/*CONTACTO*/
+#contacto {
+    width: 80%;
+    position: relative;
+    left: 10%;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#contacto textarea {
+    border: 2px solid gray;
+    border-radius: 15px;
+}
+
+
+/*FOOTER*/
+
+footer {
+    bottom: 0;
+    padding-block: 15px;
+}
+
+footer ul {
+    display: flex;
+    justify-content: center;
+}
+
+footer li {
+    margin-inline: 10px;
+}
+
+footer li img {
+    width: 50px;
+    height: 50px;
+}
+
+/*CAJAS PANEL */
+.titulopanel h2 {
+    color: #FF6B08;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.cajaspanel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: 50%;
+    justify-content: center;
+    align-items: baseline;
+    margin-top: 10%;
+}
+
+.cajap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+.cajap h1 {
+    margin-bottom: 20px;
+    color: #E8E8E8;
+}
+
+.cajap img {
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+}
+
+.entrenadores h2 {
+    margin-top: 20%;
+}
+
+/*CAJAS CONTRATOS*/
+.cajascontratoarriba {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    border-radius: 20px solid;
+    gap: 10px;
+}
+
+.cajascontratoabajo {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    padding: 0%;
+    gap: 10px;
+}
+
+.cajascontratoarriba button,
+.cajascontratoabajo button {
+    margin-bottom: 15px;
+    border: white;
+    border-radius: 10%;
+    width: 40%;
+    height: 40px;
+    color: #f2f4f7;
+    background-color: #FF6B08;
+}
+
+.cajac {
+    width: 200px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(204, 3, 3, 0.1);
+}
+
+.informacioncajac {
+    text-align: center;
+}
+
+.informacioncajac img {
+    width: 100%;
+}
+
+.opinionc {
+    margin-top: 10px;
+}
+
+.nombrec {
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.cajascontratoabajo p {
+    color: #FF6B08;
+    font-size: 4vh;
+}
+
+.cajascontratoabajo li {
+    text-align: left;
+    margin: 10px
+}
 
 /*ENTRENADOR*/
 
-.perfilh2  {
+.perfilh2 {
     margin-top: 0;
 }
-.perfil img{
 
-
-   width: 150px; 
-   height: 160px;
-   border-radius: 600px;
-   align-content: center;
+.perfil img {
+    width: 150px;
+    height: 160px;
+    border-radius: 600px;
+    align-content: center;
 }
 
-
-.perfil{
+.perfil {
     text-align: center;
-
 }
 
-.perfilinfo{
-
-    color:white;
-
+.perfilinfo {
+    color: white;
 }
 
-.botoncv{
+.botoncv {
     background-color: #191919;
     width: 2px;
     height: 2px;
 }
-.experiencia img{
+
+.experiencia img {
     background-color: #191919;
     width: 40px;
     height: 40px;
 }
 
-
-
 /*CLIENTES-entrenador*/
-
 
 .clientescurso {
     text-align: center;
@@ -613,12 +589,9 @@ main {
     text-align: center;
     display: flex;
     flex-direction: column;
-    align-items: center; 
+    align-items: center;
     padding: 10px
 }
-
-
-
 
 .nombre p {
     font-size: 14px;
@@ -633,44 +606,39 @@ main {
     margin: 0;
 }
 
-
 /* Cursos*/
 
-.cursos img{
+.cursos img {
     width: 420px;
     height: 200px;
-    border-radius:20px;
-
+    border-radius: 20px;
 }
 
-.cursoinfo{
+.cursoinfo {
     color: #878585;
     text-align: justify;
     font-size: 2vh;
     display: flex;
     justify-content: center;
-
 }
 
-.nombrecurso{
+.nombrecurso {
     font-size: 3vh;
     font-weight: bold;
     color: white;
 }
 
-
 /*BILLETERA*/
 
-
-.BILLETERACAJAS{
+.BILLETERACAJAS {
     display: flex;
     gap: 100px;
     align-items: center;
     justify-content: center;
-    
+
 }
 
-.billetera{
+.billetera {
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -681,30 +649,28 @@ main {
     font-size: 2.2vh;
     border-radius: 20px;
     box-shadow: 0 0 20px rgb(255, 255, 255);
-
-   
 }
-.billetera li{
+
+.billetera li {
     padding: 5px;
     display: flex;
 }
 
-.billetera .Metodopago{
+.billetera .Metodopago {
     color: gray;
     justify-content: center;
     padding: 20px;
     display: flex;
 }
 
-.numerotarjeta{
+.numerotarjeta {
     color: #FF6B08;
     font-size: 4vh;
     font-weight: bold;
     justify-content: center;
-
 }
 
-.billetera button{
+.billetera button {
     width: 135px;
     height: 40px;
     border-radius: 10px;
@@ -713,13 +679,9 @@ main {
     justify-content: center;
     font-weight: bold;
     border-color: white;
-
-
 }
 
-
-
-.billetera2{
+.billetera2 {
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -732,24 +694,22 @@ main {
     box-shadow: 0 0 20px #ff6b08;
 }
 
-.billetera2 h2{
+.billetera2 h2 {
     color: white;
     font-size: 2.5vh;
-
 }
 
 .billetera1 {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centra el contenido horizontalmente */
+    align-items: center;
+    /* Centra el contenido horizontalmente */
     background-color: white;
     width: 270px;
     height: 250px;
     font-size: 2.2vh;
     border-radius: 20px;
     box-shadow: 0 0 20px rgb(255, 255, 255);
-
-
 }
 
 .billetera1 h2 {
@@ -765,8 +725,10 @@ main {
     padding: 0;
     margin: 0;
     display: flex;
-    flex-direction: column; /* Organiza los elementos de la lista verticalmente */
-    align-items: center; /* Centra el contenido horizontalmente */
+    flex-direction: column;
+    /* Organiza los elementos de la lista verticalmente */
+    align-items: center;
+    /* Centra el contenido horizontalmente */
     display: grid;
     grid-template-columns: auto auto;
     grid-gap: 10px;
@@ -783,43 +745,44 @@ main {
     font-size: 2vh;
 }
 
-.billetera2 .Preciototal{
+.billetera2 .Preciototal {
 
-font-size: 4.5vh;
+    font-size: 4.5vh;
 }
+
 section {
     padding: 20px;
     text-align: center;
-  }
-  
-  /*PASARELA DE PAGO*/
+}
 
-  .pasareladepago {
+/*PASARELA DE PAGO*/
+
+.pasareladepago {
     border-radius: 20px;
     padding: 20px;
     width: 500px;
     margin: 0 auto;
     box-shadow: 0 0 20px #ff6b08;
-  }
-  
-  #formulario-pago{
+}
+
+#formulario-pago {
     display: flex;
     flex-direction: column;
-  }
-  
-  .pasareladepago label {
+}
+
+.pasareladepago label {
     margin-bottom: 5px;
     font-weight: bold;
-  }
-  
-  .pasareladepago input {
+}
+
+.pasareladepago input {
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
     width: 100%;
-  }
-  
-  .pasareladepago button {
+}
+
+.pasareladepago button {
     background-color: #FF6B08;
     color: white;
     padding: 10px 20px;
@@ -827,44 +790,89 @@ section {
     border-radius: 5px;
     margin-top: 30px;
     cursor: pointer;
-  }
-  
-  .pasareladepago button:hover {
+}
+
+.pasareladepago button:hover {
     background-color: #0069d9;
-  }
-  .pasareladepago #nombre, #apellido, #correo, #tarjeta, #fecha, #cvv {
+}
+
+.pasareladepago #nombre,
+#apellido,
+#correo,
+#tarjeta,
+#fecha,
+#cvv {
     width: auto;
-  }
+}
+
+/* 
+ * ESTILOS PERFIL --------------------------------------------------------- *
+*/
+
+.bg-profile {
+    background-color: #2c2c2c;
+    border-radius: 30px;
+    text-align: center;
+    border: 4px #ff6b08 solid ;
+    border-radius: 15px;
+    padding-bottom: 8px;
+    box-shadow: 0 0 20px #ff6b08;
+}
 
 
-    /*MEDIA QUERY WEB*/
+/*MEDIA QUERY WEB*/
 
-    @media only screen and (min-width: 620px) {
-        nav {
-            display: block;
-            grid-row: 1;
-            grid-column: 2;
-        }
-
-        nav li {
-            display: inline;
-        }
-
-        .bars-svg {
-            display: none;
-        }
-
-
-        header {
-            justify-content: space-between;
-        }
+@media only screen and (min-width: 620px) {
+    nav {
+        display: block;
+        grid-row: 1;
+        grid-column: 2;
     }
 
-    /*MEDIA QUERY MOVIL*/
-
-    @media only screen and (max-width: 620px) {
-        .cajas {
-            flex-direction: column;
-            align-items: center;
-        }
+    nav li {
+        display: inline;
     }
+
+    .bars-svg {
+        display: none;
+    }
+
+
+    header {
+        justify-content: space-between;
+    }
+
+    /* 
+    * ESTILOS PERFIL --------------------------------------------------------- *
+    */
+
+    .btn-light {
+        font-weight: bold;
+        background-color: #ff6b08;
+        color: #000000;
+        border: #ff6b08;
+    }
+
+    .col-form-label {
+        color: #dbd9d9;
+    }
+
+    .bg-profile {
+        background-color: #2c2c2c;
+        border-radius: 30px;
+        text-align: center;
+        border: 4px #ff6b08 solid ;
+        border-radius: 15px;
+        padding-bottom: 8px;
+        box-shadow: 0 0 20px #ff6b08;
+    }
+}
+
+/*MEDIA QUERY MOVIL*/
+
+@media only screen and (max-width: 620px) {
+    .cajas {
+        flex-direction: column;
+        align-items: center;
+    }
+}

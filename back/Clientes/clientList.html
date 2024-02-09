@@ -117,6 +117,10 @@
                                 </select>
                             </div>
                         </div>
+                        <div class="me-4 mt-3">
+                            <label for="cliFecha">Fecha nacimiento:</label><br>
+                            <input type="date" name="cliFecha" id="cliFecha" class="w-100">
+                        </div>
                         <button type="submit" class="btn btn-primary mt-3">Crear cliente</button>
                     </form>
                 </div>
@@ -152,13 +156,19 @@
                                 <input type="text" name="cliEditSurname" id="cliEditSurname" class="w-100">
                             </div>
                         </div>
-                        <div class="mt-3">
-                            <label for="cliEditTipo">Tipo:</label><br>
-                            <div name="showValues">
-                                <select name="cliEditTipo" id="cliEditTipo" class="form-select form-select-sm w-50">
-                                    <option value="0" selected>Normal</option>
-                                    <option value="1">Admin</option>
-                                </select>
+                        <div class="mt-3 d-flex">
+                            <div class="me-4">
+                                <label for="cliEditTipo">Tipo:</label><br>
+                                <div name="showValues">
+                                    <select name="cliEditTipo" id="cliEditTipo" class="form-select form-select-sm w-100">
+                                        <option value="0" selected>Normal</option>
+                                        <option value="1">Admin</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="me-4" name="showValues">
+                                <label for="cliEditFecha">Fecha nacimiento:</label><br>
+                                <input type="date" name="cliEditFecha" id="cliEditFecha" class="w-100">
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary mt-3">Editar cliente</button>

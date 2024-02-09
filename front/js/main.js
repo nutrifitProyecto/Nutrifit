@@ -1,39 +1,85 @@
-//header
-window.addEventListener("load",function(){
-  let header=document.getElementsByTagName("header")[0];
-  header.innerHTML=`
-  <img src="../img/bars.svg" alt="bars" class="bars-svg" onclick="displayChange()">
-  <div id="logo-title">
+let sesion = []
+let loggedOut = document.getElementsByClassName('loggedOut')
+let loggedIn = document.getElementsByClassName('loggedIn')
+
+// Recoge los datos de la sesión
+function datosSesion() {
+  // Realizar una solicitud al servidor para verificar el estado de la sesión
+  $.ajax({
+    url: '../../back/Session/getSession.php',
+    type: 'GET',
+    dataType: 'json',
+    success: function (data) {
+      sesion = data
+      if (sesion.autenticado) {
+        console.log('Usuario autenticado:', sesion.autenticado + "\n" + sesion.email);
+        // Creación de cabecera
+        prepararCabecera()
+        loggedIn[0].style.display = 'none'
+        loggedIn[1].style.display = 'none'
+      } else {
+        console.log('Usuario no autenticado');
+        // Creación de cabecera
+        prepararCabecera()
+        loggedOut[0].style.display = 'none'
+        loggedOut[1].style.display = 'none'
+      }
+    },
+    error: function (error) {
+      console.error('Error en la solicitud AJAX:', error);
+    }
+  })
+}
+
+// Prepara la cabecera y la muestra
+function prepararCabecera() {
+  let header = document.getElementsByTagName("header")[0];
+  console.log(sesion);
+  header.innerHTML = `
+  <a href="../index/index.html">
+    <div id="logo-title" style="display: flex">
       <img src="../img/logo1.png" alt="logo" class="img-logo">
       <span id="title">NUTRI<span>FIT</span></span>
-  </div>
+    </div>
+  </a>
   <nav>
-      <ul>
+      <ul style="display: flex; align-items: center; padding-top: 10px">
           <li><a href="./index.html">Servicios</a></li>
           <li><a href="./index.html">About</a></li>
-          <li><a href="./registerpage.html">Registrarse</a></li>
-          <li><a href="./loginpage.html">Iniciar Sesion</a></li>
+          <li class="loggedIn"><a href="../index/registerpage.html">Registrarse</a></li>
+          <li class="loggedIn"><a href="../index/loginpage.html">Iniciar Sesion</a></li>
+          <li class="loggedOut"><a href="../Perfil/perfil.html?email=${sesion.email}">Mi perfil</a></li>
+          <li class="loggedOut">
+            <form action="../../back/src/logOut.php">
+              <button type="submit" class="btn btn-light">Cerar sesión</button>
+            </form>
+          </li>
       </ul>
   </nav>`;
+}
+
+//header
+window.addEventListener("load", function () {
+  // Recoge los datos de la sesión
+  datosSesion()
 });
 
 //Boton de menu en movil
-function displayChange(){
-    let bttn=document.querySelector("header nav");    
-    if(bttn.style.display==="none"){
-        bttn.style.display="block";
-    }else{
-        bttn.style.display="none";
-    }
+function displayChange() {
+  let bttn = document.querySelector("header nav");
+  if (bttn.style.display === "none") {
+    bttn.style.display = "block";
+  } else {
+    bttn.style.display = "none";
+  }
 }
 
-/** */
 //acordeon preguntas frecuentes
 var acc = document.getElementsByClassName("accordion");
 var i;
 
 for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
+  acc[i].addEventListener("click", function () {
     this.classList.toggle("active");
     var panel = this.nextElementSibling;
     if (panel.style.maxHeight) {
@@ -47,12 +93,12 @@ for (i = 0; i < acc.length; i++) {
 /** */
 /*Boton de "soy entrenador" en el registerpage cuando se pulse se
 actualizara el formulario añadiendo unos inputs de experiencia y quittando otros*/
-function registerCoach(){
-  let div=document.getElementsByClassName("campoderegistro")[0];
-  while(div.hasChildNodes()){
-    div.firstChild.remove();    
+function registerCoach() {
+  let div = document.getElementsByClassName("campoderegistro")[0];
+  while (div.hasChildNodes()) {
+    div.firstChild.remove();
   }
-  let form=document.getElementsByTagName("form")[0];
+  let form = document.getElementsByTagName("form")[0];
   // let newinputs=
   // `<label for="rg-descripcion">Descripcion</label><textarea name="descripcion" id="rg-descripcion"></textarea>
   // <label for="rg-foto">Foto de Perfil</label><input type="file" id="rg-foto" name="foto" accept=".png, .jpg, .jpeg">
@@ -68,7 +114,7 @@ function registerCoach(){
   // <input type="checkbox" id="" name=""><label for="">AUMENTO DE VOLUMEN</label>
   // </div>`;
 
-  form.getElementsByTagName("p")[0].textContent="";
+  form.getElementsByTagName("p")[0].textContent = "";
 
   // div.innerHTML=newinputs;
 
