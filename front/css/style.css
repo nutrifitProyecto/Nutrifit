@@ -131,7 +131,7 @@ main {
     align-items: flex-start;
 }
 
-.informacionPD .contenido-izquierda {
+.informacionPD #contentEntrenador {
     flex: 1;
     padding-right: 20px;
     /* Espacio entre la parte izquierda y la imagen */

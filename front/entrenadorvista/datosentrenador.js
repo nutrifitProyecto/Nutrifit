@@ -1,6 +1,8 @@
 let paramURL= new URLSearchParams(window.location.search);
 let ident= paramURL.get("ident");
 let info=[];
+let infoDietas=[]; 
+let infoEntrenamientos=[];
 
 let divizq= document.getElementById("contentEntrenador");
 
@@ -24,3 +26,60 @@ function anyadirTexto(){
     divizq.innerHTML=cad;
     
 }
+
+let entCurEnt=document.getElementById("entrenadorCursosEntrenamiento");
+
+
+fetch(`../../back/Cursos/php/getCursosByDietas.php?id=${ident}`)
+    .then(response => response.json())
+    .then((data) => {
+        //Parsea la respuesta a JSON
+        infoDietas = JSON.parse(JSON.stringify(data));
+        //Llama a la función y crea una tabla con los clientes
+        anyadirDietas();
+    })
+    .catch(error => {
+        console.log(error);
+    });
+
+function anyadirDietas(){
+    let cad=``;
+    infoDietas.forEach(diet => {
+        cad+=`
+        <div class="entrenamientos">
+            <h1>${diet.Dieta}</h1>
+            <p>${diet.Descripcion_Dieta}
+            </p>
+            <button type="button">EMPEZAR</button>
+        </div>`
+    });
+    entCurEnt.innerHTML+=cad;
+}
+
+fetch(`../../back/Cursos/php/getCursosByEnt.php?id=${ident}`)
+    .then(response => response.json())
+    .then((data) => {
+        //Parsea la respuesta a JSON
+        infoEntrenamientos = JSON.parse(JSON.stringify(data));
+        //Llama a la función y crea una tabla con los clientes
+        anyadirEntrenamiento();
+    })
+    .catch(error => {
+        console.log(error);
+    });
+
+function anyadirEntrenamiento(){
+    let cad=``;
+    infoEntrenamientos.forEach(ent => {
+        cad+=`
+        <div class="entrenamientos">
+            <h1>${ent.Entrenamiento}</h1>
+            <p>${ent.Descripcion_Entrenamiento}
+            </p>
+            <button type="button">EMPEZAR</button>
+        </div>`
+    });
+    entCurEnt.innerHTML+=cad;
+}
+
+//crear la funcion que redireccione los botonesd e los cursos a la pagina de cursos y muestre su informacion 
