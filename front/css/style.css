@@ -814,6 +814,24 @@ section {
     width: auto;
 }
 
+
+/* CURSOS ESTILO*/
+
+.generalcurso{
+    display: flex;
+    background-color: #ffffff;
+    width: 500px;
+    opacity: 20%;
+    border-radius: 5%;
+    grid: 20%;
+}
+
+.nom
+
+
+
+
+
 /* 
  * ESTILOS PERFIL --------------------------------------------------------- *
 */
@@ -876,6 +894,7 @@ section {
         box-shadow: 0 0 20px #ff6b08;
     }
 }
+
 
 /*MEDIA QUERY MOVIL*/
 
