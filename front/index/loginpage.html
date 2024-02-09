@@ -18,7 +18,7 @@
     <main>
         <h2>Iniciar sesión</h2>
         <div class="formularioLogin">
-            <form method="post" action="../../back/src/loginClient.php">
+            <form id="formLogIn" method="post" action="../../back/src/loginClient.php" logTo="cliente">
                 <label for="client-email">Correo electronico:</label>
                 <input id="client-email" type="email" name="email" required autofocus><br>
                 
@@ -26,7 +26,7 @@
                 <input id="client-passwd" type="password" name="passwd" required><br>
                 <p><a href="">He olvidado la contraseña</a></p>
                 <p>¿No tienes una cuenta? <a href="../index/registerpage.html">Darse de alta</a></p>
-                <p><a href="">Soy entrenador</a></p>
+                <p><a id="logType" >Soy cliente</a></p>
 
                 <input class="bttn-submit" type="submit" value="Iniciar sesión">
             </form>
@@ -43,6 +43,7 @@
         </ul>
     </footer>
 
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="../js/main.js"></script>
 </body>
 
