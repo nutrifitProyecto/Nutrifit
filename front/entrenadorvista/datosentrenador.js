@@ -4,7 +4,7 @@ let info=[];
 
 let divizq= document.getElementById("contentEntrenador");
 
-fetch(`../../back/Entrenadores/php/getEntrenador.php?id=${ident}`)
+fetch(`../../back/Entrenadores/php/getEntrenadorById.php?id=${ident}`)
     .then(response => response.json())
     .then((data) => {
         //Parsea la respuesta a JSON
