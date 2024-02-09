@@ -29,14 +29,14 @@ function tablaEntrenadores() {
                         <th>opciones</th>
                     </tr>`
     info.forEach(ent => {
-        cad += `<tr id="column${ent.id}">
+        cad += `<tr id="column${ent.id}" class="overflow-x-scroll">
                     <td>${ent.id}</td>
                     <td>${ent.name}</td>
                     <td>${ent.surname}</td>
                     <td>${ent.email}</td>
                     <td>${ent.password}</td>
-                    <td>${ent.description}</td>
-                    <td>
+                    <td >${ent.description}</td>
+                    <td class="overflow-x-auto">
                         <button onclick="eliminarEntrenador(${ent.id})" class="btn btn-danger">Eliminar</button>
                         <button id="btnEditar" data-bs-toggle="modal" data-bs-target="#editarEntrenadorModal" class="btn btn-success" onclick="llenarCampos(${ent.id})">Editar</button>
                     </td>

@@ -11,10 +11,9 @@ $email = $_POST['entEmail'];
 $passwd = $_POST['entPasswd'];
 $desc = $_POST['entDesc'];
 
-$img= $_POST['entImg'];                                 /**añadido */
-$fecha= $_POST['entFnac'];                              /**añadido */
+$hashContraseña = password_hash($passwd, PASSWORD_DEFAULT);
 
-$query = "INSERT INTO entrenadores (name, surname, email, password, description, imgentrenador, fnacimiento) VALUES ('$name', '$surname', '$email', '$passwd', '$desc', '$img', '$fecha')";
+$query = "INSERT INTO entrenadores (name, surname, email, password, description) VALUES ('$name', '$surname', '$email', '$hashContraseña', '$desc')";
 
 $result = $connection->query($query);
 
