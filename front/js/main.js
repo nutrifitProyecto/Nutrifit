@@ -1,4 +1,4 @@
-let sesion = []
+export let sesion = []
 let loggedOut = document.getElementsByClassName('loggedOut')
 let loggedIn = document.getElementsByClassName('loggedIn')
 

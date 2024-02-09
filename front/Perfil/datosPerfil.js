@@ -4,32 +4,26 @@ let idCliente
 
 let inputs = document.getElementsByClassName('form-control')
 let btonEditarDatos = document.getElementById('btonEditarDatos')
-let mostrarDatosPago = document.getElementById('mostrarDatosPago')
 let datosPago = document.getElementById('datosPago')
 
+// Inputs de la ventana de pago
 let inputsPago = document.getElementsByName('inputsDatosPago')
 
+// Mostrar y ocultar conenedores
+let mostrarDatosPago = document.getElementById('mostrarDatosPago')
 let mostrar = mostrarDatosPago.getAttribute('mostrar')
-let sesion
+
+//Importar la sesión para usarla en este fichero
+import { sesion } from "../js/main.js"
 
 function datosSesion() {
-    // Realizar una solicitud al servidor para verificar el estado de la sesión
-    $.ajax({
-        url: '../../back/Session/getSession.php',
-        type: 'GET',
-        dataType: 'json',
-        success: function (data) {
-            sesion = data
-            if (sesion.tipo == 1) {
-
-            } else {
-
-            }
-        },
-        error: function (error) {
-            console.error('Error en la solicitud AJAX:', error);
-        }
-    })
+    if (sesion.tipo == 1) {
+        console.log("aas");
+        datosCliente()
+    } else {
+        console.log("entrenador");
+        datosEntrenador()
+    }
 }
 
 window.addEventListener("load", function () {
@@ -37,7 +31,17 @@ window.addEventListener("load", function () {
     datosSesion()
 })
 
+//Consulta a los datos del cliente y los introduce en los inputs
 function datosCliente() {
+    //Ocultar dats de cliente
+    document.getElementById('datosCliente').classList.add('d-flex')
+    document.getElementById('datosCliente').classList.remove('d-none')
+    document.getElementById('descEnt').classList.add('d-none')
+    document.getElementById('mostrarDatosPago').classList.add('d-flex')
+
+    // Cambio action para editar clientes
+    document.getElementById('formPerfil').action = "../../back/Clientes/php/editarPerfil.php"
+
     fetch(`../../back/Clientes/php/verCliente.php?email=${email}`)
         .then(response => response.json())
         .then((data) => {
@@ -56,11 +60,7 @@ function datosCliente() {
             console.log(error);
         });
 
-    // Quita el diabled del input para editar los datos del usuario 
-    btonEditarDatos.addEventListener('click', () => {
-        inputs[2].disabled = false
-    })
-
+    // Vista datos de pago y poder editarlos
     mostrarDatosPago.addEventListener('click', () => {
         console.log(idCliente);
         // Muestra datos de pago
@@ -98,22 +98,35 @@ function datosCliente() {
 }
 
 function datosEntrenador() {
-    fetch(`../../back/Clientes/php/verCliente.php?email=${email}`)
-    .then(response => response.json())
-    .then((data) => {
-        //Parsea la respuesta a JSON
-        info = JSON.parse(JSON.stringify(data));
-        idCliente = info[0].id
+    document.getElementById('datosCliente').classList.remove('d-flex')
+    document.getElementById('datosCliente').classList.add('d-none')
+    document.getElementById('descEnt').classList.remove('d-none')
+    document.getElementById('mostrarDatosPago').classList.add('d-none')
 
-        inputs[0].value = info[0].name
-        inputs[1].value = info[0].surname
-        inputs[2].value = info[0].email
-        inputs[3].value = info[0].fecha_nacimiento
-        inputs[4].value = info[0].weight
-        inputs[5].value = info[0].height
-    })
-    .catch(error => {
-        console.log(error);
-    });
+    // Cambiar action para etitar entrenador
+    document.getElementById('formPerfil').action = "../../back/Entrenadores/php/editarPerfil.php"
 
+    fetch(`../../back/Entrenadores/php/verEntrenador.php?email=${email}`)
+        .then(response => response.json())
+        .then((data) => {
+            //Parsea la respuesta a JSON
+            let info = JSON.parse(JSON.stringify(data));
+            idCliente = info[0].id
+
+            // Información de la base de datos en los inputs
+            inputs[0].value = info[0].name
+            inputs[1].value = info[0].surname
+            inputs[2].value = info[0].email
+            inputs[6].value = info[0].description
+
+        })
+        .catch(error => {
+            console.log(error);
+        });
 }
+
+// Quita el diabled del input para editar los datos 
+btonEditarDatos.addEventListener('click', () => {
+    console.log("enableds");
+    inputs[2].disabled = false
+})
