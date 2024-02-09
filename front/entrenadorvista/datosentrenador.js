@@ -9,7 +9,7 @@ fetch(`../../back/Entrenadores/php/getEntrenadorById.php?id=${ident}`)
     .then((data) => {
         //Parsea la respuesta a JSON
         info = JSON.parse(JSON.stringify(data));
-        //Llama a la función y crea una tabla con los entrenadores
+        //Llama a la función y crea un texto con los entrenadores
         anyadirTexto();
     })
     .catch(error => {
@@ -17,10 +17,10 @@ fetch(`../../back/Entrenadores/php/getEntrenadorById.php?id=${ident}`)
     });
 
 function anyadirTexto(){
-        let cad=`
+    let cad=`
         <h1>${info[0].name + " " + info[0].surname}</h1>
         <p>${info[0].description}</p>
         <button type="button">COMPRAR</button>`;
-    console.log(divizq);
     divizq.innerHTML=cad;
+    
 }

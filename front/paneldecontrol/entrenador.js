@@ -1,14 +1,27 @@
-let div = document.getElementById("infoEntrenador"); //arriba
+let divarriba = document.getElementById("infoEntrenador"); //arriba
 let divabajo=document.getElementById("infoEntrenadorAbajo"); //abajo
-let info = []
+let info = []; //info entrenadores
+let infoCursos = []; //info Cursos
 
 fetch('../../back/Entrenadores/php/getEntrenador.php')
     .then(response => response.json())
     .then((data) => {
         //Parsea la respuesta a JSON
         info = JSON.parse(JSON.stringify(data));
-        //Llama a la función y crea una tabla con los entrenadores
+        //Llama a la función y crea el texto html de arriba
         anyadirTexto();
+    })
+    .catch(error => {
+        console.log(error);
+    });
+
+fetch('../../back/Cursos/php/getCursos.php')
+    .then(response => response.json())
+    .then((data) => {
+        //Parsea la respuesta a JSON
+        infoCursos = JSON.parse(JSON.stringify(data));
+        //Llama a la función y crea el texto html de abajo
+        anyadirTextoAbajo();
     })
     .catch(error => {
         console.log(error);
@@ -16,7 +29,6 @@ fetch('../../back/Entrenadores/php/getEntrenador.php')
 
 function anyadirTexto() {
     let cad = ``;
-    let cadAbajo=``;
     info.forEach(ent => {
         cad += `
         <div class="cajac">
@@ -28,21 +40,30 @@ function anyadirTexto() {
             </div>
         </div>`;
 
+        
+    });
+    divarriba.innerHTML = cad;
+}
+
+function anyadirTextoAbajo(){
+    let cadAbajo=``;
+
+    infoCursos.forEach(curs => {
         cadAbajo+=`
         <div class="cajac">
             <div class="informacioncajac">
-                <p class="precio">$30p/mes</p>
-                <ul>
-                    <li><img src="../img/tik.png" alt="" id="tick-icon">Entrenamiento personalizado</li>
-                    <li><img src="../img/tik.png" alt="" id="tick-icon">Mantenimiento integral</li>
-                    <li><img src="../img/tik.png" alt="" id="tick-icon">Asesoramiento alimenticio</li>
-                    <li><img src="../img/tik.png" alt="" id="tick-icon">Seguimiento Continuo y Ajustes</li>
-                </ul>
-                <button type="button">EMPEZAR</button>
+            <p class="precio">${curs.costeMes} €/mes</p>
+            <ul>
+                <li><img src="../img/tik.png" alt="" id="tick-icon">Entrenamiento personalizado</li>
+                <li><img src="../img/tik.png" alt="" id="tick-icon">Mantenimiento integral</li>
+                <li><img src="../img/tik.png" alt="" id="tick-icon">Asesoramiento alimenticio</li>
+                <li><img src="../img/tik.png" alt="" id="tick-icon">Seguimiento Continuo y Ajustes</li>
+            </ul>
+            <button onclick="fun(${curs.idEntrenador})" style="cursor:pointer" type="button">EMPEZAR</button>
             </div>
         </div>`;
+
     });
-    div.innerHTML = cad;
     divabajo.innerHTML=cadAbajo;
 }
 
