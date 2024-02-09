@@ -169,9 +169,7 @@ main {
     text-align: center;
 }
 
-.entrenamientos,
-.monitoreo,
-.enfoque {
+.entrenamientos{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -179,9 +177,7 @@ main {
     padding: 20px;
 }
 
-.entrenamientos p,
-.monitoreo p,
-.enfoque p {
+.entrenamientos p{
 
     color: #E8E8E8;
     text-align: center;
@@ -196,9 +192,7 @@ main {
     margin: 5px;
  }
 
-    .entrenamientos button,
-    .monitoreo button,
-    .enfoque button {
+    .entrenamientos button{
         align-items: center;
         text-align: center;
         border: white;
@@ -247,9 +241,7 @@ main {
 
     }
 
-    .entrenamientos button,
-    .monitoreo button,
-    .enfoque button {
+    .entrenamientos button {
         align-items: center;
         text-align: center;
         border: white;
