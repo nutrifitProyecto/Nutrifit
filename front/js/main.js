@@ -1,4 +1,6 @@
 let sesion = []
+let loggedOut = document.getElementsByClassName('loggedOut')
+let loggedIn = document.getElementsByClassName('loggedIn')
 
 // Recoge los datos de la sesión
 function datosSesion() {
@@ -13,10 +15,14 @@ function datosSesion() {
         console.log('Usuario autenticado:', sesion.autenticado + "\n" + sesion.email);
         // Creación de cabecera
         prepararCabecera()
+        loggedIn[0].style.display = 'none'
+        loggedIn[1].style.display = 'none'
       } else {
         console.log('Usuario no autenticado');
         // Creación de cabecera
         prepararCabecera()
+        loggedOut[0].style.display = 'none'
+        loggedOut[1].style.display = 'none'
       }
     },
     error: function (error) {
@@ -40,8 +46,8 @@ function prepararCabecera() {
       <ul style="display: flex; align-items: center; padding-top: 10px">
           <li><a href="./index.html">Servicios</a></li>
           <li><a href="./index.html">About</a></li>
-          <li class="changeInicio loggedIn"><a href="../index/registerpage.html">Registrarse</a></li>
-          <li class="changeInicio loggedIn"><a href="../index/loginpage.html">Iniciar Sesion</a></li>
+          <li class="loggedIn"><a href="../index/registerpage.html">Registrarse</a></li>
+          <li class="loggedIn"><a href="../index/loginpage.html">Iniciar Sesion</a></li>
           <li class="loggedOut"><a href="../Perfil/perfil.html?email=${sesion.email}">Mi perfil</a></li>
           <li class="loggedOut">
             <form action="../../back/src/logOut.php">
