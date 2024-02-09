@@ -13,13 +13,15 @@
 <body>
     <header class="p-3 bg-dark text-white">
         <div class="container">
-            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <div class="d-flex flex-wrap align-items-center justify-content-center ">
 
                 <h2 class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">Consulta tabla
                     Clientes</h2>
 
                 <div class="text-end">
-                    <button type="button" class="btn btn-warning">Cerrar sesión</button>
+                    <form action="../../back/src/logOut.php">
+                        <button type="submit" class="btn btn-warning">Cerar sesión</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -160,7 +162,8 @@
                             <div class="me-4">
                                 <label for="cliEditTipo">Tipo:</label><br>
                                 <div name="showValues">
-                                    <select name="cliEditTipo" id="cliEditTipo" class="form-select form-select-sm w-100">
+                                    <select name="cliEditTipo" id="cliEditTipo"
+                                        class="form-select form-select-sm w-100">
                                         <option value="0" selected>Normal</option>
                                         <option value="1">Admin</option>
                                     </select>
