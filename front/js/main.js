@@ -1,4 +1,4 @@
-export let sesion = []
+let sesion = []
 let loggedOut = document.getElementsByClassName('loggedOut')
 let loggedIn = document.getElementsByClassName('loggedIn')
 
@@ -34,7 +34,8 @@ function datosSesion() {
 // Prepara la cabecera y la muestra
 function prepararCabecera() {
   let header = document.getElementsByTagName("header")[0];
-  console.log(sesion);
+  const email = sesion.email || '';
+  const tipo = sesion.tipo || '';
   header.innerHTML = `
   <a href="../index/index.html">
     <div id="logo-title" style="display: flex">
@@ -48,7 +49,7 @@ function prepararCabecera() {
           <li><a href="./index.html">About</a></li>
           <li class="loggedIn"><a href="../index/registerpage.html">Registrarse</a></li>
           <li class="loggedIn"><a href="../index/loginpage.html">Iniciar Sesion</a></li>
-          <li class="loggedOut"><a href="../Perfil/perfil.html?email=${sesion.email}">Mi perfil</a></li>
+          <li class="loggedOut"><a href="../Perfil/perfil.html?email=${email}&tipo=${tipo}">Mi perfil</a></li>
           <li class="loggedOut">
             <form action="../../back/src/logOut.php">
               <button type="submit" class="btn btn-light">Cerar sesión</button>

@@ -22,6 +22,7 @@
                 <h3 class="text-center">Perfil</h3>
                 <form class="mb-5" method="post" id="formPerfil" name="formPerfil"
                     action="../../back/Clientes/php/editarPerfil.php">
+                    <input type="text" id="tipo" name="tipo">
                     <div class="row">
                         <!-- NOMBRE -->
                         <div class="col-md-6 form-group mb-3">
@@ -87,6 +88,7 @@
                                             <div class="form-card">
                                                 <h2 id="heading2" class="text-orange">Datos de pago</h2>
                                                 <form method="post" action="../../back/DatosPago/guardarDatosPago.php">
+                                                    <input type="text" id="tipo" name="tipo">
                                                     <div name="inputsDatosPago" style="display: none;">
                                                         <input id="idCliente" name="idCliente" type="number">
                                                         <input id="emailCliente" name="emailCliente" type="email">

@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     // Creamos una consulta
-    $query = "SELECT * FROM entrenadores WHERE email='$email'";
+    $query = "SELECT * FROM entrenadores WHERE email = '$email'";
     $result = $connection->query($query);
 
     if ($result->num_rows > 0) {

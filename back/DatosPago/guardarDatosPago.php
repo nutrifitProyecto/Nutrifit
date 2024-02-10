@@ -10,6 +10,7 @@ $numTarjeta = $_POST['numTarjeta'];
 $cvv = $_POST['cvv'];
 $fechaExp = $_POST['fechaExp'];
 $email = $_POST['emailCliente'];
+$tipo = $_POST['tipo'];
 
 $query = "SELECT * FROM datos_pago WHERE idCliente = '$idCli'";
 
@@ -32,7 +33,7 @@ if ($result->num_rows === 0) {
         $result = $connection->query($query);
 
         if ($result === true) {
-                header("Location: ../../front/Perfil/perfil.html?email=$email");
+                header("Location: ../../front/Perfil/perfil.html?email=$email&tipo=$tipo");
                 exit();
         } else {
                 echo "error al actualizar datos tarjeta";

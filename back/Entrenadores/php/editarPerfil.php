@@ -8,6 +8,7 @@ $name = $_POST['name'];
 $surname = $_POST['surname'];
 $email = $_POST['email'];
 $description = $_POST['description'];
+$tipo = $_POST['tipo'];
 
 // Editar entrenador por email
 $query = "UPDATE entrenadores SET name = '$name', surname = '$surname', description = '$description' WHERE email = '$email'";
@@ -17,7 +18,7 @@ $result = $connection->query($query);
 if ($result === true) {
     if (!empty($email)) {
         // Redirección a la página del perfil
-        header("Location: ../../../front/Perfil/perfil.html?email=$email");
+        header("Location: ../../../front/Perfil/perfil.html?email=$email&tipo=$tipo");
         exit();
     } else {
         echo "Error: El campo de email está vacío.";

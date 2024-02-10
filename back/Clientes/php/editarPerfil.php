@@ -10,6 +10,7 @@ $email = $_POST['email'];
 $fechaNacimiento = $_POST['fNacimiento'];
 $weight = $_POST['weight'];
 $height = $_POST['height'];
+$tipo = $_POST['tipo'];
 
 // Editar cliente por email
 $query = "UPDATE clientes SET name = '$name', surname = '$surname', fecha_nacimiento = '$fechaNacimiento', weight = '$weight', height = '$height' WHERE email = '$email'";
@@ -19,7 +20,7 @@ $result = $connection->query($query);
 if ($result === true) {
     if (!empty($email)) {
         // Redirección a la página del perfil
-        header("Location: ../../../front/Perfil/perfil.html?email=$email");
+        header("Location: ../../../front/Perfil/perfil.html?email=$email&tipo=$tipo");
         exit();
     } else {
         echo "Error: El campo de email está vacío.";

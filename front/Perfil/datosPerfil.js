@@ -1,6 +1,9 @@
 let paramURL = new URLSearchParams(window.location.search)
 let email = paramURL.get('email')
+let tipo = paramURL.get('tipo')
+
 let idCliente
+let info = []
 
 let inputs = document.getElementsByClassName('form-control')
 let btonEditarDatos = document.getElementById('btonEditarDatos')
@@ -13,15 +16,10 @@ let inputsPago = document.getElementsByName('inputsDatosPago')
 let mostrarDatosPago = document.getElementById('mostrarDatosPago')
 let mostrar = mostrarDatosPago.getAttribute('mostrar')
 
-//Importar la sesión para usarla en este fichero
-import { sesion } from "../js/main.js"
-
 function datosSesion() {
-    if (sesion.tipo == 1) {
-        console.log("aas");
+    if (tipo == 1) {
         datosCliente()
-    } else {
-        console.log("entrenador");
+    } else if (tipo == 2) {
         datosEntrenador()
     }
 }
@@ -33,6 +31,7 @@ window.addEventListener("load", function () {
 
 //Consulta a los datos del cliente y los introduce en los inputs
 function datosCliente() {
+    document.getElementById('tipo').value = tipo
     //Ocultar dats de cliente
     document.getElementById('datosCliente').classList.add('d-flex')
     document.getElementById('datosCliente').classList.remove('d-none')
@@ -98,6 +97,8 @@ function datosCliente() {
 }
 
 function datosEntrenador() {
+    document.getElementById('tipo').value = tipo
+    console.log(document.getElementById('tipo').value);
     document.getElementById('datosCliente').classList.remove('d-flex')
     document.getElementById('datosCliente').classList.add('d-none')
     document.getElementById('descEnt').classList.remove('d-none')
