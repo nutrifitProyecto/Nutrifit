@@ -22,7 +22,7 @@
                 <h3 class="text-center">Perfil</h3>
                 <form class="mb-5" method="post" id="formPerfil" name="formPerfil"
                     action="../../back/Clientes/php/editarPerfil.php">
-                    <input type="text" id="tipo" name="tipo">
+                    <input type="text" id="tipo" name="tipo" style="display: none;">
                     <div class="row">
                         <!-- NOMBRE -->
                         <div class="col-md-6 form-group mb-3">
@@ -69,7 +69,8 @@
                     <div id="descEnt">
                         <div class="col-md-12 form-group mb-3">
                             <label for="description" class="col-form-label">Descripción</label>
-                            <textarea class="form-control" name="description" id="description" cols="50" rows="5"></textarea>
+                            <textarea class="form-control" name="description" id="description" cols="50"
+                                rows="5"></textarea>
                         </div>
                     </div>
                     <button id="btonEditarDatos" type="submit" class="btn btn-light mt-4">Editar datos</button>
@@ -88,7 +89,7 @@
                                             <div class="form-card">
                                                 <h2 id="heading2" class="text-orange">Datos de pago</h2>
                                                 <form method="post" action="../../back/DatosPago/guardarDatosPago.php">
-                                                    <input type="text" id="tipo" name="tipo">
+                                                    <input type="text" id="tipo" name="tipo" style="display: none;">
                                                     <div name="inputsDatosPago" style="display: none;">
                                                         <input id="idCliente" name="idCliente" type="number">
                                                         <input id="emailCliente" name="emailCliente" type="email">
@@ -134,6 +135,11 @@
                     </div>
                 </div>
             </div>
+
+            <div class="mt-5" id="cursosEntrenador">
+                <!-- RELLENAR CON LOS CURSOS DEL ENTRENADOR -->
+            </div>
+
         </div>
     </div>
 </body>

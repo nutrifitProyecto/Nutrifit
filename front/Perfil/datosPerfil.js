@@ -29,10 +29,10 @@ window.addEventListener("load", function () {
     datosSesion()
 })
 
-//Consulta a los datos del cliente y los introduce en los inputs
+// Consulta a los datos del cliente y los introduce en los inputs
 function datosCliente() {
     document.getElementById('tipo').value = tipo
-    //Ocultar dats de cliente
+    // Ocultar dats de cliente
     document.getElementById('datosCliente').classList.add('d-flex')
     document.getElementById('datosCliente').classList.remove('d-none')
     document.getElementById('descEnt').classList.add('d-none')
@@ -44,7 +44,7 @@ function datosCliente() {
     fetch(`../../back/Clientes/php/verCliente.php?email=${email}`)
         .then(response => response.json())
         .then((data) => {
-            //Parsea la respuesta a JSON
+            // Parsea la respuesta a JSON
             info = JSON.parse(JSON.stringify(data));
             idCliente = info[0].id
 
@@ -82,7 +82,7 @@ function datosCliente() {
         fetch(`../../back/DatosPago/verDatosPago.php?id=${idCliente}`)
             .then(response => response.json())
             .then((data) => {
-                //Parsea la respuesta a JSON
+                // Parsea la respuesta a JSON
                 info = JSON.parse(JSON.stringify(data));
 
                 inputsPago[1].childNodes[3].value = info[0].nombreTitular
@@ -97,8 +97,10 @@ function datosCliente() {
 }
 
 function datosEntrenador() {
+    // Asignar el tipo al input para hacer la redirección correctamente
     document.getElementById('tipo').value = tipo
-    console.log(document.getElementById('tipo').value);
+
+    // Ocultar y mostrar inputs
     document.getElementById('datosCliente').classList.remove('d-flex')
     document.getElementById('datosCliente').classList.add('d-none')
     document.getElementById('descEnt').classList.remove('d-none')
@@ -110,8 +112,8 @@ function datosEntrenador() {
     fetch(`../../back/Entrenadores/php/verEntrenador.php?email=${email}`)
         .then(response => response.json())
         .then((data) => {
-            //Parsea la respuesta a JSON
-            let info = JSON.parse(JSON.stringify(data));
+            // Parsea la respuesta a JSON
+            info = JSON.parse(JSON.stringify(data));
             idCliente = info[0].id
 
             // Información de la base de datos en los inputs
@@ -119,7 +121,9 @@ function datosEntrenador() {
             inputs[1].value = info[0].surname
             inputs[2].value = info[0].email
             inputs[6].value = info[0].description
-
+            
+            // Mostrar cursos del entrenador
+            cursosEntrenador(info[0].id)
         })
         .catch(error => {
             console.log(error);
@@ -131,3 +135,32 @@ btonEditarDatos.addEventListener('click', () => {
     console.log("enableds");
     inputs[2].disabled = false
 })
+
+function cursosEntrenador(id) {
+    let cursos = document.getElementById('cursosEntrenador')
+
+    cursos.innerHTML = "pollas"
+
+    console.log(id);
+
+    fetch(`../../back/Cursos/php/getCursoById.php?id=${id}`)
+    .then(response => response.json())
+    .then((data) => {
+        // Parsea la respuesta a JSON
+        info = JSON.parse(JSON.stringify(data));
+        idCliente = info[0].id
+
+        // Información de la base de datos en los inputs
+        inputs[0].value = info[0].name
+        inputs[1].value = info[0].surname
+        inputs[2].value = info[0].email
+        inputs[6].value = info[0].description
+        
+        // Mostrar cursos del entrenador
+        cursosEntrenador(info[0].id)
+    })
+    .catch(error => {
+        console.log(error);
+    });
+
+}
