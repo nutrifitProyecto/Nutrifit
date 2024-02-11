@@ -36,13 +36,13 @@ fetch(`./php/getEntrenamientoEjercicio.php?idEnt=${idEnt}`)
                         <th>Duración</th>
                         <th>Eliminar</th>
                     </tr>`
-
+console.log(info);
         // Recorre el array de ejercicios
         info.forEach(ej => {
             cad += `<tr id="column${ej.ejId}">
-                        <td>${ej.dia}</td>
+                        <td>${ej.ejDia}</td>
                         <td>${ej.ejDesc}</td>
-                        <td>${ej.duracion}</td>
+                        <td>${ej.ejDur}</td>
                         <td><button onclick="eliminarEj(${ej.ejId}, ${idEnt})">Eliminar</button></td>
             <tr>`
         });

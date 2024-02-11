@@ -121,7 +121,7 @@ function datosEntrenador() {
             inputs[1].value = info[0].surname
             inputs[2].value = info[0].email
             inputs[6].value = info[0].description
-            
+
             // Mostrar cursos del entrenador
             cursosEntrenador(info[0].id)
         })
@@ -138,31 +138,98 @@ btonEditarDatos.addEventListener('click', () => {
 
 /*
 function cursosEntrenador(id) {
-    let cursos = document.getElementById('cursosEntrenador')
+    fetch(`../../back/Cursos/php/getCursoByIdEnt.php?idEntrenador=${id}`)
+        .then(response => response.json())
+        .then((data) => {
+            // Parsea la respuesta a JSON
+            info = JSON.parse(JSON.stringify(data));
 
-    cursos.innerHTML = "pollas"
+            // Selecciona el contenedor donde mostrar los datos
+            const container = document.getElementById("dataContainer");
 
-    console.log(id);
+            // Itera sobre el array y crea el HTML para cada elemento
 
-    fetch(`../../back/Cursos/php/getCursoById.php?id=${id}`)
-    .then(response => response.json())
-    .then((data) => {
-        // Parsea la respuesta a JSON
-        info = JSON.parse(JSON.stringify(data));
-        idCliente = info[0].id
+            console.log(info);
 
-        // Información de la base de datos en los inputs
-        inputs[0].value = info[0].name
-        inputs[1].value = info[0].surname
-        inputs[2].value = info[0].email
-        inputs[6].value = info[0].description
-        
-        // Mostrar cursos del entrenador
-        cursosEntrenador(info[0].id)
-    })
-    .catch(error => {
-        console.log(error);
-    });
+            info.forEach(curso => {
+
+                // Crea un nuevo elemento div con las clases de Bootstrap para columnas
+                const nuevoElemento = document.createElement("div");
+                //nuevoElemento.classList.add("col-md-4", "mb-3");
+                nuevoElemento.style.width = "18rem"
+
+                // Crear card y aplicarle estilos
+                const card = document.createElement("div")
+                card.classList.add("card")
+                card.classList.add("ms-2")
+                card.classList.add("me-2")
+                card.classList.add("mb-4")
+                card.style.width = "15rem"
+
+                // Body de la carta
+                const cBody = document.createElement('div')
+                cBody.classList.add('card-body')
+
+                // Titulo curso
+                const title = document.createElement('h5')
+                title.classList.add('card-title')
+                title.style.color = '#ff6b08'
+
+                // Descripción curso
+                const desc = document.createElement('p')
+                desc.classList.add('card-text')
+
+                if (curso.cTipo == 1) {
+                    title.textContent = curso.entName + " " + curso.cCoste + "€/mes"
+                    title.classList.add('fs-4')
+                    
+                    cBody.appendChild(title)
+
+                    desc.textContent = curso.entDesc
+                    desc.classList.add('text-break')
+                    cBody.appendChild(desc)
+
+
+                    console.log("entrene");
+                } else {
+                    title.textContent = curso.dietNom + " " + curso.cCoste + "€/mes"
+                    title.classList.add('fs-4')
+
+                    cBody.appendChild(title)
+
+                    desc.textContent = curso.dietDesc
+                    desc.classList.add('text-break')
+
+                    cBody.appendChild(desc)
+
+                    console.log("dieta");
+                }
+/*
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="card-link">Card link</a>
+                        <a href="#" class="card-link">Another link</a>
+                    </div>
+                </div>
+                */  
+
+                console.log(card);
+                card.appendChild(cBody)
+                //nuevoElemento.appendChild(card)
+
+                // Añade el nuevo elemento al contenedor
+                container.appendChild(card);
+
+
+            });
+            console.log(dataContainer);
+        })
+        .catch(error => {
+            console.log(error);
+        });
 
 }
 */
