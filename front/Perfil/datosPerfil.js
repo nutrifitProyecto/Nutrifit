@@ -157,24 +157,26 @@ function cursosEntrenador(id) {
                 //nuevoElemento.classList.add("col-md-4", "mb-3");
                 nuevoElemento.style.width = "18rem"
 
+                // Crear card y aplicarle estilos
                 const card = document.createElement("div")
                 card.classList.add("card")
                 card.classList.add("ms-2")
                 card.classList.add("me-2")
-
+                card.classList.add("mb-4")
                 card.style.width = "15rem"
 
-
+                // Body de la carta
                 const cBody = document.createElement('div')
                 cBody.classList.add('card-body')
 
+                // Titulo curso
                 const title = document.createElement('h5')
                 title.classList.add('card-title')
+                title.style.color = '#ff6b08'
 
+                // Descripción curso
                 const desc = document.createElement('p')
                 desc.classList.add('card-text')
-
-console.log(curso.cTipo);   
 
                 if (curso.cTipo == 1) {
                     title.textContent = curso.entName + " " + curso.cCoste + "€/mes"
