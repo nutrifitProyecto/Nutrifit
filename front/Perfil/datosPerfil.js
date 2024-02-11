@@ -136,6 +136,7 @@ btonEditarDatos.addEventListener('click', () => {
     inputs[2].disabled = false
 })
 
+/*
 function cursosEntrenador(id) {
     let cursos = document.getElementById('cursosEntrenador')
 
@@ -164,3 +165,4 @@ function cursosEntrenador(id) {
     });
 
 }
+*/
