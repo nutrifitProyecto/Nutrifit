@@ -136,7 +136,7 @@ btonEditarDatos.addEventListener('click', () => {
     inputs[2].disabled = false
 })
 
-/*
+
 function cursosEntrenador(id) {
     fetch(`../../back/Cursos/php/getCursoByIdEnt.php?idEntrenador=${id}`)
         .then(response => response.json())
@@ -182,7 +182,7 @@ function cursosEntrenador(id) {
                 if (curso.cTipo == 1) {
                     title.textContent = curso.entName + " " + curso.cCoste + "€/mes"
                     title.classList.add('fs-4')
-                    
+
                     cBody.appendChild(title)
 
                     desc.textContent = curso.entDesc
@@ -204,17 +204,17 @@ function cursosEntrenador(id) {
 
                     console.log("dieta");
                 }
-/*
-                <div class="card" style="width: 18rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="card-link">Card link</a>
-                        <a href="#" class="card-link">Another link</a>
-                    </div>
-                </div>
-                */  
+                /*
+                                <div class="card" style="width: 18rem;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                        <a href="#" class="card-link">Card link</a>
+                                        <a href="#" class="card-link">Another link</a>
+                                    </div>
+                                </div>
+                                */
 
                 console.log(card);
                 card.appendChild(cBody)
@@ -232,4 +232,3 @@ function cursosEntrenador(id) {
         });
 
 }
-*/
