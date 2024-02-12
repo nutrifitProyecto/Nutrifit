@@ -18,8 +18,7 @@ let mostrarDatosPago = document.getElementById('mostrarDatosPago')
 let mostrar = mostrarDatosPago.getAttribute('mostrar')
 
 // Crear cursos
-let btnCrearEnt = document.getElementById('btnCrearEnt')
-let btnCrearDiet = document.getElementById('btnCrearDiet')
+let btnCrearCurs = document.getElementById('btnCrearDiet')
 
 function datosSesion() {
     if (tipo == 1) {
@@ -43,8 +42,7 @@ function datosCliente() {
     document.getElementById('descEnt').classList.add('d-none')
     document.getElementById('mostrarDatosPago').classList.add('d-flex')
 
-    btnCrearEnt.style.display = 'none'
-    btnCrearDiet.style.display = 'none'
+    btnCrearCurs.style.display = 'none'
 
     // Cambio action para editar clientes
     document.getElementById('formPerfil').action = "../../back/Clientes/php/editarPerfil.php"
@@ -73,12 +71,12 @@ function datosCliente() {
         // Muestra datos de pago
         if (mostrarDatosPago.getAttribute(mostrar) == "true") {
             datosPago.style.display = 'none'
-            mostrarDatosPago.innerHTML = "Mostrar datos de pago"
+            mostrarDatosPago.innerHTML = `<i class="fa-solid fa-wallet"></i>`
             mostrarDatosPago.setAttribute(mostrar, "false")
         } else { // Oculta datos de pago
             getDatosPago()
             datosPago.style.display = 'block'
-            mostrarDatosPago.innerHTML = "Ocultar datos de pago"
+            mostrarDatosPago.innerHTML = `<i class="fa-solid fa-wallet"></i>`
             mostrarDatosPago.setAttribute(mostrar, "true")
         }
     })
@@ -234,7 +232,7 @@ function cursosEntrenador(id) {
 
             info.forEach(curso => {
                 document.getElementById('curs' + curso.cId).addEventListener('click', () => {
-                    eliminarCurso(curso.cId)
+                    eliminarCurso(curso.cId, )
                 })
             })
             console.log(container);

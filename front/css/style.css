@@ -853,6 +853,7 @@ section {
     */
 
     .btn-light {
+        border-radius: 10px;
         font-weight: bold;
         background-color: #ff6b08;
         color: #000000;
