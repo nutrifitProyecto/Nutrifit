@@ -3,6 +3,7 @@ let email = paramURL.get('email')
 let tipo = paramURL.get('tipo')
 
 let idCliente
+let idEnt
 let info = []
 
 let inputs = document.getElementsByClassName('form-control')
@@ -15,6 +16,10 @@ let inputsPago = document.getElementsByName('inputsDatosPago')
 // Mostrar y ocultar conenedores
 let mostrarDatosPago = document.getElementById('mostrarDatosPago')
 let mostrar = mostrarDatosPago.getAttribute('mostrar')
+
+// Crear cursos
+let btnCrearEnt = document.getElementById('btnCrearEnt')
+let btnCrearDiet = document.getElementById('btnCrearDiet')
 
 function datosSesion() {
     if (tipo == 1) {
@@ -37,6 +42,9 @@ function datosCliente() {
     document.getElementById('datosCliente').classList.remove('d-none')
     document.getElementById('descEnt').classList.add('d-none')
     document.getElementById('mostrarDatosPago').classList.add('d-flex')
+
+    btnCrearEnt.style.display = 'none'
+    btnCrearDiet.style.display = 'none'
 
     // Cambio action para editar clientes
     document.getElementById('formPerfil').action = "../../back/Clientes/php/editarPerfil.php"
@@ -114,7 +122,7 @@ function datosEntrenador() {
         .then((data) => {
             // Parsea la respuesta a JSON
             info = JSON.parse(JSON.stringify(data));
-            idCliente = info[0].id
+            idEnt = info[0].id
 
             // Información de la base de datos en los inputs
             inputs[0].value = info[0].name
@@ -136,7 +144,7 @@ btonEditarDatos.addEventListener('click', () => {
     inputs[2].disabled = false
 })
 
-
+// Mostrar en el perfil los cursos del entrenador
 function cursosEntrenador(id) {
     fetch(`../../back/Cursos/php/getCursoByIdEnt.php?idEntrenador=${id}`)
         .then(response => response.json())
@@ -230,5 +238,9 @@ function cursosEntrenador(id) {
         .catch(error => {
             console.log(error);
         });
+
+    btnCrearDiet.addEventListener('click', () => {
+        window.location.replace(`../CrearCurso/crearCurso.html?idEnt=${idEnt}&email=${email}&tipo=${tipo}`)
+    })
 
 }

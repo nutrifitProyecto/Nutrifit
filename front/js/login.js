@@ -7,13 +7,13 @@ logType.addEventListener('click', () => {
 
   if (attr == 'cliente') { // Cambiar a inicio de sesión a entrenador
     form.setAttribute('logTo', 'entrenador')
-    logType.innerHTML = 'Soy entrenador'
+    logType.innerHTML = 'Iniciar como entrenador (haz click para cambiar a cliente)'
 
     // Establecer action para php de entrenador
     document.getElementById('formLogIn').action = "../../back/src/loginEntrenador.php"
   } else { // Volver a iniciar sesión como cliente
     form.setAttribute('logTo', 'cliente')
-    logType.innerHTML = 'Soy cliente'
+    logType.innerHTML = 'Iniciar como cliente (haz click para cambiar a entrenador)'
 
     // Establecer action para php de entrenador
     document.getElementById('formLogIn').action = "../../back/src/loginClient.php"
