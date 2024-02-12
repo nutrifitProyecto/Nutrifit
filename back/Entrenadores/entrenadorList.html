@@ -13,13 +13,16 @@
 <body>
     <header class="p-3 bg-dark text-white">
         <div class="container">
-            <div class="flex-wrap align-items-center justify-content-center justify-content-lg-start" style="display: flex;">
+            <div class="flex-wrap align-items-center justify-content-center justify-content-lg-start"
+                style="display: flex;">
 
                 <h2 class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">Consulta tabla
                     Entrenadores</h2>
 
                 <div class="text-end">
-                    <button type="button" class="btn btn-warning">Cerrar sesión</button>
+                    <form action="../src/logOut.php">
+                        <button type="submit" class="btn btn-warning">Cerar sesión</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -126,7 +129,7 @@
             </div>
         </div>
     </div>
-    
+
     <!-- MODAL EDITAR ENTRENADORES -->
     <div class="modal fade" id="editarEntrenadorModal" tabindex="-1" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
