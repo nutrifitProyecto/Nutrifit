@@ -163,8 +163,7 @@ function cursosEntrenador(id) {
 
                 // Crea un nuevo elemento div con las clases de Bootstrap para columnas
                 const nuevoElemento = document.createElement("div");
-                //nuevoElemento.classList.add("col-md-4", "mb-3");
-                nuevoElemento.style.width = "18rem"
+                //nuevoElemento.classList.add("col-md-2", "mb-3");
 
                 // Crear card y aplicarle estilos
                 const card = document.createElement("div")
@@ -172,7 +171,7 @@ function cursosEntrenador(id) {
                 card.classList.add("ms-2")
                 card.classList.add("me-2")
                 card.classList.add("mb-4")
-                card.style.width = "15rem"
+                card.style.width = "21rem"
 
                 // Body de la carta
                 const cBody = document.createElement('div')
@@ -239,8 +238,8 @@ function cursosEntrenador(id) {
             console.log(error);
         });
 
+        // Redirect a crear cursos
     btnCrearDiet.addEventListener('click', () => {
         window.location.replace(`../CrearCurso/crearCurso.html?idEnt=${idEnt}&email=${email}&tipo=${tipo}`)
     })
-
 }
