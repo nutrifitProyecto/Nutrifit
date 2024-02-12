@@ -18,3 +18,27 @@ let volverPerfil = document.getElementById('volverPerfil')
 volverPerfil.addEventListener('click', () => {
     window.location.replace(`../Perfil/perfil.html?email=${email}&tipo=${tipo}`)
 })
+
+// Formularios
+let formCrearDieta = document.getElementById('crearDieta')
+let formCrearEntrenamiento = document.getElementById('crearEntrenamiento')
+
+let cambioCurso = document.getElementById('cambioCurso')
+let mostrar = cambioCurso.getAttribute('mostrar')
+
+cambioCurso.addEventListener('click', () => {
+    // Cambiar de formularios
+    if (cambioCurso.getAttribute(mostrar) == "ent") {
+        formCrearEntrenamiento.style.display = 'block'
+        formCrearDieta.style.display = 'none'
+
+        cambioCurso.innerHTML = "Cambiar a dieta"
+        cambioCurso.setAttribute(mostrar, "diet")
+    } else {
+        formCrearEntrenamiento.style.display = 'none'
+        formCrearDieta.style.display = 'block'
+
+        cambioCurso.innerHTML = "Cambiar a entrenamiento"
+        cambioCurso.setAttribute(mostrar, "ent")
+    }
+})
