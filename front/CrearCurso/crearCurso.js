@@ -7,10 +7,17 @@ let tipo = paramURL.get('tipo')
 let inputIdEnt = document.getElementById('idEnt')
 let inputEmail = document.getElementById('email')
 let inputTipo = document.getElementById('tipo')
+let inputIdEntDiet = document.getElementById('idEntDiet')
+let inputEmailDiet = document.getElementById('emailDiet')
+let inputTipoDiet = document.getElementById('tipoDiet')
 
 inputIdEnt.value = idEnt
 inputEmail.value = email
 inputTipo.value = tipo
+inputIdEntDiet.value = idEnt
+inputEmailDiet.value = email
+inputTipoDiet.value = tipo
+
 
 // Votón volver al perfil
 let volverPerfil = document.getElementById('volverPerfil')
