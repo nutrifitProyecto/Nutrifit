@@ -1,3 +1,23 @@
-td, th {
+* {
+    margin: 0;
+    padding: 0;
+}
+
+td,th {
     padding: 10px;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.d-flex {
+    height: 100vh;
+}
+
+aside {
+    height: 100%; /* Ocupa toda la altura del contenedor principal */
+   /*  overflow-y: auto; Agrega un desbordamiento vertical si el contenido es demasiado largo */
 }

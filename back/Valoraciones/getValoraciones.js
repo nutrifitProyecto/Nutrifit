@@ -38,8 +38,7 @@ function tablaValoraciones() {
                     </td>
                 </tr>`
     });
-    cad += `</table>
-            <button data-bs-toggle="modal" onclick="llenarSelectEntrenadores(${rate.idCliente}, ${rate.idEntrenador}, '')" data-bs-target="#crearValoracionModal" class="btn btn-primary">Crear valoración</button>`
+    cad += `</table>`
     table.innerHTML = cad
 }
 

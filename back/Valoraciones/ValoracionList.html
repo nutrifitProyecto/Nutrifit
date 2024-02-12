@@ -13,7 +13,8 @@
 <body>
     <header class="p-3 bg-dark text-white">
         <div class="container">
-            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <div class="flex-wrap align-items-center justify-content-center justify-content-lg-start"
+                style="display: flex;">
 
                 <h2 class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">Consulta tabla
                     Valoraciones</h2>
@@ -24,7 +25,7 @@
             </div>
         </div>
     </header>
-    
+
     <div class="d-flex">
         <aside>
             <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px;">
@@ -74,8 +75,12 @@
                 <hr>
             </div>
         </aside>
-        <div id="valoracion-table" class="ps-2 w-100">
-            <!-- Valoraciones de la base de datos -->
+        <div>
+            <div id="valoracion-table" class="ps-2 w-100">
+                <!-- Valoraciones de la base de datos -->
+            </div>
+            <button data-bs-toggle="modal" onclick="llenarSelectEntrenadores()" data-bs-target="#crearValoracionModal"
+                class="btn btn-primary m-3">Crear valoración</button>
         </div>
     </div>
 
