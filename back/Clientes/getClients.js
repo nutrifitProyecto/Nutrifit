@@ -24,7 +24,6 @@ function tablaClientes() {
                         <th>Nombre</th>
                         <th>Apellido</th>
                         <th>Email</th>
-                        <th>Passwd</th>
                         <th>Tipo</th>
                         <th>Fecha nacimiento</th>
                         <th>opciones</th>
@@ -35,7 +34,6 @@ function tablaClientes() {
                     <td>${client.name}</td>
                     <td>${client.surname}</td>
                     <td>${client.email}</td>
-                    <td>${client.password}</td>
                     <td>${client.tipo}</td>
                     <td>${client.fecha_nacimiento}</td>
                     <td>

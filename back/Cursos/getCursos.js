@@ -38,7 +38,7 @@ function tablaCursos() {
         } else {
             cad += `Dieta`
         }
-        cad += `<td><button onclick="consultarDatos(${curso.id}, ${curso.tipo}, ${curso.idEnt})">Consultar datos</button></td>
+        cad += `<td><button onclick="consultarDatos(${curso.id}, ${curso.tipo}, ${curso.idEnt})" class="btn btn-info">Consultar datos</button></td>
                 </td>
                     <td>
                         <button onclick="eliminarCurso(${curso.id})" class="btn btn-danger">Eliminar</button>

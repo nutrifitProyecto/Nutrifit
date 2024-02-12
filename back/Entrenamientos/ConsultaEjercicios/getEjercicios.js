@@ -43,7 +43,7 @@ console.log(info);
                         <td>${ej.ejDia}</td>
                         <td>${ej.ejDesc}</td>
                         <td>${ej.ejDur}</td>
-                        <td><button onclick="eliminarEj(${ej.ejId}, ${idEnt})">Eliminar</button></td>
+                        <td><button onclick="eliminarEj(${ej.ejId}, ${idEnt})" class="btn btn-danger">Eliminar</button></td>
             <tr>`
         });
         cad += `</table>`
