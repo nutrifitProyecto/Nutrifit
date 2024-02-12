@@ -186,53 +186,58 @@ function cursosEntrenador(id) {
                 const desc = document.createElement('p')
                 desc.classList.add('card-text')
 
+                const eliminar = document.createElement('button')
+                const editar = document.createElement('button')
+
                 if (curso.cTipo == 1) {
+                    // Título
                     title.textContent = curso.entName + " " + curso.cCoste + "€/mes"
                     title.classList.add('fs-4')
-
                     cBody.appendChild(title)
 
+                    // Descripción
                     desc.textContent = curso.entDesc
                     desc.classList.add('text-break')
                     cBody.appendChild(desc)
 
-
-                    console.log("entrene");
+                    // btn eliminar
+                    eliminar.textContent = "Eliminar"
+                    eliminar.id = "curs" + curso.cId
+                    eliminar.classList.add('btn')
+                    eliminar.classList.add('btn-danger')
+                    cBody.appendChild(eliminar)
                 } else {
+                    // Título
                     title.textContent = curso.dietNom + " " + curso.cCoste + "€/mes"
                     title.classList.add('fs-4')
-
                     cBody.appendChild(title)
 
+                    // Descripción
                     desc.textContent = curso.dietDesc
                     desc.classList.add('text-break')
-
                     cBody.appendChild(desc)
 
-                    console.log("dieta");
+                    // btn eliminar
+                    eliminar.textContent = "Eliminar"
+                    eliminar.id = "curs" + curso.cId
+                    eliminar.classList.add('btn')
+                    eliminar.classList.add('btn-danger')
+                    cBody.appendChild(eliminar)
                 }
-                /*
-                                <div class="card" style="width: 18rem;">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        <a href="#" class="card-link">Card link</a>
-                                        <a href="#" class="card-link">Another link</a>
-                                    </div>
-                                </div>
-                                */
-
                 console.log(card);
                 card.appendChild(cBody)
                 //nuevoElemento.appendChild(card)
 
                 // Añade el nuevo elemento al contenedor
                 container.appendChild(card);
-
-
             });
-            console.log(dataContainer);
+
+            info.forEach(curso => {
+                document.getElementById('curs' + curso.cId).addEventListener('click', () => {
+                    eliminarCurso(curso.cId)
+                })
+            })
+            console.log(container);
         })
         .catch(error => {
             console.log(error);
@@ -242,4 +247,14 @@ function cursosEntrenador(id) {
     btnCrearDiet.addEventListener('click', () => {
         window.location.replace(`../CrearCurso/crearCurso.html?idEnt=${idEnt}&email=${email}&tipo=${tipo}`)
     })
+
+    function eliminarCurso(idCurs) {
+        console.log(idCurs);
+        $.ajax({
+            type: "POST", //POST para enviar los datos al php
+            url: "./php/eliminarDieta.php",
+            data: { idToDelete: sendId }, // Enviar la variable como parte de los datos
+            success: window.location = "./dietaList.html"
+        });
+    }
 }

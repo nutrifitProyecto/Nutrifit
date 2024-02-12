@@ -84,13 +84,14 @@ function llenarCampos(id) {
     editInputs[2].childNodes[4].value = document.getElementById('column' + id).childNodes[5].innerHTML
 }
 
-//Limpia los campos de la ventana modal
+// Limpia los campos de la ventana modal
 function limpiarCampos() {
     inputs.forEach(element => {
         element.value = ""
     });
 }
 
+// Redirect
 function consultarEjercicios(id) {
     window.location.replace(`./ConsultaEjercicios/consultaEjercicios.html?id=${id}`)
 }
