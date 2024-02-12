@@ -21,12 +21,12 @@
             <div class="col-md-7">
                 <div class="form contact-wrap p-5 mt-5 bg-profile pt-5">
                     <button id="volverPerfil" class="btn btn-light mb-3">Volver al perfil</button>
-                    <form id="crearEntrenamiento" method="post" action="./php/crearEntrenamiento.php">
+                    <form id="crearEntrenamiento" method="post" action="../../back/Entrenamientos/php/crearCursoDesdePerfil.php">
                         <h3 class="text-center">Entrenamiento</h3>
-                        <div class="">
-                            <input id="idEnt" type="text">
-                            <input id="email" type="text">
-                            <input id="tipo" type="text">
+                        <div class="d-none">
+                            <input id="idEnt" name="idEnt" type="text">
+                            <input id="email" name="email" type="text">
+                            <input id="tipo" name="tipo" type="text">
                         </div>
                         <div class="row">
                             <!-- NOMBRE -->
@@ -43,7 +43,7 @@
                         <div id="descEnt">
                             <div class="col-md-12 form-group mb-3">
                                 <label for="description" class="col-form-label">Descripción</label>
-                                <textarea class="form-control" name="description" id="description" cols="50"
+                                <textarea class="form-control" name="trainDesc" id="description" cols="50"
                                     rows="5"></textarea>
                             </div>
                         </div>
