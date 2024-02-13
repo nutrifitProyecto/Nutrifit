@@ -1,0 +1,111 @@
+
+/* ------ Estilo formulario ------ */
+.form-input {
+    width: 385px;
+    background-color: #fff;
+    border: 3px solid transparent;
+    border-radius: 3px;
+    height: 40px;
+    line-height: 45px;
+    padding: 0 45px 0 10px;
+    transition: .3s ease all;
+}
+
+.form-input:focus {
+    border: 3px solid rgb(0, 0, 0);
+    outline: none;
+    box-shadow: 3px 0px 30px rgb(53, 53, 53);
+}
+
+.form-input-column {
+    width: 150px;
+    background-color: #fff;
+    border: 3px solid transparent;
+    border-radius: 3px;
+    height: 40px;
+    line-height: 45px;
+    padding: 0 10px 0 10px;
+    transition: .3s ease all;
+}
+
+.form-input-column:focus {
+    border: 3px solid rgb(0, 0, 0);
+    outline: none;
+    box-shadow: 3px 0px 30px rgb(53, 53, 53);
+}
+
+.form-control:focus {
+    border: 3px solid rgb(0, 0, 0);
+    outline: none;
+    box-shadow: 3px 0px 30px rgb(53, 53, 53);
+}
+
+/* --- Formulario correcto y enviado --- */
+.form-enviado {
+    height: 45px;
+    line-height: 45px;
+    background: rgb(19, 180, 19);
+    display: none;
+    padding: 0 15px;
+    border-radius: 3px;
+    width: 100%;
+    font-size: 12px;
+}
+
+.form-enviado-activo {
+    display: block;
+}
+
+/* --- Error al completar el formulario --- */
+.formulario-error {
+    height: 45px;
+    line-height: 45px;
+    background: #ff0000;
+    padding: 0 15px;
+    border-radius: 3px;
+    display: none;
+    width: 100%;
+    font-size: 12px;
+}
+
+.formulario-error-activo {
+    display: block;
+}
+
+/* ------ Estilo de errores y validación de formulario ------ */
+.error-validado {
+    font-size: 12px;
+    margin-bottom: 0;
+    display: none;
+}
+
+.error-validado-activo {
+    display: block;
+}
+
+.validacion-estado {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    z-index: 100;
+    font-size: 16px;
+    opacity: 0;
+}
+
+.correct .validacion-estado {
+    color: #1ed12d;
+    opacity: 1;
+}
+
+.incorrect .label {
+    color: #bb2929;
+}
+
+.incorrect .validacion-estado {
+    color: #bb2929;
+    opacity: 1;
+}
+
+.incorrect .input {
+    border: 3px solid #bb2929;
+}

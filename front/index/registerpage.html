@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/register.css">
 </head>
 
 <body>
@@ -18,17 +19,29 @@
     <main>
         <h2>Registrate</h2>
         <div class="formularioLogin campoderegistro">
-            <form method="post" id="formulario-pago" action="../../back/src/pasareladepago.php"
+            <form method="post" name="formulario_registro" id="formulario_registro" action="../../back/src/pasareladepago.php"
                 onsubmit="return validarFormulario()">
-                <label for="rg-nombre">Nombre</label><input type="text" id="rg-nombre" name="nombre" autofocus>
-                <label for="rg-apellido">Apellidos</label><input type="text" id="rg-apellido" name="apellido">
-                <label for="rg-fechan">Fecha de nacimiento</label><input type="date" name="fechaNacimiento"
+                <label for="rg-nombre">Nombre</label>
+                <input type="text" id="rg-nombre" name="nombre" autofocus>
+                
+                <label for="rg-apellido">Apellidos</label>
+                <input type="text" id="rg-apellido" name="apellido">
+                
+                <label for="rg-fechan">Fecha de nacimiento</label>
+                <input type="date" name="fechaNacimiento"
                     id="rg-fechan">
-                <label for="rg-altura">Altura</label><input type="text" id="rg-altura" name="altura">
-                <label for="rg-peso">Peso</label><input type="text" id="rg-peso" name="peso">
-                <label for="rg-email">Correo electronico</label><input type="email" name="email" id="rg-email">
-                <label for="rg-psswd">Contraseña</label><input type="password" name="passwd" id="rg-psswd">
-                <label for="rg2-psswd">Repetir contraseña</label><input type="password" name="psswd2" id="rg2-psswd">
+                
+                <label for="rg-peso">Peso</label>
+                <input type="text" id="rg-peso" name="peso">
+                
+                <label for="rg-email">Correo electronico</label>
+                <input type="email" name="email" id="rg-email">
+                
+                <label for="rg-psswd">Contraseña</label>
+                <input type="password" name="passwd" id="rg-passwd">
+                
+                <label for="rg-psswd2">Repetir contraseña</label>
+                <input type="password" name="passwd2" id="rg2-passwd">
 
                 <p onclick="registerCoach()"><a>Soy entrenador</a></p>
 
@@ -47,7 +60,9 @@
         </ul>
     </footer>
 
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="../js/main.js"></script>
+    <script src="../js/validarRegistro.js"></script>
 </body>
 
 <!-- <script src="./login.js"></script> ACABAR FUNCIONALIDAD-->
