@@ -160,7 +160,7 @@ function cursosEntrenador(id) {
             info.forEach(curso => {
 
                 // Crea un nuevo elemento div con las clases de Bootstrap para columnas
-                const nuevoElemento = document.createElement("div");
+                //const nuevoElemento = document.createElement("div");
                 //nuevoElemento.classList.add("col-md-2", "mb-3");
 
                 // Crear card y aplicarle estilos
@@ -169,7 +169,7 @@ function cursosEntrenador(id) {
                 card.classList.add("ms-2")
                 card.classList.add("me-2")
                 card.classList.add("mb-4")
-                card.style.width = "21rem"
+                card.style.width = "46%"
 
                 // Body de la carta
                 const cBody = document.createElement('div')
@@ -185,7 +185,11 @@ function cursosEntrenador(id) {
                 desc.classList.add('card-text')
 
                 const eliminar = document.createElement('button')
-                const editar = document.createElement('button')
+                const lista = document.createElement('ul')
+                const elemento1 = document.createElement('li')
+                const elemento2 = document.createElement('li')
+                const elemento3 = document.createElement('li')
+
 
                 if (curso.cTipo == 1) {
                     // Título
@@ -215,6 +219,17 @@ function cursosEntrenador(id) {
                     desc.classList.add('text-break')
                     cBody.appendChild(desc)
 
+                    elemento1.textContent = "Tipo: " + curso.dietTipo
+                    lista.appendChild(elemento1)                      
+
+                    elemento2.textContent = "Valor calórico: " + curso.dietVal
+                    lista.appendChild(elemento2)                      
+
+                    elemento3.textContent = "Comidas al día: " + curso.dietCom
+                    lista.appendChild(elemento3)                      
+
+                    cBody.appendChild(lista)
+
                     // btn eliminar
                     eliminar.textContent = "Eliminar"
                     eliminar.id = "curs" + curso.cId
@@ -232,7 +247,7 @@ function cursosEntrenador(id) {
 
             info.forEach(curso => {
                 document.getElementById('curs' + curso.cId).addEventListener('click', () => {
-                    eliminarCurso(curso.cId, )
+                    eliminarCurso(curso.cId,)
                 })
             })
             console.log(container);
@@ -241,7 +256,7 @@ function cursosEntrenador(id) {
             console.log(error);
         });
 
-        // Redirect a crear cursos
+    // Redirect a crear cursos
     btnCrearDiet.addEventListener('click', () => {
         window.location.replace(`../CrearCurso/crearCurso.html?idEnt=${idEnt}&email=${email}&tipo=${tipo}`)
     })

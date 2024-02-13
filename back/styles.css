@@ -33,3 +33,15 @@ a {
     color: black;
     text-decoration: none;
 }
+
+.btn-warning {
+    border-radius: 10px;
+    font-weight: bold;
+    background-color: #ff6b08;
+    color: #000000;
+    border: #ff6b08;
+}
+
+.active {
+    background-color: #ff6b08;
+}
