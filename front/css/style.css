@@ -117,6 +117,31 @@ main {
     height: 300px;
 }
 
+
+
+#video {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    z-index: 1;
+  }
+  
+  #teaser-bg {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .titulo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+  }
+  
+
 /*PERDIDA DE PESO*/
 
 .fondo {
@@ -131,7 +156,7 @@ main {
     align-items: flex-start;
 }
 
-.informacionPD .contenido-izquierda {
+.informacionPD #contentEntrenador {
     flex: 1;
     padding-right: 20px;
     /* Espacio entre la parte izquierda y la imagen */
@@ -166,9 +191,11 @@ main {
     /* Hace que la altura se ajuste automáticamente según el ancho */
 }
 
-.entrenamientos,
-.monitoreo,
-.enfoque {
+.informacionPD button {
+    text-align: center;
+}
+
+.entrenamientos{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -176,9 +203,8 @@ main {
     padding: 20px;
 }
 
-.entrenamientos p,
-.monitoreo p,
-.enfoque p {
+.entrenamientos p{
+
     color: #E8E8E8;
     text-align: center;
     font-size: 2.5vh;
@@ -189,345 +215,353 @@ main {
     width: 12px;
     height: 12px;
     margin: 5px;
-}
+ }
 
-.entrenamientos button,
-.monitoreo button,
-.enfoque button {
-    align-items: center;
-    text-align: center;
-    border: white;
-    border-radius: 10%;
-    width: 10%;
-    height: 40px;
-    color: #f2f4f7;
-    background-color: #262424;
-}
+    .entrenamientos button{
+        align-items: center;
+        text-align: center;
+        border: white;
+        border-radius: 10%;
+        width: 10%;
+        height: 40px;
+        color: #f2f4f7;
+        background-color: #262424;
 
-.teaser-bg {
-    position: relative;
-    display: inline-block;
-}
-
-.titulo {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #E8E8E8;
-    font-size: 4vh;
-}
-
-.caja {
-    width: 300px;
-    height: 200px;
-    background-color: #f1f1f1;
-    border: 1px solid #ddd;
-    border-radius: 20px;
-    margin: 10px;
-    padding: 10px;
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: center;
-}
-
-.cajas {
-    text-align: center;
-    justify-content: center;
-    display: flex;
-
-}
-
-.entrenamientos button,
-.monitoreo button,
-.enfoque button {
-    align-items: center;
-    text-align: center;
-    border: white;
-    border-radius: 10%;
-    width: 10%;
-    height: 40px;
-    color: #f2f4f7;
-    background-color: #262424;
-
-}
-
-/*IMAGEN DE FONDO INDEX*/
-
-.teaser-bg {
-    position: relative;
-    display: inline-block;
-}
-
-.titulo {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #E8E8E8;
-    font-size: 4vh;
-}
-
-/*OPINIONES*/
-
-.cajas {
-    text-align: center;
-    justify-content: center;
-    display: flex;
-}
-
-.cajas h1 {
-    display: flex;
-}
-
-.cajas img {
-    width: 10%;
-    height: 15%;
-    border-radius: 50%;
-}
-
-.informacioncaja {
-    width: 100%;
-    height: 100%;
-}
-
-.opinion {
-    line-height: 1.5;
-
-}
-
-.nombre {
-    font-size: 14px;
-    font-weight: bold;
-    margin: 5px 0;
-}
-
-.email {
-    font-size: 14px;
-    color: #0084b4;
-    margin: 0;
-}
-
-.informacioncaja {
-    width: 100%;
-    height: 100%;
-}
-
-.opinion {
-    line-height: 1.5;
-
-}
-
-.nombre {
-    font-size: 14px;
-    font-weight: bold;
-    margin: 5px 0;
-}
-
-.email {
-    font-size: 14px;
-    color: #0084b4;
-    margin: 0;
-}
-
-/*ACORDEON DE PREGUNTAS FRECUENTES*/
-#faqs {
-    position: relative;
-    left: 10%;
-    width: 80%;
-    margin-block: 15px;
-}
-
-.accordion {
-    background-color: #eee;
-    color: #444;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    text-align: left;
-    border: none;
-    outline: none;
-    transition: 0.4s;
-}
-
-div#faqs :nth-child(2) {
-    border-radius: 10px 10px 0 0;
-}
-
-.active,
-.accordion:hover {
-    background-color: #ccc;
-}
-
-.panel {
-    padding: 0 18px;
-    background-color: white;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
-}
-
-.accordion:after {
-    content: '\02795';
-    /* Unicode character for "plus" sign (+) */
-    font-size: 13px;
-    color: #777;
-    float: right;
-    margin-left: 5px;
-}
-
-.active:after {
-    content: "\2796";
-    /* Unicode character for "minus" sign (-) */
-}
-
-/*CONTACTO*/
-#contacto {
-    width: 80%;
-    position: relative;
-    left: 10%;
-    margin-bottom: 25px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-#contacto textarea {
-    border: 2px solid gray;
-    border-radius: 15px;
-}
+    }
 
 
-/*FOOTER*/
 
-footer {
-    bottom: 0;
-    padding-block: 15px;
-}
 
-footer ul {
-    display: flex;
-    justify-content: center;
-}
+    .teaser-bg {
+        position: relative;
+        display: inline-block;
+    }
 
-footer li {
-    margin-inline: 10px;
-}
+    .titulo {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #E8E8E8;
+        font-size: 4vh;
+    }
 
-footer li img {
-    width: 50px;
-    height: 50px;
-}
+    .caja{
+        width: 300px;
+        height: 200px;
+        background-color: #f1f1f1;
+        border: 1px solid #ddd;
+        border-radius: 20px;
+        margin: 10px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
 
-/*CAJAS PANEL */
-.titulopanel h2 {
-    color: #FF6B08;
-}
+    .cajas {
+        text-align: center;
+        justify-content: center;
+        display: flex;
 
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100%;
-}
+    }
 
-.cajaspanel {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    width: 50%;
-    justify-content: center;
-    align-items: baseline;
-    margin-top: 10%;
-}
+    .entrenamientos button {
+        align-items: center;
+        text-align: center;
+        border: white;
+        border-radius: 10%;
+        width: 10%;
+        height: 40px;
+        color: #f2f4f7;
+        background-color: #262424;
 
-.cajap {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    text-align: center;
-}
+    }
 
-.cajap h1 {
-    margin-bottom: 20px;
-    color: #E8E8E8;
-}
+    /*IMAGEN DE FONDO INDEX*/
 
-.cajap img {
-    width: 250px;
-    height: 250px;
-    border-radius: 10px;
-}
+    .teaser-bg {
+        position: relative;
+        display: inline-block;
+    }
 
-.entrenadores h2 {
-    margin-top: 20%;
-}
+    .titulo {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #E8E8E8;
+        font-size: 4vh;
+    }
 
-/*CAJAS CONTRATOS*/
-.cajascontratoarriba {
-    display: flex;
-    justify-content: center;
-    margin: 10px;
-    border-radius: 20px solid;
-    gap: 10px;
-}
+    /*OPINIONES*/
 
-.cajascontratoabajo {
-    display: flex;
-    justify-content: center;
-    margin: 10px;
-    padding: 0%;
-    gap: 10px;
-}
+    .cajas {
+        text-align: center;
+        justify-content: center;
+        display: flex;
+    }
 
-.cajascontratoarriba button,
-.cajascontratoabajo button {
-    margin-bottom: 15px;
-    border: white;
-    border-radius: 10%;
-    width: 40%;
-    height: 40px;
-    color: #f2f4f7;
-    background-color: #FF6B08;
-}
+    .cajas h1 {
+        display: flex;
+    }
 
-.cajac {
-    width: 200px;
-    background-color: #f0f0f0;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(204, 3, 3, 0.1);
-}
+    .cajas img {
+        width: 10%;
+        height: 15%;
+        border-radius: 50%;
+    }
 
-.informacioncajac {
-    text-align: center;
-}
+    .informacioncaja {
+        width: 100%;
+        height: 100%;
+    }
 
-.informacioncajac img {
-    width: 100%;
-}
+    .opinion {
+        line-height: 1.5;
 
-.opinionc {
-    margin-top: 10px;
-}
+    }
 
-.nombrec {
-    font-weight: bold;
-    margin: 10px 0;
-}
+    .nombre {
+        font-size: 14px;
+        font-weight: bold;
+        margin: 5px 0;
+    }
 
-.cajascontratoabajo p {
-    color: #FF6B08;
-    font-size: 4vh;
-}
+    .email {
+        font-size: 14px;
+        color: #0084b4;
+        margin: 0;
+    }
 
-.cajascontratoabajo li {
-    text-align: left;
-    margin: 10px
-}
+    .informacioncaja {
+        width: 100%;
+        height: 100%;
+    }
+
+    .opinion {
+        line-height: 1.5;
+
+    }
+
+    .nombre {
+        font-size: 14px;
+        font-weight: bold;
+        margin: 5px 0;
+    }
+
+    .email {
+        font-size: 14px;
+        color: #0084b4;
+        margin: 0;
+    }
+
+    /*ACORDEON DE PREGUNTAS FRECUENTES*/
+    #faqs {
+        position: relative;
+        left: 10%;
+        width: 80%;
+        margin-block: 15px;
+    }
+
+
+    .accordion {
+        background-color: #eee;
+        color: #444;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        text-align: left;
+        border: none;
+        outline: none;
+        transition: 0.4s;
+    }
+
+    div#faqs :nth-child(2) {
+        border-radius: 10px 10px 0 0;
+    }
+
+    .active,
+    .accordion:hover {
+        background-color: #ccc;
+    }
+
+    .panel {
+        padding: 0 18px;
+        background-color: white;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+    }
+
+    .accordion:after {
+        content: '\02795';
+        /* Unicode character for "plus" sign (+) */
+        font-size: 13px;
+        color: #777;
+        float: right;
+        margin-left: 5px;
+    }
+
+    .active:after {
+        content: "\2796";
+        /* Unicode character for "minus" sign (-) */
+    }
+
+    /*CONTACTO*/
+    #contacto {
+        width: 80%;
+        position: relative;
+        left: 10%;
+        margin-bottom: 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    #contacto input,
+    textarea {
+        border: 2px solid gray;
+        border-radius: 15px;
+    }
+
+
+    /*FOOTER*/
+
+    footer {
+        bottom: 0;
+        padding-block: 15px;
+    }
+
+    footer ul {
+        display: flex;
+        justify-content: center;
+    }
+
+    footer li {
+        margin-inline: 10px;
+    }
+
+    footer li img {
+        width: 50px;
+        height: 50px;
+    }
+
+
+    /*CAJAS PANEL */
+    .titulopanel h2 {
+        color: #FF6B08;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100%;
+    }
+
+    .cajaspanel {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+
+        width: 50%;
+        justify-content: center;
+        align-items: baseline;
+        margin-top: 10%;
+    }
+
+    .cajap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: center;
+
+    }
+
+    .cajap h1 {
+        margin-bottom: 20px;
+        color: #E8E8E8;
+    }
+
+    .cajap img {
+        width: 250px;
+        height: 250px;
+        border-radius: 10px;
+    }
+    .entrenadores h2{
+
+        margin-top: 20%;
+    }
+
+    /*CAJAS CONTRATOS*/
+    .cajascontratoarriba {
+        display: flex;
+        justify-content: center;
+        margin: 10px;
+        border-radius: 20px solid;
+        gap: 10px;
+       
+    }
+
+    .cajascontratoabajo {
+        display: flex;
+        justify-content: center;
+        margin: 10px;
+        padding: 0%;
+        gap: 10px;
+    }
+
+    .cajascontratoarriba button,
+    .cajascontratoabajo button {
+        margin-bottom: 15px;
+        border: white;
+        border-radius: 10%;
+        width: 40%;
+        height: 40px;
+        color: #f2f4f7;
+        background-color: #FF6B08;
+    }
+
+    .cajac {
+        width: 200px;
+        background-color: #f0f0f0;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(204, 3, 3, 0.1);
+    }
+
+    .informacioncajac {
+        text-align: center;
+    }
+
+    .informacioncajac img {
+        width: 100%;
+    }
+
+    .opinionc {
+        margin-top: 10px;
+    }
+
+    .nombrec {
+        font-weight: bold;
+        margin: 10px 0;
+    }
+
+
+    .cajascontratoabajo p {
+
+        color: #FF6B08;
+        font-size: 4vh;
+    }
+    .cajascontratoabajo li{
+        text-align: left;
+        margin: 10px
+    }
+
 
 /*ENTRENADOR*/
 
@@ -805,6 +839,24 @@ section {
     width: auto;
 }
 
+
+/* CURSOS ESTILO*/
+
+.generalcurso{
+    display: flex;
+    background-color: #ffffff;
+    width: 500px;
+    opacity: 20%;
+    border-radius: 5%;
+    grid: 20%;
+}
+
+.nom
+
+
+
+
+
 /* 
  * ESTILOS PERFIL --------------------------------------------------------- *
 */
@@ -874,6 +926,7 @@ section {
         box-shadow: 0 0 20px #ff6b08;
     }
 }
+
 
 /*MEDIA QUERY MOVIL*/
 

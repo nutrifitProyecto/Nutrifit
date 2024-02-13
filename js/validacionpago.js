@@ -10,7 +10,6 @@ function validarFormulario() {
   // Expresiones regulares para validar el correo y la tarjeta de crédito
   var correoRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   var tarjetaRegex = /^\d{16}$/;
-  var fechaRegex = /^(0[1-9]|1[0-2])\/(0[1-9]|[12][0-9]|3[01])\/\d{4}$/;
 
   // Validar que los campos no estén vacíos
   if (nombre === '' || apellido === '' || correo === '' || tarjeta === '' || fecha === '' || cvv === '') {
@@ -31,10 +30,7 @@ function validarFormulario() {
   }
 
   // Validar el formato de la fecha (MM/DD/YYYY)
-  if (!fechaRegex.test(fecha)) {
-      alert('Por favor, introduzca la fecha en el formato DD/MM/YYYY.');
-      return false;
-  }
+
 
   // Validar que el CVV tenga 3 o 4 dígitos
   if (!cvv.match(/^\d{3,4}$/)) {
@@ -45,3 +41,9 @@ function validarFormulario() {
   // Si todo está correcto, se envía el formulario
   return true;
 }
+// ENLAZAR CON BASE DE DATOS 
+function pagar() {
+
+
+  
+  }
