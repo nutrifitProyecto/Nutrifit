@@ -19,8 +19,8 @@
     <main>
         <h2>Registrate</h2>
         <div class="formularioLogin campoderegistro">
-            <form method="post" name="formulario_registro" id="formulario_registro" action="../../back/src/pasareladepago.php"
-                onsubmit="return validarFormulario()">
+            <form method="post" name="formulario_registro" id="formulario_registro" action="../../back/src/registerClient.php"
+                onsubmit="validarFormulario()">
                 <label for="rg-nombre">Nombre</label>
                 <input type="text" id="rg-nombre" name="nombre" autofocus>
                 
@@ -33,17 +33,22 @@
                 
                 <label for="rg-peso">Peso</label>
                 <input type="text" id="rg-peso" name="peso">
+
+                <label for="rg-altura">Altura</label>
+                <input type="text" id="rg-altura" name="altura">
                 
                 <label for="rg-email">Correo electronico</label>
                 <input type="email" name="email" id="rg-email">
                 
                 <label for="rg-psswd">Contraseña</label>
                 <input type="password" name="passwd" id="rg-passwd">
-                
+                <p class="ps-5 pe-5" style="font-size: 80%;">La contraseña debe tener una mayúscula, números y al menos un caracter especial</p>
+
                 <label for="rg-psswd2">Repetir contraseña</label>
                 <input type="password" name="passwd2" id="rg2-passwd">
 
-                <p onclick="registerCoach()"><a>Soy entrenador</a></p>
+                <!-- <p onclick="registerCoach()"><a>Soy entrenador</a></p> -->
+                <p></p>
 
                 <input class="bttn-submit" type="submit" value="Registrarse">
             </form>

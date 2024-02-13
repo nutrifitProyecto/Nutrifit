@@ -1,5 +1,4 @@
 let inputs = document.getElementsByTagName('input')
-console.log(inputs);
 
 let form = document.forms['formulario_registro']
 let inputsF = document.querySelectorAll('#formulario_registro input')
@@ -12,9 +11,8 @@ const validation = {
 
 // Comprobación de campos
 const camposValidados = {
-    telefono: false,
-    name: false,
-    surname: false,
+    nombre: false,
+    apellido: false,
     passwd: false,
     email: false
 }
@@ -35,9 +33,32 @@ function cargarDatos() {
 }
 
 function mandarDatos(e) {
-    e.preventDefault()
-
     
+/*
+    if (camposValidados.nombre == true && camposValidados.apellido == true && camposValidados.passwd == true && camposValidados.email == true) {
+        const formData = new FormData(form);
+
+        for (const entry of formData.entries()) {
+            console.log(entry[0], entry[1]);
+        }
+
+        fetch('../../back/src/registerClient.php', {
+            method: 'POST',
+            body: formData,
+        })
+            .then(response => response.json()) // Puedes ajustar esto según el formato de respuesta esperado
+            .then(data => {
+                // Aquí puedes manejar la respuesta del servidor
+                console.log(data);
+                // Puedes redirigir o realizar otras acciones según sea necesario
+            })
+            .catch(error => {
+                console.error('Error al enviar datos:', error);
+            });
+    } else {
+        console.log("no se han podido enviar");
+    }
+    */
 }
 
 function camposRequired() {
@@ -107,9 +128,6 @@ const validarConfpasswd = () => {
 
 // * Cambia los estilos a los campos no validados
 const validarCampo = (expr, input, campo) => {
-    console.log(input);
-    console.log(campo);
-
     if (expr.test(input.value)) {
         // ? Campo correcto
         document.getElementById(`rg-${campo}`).style.border = '1px solid white'
