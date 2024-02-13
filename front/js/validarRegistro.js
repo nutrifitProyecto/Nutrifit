@@ -41,7 +41,7 @@ function mandarDatos(e) {
 }
 
 function camposRequired() {
-    //Todos los campos deben tener valor
+    // Todos los campos deben tener valor
     form.elements["nombre"].setAttribute("required", "true")
     form.elements["apellido"].setAttribute("required", "true")
     form.elements["fechaNacimiento"].setAttribute("required", "true")
@@ -78,8 +78,16 @@ function validateForm(e) {
     }
 }
 
+// * Validar nombre
+const validarNom = (input, campo) => {
+    if (input.value != "") {
+        camposValidados[campo] = true
+    } else {
+        camposValidados[campo] = false
+    }
+}
 
-// Las dos contraseñas coinciden
+// * Las dos contraseñas coinciden
 const validarConfpasswd = () => {
     const inputPasswd1 = document.getElementById('rg-passwd')
     const inputPasswd2 = document.getElementById('rg2-passwd')
@@ -90,27 +98,25 @@ const validarConfpasswd = () => {
         camposValidados['passwd'] = false
     } else {
         if (inputPasswd2.value != "") {
-            // Son iguales y no son nulas
-            document.getElementById(`rg2-passwd`).style.border = '2px solid white'
+            // ? Son iguales y no son nulas
+            document.getElementById(`rg2-passwd`).style.border = '1px solid white'
             camposValidados['passwd'] = true
         }
     }
 }
 
-// Cambia los estilos a los campos no validados
+// * Cambia los estilos a los campos no validados
 const validarCampo = (expr, input, campo) => {
     console.log(input);
     console.log(campo);
 
     if (expr.test(input.value)) {
-        //Campo correcto
-        document.getElementById(`rg-${campo}`).style.border = '2px solid white'
-        //document.getElementById(`rg-${campo}`).classList.add('correct')
+        // ? Campo correcto
+        document.getElementById(`rg-${campo}`).style.border = '1px solid white'
         camposValidados[campo] = true
     } else {
-        //Campo incorrecto
+        // ! Campo incorrecto
         document.getElementById(`rg-${campo}`).style.border = '2px solid red'
         camposValidados[campo] = false
     }
 }
-
