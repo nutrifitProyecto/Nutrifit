@@ -36,6 +36,8 @@ function cargarDatos() {
 
 function mandarDatos(e) {
     e.preventDefault()
+
+    
 }
 
 function camposRequired() {
