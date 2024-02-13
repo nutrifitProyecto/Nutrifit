@@ -21,9 +21,52 @@ const camposValidados = {
 window.onload = cargarDatos
 
 function cargarDatos() {
-    form.onsubmit = mandarDatos
-
     camposRequired()
+
+    // * Validación nombre
+    form.elements['nombre'].addEventListener('keyup', () => {
+        let textoValido = form.elements['nombre'].value.replace(/[^a-zA-Z]/g, '');
+
+        if (textoValido.length > 1) {
+            textoValido = textoValido.substring(0, 50)
+        }
+
+        form.elements['nombre'].value = textoValido
+    })
+
+    // * Validación apellido
+    form.elements['apellido'].addEventListener('keyup', () => {
+        let textoValido = form.elements['apellido'].value.replace(/[^a-zA-Z]/g, '');
+
+        if (textoValido.length > 1) {
+            textoValido = textoValido.substring(0, 50)
+        }
+
+        form.elements['apellido'].value = textoValido
+    })
+
+    // * Validación peso
+    form.elements['peso'].addEventListener('keyup', () => {
+        let textoValido = form.elements['peso'].value.replace(/[^0-9]/g, '');
+
+        if (textoValido.length > 1) {
+            textoValido = textoValido.substring(0, 3)
+        }
+
+        form.elements['peso'].value = textoValido
+    })
+
+    // * Validación peso
+    form.elements['altura'].addEventListener('keyup', () => {
+        let textoValido = form.elements['altura'].value.replace(/[^0-9]/g, '');
+
+        if (textoValido.length > 1) {
+            textoValido = textoValido.substring(0, 3)
+        }
+
+        form.elements['altura'].value = textoValido
+    })
+
 
     // Asignar un evento por cada input
     inputsF.forEach((input) => {
@@ -32,41 +75,13 @@ function cargarDatos() {
     })
 }
 
-function mandarDatos(e) {
-    
-/*
-    if (camposValidados.nombre == true && camposValidados.apellido == true && camposValidados.passwd == true && camposValidados.email == true) {
-        const formData = new FormData(form);
-
-        for (const entry of formData.entries()) {
-            console.log(entry[0], entry[1]);
-        }
-
-        fetch('../../back/src/registerClient.php', {
-            method: 'POST',
-            body: formData,
-        })
-            .then(response => response.json()) // Puedes ajustar esto según el formato de respuesta esperado
-            .then(data => {
-                // Aquí puedes manejar la respuesta del servidor
-                console.log(data);
-                // Puedes redirigir o realizar otras acciones según sea necesario
-            })
-            .catch(error => {
-                console.error('Error al enviar datos:', error);
-            });
-    } else {
-        console.log("no se han podido enviar");
-    }
-    */
-}
-
 function camposRequired() {
     // Todos los campos deben tener valor
     form.elements["nombre"].setAttribute("required", "true")
     form.elements["apellido"].setAttribute("required", "true")
     form.elements["fechaNacimiento"].setAttribute("required", "true")
     form.elements["peso"].setAttribute("required", "true")
+    form.elements["altura"].setAttribute("required", "true")
     form.elements["email"].setAttribute("required", "true")
     form.elements["passwd"].setAttribute("required", "true")
     form.elements["passwd2"].setAttribute("required", "true")
