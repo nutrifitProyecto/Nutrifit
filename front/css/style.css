@@ -98,12 +98,18 @@ main {
   background-color: #191919;
 }
 
-#features {
-  display: flex;
-  flex-direction: column;
-  width: 90%;
-  margin-top: 5%;
+
+
+.SERVICIOS{
+    margin-top: 5%;
+    display: flex;
+    gap: 40px;
+    flex-direction: column;
+
 }
+
+
+
 
 .flotante-feature {
   float: inline-start;
@@ -128,13 +134,14 @@ main {
   position: relative;
   width: 100%;
 }
-.video {
-  width: 100%;
-  height: 700px;
-  opacity: 60%;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-  z-index: 1;
-}
+
+.Video {
+    width: 100%;
+   
+    opacity: 60%;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
 .buttons {
   position: absolute;
   top: 2%;
@@ -146,20 +153,21 @@ main {
 }
 .boton1,
 .boton2 {
-  color: #ffffff;
-  background-color: transparent;
-  width: 10%;
-  height: 7vh;
-  margin-top: 30%;
-  border-radius: 11px;
-  margin-right: 20px;
-  cursor: pointer;
-  box-shadow: 0 0 20px #ff6b08;
+    color: #ffffff;
+    background-color: #ff6b08;
+    width: 10%;
+    height: 7vh;
+    margin-top: 30%;
+    border-radius: 10px;
+    border: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+    box-shadow: 0 0 20px #ff6b08;
 }
 
 .boton1:hover,
 .boton2:hover {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 #teaser-bg {
@@ -167,15 +175,50 @@ main {
   z-index: 2;
 }
 
-.titulo {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #e8e8e8;
-  font-size: 4vh;
-}
+.entrenamiento {
+    background-color: #191919;
+    box-shadow: 0 0 20px #ff6b08;
+  }
+  .entrenamiento:hover{
+    
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+  
+  .dietas {
+    background-color: #191919;
+    box-shadow: 0 0 20px #ff6b08;
+  }
+  
+  .dietas:hover{
+    
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+  .asesoramiento {
+    background-color: #191919;
+    box-shadow: 0 0 20px #ff6b08;
+  }
+  
+  .asesoramiento:hover{
+    
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
 
+.titulo {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #e8e8e8;
+    font-size: 4vh;
+  }
+  
+  
+  .naranja {
+    color: orange;
+  }
+  
+
+  
 /*PERDIDA DE PESO*/
 
 .fondo {

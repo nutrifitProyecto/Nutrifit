@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
+    
     <header>
       <!-- header en main.js -->
     </header>
@@ -16,65 +17,66 @@
     <main>
       <div id="teaser-bg">
         <div class="video">
-          <video class="video" width="400" height="300" autoplay muted loop>
+          <video class="Video" autoplay muted loop>
             <source src="/front/img/VIDEOOOS.mp4" type="video/mp4" />
           </video>
         </div>
         <div class="buttons">
-          <button class="boton1" href="/front/index/cursos.html">
+          <button class="boton1" href="/front/cursos/cursos.html">
             Comprar
           </button>
-          <button class="boton2" href="/front/index/cursos.html">
+          <button class="boton2" href="/front/paneldecontrol/paneldecontrol.html">
             Informacion
           </button>
         </div>
       </div>
 
       <div class="texto-superpuesto">
-        <h2 class="titulo">"TRANSFORMA TU CUERPO, CAMBIA TU MENTE"</h2>
-        <!-- Otro contenido superpuesto si es necesario -->
+        <h2 class="titulo">
+            "TRANSFORMA TU <span class="naranja">CUERPO</span>,CAMBIA TU <span class="naranja">MENTE</span>"
+          </h2>
+                  <!-- Otro contenido superpuesto si es necesario -->
       </div>
 
-      <div id="features">
-        <div class="feature">
-          <img
-            src="../img/entrenamientos.jpeg"
-            alt="entrenamiento"
-            class="flotante-feature"
-          />
-          <div>
-            <a href=""><h2>ENTRENAMIENTOS</h2></a>
-            <p class="parrafos-index">
-              Consigue tus objetivos de fitness con entrenamientos
-              personalizados y adaptados a tus necesidades.
-            </p>
-          </div>
-        </div>
-        <div class="feature">
-          <div class="flotante-feature">
-            <a href=""><h2>DIETAS</h2></a>
-            <p class="parrafos-index">
-              Alimentación saludable y equilibrada para alcanzar tus objetivos
-              de peso, salud y rendimiento.
-            </p>
-          </div>
-          <img src="../img/dietas..png" alt="dietas" />
-        </div>
-        <div class="feature">
-          <img
-            src="../img/asesormento.jpg"
-            alt="asesoramiento"
-            class="flotante-feature"
-          />
-          <div>
-            <a href=""><h2>ASESORAMIENTO</h2></a>
-            <p class="parrafos-index">
-              Apoyo y orientación profesional para ayudarte a alcanzar tus
-              objetivos de fitness.
-            </p>
-          </div>
+
+
+<div class="SERVICIOS">
+
+      <div class="feature entrenamiento">
+        <img src="../img/entrenamientos.jpeg" alt="entrenamiento" class="flotante-feature"/>
+        <div>
+          <a href="/front/cursos/cursos.html"><h2>ENTRENAMIENTOS</h2></a>
+          <p class="parrafos-index">
+            Consigue tus objetivos de fitness con entrenamientos
+            personalizados y adaptados a tus necesidades.
+          </p>
         </div>
       </div>
+      
+      <div class="feature dietas">
+        <div class="flotante-feature">
+          <a href="/front/cursos/cursos.html"><h2>DIETAS</h2></a>
+          <p class="parrafos-index">
+            Alimentación saludable y equilibrada para alcanzar tus objetivos
+            de peso, salud y rendimiento.
+          </p>
+        </div>
+        <img src="../img/dietas..png" alt="dietas" />
+      </div>
+      
+      <div class="feature asesoramiento">
+        <img src="../img/asesormento.jpg" alt="asesoramiento" class="flotante-feature"
+        />
+        <div>
+          <a href="/front/cursos/cursos.html"><h2>ASESORAMIENTO</h2></a>
+          <p class="parrafos-index">
+            Apoyo y orientación profesional para ayudarte a alcanzar tus
+            objetivos de fitness.
+          </p>
+        </div>
+      </div>
+    </div>
+      
 
       <section>
         <h2>OPINIONES</h2>
@@ -206,6 +208,7 @@
       </ul>
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    
     <script type="module" src="../js/main.js"></script>
   </body>
 </html>
