@@ -5,19 +5,9 @@ include "../../inc/dbinfo.inc";
 //Creación de la conexión
 $connection = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
 
-$query = 'SELECT 
-e.name AS Entrenador,
-t.nombre AS Entrenamiento,
-t.description AS Descripcion,
-t.id AS IdEnt
-FROM 
-entrenamientos t
-JOIN 
-cursos_entrenamientos ce ON t.id = ce.idEntrenamiento
-JOIN 
-cursos c ON ce.idCurso = c.id
-JOIN 
-entrenadores e ON c.idEntrenador = e.id';
+$variable = $_GET['id'];
+
+$query = "SELECT ej.* FROM entrenamiento_ejercicio te JOIN ejercicios ej ON te.idEjercicio = ej.id WHERE te.idEntrenamiento = '$variable'";
 
 $result = $connection->query($query);
 
