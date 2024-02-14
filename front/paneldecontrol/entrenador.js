@@ -46,10 +46,10 @@ function anyadirTexto() {
             cad += `
         <div class="cajac">
             <div class="informacioncajac">
-                <img src="" alt="img"> 
-                <p class="nombrec">${ent.name + " " + ent.surname}</p>
+                <!-- <img src="" alt="img"> -->
+                <h3 class="nombrec">${ent.name + " " + ent.surname}</h3>
                 <p class="opinionc">${ent.description}</p>
-                <button onclick="fun(${ent.id})" style="cursor:pointer">Leer mas</button>
+                <button class="bttnCajac" onclick="fun(${ent.id})" style="cursor:pointer">Leer mas</button>
             </div>
         </div>`;
 

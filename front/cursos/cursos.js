@@ -1,5 +1,5 @@
-let divEntrenamientos=document.getElementById("showAllEntrenamientos");
-let divDietas=document.getElementById("showAllDietas");
+let divEntrenamientos = document.getElementById("showAllEntrenamientos");
+let divDietas = document.getElementById("showAllDietas");
 
 let infoEntrenamientos = [];
 
@@ -17,14 +17,14 @@ fetch('../../back/Entrenamientos/php/getEntrenamientosbyEnt.php')
 function insertEntrenamientos() {
     let cad = `<div class="faqs"> <h2>Entrenamientos</h2>`;
     infoEntrenamientos.forEach(ent => {
-        cad+=`
+        cad += `
         <button class="accordion" onclick="showExcercise(${ent.IdEnt})">${ent.Entrenamiento} / ${ent.Entrenador}</button>
         <div class="">
             <p>${ent.Descripcion}</p>
             <div id="ejerCursos${ent.IdEnt}"></div>
         </div>`;
     });
-    cad+=`</div>`;
+    cad += `</div>`;
     divEntrenamientos.innerHTML += cad;
 }
 
@@ -46,7 +46,7 @@ fetch('../../back/Dietas/php/getDietasbyEnt.php')
 function insertDietas() {
     let cad = `<div class="faqs"> <h2>Dietas</h2>`;
     infoDietas.forEach(ent => {
-        cad+=`
+        cad += `
         <button class="accordion">${ent.Dieta} / ${ent.Entrenador}</button>
         <div class="">
             <p>${ent.Descripcion}</p>
@@ -56,25 +56,32 @@ function insertDietas() {
 }
 
 //Ejercicios
-let infoEjercicios= [];
+let infoEjercicios = [];
+let displayEjercicios = false;
 
-function showExcercise(idEntre){
-    let divEjercicios=document.getElementById(`ejerCursos${idEntre}`)
+function showExcercise(idEntre) {
+    let divEjercicios = document.getElementById(`ejerCursos${idEntre}`)
 
-    fetch(`../../back/Ejercicios/php/getEjercicobyEnt.php?id=${idEntre}`)
-    .then(response => response.json())
-    .then((data) => {
-        //Parsea la respuesta a JSON
-        infoEjercicios = JSON.parse(JSON.stringify(data));
-        //Llama a la función y crea una tabla con los ejercicios
-        showEjercicios();
-    })
-    .catch(error => {
-        console.log(error);
-    });
+    if (displayEjercicios) {
+        divEjercicios.innerHTML="";
+        displayEjercicios = false;
+    } else {
+        displayEjercicios = true;
 
-    function showEjercicios(){
-        let cadena="<h5>Ejercicios</h5>";
+        fetch(`../../back/Ejercicios/php/getEjercicobyEnt.php?id=${idEntre}`)
+            .then(response => response.json())
+            .then((data) => {
+                //Parsea la respuesta a JSON
+                infoEjercicios = JSON.parse(JSON.stringify(data));
+                //Llama a la función y crea una tabla con los ejercicios
+                showEjercicios();
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    }
+    function showEjercicios() {
+        let cadena = "<h5>Ejercicios</h5>";
         infoEjercicios.forEach(ejer => {
             cadena += `
             <div class="cajac">
@@ -84,7 +91,7 @@ function showExcercise(idEntre){
                     <p class="opinionc">Duracion: ${ejer.duracion}</p>
                 </div>
             </div>`;
-            divEjercicios.innerHTML=cadena;
+            divEjercicios.innerHTML = cadena;
         });
     }
 }
