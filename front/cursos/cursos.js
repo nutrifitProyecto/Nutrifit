@@ -17,7 +17,7 @@ fetch('../../back/Entrenamientos/php/getEntrenamientosbyEnt.php')
 
 //Crear la tabla con todos los ejercicios
 function insertEntrenamientos() {
-    let cad = `<div id="faqs">`;
+    let cad = `<div class="faqs"> <h2>Entrenamientos</h2>`;
     infoEntrenamientos.forEach(ent => {
         cad+=`
         <button class="accordion">${ent.Entrenamiento} / ${ent.Entrenador}</button>
@@ -46,14 +46,13 @@ fetch('../../back/Dietas/php/getDietasbyEnt.php')
 
 //Crear la tabla con todos los ejercicios
 function insertDietas() {
-    let cad = ``;
+    let cad = `<div class="faqs"> <h2>Dietas</h2>`;
     infoDietas.forEach(ent => {
-        cad+=`<div>
-        <h3>${ent.Dieta}</h3>
-        <h4>${ent.Descripcion}</h4>
-        <h5>${ent.Entrenador}</h5>
-        </div>
-        `;
+        cad+=`
+        <button class="accordion">${ent.Dieta} / ${ent.Entrenador}</button>
+        <div class="panel">
+            <p>${ent.Descripcion}</p>
+        </div>`;
     });
     divDietas.innerHTML += cad;
 }

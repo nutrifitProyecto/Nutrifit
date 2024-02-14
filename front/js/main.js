@@ -44,8 +44,8 @@ function prepararCabecera() {
   </a>
   <nav>
       <ul style="display: flex; align-items: center; padding-top: 10px">
-          <li><a href="./index.html">Servicios</a></li>
-          <li><a href="./index.html">About</a></li>
+          <li><a href="../cursos/cursos.html">Cursos</a></li>
+          <li><a href="../paneldecontrol/paneldecontrol.html">Entrenadores</a></li>
           <li class="loggedIn"><a href="../index/registerpage.html">Registrarse</a></li>
           <li class="loggedIn"><a href="../index/loginpage.html">Iniciar Sesion</a></li>
           <li class="loggedOut"><a href="../Perfil/perfil.html?email=${sesion.email}">Mi perfil</a></li>
