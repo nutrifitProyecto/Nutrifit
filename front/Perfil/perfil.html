@@ -21,8 +21,9 @@
         <div class="col-md-7">
             <div class="form contact-wrap p-5 mt-5 bg-profile pt-5">
                 <h3 class="text-center">Perfil</h3>
-                <form class="mb-5" method="post" id="contactForm" name="contactForm"
+                <form class="mb-5" method="post" id="formPerfil" name="formPerfil"
                     action="../../back/Clientes/php/editarPerfil.php">
+                    <input type="text" id="tipo" name="tipo" style="display: none;">
                     <div class="row">
                         <!-- NOMBRE -->
                         <div class="col-md-6 form-group mb-3">
@@ -42,7 +43,9 @@
                             <input type="text" class="form-control" name="email" id="email" disabled>
                         </div>
                     </div>
-                    <div class="row d-flex align-items-center">
+
+                    <!-- Caja datos -->
+                    <div class="row d-flex align-items-center" id="datosCliente">
                         <div class="col-md-4 form-group mb-3">
                             <label for="fNacimiento" class="col-form-label">Fecha de nacimiento</label>
                             <input type="date" class="form-control" name="fNacimiento" id="fNacimiento">
@@ -64,10 +67,17 @@
                             </div>
                         </div>
                     </div>
+                    <div id="descEnt">
+                        <div class="col-md-12 form-group mb-3">
+                            <label for="description" class="col-form-label">Descripción</label>
+                            <textarea class="form-control" name="description" id="description" cols="50"
+                                rows="5"></textarea>
+                        </div>
+                    </div>
                     <button id="btonEditarDatos" type="submit" class="btn btn-light mt-4">Editar datos</button>
                 </form>
+                <button id="mostrarDatosPago" class="btn btn-warning mt-4" mostrar="false"><i class="fa-solid fa-wallet"></i></button>
 
-                <button id="mostrarDatosPago" class="btn-warning" mostrar="false">Ver datos de pago</button>
 
                 <!-- DATOS DE PAGO -->
                 <div id="datosPago" class="container-fluid" style="display: none;">
@@ -80,6 +90,7 @@
                                             <div class="form-card">
                                                 <h2 id="heading2" class="text-orange">Datos de pago</h2>
                                                 <form method="post" action="../../back/DatosPago/guardarDatosPago.php">
+                                                    <input type="text" id="tipo" name="tipo" style="display: none;">
                                                     <div name="inputsDatosPago" style="display: none;">
                                                         <input id="idCliente" name="idCliente" type="number">
                                                         <input id="emailCliente" name="emailCliente" type="email">
@@ -107,12 +118,13 @@
                                                             <label class="pay">Expiration Date</label>
                                                         </div>
                                                         <div class="col-md-12" name="inputsDatosPago">
-                                                            <input type="text" name="fechaExp" id="exp" placeholder="MM/YY"
-                                                                minlength="5" maxlength="5">
+                                                            <input type="text" name="fechaExp" id="exp"
+                                                                placeholder="MM/YY" minlength="5" maxlength="5">
                                                         </div>
                                                     </div>
                                                     <div class="d-flex justify-content-center">
-                                                        <button class="btn-light" type="submit">Guardar datos de pago</button>
+                                                        <button class="btn-light" type="submit">Guardar datos de
+                                                            pago</button>
                                                     </div>
                                                 </form>
                                             </div>
@@ -123,13 +135,29 @@
                         </div>
                     </div>
                 </div>
+
+
+            </div>
+
+            <h3 class="mt-5">Tus cursos</h3>
+            <div class="mt-2 ms-4 container_cursos mx-auto" id="cursosEntrenador">
+                <div>
+                    <div class="row align-items-center" id="dataContainer">
+                        <!-- CURSOS ORGANIZADOS EN COLUMNAS DE 3 -->
+
+                    </div>
+                    <button id="btnCrearDiet" class="btn btn-primary m-3">Crear curso nuevo</button>
+                </div>
             </div>
         </div>
     </div>
+
 </body>
 
-<script src="../js/main.js"></script>
+<script src="https://kit.fontawesome.com/0265a14cdb.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script src="./datosPerfil.js"></script>
+<script type="module" src="../js/main.js"></script>
+<script type="module" src="./datosPerfil.js"></script>
+
 
 </html>

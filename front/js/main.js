@@ -12,7 +12,7 @@ function datosSesion() {
     success: function (data) {
       sesion = data
       if (sesion.autenticado) {
-        console.log('Usuario autenticado:', sesion.autenticado + "\n" + sesion.email);
+        console.log('Usuario autenticado:', sesion.autenticado + "\n" + sesion.email + "\n" + sesion.tipo);
         // Creación de cabecera
         prepararCabecera()
         loggedIn[0].style.display = 'none'
@@ -34,7 +34,8 @@ function datosSesion() {
 // Prepara la cabecera y la muestra
 function prepararCabecera() {
   let header = document.getElementsByTagName("header")[0];
-  console.log(sesion);
+  const email = sesion.email || '';
+  const tipo = sesion.tipo || '';
   header.innerHTML = `
   <a href="../index/index.html">
     <div id="logo-title" style="display: flex">
@@ -48,7 +49,7 @@ function prepararCabecera() {
           <li><a href="../paneldecontrol/paneldecontrol.html">Entrenadores</a></li>
           <li class="loggedIn"><a href="../index/registerpage.html">Registrarse</a></li>
           <li class="loggedIn"><a href="../index/loginpage.html">Iniciar Sesion</a></li>
-          <li class="loggedOut"><a href="../Perfil/perfil.html?email=${sesion.email}">Mi perfil</a></li>
+          <li class="loggedOut"><a href="../Perfil/perfil.html?email=${email}&tipo=${tipo}">Mi perfil</a></li>
           <li class="loggedOut">
             <form action="../../back/src/logOut.php">
               <button type="submit" class="btn btn-light">Cerar sesión</button>
@@ -62,7 +63,7 @@ function prepararCabecera() {
 window.addEventListener("load", function () {
   // Recoge los datos de la sesión
   datosSesion()
-});
+})
 
 //Boton de menu en movil
 function displayChange() {
@@ -112,27 +113,10 @@ function registerCoach() {
   // <input type="checkbox" id="" name=""><label for="">SEGUIMIENTO CONTINUO Y AJUSTES</label>
   // <input type="checkbox" id="" name=""><label for="">PERDIDA DE PESO</label>
   // <input type="checkbox" id="" name=""><label for="">AUMENTO DE VOLUMEN</label>
-  // </div>`;
+  //¡ </div>`;
 
   form.getElementsByTagName("p")[0].textContent = "";
 
   // div.innerHTML=newinputs;
 
 }
-
-/*
-//SUBIR CV
-
-
-
-
-     // Obtén referencia al input de tipo file y al input de texto
-     const fileInput = document.getElementById('file-input');
-     const fileNameInput = document.getElementById('file-name');
-
-     // Agrega un listener al cambio de input
-     fileInput.addEventListener('change', function() {
-         // Muestra el nombre del archivo seleccionado en el input de texto
-         fileNameInput.value = fileInput.files[0].name;
-     });
-*/

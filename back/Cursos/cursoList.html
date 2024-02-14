@@ -13,21 +13,23 @@
 <body>
     <header class="p-3 bg-dark text-white">
         <div class="container">
-            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <div class="flex-wrap align-items-center justify-content-center justify-content-lg-start" style="display: flex;">
 
                 <h2 class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">Consulta tabla
                     Cursos</h2>
 
                 <div class="text-end">
-                    <button type="button" class="btn btn-warning">Cerrar sesión</button>
+                    <form action="../src/logOut.php">
+                        <button type="submit" class="btn btn-warning">Cerar sesión</button>
+                    </form>
                 </div>
             </div>
         </div>
     </header>
 
-    <div class="d-flex">
+    <div class="disp-flex">
         <aside>
-            <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px;">
+            <div class="disp-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px;">
                 <hr>
                 <ul class="nav nav-pills flex-column mb-auto">
                     <li class="nav-item">
@@ -75,57 +77,12 @@
             </div>
         </aside>
 
-        <div>
+        <div class="w-100">
             <div id="curso-table" class="ps-2 w-100">
                 <!-- Cursos de la base de datos -->
             </div>
-            <!--<button onclick="llenarSelectEntrenadores('placeholder', '')" data-bs-toggle="modal" data-bs-target="#crearCursoModal" class="btn btn-primary m-4">Crear
-                curso</button>-->
         </div>
     </div>
-
-    <!-- MODAL CREAR CURSO 
-    <div class="modal fade" id="crearCursoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Crear Curso</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form method="post" action="./php/crearCurso.php">
-                        <div class="d-flex">
-                            <div class="me-4">
-                                <label for="cursoEnt">Entrenador:</label><br>
-                                <select name="cursoEnt" id="cursoEnt">
-                                    <option value="0">--- Selecciona un entrenador</option>
-                                    <!-- RELLENAR ENTRENADORES CON JS 
-                                </select>
-                            </div>
-                            <div>
-                                <label for="cursoCoste">Coste mes:</label><br>
-                                <input type="text" name="cursoCoste" id="cursoCoste" class="w-100">
-                            </div>
-                        </div>
-                        <div class="mt-3">
-                            <label for="cursoTipo">Tipo del curso:</label><br>
-                             <select name="cursoTipo" id="cursoTipo">
-                                <option value="0">--- Selecciona un tipo</option>
-                                <option value="1">Entrenamiento</option>
-                                <option value="2">Dieta</option>
-                             </select>   
-                        </div>
-                        <button type="submit" class="btn btn-primary mt-3">Crear curso</button>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
-                        onclick="limpiarCampos()">Cerrar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    -->
 
     <!-- MODAL EDITAR CLIENTES -->
     <div class="modal fade" id="editarCursoModal" tabindex="-1" aria-labelledby="exampleModalLabel"

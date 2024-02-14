@@ -7,13 +7,11 @@ $connection = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
 $name = $_POST['name'];
 $surname = $_POST['surname'];
 $email = $_POST['email'];
-$fechaNacimiento = $_POST['fNacimiento'];
-$weight = $_POST['weight'];
-$height = $_POST['height'];
+$description = $_POST['description'];
 $tipo = $_POST['tipo'];
 
-// Editar cliente por email
-$query = "UPDATE clientes SET name = '$name', surname = '$surname', fecha_nacimiento = '$fechaNacimiento', weight = '$weight', height = '$height' WHERE email = '$email'";
+// Editar entrenador por email
+$query = "UPDATE entrenadores SET name = '$name', surname = '$surname', description = '$description' WHERE email = '$email'";
 
 $result = $connection->query($query);
 

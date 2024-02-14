@@ -125,22 +125,22 @@ main {
     width: 100%;
     height: 50%;
     z-index: 1;
-  }
-  
-  #teaser-bg {
+}
+
+#teaser-bg {
     position: relative;
     z-index: 2;
-  }
-  
-  .titulo {
+}
+
+.titulo {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
     text-align: center;
-  }
-  
+}
+
 
 /*PERDIDA DE PESO*/
 
@@ -195,7 +195,7 @@ main {
     text-align: center;
 }
 
-.entrenamientos{
+.entrenamientos {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -203,7 +203,7 @@ main {
     padding: 20px;
 }
 
-.entrenamientos p{
+.entrenamientos p {
 
     color: #E8E8E8;
     text-align: center;
@@ -843,13 +843,18 @@ section {
 
 /* CURSOS ESTILO*/
 
+<<<<<<< HEAD
 #showAllEntDiet{
+=======
+.generalcurso {
+>>>>>>> main
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
+<<<<<<< HEAD
 #showAllDietas{
     background-color: #ccc;
     width: 80%;
@@ -876,6 +881,9 @@ section {
     margin:5%;
 }
 
+=======
+.nom
+>>>>>>> main
 /* 
  * ESTILOS PERFIL -------- *
 */
@@ -884,10 +892,16 @@ section {
     background-color: #2c2c2c;
     border-radius: 30px;
     text-align: center;
-    border: 4px #ff6b08 solid ;
+    border: 4px #ff6b08 solid;
     border-radius: 15px;
     padding-bottom: 8px;
     box-shadow: 0 0 20px #ff6b08;
+}
+
+.container_cursos {
+    display: flex;
+    width: 100%;
+    height: 100vh;
 }
 
 
@@ -918,6 +932,7 @@ section {
     */
 
     .btn-light {
+        border-radius: 10px;
         font-weight: bold;
         background-color: #ff6b08;
         color: #000000;
@@ -932,13 +947,12 @@ section {
         background-color: #2c2c2c;
         border-radius: 30px;
         text-align: center;
-        border: 4px #ff6b08 solid ;
+        border: 4px #ff6b08 solid;
         border-radius: 15px;
         padding-bottom: 8px;
         box-shadow: 0 0 20px #ff6b08;
     }
 }
-
 
 /*MEDIA QUERY MOVIL*/
 

@@ -24,7 +24,6 @@ function tablaEntrenadores() {
                         <th>Nombre</th>
                         <th>Apellido</th>
                         <th>Email</th>
-                        <th>Contraseña</th>
                         <th>Descripción</th>
                         <th>opciones</th>
                     </tr>`
@@ -34,8 +33,7 @@ function tablaEntrenadores() {
                     <td>${ent.name}</td>
                     <td>${ent.surname}</td>
                     <td>${ent.email}</td>
-                    <td>${ent.password}</td>
-                    <td >${ent.description}</td>
+                    <td>${ent.description}</td>
                     <td class="overflow-x-auto">
                         <button onclick="eliminarEntrenador(${ent.id})" class="btn btn-danger">Eliminar</button>
                         <button id="btnEditar" data-bs-toggle="modal" data-bs-target="#editarEntrenadorModal" class="btn btn-success" onclick="llenarCampos(${ent.id})">Editar</button>

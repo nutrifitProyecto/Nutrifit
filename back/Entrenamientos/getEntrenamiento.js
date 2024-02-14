@@ -31,7 +31,7 @@ function tablaEntrenamientos() {
                     <td>${ent.id}</td>
                     <td>${ent.nombre}</td>
                     <td>${ent.description}</td>
-                    <td><button onclick="consultarEjercicios(${ent.id})">Ver ejercicios</button></td>
+                    <td><button onclick="consultarEjercicios(${ent.id})" class="btn btn-info">Ver ejercicios</button></td>
                     <td>
                         <button onclick="eliminarEntrenamiento(${ent.id})" class="btn btn-danger">Eliminar</button>
                         <button id="btnEditar" data-bs-toggle="modal" data-bs-target="#editarEntrenamientoModal" class="btn btn-success" onclick="llenarCampos(${ent.id})">Editar</button>
@@ -84,13 +84,14 @@ function llenarCampos(id) {
     editInputs[2].childNodes[4].value = document.getElementById('column' + id).childNodes[5].innerHTML
 }
 
-//Limpia los campos de la ventana modal
+// Limpia los campos de la ventana modal
 function limpiarCampos() {
     inputs.forEach(element => {
         element.value = ""
     });
 }
 
+// Redirect
 function consultarEjercicios(id) {
     window.location.replace(`./ConsultaEjercicios/consultaEjercicios.html?id=${id}`)
 }
