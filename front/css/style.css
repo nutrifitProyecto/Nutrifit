@@ -4,210 +4,286 @@ h3,
 h4,
 h5,
 h6 {
-    color: #FF6B08;
-    text-align: center;
-    /* font-size: 5vh; */
-    font-family: "Bebas Neue", sans-serif;
-    letter-spacing: 2px;
-    font-weight: bold;
+  color: #ff6b08;
+  text-align: center;
+  font-size: 5vh;
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 2px;
+  font-weight: bold;
 }
 
 body {
-    background-color: #191919;
-    font-family: "Bebas Neue", sans-serif;
-    font-weight: bold;
+  background-color: #191919;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: bold;
 }
 
 a {
-    text-decoration: none;
-    color: #E8E8E8;
+  text-decoration: none;
+  color: #e8e8e8;
 }
 
 ul {
-    margin-left: 0;
-    margin-right: 0;
-    padding: 0;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0;
 }
 
 li {
-    list-style: none;
+  list-style: none;
 }
 
 header,
 footer {
-    color: #E8E8E8;
-    background-color: #000000;
-
+  color: #e8e8e8;
+  background-color: #000000;
 }
 
+.parrafos-index {
+  color: white;
+  font-size: 2.5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5%;
+}
 header {
-    display: grid;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    grid-template-columns: repeat(2, auto);
-    /*position: sticky;
-    top: 0px;*/
-    width: 100%;
+  display: grid;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  grid-template-columns: repeat(2, auto);
+  /*position: sticky;
+top: 0px;*/
+  width: 100%;
 }
 
 .bars-svg {
-    width: 60px;
-    height: 50px;
+  width: 60px;
+  height: 50px;
 }
 
 nav {
-    display: none;
-    font-size: larger;
+  display: none;
+  font-size: larger;
 }
 
 header li {
-    margin-left: 6px;
-    margin-right: 6px;
+  margin-left: 6px;
+  margin-right: 6px;
 }
 
 span#title {
-    font-weight: 700;
-    font-size: x-large;
+  font-weight: 700;
+  font-size: x-large;
 }
 
 #title span {
-    color: #FF6B08;
-    font-weight: 900;
+  color: #ff6b08;
+  font-weight: 900;
 }
 
-
 div#logo-title {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .img-logo {
-    width: 60px;
-    height: 60px;
+  width: 60px;
+  height: 60px;
 }
 
 /*MAIN INDEX*/
 
 main {
-    background-color: #191919;
+  background-color: #191919;
 }
 
-#features {
+
+
+.SERVICIOS{
+    margin-top: 5%;
     display: flex;
+    gap: 40px;
     flex-direction: column;
-    width: 90%;
+
 }
+
+
+
 
 .flotante-feature {
-    float: inline-start;
+  float: inline-start;
 }
 
 .feature {
-    position: relative;
-    left: 10%;
-    width: 80%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
+  position: relative;
+  left: 10%;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
 }
 
 .feature img {
-    width: 40%;
-    height: 300px;
+  width: 40%;
+  height: 300px;
 }
 
+.container {
+  position: relative;
+  width: 100%;
+}
 
-
-#video {
-    top: 0;
-    left: 0;
+.Video {
     width: 100%;
-    height: 50%;
+   
+    opacity: 60%;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
     z-index: 1;
+  }
+.buttons {
+  position: absolute;
+  top: 2%;
+  left: 0;
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  z-index: 2;
+}
+.boton1,
+.boton2 {
+    color: #ffffff;
+    background-color: #ff6b08;
+    width: 10%;
+    height: 7vh;
+    margin-top: 30%;
+    border-radius: 10px;
+    border: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+    box-shadow: 0 0 20px #ff6b08;
+}
+
+.boton1:hover,
+.boton2:hover {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 #teaser-bg {
-    position: relative;
-    z-index: 2;
+  position: relative;
+  z-index: 2;
 }
+
+.entrenamiento {
+    background-color: #191919;
+    box-shadow: 0 0 20px #ff6b08;
+  }
+  .entrenamiento:hover{
+    
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+  
+  .dietas {
+    background-color: #191919;
+    box-shadow: 0 0 20px #ff6b08;
+  }
+  
+  .dietas:hover{
+    
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+  .asesoramiento {
+    background-color: #191919;
+    box-shadow: 0 0 20px #ff6b08;
+  }
+  
+  .asesoramiento:hover{
+    
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
 
 .titulo {
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: white;
-    text-align: center;
-}
+    color: #e8e8e8;
+    font-size: 4vh;
+  }
+  
+  
+  .naranja {
+    color: orange;
+  }
+  
 
-
+  
 /*PERDIDA DE PESO*/
 
 .fondo {
-    width: 100%;
-    height: 600px;
-    opacity: 70%;
+  width: 100%;
+  height: 600px;
+  opacity: 70%;
 }
 
 .informacionPD {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .informacionPD #contentEntrenador {
-    flex: 1;
-    padding-right: 20px;
-    /* Espacio entre la parte izquierda y la imagen */
+  flex: 1;
+  padding-right: 20px;
+  /* Espacio entre la parte izquierda y la imagen */
 }
 
 .informacionPD h1 {
-    text-align: left;
-    font-size: 4vh;
-    font-family: Inter, sans-serif;
-    font-weight: bold;
+  text-align: left;
+  font-size: 4vh;
+  font-family: Inter, sans-serif;
+  font-weight: bold;
 }
 
 .informacionPD p {
-    font-size: 3vh;
-    color: white
+  font-size: 3vh;
+  color: white;
 }
 
 .informacionPD button {
-    margin-bottom: 15px;
-    border: white;
-    border-radius: 10%;
-    width: 10%;
-    height: 40px;
-    color: #f2f4f7;
-    background-color: #FF6B08;
-    text-align: center;
+  margin-bottom: 15px;
+  border: white;
+  border-radius: 10%;
+  width: 10%;
+  height: 40px;
+  color: #f2f4f7;
+  background-color: #ff6b08;
+  text-align: center;
 }
 
 .informacionPD img {
-    max-width: 350PX;
-    height: auto;
-    /* Hace que la altura se ajuste automáticamente según el ancho */
+  max-width: 350px;
+  height: auto;
+  /* Hace que la altura se ajuste automáticamente según el ancho */
 }
 
 .informacionPD button {
-    text-align: center;
+  text-align: center;
 }
 
 .entrenamientos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
 }
 
 .entrenamientos p {
-
-    color: #E8E8E8;
-    text-align: center;
-    font-size: 2.5vh;
+  color: #e8e8e8;
+  text-align: center;
+  font-size: 2.5vh;
 }
 
 /*tick*/
@@ -562,268 +638,265 @@ main {
 /*ENTRENADOR*/
 
 .perfilh2 {
-    margin-top: 0;
+  margin-top: 0;
 }
 
 .perfil img {
-    width: 150px;
-    height: 160px;
-    border-radius: 600px;
-    align-content: center;
+  width: 150px;
+  height: 160px;
+  border-radius: 600px;
+  align-content: center;
 }
 
 .perfil {
-    text-align: center;
+  text-align: center;
 }
 
 .perfilinfo {
-    color: white;
+  color: white;
 }
 
 .botoncv {
-    background-color: #191919;
-    width: 2px;
-    height: 2px;
+  background-color: #191919;
+  width: 2px;
+  height: 2px;
 }
 
 .experiencia img {
-    background-color: #191919;
-    width: 40px;
-    height: 40px;
+  background-color: #191919;
+  width: 40px;
+  height: 40px;
 }
 
 /*CLIENTES-entrenador*/
 
 .clientescurso {
-    text-align: center;
-    justify-content: center;
-    display: flex;
-    gap: 10px;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  gap: 10px;
 }
 
 .clientescurso h1 {
-    display: flex;
+  display: flex;
 }
 
 .clientescurso img {
-    width: 10%;
-    height: 15%;
-    border-radius: 50%;
+  width: 10%;
+  height: 15%;
+  border-radius: 50%;
 }
 
 .informacioncliente {
-    width: 200px;
-    height: auto;
-    background-color: white;
-    border-radius: 20px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px
+  width: 200px;
+  height: auto;
+  background-color: white;
+  border-radius: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
 }
 
 .nombre p {
-    font-size: 14px;
-    font-weight: bold;
-    margin: 5px 0;
-    color: #000000;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 5px 0;
+  color: #000000;
 }
 
 .email {
-    font-size: 14px;
-    color: #000000;
-    margin: 0;
+  font-size: 14px;
+  color: #000000;
+  margin: 0;
 }
 
 /* Cursos*/
 
 .cursos img {
-    width: 420px;
-    height: 200px;
-    border-radius: 20px;
+  width: 420px;
+  height: 200px;
+  border-radius: 20px;
 }
 
 .cursoinfo {
-    color: #878585;
-    text-align: justify;
-    font-size: 2vh;
-    display: flex;
-    justify-content: center;
+  color: #878585;
+  text-align: justify;
+  font-size: 2vh;
+  display: flex;
+  justify-content: center;
 }
 
 .nombrecurso {
-    font-size: 3vh;
-    font-weight: bold;
-    color: white;
+  font-size: 3vh;
+  font-weight: bold;
+  color: white;
 }
 
 /*BILLETERA*/
 
 .BILLETERACAJAS {
-    display: flex;
-    gap: 100px;
-    align-items: center;
-    justify-content: center;
-
+  display: flex;
+  gap: 100px;
+  align-items: center;
+  justify-content: center;
 }
 
 .billetera {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: white;
-    width: 270px;
-    height: 350px;
-    font-size: 2.2vh;
-    border-radius: 20px;
-    box-shadow: 0 0 20px rgb(255, 255, 255);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  width: 270px;
+  height: 350px;
+  font-size: 2.2vh;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgb(255, 255, 255);
 }
 
 .billetera li {
-    padding: 5px;
-    display: flex;
+  padding: 5px;
+  display: flex;
 }
 
 .billetera .Metodopago {
-    color: gray;
-    justify-content: center;
-    padding: 20px;
-    display: flex;
+  color: gray;
+  justify-content: center;
+  padding: 20px;
+  display: flex;
 }
 
 .numerotarjeta {
-    color: #FF6B08;
-    font-size: 4vh;
-    font-weight: bold;
-    justify-content: center;
+  color: #ff6b08;
+  font-size: 4vh;
+  font-weight: bold;
+  justify-content: center;
 }
 
 .billetera button {
-    width: 135px;
-    height: 40px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    border-color: white;
+  width: 135px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border-color: white;
 }
 
 .billetera2 {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #ff6b08;
-    width: 270px;
-    height: 150px;
-    font-size: 2.2vh;
-    border-radius: 20px;
-    box-shadow: 0 0 20px #ff6b08;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ff6b08;
+  width: 270px;
+  height: 150px;
+  font-size: 2.2vh;
+  border-radius: 20px;
+  box-shadow: 0 0 20px #ff6b08;
 }
 
 .billetera2 h2 {
-    color: white;
-    font-size: 2.5vh;
+  color: white;
+  font-size: 2.5vh;
 }
 
 .billetera1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* Centra el contenido horizontalmente */
-    background-color: white;
-    width: 270px;
-    height: 250px;
-    font-size: 2.2vh;
-    border-radius: 20px;
-    box-shadow: 0 0 20px rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Centra el contenido horizontalmente */
+  background-color: white;
+  width: 270px;
+  height: 250px;
+  font-size: 2.2vh;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgb(255, 255, 255);
 }
 
 .billetera1 h2 {
-    text-align: left;
-    color: #636363;
-    font-size: 2.5vh;
-    margin-bottom: 10px;
-    padding: 10px;
+  text-align: left;
+  color: #636363;
+  font-size: 2.5vh;
+  margin-bottom: 10px;
+  padding: 10px;
 }
 
 .billetera1 ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    /* Organiza los elementos de la lista verticalmente */
-    align-items: center;
-    /* Centra el contenido horizontalmente */
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-gap: 10px;
-
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  /* Organiza los elementos de la lista verticalmente */
+  align-items: center;
+  /* Centra el contenido horizontalmente */
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 10px;
 }
 
 .billetera1 .precio {
-    color: #000000;
-    font-size: 5.5vh;
+  color: #000000;
+  font-size: 5.5vh;
 }
 
 .billetera1 .fecha {
-    color: #777;
-    font-size: 2vh;
+  color: #777;
+  font-size: 2vh;
 }
 
 .billetera2 .Preciototal {
-
-    font-size: 4.5vh;
+  font-size: 4.5vh;
 }
 
 section {
-    padding: 20px;
-    text-align: center;
+  padding: 20px;
+  text-align: center;
 }
 
 /*PASARELA DE PAGO*/
 
 .pasareladepago {
-    border-radius: 20px;
-    padding: 20px;
-    width: 500px;
-    margin: 0 auto;
-    box-shadow: 0 0 20px #ff6b08;
+  border-radius: 20px;
+  padding: 20px;
+  width: 500px;
+  margin: 0 auto;
+  box-shadow: 0 0 20px #ff6b08;
 }
 
 #formulario-pago {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .pasareladepago label {
-    margin-bottom: 5px;
-    font-weight: bold;
+  margin-bottom: 5px;
+  font-weight: bold;
 }
 
 .pasareladepago input {
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
 }
 
 .pasareladepago button {
-    background-color: #FF6B08;
-    color: white;
-    padding: 10px 20px;
-    border: 1px solid #007bff;
-    border-radius: 5px;
-    margin-top: 30px;
-    cursor: pointer;
+  background-color: #ff6b08;
+  color: white;
+  padding: 10px 20px;
+  border: 1px solid #007bff;
+  border-radius: 5px;
+  margin-top: 30px;
+  cursor: pointer;
 }
 
 .pasareladepago button:hover {
-    background-color: #0069d9;
+  background-color: #0069d9;
 }
 
 .pasareladepago #nombre,
@@ -832,50 +905,79 @@ section {
 #tarjeta,
 #fecha,
 #cvv {
-    width: auto;
+  width: auto;
 }
-
 
 /* CURSOS ESTILO*/
 
 .generalcurso {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  background-color: #ffffff;
+  width: 500px;
+  opacity: 20%;
+  border-radius: 5%;
+  grid: 20%;
 }
 
-#showAllDietas{
-    background-color: #ccc;
-    width: 80%;
-    border-radius: 20px;
-    margin: 5%;
-}
-
-#showAllDietas div{
-    background-color: #fff;
-    border-radius: 10px;
-    margin:5%;
-}
-
-#showAllEntrenamientos{
-    background-color: #ccc;
-    width: 80%;
-    border-radius: 20px;
-    margin: 5%;
-}
-
-#showAllEntrenamientos div{
-    background-color: #ffff;
-    border-radius: 10px;
-    margin:5%;
-}
-
+.nom
 /* 
- * ESTILOS PERFIL -------- *
+* ESTILOS PERFIL --------------------------------------------------------- *
 */
 
 .bg-profile {
+  background-color: #2c2c2c;
+  border-radius: 30px;
+  text-align: center;
+  border: 4px #ff6b08 solid;
+  border-radius: 15px;
+  padding-bottom: 8px;
+  box-shadow: 0 0 20px #ff6b08;
+}
+
+.container_cursos {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+/*MEDIA QUERY WEB*/
+
+@media only screen and (min-width: 620px) {
+  nav {
+    display: block;
+    grid-row: 1;
+    grid-column: 2;
+  }
+
+  nav li {
+    display: inline;
+  }
+
+  .bars-svg {
+    display: none;
+  }
+
+  header {
+    justify-content: space-between;
+  }
+
+  /* 
+* ESTILOS PERFIL --------------------------------------------------------- *
+*/
+
+  .btn-light {
+    border-radius: 10px;
+    font-weight: bold;
+    background-color: #ff6b08;
+    color: #000000;
+    border: #ff6b08;
+  }
+
+  .col-form-label {
+    color: #dbd9d9;
+  }
+
+  .bg-profile {
     background-color: #2c2c2c;
     border-radius: 30px;
     text-align: center;
@@ -883,69 +985,14 @@ section {
     border-radius: 15px;
     padding-bottom: 8px;
     box-shadow: 0 0 20px #ff6b08;
-}
-
-.container_cursos {
-    display: flex;
-    width: 100%;
-    height: 100vh;
-}
-
-
-/*MEDIA QUERY WEB*/
-
-@media only screen and (min-width: 620px) {
-    nav {
-        display: block;
-        grid-row: 1;
-        grid-column: 2;
-    }
-
-    nav li {
-        display: inline;
-    }
-
-    .bars-svg {
-        display: none;
-    }
-
-
-    header {
-        justify-content: space-between;
-    }
-
-    /* 
-    * ESTILOS PERFIL --------------------------------------------------------- *
-    */
-
-    .btn-light {
-        border-radius: 10px;
-        font-weight: bold;
-        background-color: #ff6b08;
-        color: #000000;
-        border: #ff6b08;
-    }
-
-    .col-form-label {
-        color: #dbd9d9;
-    }
-
-    .bg-profile {
-        background-color: #2c2c2c;
-        border-radius: 30px;
-        text-align: center;
-        border: 4px #ff6b08 solid;
-        border-radius: 15px;
-        padding-bottom: 8px;
-        box-shadow: 0 0 20px #ff6b08;
-    }
+  }
 }
 
 /*MEDIA QUERY MOVIL*/
 
 @media only screen and (max-width: 620px) {
-    .cajas {
-        flex-direction: column;
-        align-items: center;
-    }
+  .cajas {
+    flex-direction: column;
+    align-items: center;
+  }
 }
