@@ -843,18 +843,13 @@ section {
 
 /* CURSOS ESTILO*/
 
-<<<<<<< HEAD
-#showAllEntDiet{
-=======
 .generalcurso {
->>>>>>> main
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-<<<<<<< HEAD
 #showAllDietas{
     background-color: #ccc;
     width: 80%;
@@ -881,9 +876,6 @@ section {
     margin:5%;
 }
 
-=======
-.nom
->>>>>>> main
 /* 
  * ESTILOS PERFIL -------- *
 */
