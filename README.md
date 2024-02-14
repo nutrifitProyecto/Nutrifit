@@ -2,7 +2,7 @@
 
 **Título del proyecto:** NUTRIFIT 🏋️‍♂️🥗
 
-**Integrantes del grupo:** Jose Aristides, Sergio Castillo, Santiago Galvez.
+**Integrantes del grupo:** Jose Aristides, Sergio Castillo y Santiago Galvez.
 
 **Descripción breve:**  
 El proyecto consiste en el desarrollo de una plataforma web que actúa como intermediaria entre entrenadores y clientes interesados en recibir asesoramiento personalizado sobre entrenamiento y nutrición. La plataforma permitirá a los clientes explorar perfiles de coaches, comparar sus habilidades y experiencias, y seleccionar al profesional que mejor se adapte a sus necesidades. A su vez, los formadores podrán crear perfiles detallados, mostrar sus especialidades y fijar tarifas por sus servicios.
