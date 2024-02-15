@@ -99,7 +99,9 @@ main {
   background-color: #191919;
 }
 
-
+.label-regis {
+  padding-bottom: 15px;
+}
 
 .SERVICIOS {
   margin-top: 5%;
@@ -108,9 +110,6 @@ main {
   flex-direction: column;
 
 }
-
-
-
 
 .flotante-feature {
   float: inline-start;
