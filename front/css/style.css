@@ -951,9 +951,11 @@ li {
   padding: 10px;
 }
 
+/* hover menu */
+
 nav ul li:hover {
-  background-color: #ff6b08; /* Cambia el color de fondo al pasar el ratón sobre el elemento li */
-  cursor: pointer; /* Cambia el cursor a una mano para indicar que es interactivo */
+  background-color: #ff6b08;
+  cursor: pointer;
   border-radius: 5px;
 }
 
