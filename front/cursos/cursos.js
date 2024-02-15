@@ -22,7 +22,7 @@ function insertDietas() {
         cad += `
         <div>
             <button class="accordion">${ent.Dieta} / ${ent.Entrenador} ${ent.apellido}</button>
-            <p style="color: grey;">${ent.Descripcion}</p>
+            <p style="color: lightgray;">${ent.Descripcion}</p>
         </div>`;
     });
     cad += `</div>`
@@ -49,7 +49,7 @@ function insertEntrenamientos() {
         cad += `
         <button class="accordion" onclick="showExcercise(${ent.IdEnt})">${ent.Entrenamiento} / ${ent.Entrenador} ${ent.apellido}</button>
         <div class="">
-            <p style="color: grey;">${ent.Descripcion}</p>
+            <p style="color: lightgray;">${ent.Descripcion}</p>
             <div id="ejerCursos${ent.IdEnt}"></div>
         </div>`;
     });
