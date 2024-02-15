@@ -34,18 +34,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['email'] = $email;
             $_SESSION['tipo'] = 2;  // Guardar el tipo de usuario en la sesión
 
-            $tipoUsuario = $row['tipo'];
+            $tipoUsuario = 2;
 
-            if ($tipoUsuario == 0) {
+            if ($tipoUsuario == 2) {
                 header('Location: ../../front/index/index.html'); // Cambiado el nombre de la página
-                exit();
-            } elseif ($tipoUsuario == 1) {
-                header('Location: ../Clientes/clientList.html');
                 exit();
             }
         }
     } else {
-        $error = "email o contraseña incorrectos.";
+        //$error = "email o contraseña incorrectos.";
         //header('Location: ../../front/index/loginpage.html');
         exit();
     }
