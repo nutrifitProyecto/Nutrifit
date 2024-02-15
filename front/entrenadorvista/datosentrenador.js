@@ -20,7 +20,7 @@ fetch(`../../back/Entrenadores/php/getEntrenadorById.php?id=${ident}`)
 
 function anyadirTexto(){
     let cad=`
-        <h1>${info[0].name + " " + info[0].surname}</h1>
+        <h2>${info[0].name + " " + info[0].surname}</h2>
         <p>${info[0].description}</p>
         <button type="button">COMPRAR</button>`;
     divizq.innerHTML=cad;
@@ -46,8 +46,8 @@ function anyadirDietas(){
     let cad=``;
     infoDietas.forEach(diet => {
         cad+=`
-        <div class="entrenamientos">
-            <h1>${diet.Dieta}</h1>
+        <div class="entrenamientos cajap">
+            <h3>${diet.Dieta}</h3>
             <p>${diet.Descripcion_Dieta}
             </p>
             <button type="button">EMPEZAR</button>
@@ -72,8 +72,8 @@ function anyadirEntrenamiento(){
     let cad=``;
     infoEntrenamientos.forEach(ent => {
         cad+=`
-        <div class="entrenamientos">
-            <h1>${ent.Entrenamiento}</h1>
+        <div class="entrenamientos cajap">
+            <h3>${ent.Entrenamiento}</h3>
             <p>${ent.Descripcion_Entrenamiento}
             </p>
             <button type="button">EMPEZAR</button>

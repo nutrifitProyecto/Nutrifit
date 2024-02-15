@@ -5,8 +5,8 @@ include "../../inc/dbinfo.inc";
 //Creación de la conexión
 $connection = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
 
-$variable= $_GET['id'];
-
+// $variable= $_GET['id'];
+$variable=null;
 $query="";
 
 if($variable!=null){

@@ -1,18 +1,24 @@
+body{
+    height: 100vh;
+}
+
 main{
     display: flex;
     flex-direction: column;
     align-items: center;
     color: #fff;
-    margin-bottom: 16.5%;
-
+    margin-bottom: 5%;
+    width: 80%;
+    position: relative;
+    left: 10%;
 }
 
 .formularioLogin{
     text-align: center;
     border: 4px #ff6b08 solid ;
     border-radius: 15px;
-    width: 50%;
-    padding-bottom: 8px;
+    width: 100%;
+    padding: 8px;
     box-shadow: 0 0 20px #ff6b08;
 }
 

@@ -43,6 +43,9 @@ function prepararCabecera() {
       <span id="title">NUTRI<span>FIT</span></span>
     </div>
   </a>
+  <div onclick="displayChange()">
+  <img src="../img/bars.svg" class="barsvg">
+  </div>
   <nav>
       <ul style="display: flex; align-items: center; padding-top: 10px">
           <li><a href="../cursos/cursos.html">Cursos</a></li>
@@ -52,11 +55,20 @@ function prepararCabecera() {
           <li class="loggedOut"><a href="../Perfil/perfil.html?email=${email}&tipo=${tipo}">Mi perfil</a></li>
           <li class="loggedOut">
             <form action="../../back/src/logOut.php">
-              <button type="submit" class="btn btn-light">Cerar sesión</button>
+              <button type="submit" class="btn btn-light">Cerrar sesión</button>
             </form>
           </li>
       </ul>
   </nav>`;
+
+  function displayChange() {
+    let bttn = document.querySelector("header nav");
+    if (bttn.style.display === "none") {
+      bttn.style.display = "block";
+    } else {
+      bttn.style.display = "none";
+    }
+  }
 }
 
 //header
@@ -66,14 +78,14 @@ window.addEventListener("load", function () {
 })
 
 //Boton de menu en movil
-function displayChange() {
-  let bttn = document.querySelector("header nav");
-  if (bttn.style.display === "none") {
-    bttn.style.display = "block";
-  } else {
-    bttn.style.display = "none";
-  }
-}
+// function displayChange() {
+//   let bttn = document.querySelector("header nav");
+//   if (bttn.style.display === "none") {
+//     bttn.style.display = "block";
+//   } else {
+//     bttn.style.display = "none";
+//   }
+// }
 
 //acordeon preguntas frecuentes
 var acc = document.getElementsByClassName("accordion");

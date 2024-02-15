@@ -18,9 +18,11 @@ function insertEntrenamientos() {
     let cad = `<div class="faqs"> <h2>Entrenamientos</h2>`;
     infoEntrenamientos.forEach(ent => {
         cad += `
-        <button class="accordion" onclick="showExcercise(${ent.IdEnt})">${ent.Entrenamiento} / ${ent.Entrenador}</button>
-        <div class="">
-            <p>${ent.Descripcion}</p>
+        <button class="accordion itemsCursos" onclick="showExcercise(${ent.IdEnt})">${ent.Entrenamiento} / ${ent.Entrenador}</button>
+        <div>
+            <div>
+                <p>${ent.Descripcion}</p>
+            </div>
             <div id="ejerCursos${ent.IdEnt}"></div>
         </div>`;
     });
@@ -47,8 +49,8 @@ function insertDietas() {
     let cad = `<div class="faqs"> <h2>Dietas</h2>`;
     infoDietas.forEach(ent => {
         cad += `
-        <button class="accordion">${ent.Dieta} / ${ent.Entrenador}</button>
-        <div class="">
+        <button class="accordion itemsCursos">${ent.Dieta} / ${ent.Entrenador}</button>
+        <div>
             <p>${ent.Descripcion}</p>
         </div>`;
     });
@@ -81,7 +83,7 @@ function showExcercise(idEntre) {
             });
     }
     function showEjercicios() {
-        let cadena = "<h5>Ejercicios</h5>";
+        let cadena = "<h4>Ejercicios</h4> <div id='ejerciciosCursos'>";
         infoEjercicios.forEach(ejer => {
             cadena += `
             <div class="cajac">
@@ -91,8 +93,9 @@ function showExcercise(idEntre) {
                     <p class="opinionc">Duracion: ${ejer.duracion}</p>
                 </div>
             </div>`;
-            divEjercicios.innerHTML = cadena;
         });
+        cadena +="</div>";
+        divEjercicios.innerHTML = cadena;
     }
 }
 
