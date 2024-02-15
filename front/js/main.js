@@ -37,14 +37,14 @@ function prepararCabecera() {
   const email = sesion.email || '';
   const tipo = sesion.tipo || '';
   header.innerHTML = `
-  <a href="../index/index.html">
+  <a href="../index/index.html" style="margin-top:15px">
     <div id="logo-title" style="display: flex">
       <img src="../img/logo1.png" alt="logo" class="img-logo">
       <span id="title">NUTRI<span>FIT</span></span>
     </div>
   </a>
   <nav>
-      <ul style="display: flex; align-items: center; padding-top: 10px">
+      <ul style="display: flex; align-items: center; padding-top: 10px; padding-right: 50px">
           <li><a href="../cursos/cursos.html">Cursos</a></li>
           <li><a href="../paneldecontrol/paneldecontrol.html">Entrenadores</a></li>
           <li class="loggedIn"><a href="../index/registerpage.html">Registrarse</a></li>
@@ -89,34 +89,4 @@ for (i = 0; i < acc.length; i++) {
       panel.style.maxHeight = panel.scrollHeight + "px";
     }
   });
-}
-
-/** */
-/*Boton de "soy entrenador" en el registerpage cuando se pulse se
-actualizara el formulario añadiendo unos inputs de experiencia y quittando otros*/
-function registerCoach() {
-  let div = document.getElementsByClassName("campoderegistro")[0];
-  while (div.hasChildNodes()) {
-    div.firstChild.remove();
-  }
-  let form = document.getElementsByTagName("form")[0];
-  // let newinputs=
-  // `<label for="rg-descripcion">Descripcion</label><textarea name="descripcion" id="rg-descripcion"></textarea>
-  // <label for="rg-foto">Foto de Perfil</label><input type="file" id="rg-foto" name="foto" accept=".png, .jpg, .jpeg">
-  // <label for="rg-ncurso">Nombre del Curso</label><input type="text" id="rg-ncurso" name="ncurso">
-  // <label for="rg-descurso">Descripcion del Curso</label><textarea name="descurso" id="rg-descurso"></textarea>
-  // <label>Etiquetas</label>
-  // <div class="checkboxing">
-  // <input type="checkbox" id="" name=""><label for="">ENTRENAMIENTO PERSONALIZADO</label>
-  // <input type="checkbox" id="" name=""><label for="">MANTENIMIENTO INTEGRAL</label>
-  // <input type="checkbox" id="" name=""><label for="">ASESORAMIENTO ALIMENTICIO</label>
-  // <input type="checkbox" id="" name=""><label for="">SEGUIMIENTO CONTINUO Y AJUSTES</label>
-  // <input type="checkbox" id="" name=""><label for="">PERDIDA DE PESO</label>
-  // <input type="checkbox" id="" name=""><label for="">AUMENTO DE VOLUMEN</label>
-  //¡ </div>`;
-
-  form.getElementsByTagName("p")[0].textContent = "";
-
-  // div.innerHTML=newinputs;
-
 }
