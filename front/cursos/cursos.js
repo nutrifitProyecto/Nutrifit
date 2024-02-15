@@ -1,34 +1,7 @@
 let divEntrenamientos = document.getElementById("showAllEntrenamientos");
 let divDietas = document.getElementById("showAllDietas");
 
-let infoEntrenamientos = [];
-
-fetch('../../back/Entrenamientos/php/getEntrenamientosbyEnt.php')
-    .then(response => response.json())
-    .then((data) => {
-        //Parsea la respuesta a JSON
-        infoEntrenamientos = JSON.parse(JSON.stringify(data));
-        insertEntrenamientos();
-    })
-    .catch(error => {
-        console.log(error);
-    });
-
-function insertEntrenamientos() {
-    let cad = `<div class="faqs"> <h2>Entrenamientos</h2>`;
-    infoEntrenamientos.forEach(ent => {
-        cad += `
-        <button class="accordion" onclick="showExcercise(${ent.IdEnt})">${ent.Entrenamiento} / ${ent.Entrenador}</button>
-        <div class="">
-            <p>${ent.Descripcion}</p>
-            <div id="ejerCursos${ent.IdEnt}"></div>
-        </div>`;
-    });
-    cad += `</div>`;
-    divEntrenamientos.innerHTML += cad;
-}
-
-//Dietas
+// Dietas
 let infoDietas = [];
 
 fetch('../../back/Dietas/php/getDietasbyEnt.php')
@@ -44,15 +17,46 @@ fetch('../../back/Dietas/php/getDietasbyEnt.php')
     });
 
 function insertDietas() {
-    let cad = `<div class="faqs"> <h2>Dietas</h2>`;
+    let cad = `<div class="faqs" style="margin-left: 20%; margin-right: 20%;"> 
+                    <h2>Dietas</h2>`;
     infoDietas.forEach(ent => {
         cad += `
-        <button class="accordion">${ent.Dieta} / ${ent.Entrenador}</button>
-        <div class="">
-            <p>${ent.Descripcion}</p>
+        <div>
+            <button class="accordion">${ent.Dieta} / ${ent.Entrenador} ${ent.apellido}</button>
+            <p style="color: grey;">${ent.Descripcion}</p>
         </div>`;
     });
+    cad += `</div>`
     divDietas.innerHTML += cad;
+}
+
+
+let infoEntrenamientos = [];
+
+fetch('../../back/Entrenamientos/php/getEntrenamientosbyEnt.php')
+    .then(response => response.json())
+    .then((data) => {
+        //Parsea la respuesta a JSON
+        infoEntrenamientos = JSON.parse(JSON.stringify(data));
+        insertEntrenamientos();
+    })
+    .catch(error => {
+        console.log(error);
+    });
+
+function insertEntrenamientos() {
+    let cad = `<div class="faqs" style="margin-left: 20%; margin-right: 20%;"> 
+                    <h2>Entrenamientos</h2>`;
+    infoEntrenamientos.forEach(ent => {
+        cad += `
+        <button class="accordion" onclick="showExcercise(${ent.IdEnt})">${ent.Entrenamiento} / ${ent.Entrenador} ${ent.apellido}</button>
+        <div class="">
+            <p style="color: grey;">${ent.Descripcion}</p>
+            <div id="ejerCursos${ent.IdEnt}"></div>
+        </div>`;
+    });
+    cad += `</div>`;
+    divEntrenamientos.innerHTML += cad;
 }
 
 //Ejercicios
@@ -63,7 +67,7 @@ function showExcercise(idEntre) {
     let divEjercicios = document.getElementById(`ejerCursos${idEntre}`)
 
     if (displayEjercicios) {
-        divEjercicios.innerHTML="";
+        divEjercicios.innerHTML = "";
         displayEjercicios = false;
     } else {
         displayEjercicios = true;
