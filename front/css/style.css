@@ -98,12 +98,17 @@ main {
   background-color: #191919;
 }
 
+
+.label-regis {
+  padding-bottom: 15px;
+}
+
 .SERVICIOS {
   margin-top: 5%;
   display: flex;
   gap: 40px;
   flex-direction: column;
-  margin-bottom: 5%;
+
 }
 
 .flotante-feature {
@@ -178,6 +183,45 @@ main {
   color: orange;
 }
 
+.entrenamiento {
+  background-color: #191919;
+  box-shadow: 0 0 20px #ff6b08;
+}
+
+.entrenamiento:hover {
+
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.dietas {
+  background-color: #191919;
+  box-shadow: 0 0 20px #ff6b08;
+}
+
+.dietas:hover {
+
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.asesoramiento {
+  background-color: #191919;
+  box-shadow: 0 0 20px #ff6b08;
+}
+
+.asesoramiento:hover {
+
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.titulo {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #e8e8e8;
+  font-size: 4vh;
+}
+
 /*PERDIDA DE PESO*/
 .informacionPD {
   width: 80%;
@@ -221,20 +265,17 @@ main {
   margin: 5px;
 }
 
-.caja {
-  width: 300px;
-  height: 200px;
-  background-color: #f1f1f1;
-  border: 1px solid #ddd;
-  border-radius: 20px;
-  margin: 10px;
-  padding: 10px;
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: center;
+.entrenamientos button {
+  align-items: center;
+  text-align: center;
+  border: white;
+  border-radius: 10%;
+  width: 10%;
+  height: 40px;
+  color: #f2f4f7;
+  background-color: #262424;
 }
 
-/*IMAGEN DE FONDO INDEX*/
 .teaser-bg {
   position: relative;
   display: inline-block;
@@ -249,11 +290,37 @@ main {
   font-size: 4vh;
 }
 
-/*OPINIONES*/
+.caja {
+  width: 300px;
+  height: 200px;
+  background-color: #f1f1f1;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+}
+
 .cajas {
   text-align: center;
   justify-content: center;
   display: flex;
+}
+
+.teaser-bg {
+  position: relative;
+  display: inline-block;
+}
+
+.titulo {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #E8E8E8;
+  font-size: 4vh;
 }
 
 .cajas h1 {
@@ -367,7 +434,6 @@ textarea {
   border-radius: 15px;
 }
 
-/*FOOTER*/
 footer {
   bottom: 0;
   padding-block: 15px;
@@ -387,11 +453,19 @@ footer li img {
   height: 50px;
 }
 
-/*CAJAS PANEL */
+.titulopanel h2 {
+  color: #FF6B08;
+}
+
+.titulopanel a {
+  color: grey;
+}
+
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
   width: 100%;
 }
 
@@ -411,7 +485,22 @@ footer li img {
   text-align: center;
   border-radius: 50px;
   margin: 20px;
+  gap: 20px;
+  width: 50%;
+  justify-content: center;
+  align-items: baseline;
+  margin-top: 10%;
 }
+/*
+.cajap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+}
+*/
 
 .cajap h1 {
   margin-bottom: 20px;
@@ -422,6 +511,11 @@ footer li img {
   width: 250px;
   height: 250px;
   border-radius: 10px;
+}
+
+.entrenadores h2 {
+
+  margin-top: 20%;
 }
 
 /*CAJAS CONTRATOS*/
@@ -436,6 +530,20 @@ footer li img {
 }
 
 .cajascontratoarriba button {
+  border-radius: 20px solid;
+  gap: 10px;
+}
+
+.cajascontratoabajo {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+  padding: 0%;
+  gap: 10px;
+}
+
+.cajascontratoarriba button,
+.cajascontratoabajo button {
   margin-bottom: 15px;
   border: white;
   border-radius: 10%;
@@ -451,6 +559,7 @@ footer li img {
   background-color: #f0f0f0;
   border-radius: 10px;
   height: 100%;
+  box-shadow: 0 4px 8px rgba(204, 3, 3, 0.1);
 }
 
 .informacioncajac {
@@ -460,6 +569,10 @@ footer li img {
   display: flex;
 }
 
+.informacioncajac img {
+  width: 100%;
+}
+
 .opinionc {
   margin-top: 10px;
 }
@@ -467,6 +580,17 @@ footer li img {
 .nombrec {
   font-weight: bold;
   margin: 10px 0;
+}
+
+.cajascontratoabajo p {
+
+  color: #FF6B08;
+  font-size: 4vh;
+}
+
+.cajascontratoabajo li {
+  text-align: left;
+  margin: 10px
 }
 
 /*ENTRENADOR*/
@@ -766,6 +890,16 @@ footer li img {
   width: 80%;
   left: 10%;
   position: relative;
+}
+
+li {
+  padding: 10px;
+}
+
+nav ul li:hover {
+  background-color: #ff6b08;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
 #showAllEntrenamientos,

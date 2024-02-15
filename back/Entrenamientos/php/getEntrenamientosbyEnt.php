@@ -7,6 +7,7 @@ $connection = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
 
 $query = 'SELECT 
 e.name AS Entrenador,
+e.surname AS apellido,
 t.nombre AS Entrenamiento,
 t.description AS Descripcion,
 t.id AS IdEnt

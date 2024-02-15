@@ -40,8 +40,7 @@ function tablaEntrenadores() {
                     </td>
                 </tr>`
     });
-    cad += `</table>
-            <button data-bs-toggle="modal" data-bs-target="#crearEntrenadorModal" class="btn btn-primary">Crear entrenador</button>`
+    cad += `</table>`
     table.innerHTML = cad
 }
 

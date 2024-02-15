@@ -42,8 +42,7 @@ function tablaClientes() {
                     </td>
                 </tr>`
     });
-    cad += `</table>
-            <button data-bs-toggle="modal" data-bs-target="#crearClienteModal" class="btn btn-primary">Crear cliente</button>`
+    cad += `</table>`
     table.innerHTML = cad
 }
 

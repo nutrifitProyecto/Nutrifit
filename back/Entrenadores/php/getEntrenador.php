@@ -5,15 +5,7 @@ include "../../inc/dbinfo.inc";
 //Creación de la conexión
 $connection = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
 
-// $variable= $_GET['id'];
-$variable=null;
-$query="";
-
-if($variable!=null){
-    $query= "SELECT * FROM entrenadores WHERE id = '$variable'";
-}else{
-    $query = 'SELECT * FROM entrenadores';
-}
+$query = 'SELECT * FROM entrenadores';
 
 $result = $connection->query($query);
 
